@@ -1,0 +1,21 @@
+Fernhill's decisions (Mark I), personal loans
+from      cut-off    women     men   ratio
+2016-01       560    54.6%   54.6%   1.000
+2019-01       575    50.6%   52.4%   0.966
+2020-04       610    33.1%   32.7%   1.011
+2021-02       525    66.7%   65.9%   1.011
+2022-07       580    50.8%   50.6%   1.004
+
+The same 28,061 applicants of 2023-2025, two ways
+                             women     men   ratio  95% interval
+Fernhill approved            50.9%   50.9%   1.001  0.977 to 1.021
+Ballast approves             52.6%   53.5%   0.983  0.961 to 1.005
+Ballast refers                7.2%    6.6%   1.097  1.000 to 1.197
+Ballast policy declines      20.4%   20.5%   0.993  0.945 to 1.045
+
+Year by year: Ballast's ratio (95% interval), Fernhill's,
+and the share of women and men Ballast declines by a rule
+  2023  1.009 (0.971 to 1.049)  1.041  rules 19.3% 21.1%
+  2024  0.983 (0.949 to 1.023)  0.987  rules 20.4% 21.2%
+  2025  0.957 (0.922 to 0.996)  0.976  rules 21.4% 19.4%
+Also in 2023-2025: X 318, U 704

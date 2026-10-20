@@ -1,0 +1,18 @@
+each March, after the review
+  486 company-years; 9 within a year of a default (9 firms)
+  AUC by DD       0.993   90% interval 0.985 to 1.000
+  AUC by grade    0.908   90% interval 0.846 to 0.960
+  difference     +0.085   90% interval +0.033 to +0.150
+  DD ranked better in 100% of resamples
+
+every month end
+  5,647 company-months; 108 within a year of a default (9 firms)
+  AUC by DD       0.988   90% interval 0.980 to 0.994
+  AUC by grade    0.848   90% interval 0.754 to 0.930
+  difference     +0.140   90% interval +0.061 to +0.230
+  DD ranked better in 100% of resamples
+
+the defaulters at their last March review, ranked among that
+March's listed clients (0% = riskiest)
+  by DD     median   3%, least risky   6%
+  by grade  median   6%, least risky  37%

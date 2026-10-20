@@ -1,0 +1,14 @@
+PL0001986: $13,800 lent 2016-11-16
+defaulted 2017-07-31, charged off 2017-10-31
+owed at default (EAD)      $ 13,235.17
+discount rate                    6.27% a year (1.27 + 5)
+
+                      months  rows        cash  value at default
+payment                    2     1      117.74            116.52
+collections_payment     4-22    19    1,418.97          1,343.96
+cost                    4-22    19     -312.19           -295.69
+debt_sale                 23     1    1,085.52            962.90
+net                                   2,310.04          2,127.69
+
+loss, undiscounted   $10,925.13   LGD 82.5%
+loss, discounted     $11,107.48   LGD 83.9%

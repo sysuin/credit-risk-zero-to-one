@@ -1,0 +1,1 @@
+{"scenarios": {"upside": 171.0052238862505, "base": 183.88249168349145, "downside": 258.19490726124167, "severe": 363.6066643069787}, "weights": {"upside": 0.15, "base": 0.4, "downside": 0.3, "severe": 0.15}, "weighted": 231.20325208075343, "average_path": 224.5864087644157}

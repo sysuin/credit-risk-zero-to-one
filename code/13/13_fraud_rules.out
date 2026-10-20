@@ -1,0 +1,21 @@
+24,595 booked personal loans, 165 never paid
+rule                       flagged caught  share false/catch
+new_address                  3,213    149    90%        20.6
+young_file                   2,022    145    88%        12.9
+file_younger_than_person     1,451    127    77%        10.4
+enquiry_burst                  447    106    64%         3.2
+round_income                 2,617    148    90%        16.7
+refused_consent              3,336     78    47%        41.8
+income_gap                     140     40    24%         2.5
+
+Flagged loans that paid, share to under-30s (all loans: 9.0%)
+  young_file                 1,877   29.5%
+  file_younger_than_person   1,324    0.0%
+
+Flags raised, Ballast's 5 rules
+at least   flagged caught  share false/catch
+1            6,763    153    93%        43.2
+2              814    146    88%         4.6
+3              160    140    85%         0.1
+4              108    108    65%         0.0
+with refused_consent as a sixth rule, at 3: 240 flagged, 143 caught

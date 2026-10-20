@@ -1,0 +1,20 @@
+Mortgages: 3,609, indexed LTV 61% (balance-weighted)
+collateral model today 1.98%; Chapter 20's LGD 1.93%
+house prices             fall   LTV   >100%     LGD
+base                    +0.4%   61%    0.0%   1.91%
+severe                 -24.0%   80%   16.6%   4.44%
+stress_2026            -29.0%   86%   26.7%   5.56%
+hypothetical           -40.0%  102%   53.8%   8.80%
+hypothetical           -50.0%  122%   76.5%  12.61%
+
+Car loans: 5,110, indexed LTV 61%
+Chapter 20's LGD 29.8%, downturn 39.6%; by used-car prices:
+  base                  +0.2%  LGD 29.8%
+  severe               -14.4%  LGD 34.0%
+  stress_2026          -17.4%  LGD 35.0%
+
+Unsecured: LGD as cures fall with unemployment (Chapter 25)
+                cure    LGD downturn at 8.80% at 9.82%
+personal       16.1%  66.4%    69.3%    69.5%    70.2%
+card           14.9%  72.1%    73.3%    75.2%    76.0%
+sme_overdraft  17.9%  66.2%    66.2%    69.7%    70.5%

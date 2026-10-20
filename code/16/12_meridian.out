@@ -1,0 +1,25 @@
+accounts    leverage   cover  equity   revenue      PD  grade
+2024           1.08x  11.46x   47.0%    112.0m   0.01%      1
+2025           1.28x  10.14x   46.7%    127.3m   0.02%      1
+PF             2.30x   5.64x   37.7%    127.3m   0.12%      3
+pro forma, log odds against the average client:
+  leverage -0.85, cover +0.11, equity +0.05, size -0.00
+
+Meridian Supply Co. (prospect), review 05 Jan 2026
+model grade 3 (PD 0.15%); assigned 5 (PD 0.60%); +2 notches
+1. Receivable days rose from 48 to 66 in three years; the cause and
+   the customers are not yet known.
+2. Free cash flow negative in 3 of 4 years; cash at 7 days of costs
+   against a peer median of 44.
+3. 57% of 2025's profit paid out while borrowings rose.
+4. 2025 accounts are unaudited, and Meridian has no history with
+   Fernhill.
+Revisit: audited 2025 accounts and twelve monthly aged receivables
+   listings, or any covenant breach.
+By: credit analyst; to the credit committee
+
+loss cost on $17m at 40% loss and 90% drawn at default
+  book average (Chapter 15)  PD  1.72%  $  104,723 a year
+  model grade 3              PD  0.15%  $    9,142 a year
+  assigned grade 5           PD  0.60%  $   36,569 a year
+margin and fees $213,633 to $346,233: 5.8 to 9.5 times the loss cost

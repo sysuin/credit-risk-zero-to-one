@@ -1,0 +1,21 @@
+A00061530 (no bureau file): declined thin_file
+  Mark I 544 (cut-off 580), Mark II 550, challenger 554
+  challenger                points Mark II                    short
+  no_file no file            -33.5 bureau_score no file          31
+  address_months 6            -8.9 income <27,000                21
+  income 13,200               -5.7 address_months <10            20
+  region Riverside            -2.7 dti no file                   14
+A00061514 (channel among the reasons): declined score_below_cutoff
+  Mark I 563 (cut-off 580), Mark II 585, challenger 570
+  challenger                points Mark II                    short
+  bureau_score 650           -12.8 bureau_score 630-679          35
+  dti 0.35                    -9.9 dti 0.32+                     24
+  revolving_utilisation 0.64  -9.0 revolving_utilisation 0.55+   20
+  channel online              -1.6 income 40,000-91,999          14
+A00061564 (five or more enquiries): declined score_below_cutoff
+  Mark I 471 (cut-off 580), Mark II 529, challenger 518
+  challenger                points Mark II                    short
+  enquiries_6m 6             -55.6 bureau_score <630             50
+  bureau_score 514           -30.7 enquiries_6m 3+               41
+  address_months 3            -7.7 address_months <10            20
+  revolving_utilisation 0.87  -5.3 revolving_utilisation 0.55+   20

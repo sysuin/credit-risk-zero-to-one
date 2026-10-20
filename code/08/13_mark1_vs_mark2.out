@@ -1,0 +1,10 @@
+loans 21,813, Mark I score missing for 0
+
+sample        Mark I  Mark II    gain      95% interval  II wins
+holdout        0.467    0.575  +0.108  +0.033 to +0.179    99.8%
+out_of_time    0.414    0.569  +0.155  +0.075 to +0.234   100.0%
+
+out-of-time: the lowest-scoring 456 loans (10%) on each card
+  mark1_score   31 of 114 bads, bad rate 6.8%
+  mark2         53 of 114 bads, bad rate 11.6%
+correlation of the two scores: 0.72

@@ -1,0 +1,15 @@
+300 borrowers, PD 1%, so 3 defaults expected
+  d  binomial p  Jeffreys p  light        exact 95%     Jeffreys 95%
+  0       1.000       0.986  green      0.00%-1.22%      0.00%-0.83%
+  1       0.951       0.890  green      0.01%-1.84%      0.04%-1.55%
+  2       0.802       0.695  green      0.08%-2.39%      0.14%-2.12%
+  3       0.578       0.461  green      0.21%-2.89%      0.28%-2.64%
+  4       0.353       0.260  green      0.36%-3.38%      0.45%-3.14%
+  5       0.184       0.126  green      0.54%-3.85%      0.64%-3.61%
+  6       0.083       0.053  green      0.74%-4.30%      0.84%-4.08%
+  7       0.033       0.020  amber      0.94%-4.75%      1.05%-4.53%
+  8       0.011       0.007  amber      1.16%-5.19%      1.27%-4.97%
+
+zero defaults: exact one-sided 95% bound 0.99%; 3/n = 1.00%
+seen 80% of the time by the amber test: a true rate 3.0x the PD
+normal approximation to the count: mean 3.0, sd 1.72

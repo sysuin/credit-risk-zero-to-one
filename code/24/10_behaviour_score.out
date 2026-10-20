@@ -1,0 +1,19 @@
+           account-quarters  bad in 12m  test rows    bad
+card                257,833       2.88%    146,237  2.58%
+personal            140,365       3.32%     69,572  2.68%
+
+Gini on the test quarters (2022-2024)
+            application   account    history +
+                  score   history  application
+card              0.439     0.598        0.655
+personal          0.483     0.372        0.585
+
+Gini by months on book, test quarters (loan = personal loan)
+                            application    behaviour
+months         rows    bad   card  loan   card  loan
+1-6          37,993  3.21%  0.434 0.437  0.529 0.468
+7-12         29,450  3.87%  0.490 0.466  0.623 0.573
+13-24        46,714  3.65%  0.522 0.496  0.623 0.599
+25-36        31,897  2.83%  0.439 0.629  0.604 0.708
+37+          69,755  0.95%  0.331 0.309  0.563 0.432
+saved data/ballast/monitoring/behaviour.json

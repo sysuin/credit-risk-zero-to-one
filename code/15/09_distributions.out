@@ -1,0 +1,9 @@
+rule: up to 35% of last year's net income, leverage <= 2.50x
+
+$000   prior profit  leverage   allowed      paid   excess
+2023           1,850     2.22x       648       500        0
+2024           5,372     1.16x     1,880     2,000      120
+2025           6,625     1.08x     2,319     3,600    1,281
+kept in the business, 2023-2025: $1.40m
+
+2026 allowance on 2025's profit: $2.21m (paid in 2025: $3.60m)

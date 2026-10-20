@@ -1,0 +1,15 @@
+age      applications   no hit    thin  0-1 open
+18-20          11,175    41.2%   37.0%     18.3%
+21-22           4,065    41.2%   18.4%     15.6%
+23-24           4,911    10.6%   14.7%     22.2%
+25-26           5,898    11.2%    8.4%     21.3%
+27-29          11,099     3.0%    6.4%     20.8%
+30-39          51,150     3.1%    6.0%     16.1%
+40-59          78,784     3.0%    6.1%     10.1%
+60+            10,796     3.0%    6.1%      5.1%
+all           177,878     6.8%
+
+no-hit applicants, by age and what Fernhill decided:
+  under 25     decline  thin_file             6,786
+  25 and over  decline  score_below_cutoff    1,554
+  25 and over  approve  -                     3,632

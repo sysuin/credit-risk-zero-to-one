@@ -1,0 +1,7 @@
+wrote data/ballast/challenger/model.txt  (237,301 bytes)
+wrote data/ballast/challenger/challenger.json  (6,703 bytes)
+
+reloaded: 257 trees, 21 characteristics, 6 constrained
+every one of 22,205 loans scores the same: True
+contributions add up to every score (within 1e-9): True
+Gini saved: train 0.674, holdout 0.646, out_of_time 0.634

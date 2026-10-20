@@ -1,0 +1,12 @@
+facilities by ranking and security
+  revolver  senior    406   secured 44%
+  term      senior    491   secured 75%
+
+facilities whose borrower defaulted
+                       count   drawn  worked  net back
+  revolver, secured       10     90%       8       60%
+  revolver, unsecured     14     93%      12       38%
+  term, secured           26     59%      20       55%
+  term, unsecured          5     70%       5       22%
+  drawn: of the limit at default; net back: recoveries less
+  costs over what was owed, on workouts with recoveries

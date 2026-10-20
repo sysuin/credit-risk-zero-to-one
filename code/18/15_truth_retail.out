@@ -1,0 +1,26 @@
+38,696 loan-Decembers, all with a true PD; 9.8% of the PD's defaults
+are bankruptcies, which the truth's 90-days event does not count
+
+Dec     loans   truth     PIT     TTC  defaulted
+2016    1,762   3.82%   4.12%   4.49%      3.92%
+2017    3,087   3.55%   3.61%   4.36%      3.89%
+2018    4,033   3.34%   3.24%   4.17%      3.07%
+2019    4,261   6.84%   6.21%   3.57%      6.34%
+2020    3,901   3.61%   3.92%   3.38%      3.69%
+2021    4,414   2.81%   2.78%   3.38%      3.01%
+2022    5,029   3.09%   2.85%   3.20%      2.66%
+2023    5,942   3.06%   3.04%   2.85%      3.23%  test
+2024    6,267   2.55%   2.74%   2.67%      2.46%  test
+Average gap to the truth: PIT 0.21%, TTC 0.76%
+
+true PD        loans   truth     PIT  defaulted
+0%-1%         16,686   0.39%   1.47%      0.46%
+1%-2%          6,650   1.45%   2.54%      1.71%
+2%-5%          8,393   3.21%   3.48%      2.92%
+5%-10%         4,158   6.95%   4.95%      6.97%
+10%-30%        2,235  15.52%   8.53%     15.12%
+30%-100%         574  52.10%  43.00%     48.26%
+Correlation of log PIT with log truth: 0.74
+
+New loans of 2024: calibrated PD 2.72%, truth at opening 2.67%,
+defaulted in their first year 2.56%

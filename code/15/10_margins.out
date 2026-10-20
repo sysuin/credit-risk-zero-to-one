@@ -1,0 +1,15 @@
+margins from 125 to 500 bps; at the 125 floor: 36%
+
+                              facilities   mean margin
+  grades 1-3 (safest)                146           153
+  grades 4-6                         222           187
+  grades 7-10                        147           269
+  no grade yet                       382           202
+  secured                            548           188
+  unsecured                          349           222
+  borrower later defaulted            99           285
+  borrower never defaulted           798           191
+correlation of grade at signing and margin: +0.55
+
+signed at 1.5x-3.0x leverage and 5x+ cover: 155
+  margin p25 125, median 125, p75 175 bps

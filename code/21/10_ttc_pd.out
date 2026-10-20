@@ -1,0 +1,23 @@
+defaulted within 12 months, quarter ends 2016-2024
+product                1 behind        2 behind
+auto             37.2% of   925  61.5% of   457
+card             36.7% of 2,505  64.3% of 1,111
+mortgage         36.4% of   110  58.3% of    48
+personal         36.0% of 1,810  64.0% of   827
+sme_emergency    48.9% of   601  70.7% of   297
+sme_overdraft    36.4% of   129  61.7% of    47
+sme_term         34.2% of   330  65.5% of   139
+
+performing exposures, PD weighted by balance
+product                 TTC    PIT  at floor
+auto                  1.98%  1.89%         0
+card                  2.09%  2.35%         0
+commercial_revolver   4.32%  3.98%         6
+commercial_term       3.90%  4.15%         8
+mortgage              0.40%  0.36%       255
+personal              2.53%  3.01%         0
+sme_emergency         2.20%  1.29%         0
+sme_overdraft         1.97%  2.57%       216
+sme_term              4.19%  4.60%         2
+all                   3.37%  3.43%       487
+PIT: Chapter 20's 12-month PD, weighted across its scenarios

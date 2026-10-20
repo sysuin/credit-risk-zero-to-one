@@ -1,0 +1,20 @@
+unemployment taken this many months before the charge-off
+lag, months                        0       3       6       9      12
+deviance, $m (lower fits)       9.26    8.73    8.45    9.14    9.44
+
+lag 6: 693 cells, 2017-2025; long-run unemployment 5.01%
+                              rate x    90% interval
+age 6-11 months                 0.93     0.80 to 1.08
+age 12-17 months                1.00  (yardstick)
+age 18-23 months                1.09     0.91 to 1.31
+age 24-35 months                1.03     0.85 to 1.24
+age 36+ months                  0.71     0.50 to 1.00
+booked 2016-2018                1.46     1.25 to 1.70
+booked Jan 2019-Mar 2020        0.89     0.72 to 1.10
+booked Apr 2020-Jan 2021        0.48     0.34 to 0.67
+booked the push                 1.46     1.23 to 1.73
+booked since Jul 2022           1.00  (yardstick)
+unemployment, a point           1.31     1.25 to 1.38
+Chapter 18, 12-month PD         1.33
+dispersion 14,457: the variance of a cell's dollars
+is that many times its expected dollars

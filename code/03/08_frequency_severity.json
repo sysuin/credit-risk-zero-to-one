@@ -1,0 +1,44 @@
+[
+ {
+  "product": "card",
+  "freq": 0.09750186428038778,
+  "severity": 0.7979381002606675,
+  "workouts": 1079
+ },
+ {
+  "product": "sme_overdraft",
+  "freq": 0.07933194154488518,
+  "severity": 0.754493751124843,
+  "workouts": 51
+ },
+ {
+  "product": "personal",
+  "freq": 0.07197251646149441,
+  "severity": 0.7898226008058852,
+  "workouts": 888
+ },
+ {
+  "product": "sme_emergency",
+  "freq": 0.2201923076923077,
+  "severity": 0.1948411060124623,
+  "workouts": 207
+ },
+ {
+  "product": "sme_term",
+  "freq": 0.09526089037817137,
+  "severity": 0.2829394147982002,
+  "workouts": 140
+ },
+ {
+  "product": "auto",
+  "freq": 0.05973173791373154,
+  "severity": 0.3488169784440672,
+  "workouts": 458
+ },
+ {
+  "product": "mortgage",
+  "freq": 0.020171149144254278,
+  "severity": 0.0001545339102059458,
+  "workouts": 14
+ }
+]

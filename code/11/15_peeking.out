@@ -1,0 +1,6 @@
+2,000 tests, no real difference, 144 loans an arm a month
+  read once, at month 24:                   5.9% declare a winner
+  read every month, first  6 months:       14.1% declare a winner
+  read every month, first 12 months:       19.7% declare a winner
+  read every month, first 24 months:       25.6% declare a winner
+  of those, half had declared by month 5

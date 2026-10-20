@@ -1,0 +1,24 @@
+                                  hers             his
+applied                     2025-04-14      2025-04-20
+channel                         online          online
+asked for                      $11,500         $14,800
+stated income                  $52,900         $66,300
+age                                 41              43
+time at address              70 months       70 months
+bureau score                       607             702
+card utilisation                   76%             33%
+worst status, 2 yrs            60 days          0 days
+
+Mark I, line by line (base 140)
+  bureau_score                      58              90   <- differs
+  revolving_utilisation              30              55   <- differs
+  enquiries_6m                      44              44
+  worst_status_24m                  22              58   <- differs
+  dti                               54              54
+  employment_months                 50              42   <- differs
+  address_months                    53              53
+  age                               50              50
+  housing                           40              40
+  score                            541             626
+hers: cut-off 580, decline, recorded reason: score_below_cutoff
+his: cut-off 580, approve, recorded reason: -

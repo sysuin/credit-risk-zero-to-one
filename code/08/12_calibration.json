@@ -1,0 +1,132 @@
+{
+ "out_of_time": [
+  {
+   "band": "<540",
+   "loans": 51,
+   "bads": 19,
+   "observed": 0.372549,
+   "predicted": 0.209982,
+   "expected": 10.709082,
+   "p_value": 0.008697
+  },
+  {
+   "band": "540-559",
+   "loans": 176,
+   "bads": 20,
+   "observed": 0.113636,
+   "predicted": 0.096245,
+   "expected": 16.939131,
+   "p_value": 0.441722
+  },
+  {
+   "band": "560-579",
+   "loans": 542,
+   "bads": 21,
+   "observed": 0.038745,
+   "predicted": 0.051384,
+   "expected": 27.850391,
+   "p_value": 0.205625
+  },
+  {
+   "band": "580-599",
+   "loans": 1025,
+   "bads": 29,
+   "observed": 0.028293,
+   "predicted": 0.027361,
+   "expected": 28.044519,
+   "p_value": 0.847772
+  },
+  {
+   "band": "600-619",
+   "loans": 1199,
+   "bads": 18,
+   "observed": 0.015013,
+   "predicted": 0.014633,
+   "expected": 17.545372,
+   "p_value": 0.903865
+  },
+  {
+   "band": "620-639",
+   "loans": 960,
+   "bads": 6,
+   "observed": 0.00625,
+   "predicted": 0.007416,
+   "expected": 7.119821,
+   "p_value": 0.850604
+  },
+  {
+   "band": "640+",
+   "loans": 611,
+   "bads": 1,
+   "observed": 0.001637,
+   "predicted": 0.003437,
+   "expected": 2.099834,
+   "p_value": 0.729541
+  }
+ ],
+ "holdout": [
+  {
+   "band": "<540",
+   "loans": 141,
+   "bads": 33,
+   "observed": 0.234043,
+   "predicted": 0.226293,
+   "expected": 31.907278,
+   "p_value": 0.840481
+  },
+  {
+   "band": "540-559",
+   "loans": 349,
+   "bads": 28,
+   "observed": 0.080229,
+   "predicted": 0.097794,
+   "expected": 34.130224,
+   "p_value": 0.320782
+  },
+  {
+   "band": "560-579",
+   "loans": 809,
+   "bads": 38,
+   "observed": 0.046972,
+   "predicted": 0.051776,
+   "expected": 41.886685,
+   "p_value": 0.633495
+  },
+  {
+   "band": "580-599",
+   "loans": 1251,
+   "bads": 38,
+   "observed": 0.030376,
+   "predicted": 0.02796,
+   "expected": 34.977707,
+   "p_value": 0.60611
+  },
+  {
+   "band": "600-619",
+   "loans": 1256,
+   "bads": 17,
+   "observed": 0.013535,
+   "predicted": 0.014588,
+   "expected": 18.322191,
+   "p_value": 0.905997
+  },
+  {
+   "band": "620-639",
+   "loans": 867,
+   "bads": 2,
+   "observed": 0.002307,
+   "predicted": 0.007446,
+   "expected": 6.455398,
+   "p_value": 0.107592
+  },
+  {
+   "band": "640+",
+   "loans": 501,
+   "bads": 1,
+   "observed": 0.001996,
+   "predicted": 0.003455,
+   "expected": 1.730905,
+   "p_value": 1.0
+  }
+ ]
+}

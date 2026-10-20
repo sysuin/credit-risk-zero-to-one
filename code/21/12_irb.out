@@ -1,0 +1,18 @@
+saved data/ballast/capital/rwa_2025-12-31.parquet
+saved data/ballast/capital/rwa_by_product_2025-12-31.csv
+
+product                 PD    LGD   EAD $m   RWA $m   IRB    SA
+auto                 1.98%  39.3%     99.2     43.2   44%   75%
+card                 1.85%  70.1%     64.3     21.5   33%   75%
+commercial_revolver  3.88%  40.0%  2,182.3  2,003.4   92%   92%
+commercial_term      3.90%  40.0%  2,977.1  2,959.4   99%   93%
+mortgage             0.40%  10.0%    877.0     49.2    6%   29%
+personal             2.53%  68.8%     59.0     47.8   81%   75%
+sme_emergency        2.20%  88.7%     40.2      8.5   21%   15%
+sme_overdraft        1.87%  66.1%    155.4    109.8   71%   78%
+sme_term             4.19%  26.4%    191.3     77.7   41%   76%
+all                                6,645.8  5,320.6   80%   82%
+PD, LGD: performing exposures, weighted by EAD; IRB, SA: RWA
+density, each approach's RWA over its own EAD
+
+credit RWA: IRB $5,320,552,984; standardised $5,402,435,086

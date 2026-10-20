@@ -1,0 +1,10 @@
+step added                        LR        p  refused (sign)
+1    enquiries_6m              160.5  9.0e-37  0
+2    bureau_score              100.6  1.1e-23  0
+3    oldest_account_months      49.0  2.6e-12  0
+4    address_months             33.3  7.7e-09  3
+5    income                     13.4  2.5e-04  3
+6    dti                        11.9  5.7e-04  3
+7    (stop)                      1.5  2.1e-01  3
+chosen 6; wrong signs 0
+no-file bad rate: observed 5.0%, this model 11.3%

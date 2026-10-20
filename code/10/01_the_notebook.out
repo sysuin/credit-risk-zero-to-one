@@ -1,0 +1,6 @@
+characteristics used     21
+trees, chosen on holdout 298
+holdout loans            5,174 (157 bads)
+Gini, Mark II            0.575
+Gini, boosted trees      0.638
+gain                     +0.062

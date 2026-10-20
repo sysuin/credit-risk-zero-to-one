@@ -1,0 +1,9 @@
+period         applied  declined  walked  booked
+development     52,445    23,862  11,018  17,565
+out_of_time     13,887     6,786   2,461   4,640
+too_recent      14,174     6,986   2,705   4,483
+
+booked loans whose 12-payment window has finished:
+  development   17,565 of 17,565
+  out_of_time    4,640 of  4,640
+  too_recent     1,679 of  4,483

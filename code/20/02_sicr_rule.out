@@ -1,0 +1,15 @@
+date       rule       stage 2        defaulted next year  caught
+                        share  stage 2    added  stage 1
+2023-12-31 1.5x          9.2%    12.8%     7.2%     1.9%     40%
+2023-12-31 2x            6.1%    15.9%     7.4%     2.1%     33%
+2023-12-31 3x            2.5%    28.7%     8.9%     2.3%     24%
+2023-12-31 backstops     1.8%    35.4%        -     2.3%     22%
+2024-12-31 1.5x          9.2%    10.1%     4.4%     1.4%     43%
+2024-12-31 2x            6.1%    13.1%     4.7%     1.4%     37%
+2024-12-31 3x            2.4%    26.5%     7.4%     1.6%     30%
+2024-12-31 backstops     1.8%    33.0%        -     1.6%     28%
+rule: 12-month PD at least that multiple of origination's and
+one point higher, plus the backstops (30 days past due, a
+year after a cure, the commercial watchlist); added: accounts
+the PD test adds to the backstops; caught: share of next
+year's defaults already in stage 2

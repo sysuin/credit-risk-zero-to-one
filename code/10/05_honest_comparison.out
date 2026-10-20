@@ -1,0 +1,14 @@
+sample       Mark II challenger    gain      95% interval   wins
+holdout        0.575      0.646  +0.070  +0.031 to +0.106 100.0%
+  interval  0.51-0.64  0.59-0.70
+out_of_time    0.569      0.634  +0.065  +0.020 to +0.111  99.8%
+  interval  0.48-0.65  0.55-0.71
+
+out-of-time: bads among the lowest-scoring loans (of 114)
+  lowest  loans  Mark II  challenger
+      5%    228       39          41
+     10%    456       53          50
+     20%    913       65          69
+     30%  1,369       75          85
+     50%  2,282       98         102
+correlation of the two scores: 0.84

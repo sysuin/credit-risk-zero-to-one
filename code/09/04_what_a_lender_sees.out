@@ -1,0 +1,15 @@
+training: 12,075 booked with an outcome, 16,484 without
+reweight: weights 1.08 to 338; 51 loans above 20
+  carry 24.4% of the weight
+  effective sample: 649 loans
+
+method            rows  unknowns called bad  declines   Gini
+ignore          12,075         0          -     13.9%  0.575
+reweight        12,075         0          -     10.7%  0.424
+hard cut-off    28,559    16,484       9.8%     17.2%  0.490
+parcelling      28,559    16,484       8.3%     11.6%  0.585
+fuzzy           45,043    16,484       9.8%     13.9%  0.569
+bureau retro    19,144     7,069      10.6%     13.5%  0.580
+
+declines: predicted bad rate, the holdout's 3,764 declined
+Gini: on the holdout's 5,174 booked loans, the only outcomes

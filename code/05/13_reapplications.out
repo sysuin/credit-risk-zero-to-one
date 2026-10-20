@@ -1,0 +1,8 @@
+applications        177,878 rows     177,878 distinct keys
+accounts             87,762 rows      87,762 distinct keys
+account-months    2,487,898 rows   2,487,898 distinct keys
+
+pairs agreeing on age, region, income, employment,
+housing and dependants, within 90 days:         319
+  months at address 0 to 3 higher the second time   38
+  months at address 1 to 4 lower (impossible)       38

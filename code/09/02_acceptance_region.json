@@ -1,0 +1,72 @@
+[
+ {
+  "band": "<-60",
+  "policy": 4461,
+  "score": 3654,
+  "walked": 19,
+  "booked": 30
+ },
+ {
+  "band": "-60 to -41",
+  "policy": 1041,
+  "score": 2075,
+  "walked": 13,
+  "booked": 16
+ },
+ {
+  "band": "-40 to -21",
+  "policy": 1321,
+  "score": 2768,
+  "walked": 22,
+  "booked": 17
+ },
+ {
+  "band": "-20 to -11",
+  "policy": 881,
+  "score": 1800,
+  "walked": 13,
+  "booked": 16
+ },
+ {
+  "band": "-10 to -1",
+  "policy": 611,
+  "score": 1139,
+  "walked": 493,
+  "booked": 335
+ },
+ {
+  "band": "+0 to +9",
+  "policy": 556,
+  "score": 953,
+  "walked": 760,
+  "booked": 589
+ },
+ {
+  "band": "+10 to +19",
+  "policy": 587,
+  "score": 27,
+  "walked": 1202,
+  "booked": 1142
+ },
+ {
+  "band": "+20 to +39",
+  "policy": 853,
+  "score": 45,
+  "walked": 2090,
+  "booked": 2931
+ },
+ {
+  "band": "+40 to +59",
+  "policy": 444,
+  "score": 43,
+  "walked": 2172,
+  "booked": 2889
+ },
+ {
+  "band": "+60 up",
+  "policy": 508,
+  "score": 95,
+  "walked": 4234,
+  "booked": 9600
+ }
+]

@@ -1,0 +1,29 @@
+id    model                     owner           $m tier last     due
+-------------------------------------------------------------------
+MK1   Mark I scorecard          retail cr      223    1 2015 overdue
+MK2   Mark II scorecard         retail cr        -    -    -       -
+MK2R  Mark II-R scorecard       retail cr     45.2    1 2026    2028
+CHAL  Boosted challenger        retail cr        -    1    - pre-use
+SME1  SME-1 scorecard           small bus      154    1 2015 overdue
+SME1B SME-1 with bank data      small bus        -    3    - pre-use
+FRM   Fernhill rating model     CCO          5,917    1 2026 blocked
+RATE  Ballast rating model      CCO          5,917    1 2026    2028
+MERT  Merton market signals     CCO          1,741    2    -     now
+PD12  12-month PD               credit risk   59.0    1 2026    2028
+HAZ   Lifetime PD hazards       credit risk  1,486    1    -     now
+LGD   Workout LGD               credit risk  7,403    1 2026    2028
+CCF   Conversion factors (EAD)  credit risk  3,160    1 2026    2028
+ECL   IFRS 9 provision engine   CFO          7,403    1    -     now
+CAP   Regulatory capital        CFO          7,403    1    - pre-use
+BEH   Behavioural scores        retail cr      123    3    -     now
+CURE  Collections cure model    collections   14.8    3    -     now
+FRAUD Application fraud rules   retail cr     45.2    2    - pre-use
+PRICE Personal-loan price grid  retail lend   45.2    2    - pre-use
+SEC   Securitisation cash flows treasurer     92.9    2    - pre-use
+BMAP  Bureau v2-to-v3 map       credit risk      -    3    -     now
+
+21 models, 20 live; by tier: 1: 12, 2: 4, 3: 4
+on materiality and evidence alone: 1: 11, 2: 5, 3: 4
+independent validation overdue: 2; in use, never validated: 6;
+to validate before use: 6; validated and not approved: 1
+validated in 2026: 5 approved with conditions, 1 not approved

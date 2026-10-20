@@ -1,0 +1,22 @@
+defaulters 35; other company-years 1855
+  last accounts arrive 5 months before default (range 1 to 12)
+  a year earlier arrive 17 months before default (range 13 to 24)
+
+share above the cap        last  -1 yr -2 yrs  others
+  debt / EBITDA > 3.25     100%    97%    94%     55%
+  debt / EBITDA > 4.00     100%    94%    82%     41%
+  debt / EBITDA > 5.00      97%    94%    64%     30%
+  debt / EBITDA > 6.00      91%    89%    55%     21%
+  debt / EBITDA > 8.00      86%    74%    33%     12%
+  EBITDA / int. < 4.00      91%    86%    45%     27%
+  EBITDA / int. < 3.00      80%    66%    24%     18%
+  EBITDA / int. < 2.00      69%    31%     6%      8%
+
+median debt / EBITDA, by accounts before default
+  1 before:  14.5x  (middle half 10.7x to 19.0x)
+  2 before:   9.4x  (middle half 7.9x to 12.9x)
+  3 before:   6.7x  (middle half 4.4x to 10.0x)
+  4 before:   5.1x  (middle half 3.7x to 8.2x)
+  5 before:   5.7x  (middle half 3.2x to 7.1x)
+  6 before:   4.1x  (middle half 3.3x to 5.3x)
+  never defaulted: 3.5x  (middle half 2.2x to 5.6x)

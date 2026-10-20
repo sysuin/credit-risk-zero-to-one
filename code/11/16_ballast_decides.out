@@ -1,0 +1,20 @@
+Saved ballast/decision/policy.json
+  Mark II-R, cut-off 554, refer 550-557
+
+9,691 applications in 2025; Fernhill declined 50 at its fraud checks
+  Ballast               all  Fernhill yes  Fernhill no
+  approve, score      5,120         4,421          699
+  decline, policy     1,973             0        1,973
+  decline, score      1,901           220        1,681
+  refer, score          697           246          451
+
+First reason given, score declines and referrals
+  bureau_score             2,499  credit bureau score
+  no_file                     68  no credit history at the bureau
+  enquiries_6m                30  recent applications for credit
+  revolving_utilisation        1  share of card limits in use
+
+Loans Fernhill booked in 2025, payments missed by December
+  Ballast approves   2,880 loans, one or more missed   3.3%
+  Ballast refers        86 loans, one or more missed   4.7%
+  Ballast declines      66 loans, one or more missed   6.1%

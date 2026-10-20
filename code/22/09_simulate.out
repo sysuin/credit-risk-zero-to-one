@@ -1,0 +1,20 @@
+200,000 years drawn
+expected loss: simulated $150.3m, by formula $149.9m
+standard deviation $136.4m, median year $112.3m
+  VaR 99.0%  $   637.4m   ES $   777.3m
+  VaR 99.5%  $   733.2m   ES $   875.6m
+  VaR 99.9%  $   970.4m   ES $ 1,106.3m
+  the simulation's own noise: 99.9% VaR between $946.6m and $996.5m
+economic capital, 99.9% VaR less EL: $820.1m
+worst year of 200,000: $1,677.3m
+
+segment          EL $m  alone 99.9%  in the tail
+auto              0.61          2.1          1.1
+card              0.82          1.7          1.1
+mortgage          0.09          0.3          0.1
+personal          0.97          2.3          1.4
+sme_emergency     0.15          0.5          0.3
+sme_overdraft     1.91          7.3          3.4
+sme_term          1.87          6.1          3.1
+companies       143.90        959.0       1095.8
+sum             150.32        979.3       1106.3

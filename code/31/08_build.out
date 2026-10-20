@@ -1,0 +1,16 @@
+ 1 data        check  Ch 5        3 checks, all equal
+ 2 performance check  Ch 1, 6     3 checks, all equal
+ 3 decisions   check  Ch 11       5 checks, all equal
+ 4 prices      check  Ch 12       2 checks, all equal
+ 5 parameters  check  Ch 18, 19   3 checks, all equal
+ 6 provision   check  Ch 20       3 checks, all equal
+ 7 capital     check  Ch 21       3 checks, all equal
+ 8 portfolio   check  Ch 22       3 checks, all equal
+ 9 stress      check  Ch 26       3 checks, all equal
+10 validation  check  Ch 23, 29   1 check, all equal
+11 monitoring  check  Ch 24, 29   2 checks, all equal
+12 governance  check  Ch 29       1 check, all equal
+13 appetite    check  Ch 27       1 check, all equal
+14 pack        check  Ch 27       2 checks, all equal
+35 of 35 figures equal
+all reconciled

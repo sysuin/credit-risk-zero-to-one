@@ -1,0 +1,11 @@
+segment         larger  EC only  reg only
+personal           63%    >999%       63%
+card              126%    >999%      126%
+auto               56%    >999%       56%
+mortgage           44%    >999%       44%
+sme_term           35%     685%       35%
+sme_overdraft      27%     254%       27%
+sme_emergency     -45%    -516%      -45%
+grades 1-5         14%      40%       14%
+grades 6-8          5%       5%        6%
+grades 9-10       -17%     -17%      -46%

@@ -1,0 +1,19 @@
+five-year swap rate 3.34%; its monthly moves since 2016 give
+a volatility of 0.69 points a year
+
+Fernhill receives 3.34% fixed on $25,000,000 for 5 years
+  month   expected exposure $     95% PFE $
+      0                     0             0
+      6               206,642       848,300
+     12               268,554     1,105,320
+     18               291,289     1,176,002
+     24               285,827     1,152,256
+     36               227,770       948,455
+     48               133,681       552,372
+     57                36,559       153,052
+     60                     0             0
+peak expected exposure $306,737 in month 20; peak PFE $1,240,264
+
+counterparty            CDS bp     CVA $  bp a year
+Cedar Oak Foods           17.0     1,625       0.14
+Elm Juniper Foods        335.4    28,743       2.51

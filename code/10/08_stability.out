@@ -1,0 +1,17 @@
+score distribution, training loans against out-of-time:
+  Mark II     PSI 0.070, mean 601.0 -> 608.7
+  challenger  PSI 0.065, mean 600.3 -> 606.6
+
+the challenger refitted with other seeds:
+  seed  trees  holdout  out of time
+  2026    257    0.646        0.634
+  2027    407    0.629        0.626
+  2028    539    0.620        0.626
+  2029    245    0.647        0.640
+  2030    408    0.632        0.631
+  2031    294    0.643        0.638
+
+refitted on nine-tenths of the training loans, five times:
+             median move  95th pct  over 10 pts
+Mark II              0.8       2.6         0.0%
+challenger           3.1      10.4         5.8%

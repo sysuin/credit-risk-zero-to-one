@@ -1,0 +1,33 @@
+characteristic         bins  trend   fine  coarse  holdout
+bureau_score              5  falls  0.486   0.449    0.717
+enquiries_6m              3  rises  0.610   0.389    0.658
+oldest_account_months     2  falls  0.268   0.192    0.229
+income                    4  falls  0.170   0.150    0.160
+address_months            2  falls  0.190   0.149    0.189
+revolving_utilisation     4  rises  0.153   0.130    0.126
+dti                       3  rises  0.110   0.078    0.057
+amount_requested          3  falls  0.088   0.052    0.043
+employment_months         2  falls  0.081   0.045    0.165
+revolving_balance         2  falls  0.125   0.043    0.079
+worst_status_24m          2  rises  0.038   0.037    0.066
+open_accounts             2  falls  0.059   0.035    0.046
+channel                   2    cat  0.022   0.020    0.010
+region                    2    cat  0.023   0.018    0.017
+age                       2  rises  0.057   0.012    0.004
+public_records            1      -  0.010   0.010    0.046
+noise                     2  rises  0.049   0.008    0.000
+term_requested_months     1      -  0.004   0.000    0.000
+dependants                1      -  0.011   0.000    0.000
+employment                1    cat  0.006   0.000    0.000
+housing                   1    cat  0.010   0.000    0.000
+purpose                   1    cat  0.006   0.000    0.000
+
+bad rate by coarse bin (loans), for four of them:
+  enquiries_6m:  <1 1.9% (5,006)  1-2 2.7% (5,815)  3+ 11.7% (874)
+     no file 5.0% (380)
+  revolving_utilisation:  <0.11 1.6% (2,384)
+     0.11-0.29 2.5% (3,379)  0.29-0.55 3.6% (4,159)
+     0.55+ 4.7% (1,773)  no file 5.0% (380)
+  amount_requested:  <3,000 5.2% (860)  3,000-9,999 3.4% (5,453)
+     10,000+ 2.5% (5,762)
+  age:  <54 2.9% (9,469)  54+ 3.8% (2,606)

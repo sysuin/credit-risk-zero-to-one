@@ -1,0 +1,11 @@
+first payment due in month on book 13 (latest 13)
+
+clock from open: cumulative default rate
+cohort    loans      m6     m12     m18     m24     m36
+2020      1,541    0.0%    0.0%    6.7%   13.4%   22.0%
+2021        539    0.2%    0.4%    4.3%   12.4%   23.7%
+
+clock from due: cumulative default rate
+cohort    loans      m6     m12     m18     m24     m36
+2020      1,541    6.7%   13.4%   17.7%   22.0%   26.9%
+2021        539    4.3%   12.4%   19.3%   23.7%   29.7%

@@ -1,0 +1,14 @@
+table                cols     rows  table            cols      rows
+account_events          4    8,948  defaults            6     6,279
+accounts               16   87,762  facilities         11       897
+applicant_monitoring    2  177,878  facility_months     5    42,501
+applications           47  177,878  financials         24     2,062
+bank_capital            6       10  macro               7       120
+bureau_retro            4   56,631  market_data         5     7,328
+businesses              5    3,800  market_rates        5       120
+collections             4   51,238  performance        13 2,487,898
+companies               5      266  ratings             6     3,126
+corporate_defaults      3       35  recoveries          4   246,397
+corporate_recoveries    4       90  scenarios           9       300
+credit_requests         7        1  sme_applications   30    16,436
+24 tables; 24 agree with the manifest (seed 2026)

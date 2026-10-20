@@ -1,0 +1,12 @@
+20,999 loans to women and men, applied 2016 to mid-2024
+Mark II-R   loans F  seen F  loans M  seen M  promised
+<540            170  22.35%      172  16.86%    18.28%
+540-559       1,093   8.05%      978   9.82%     9.48%
+560-579       2,556   4.23%    2,518   3.49%     5.46%
+580-599       3,293   2.73%    3,265   1.90%     2.84%
+600-619       2,354   0.51%    2,333   0.26%     1.45%
+620+          1,128   0.09%    1,139   0.26%     0.75%
+F: 10,594 loans, 337 bad, seen 3.18%, promised 3.87%, score 588.6
+M: 10,405 loans, 284 bad, seen 2.73%, promised 3.82%, score 589.1
+Being a woman, once the score is known: +0.149 on the log odds
+  (standard error 0.084, p 0.075)

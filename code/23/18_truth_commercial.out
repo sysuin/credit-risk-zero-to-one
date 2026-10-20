@@ -1,0 +1,11 @@
+1,829 reviews with a true PD; correlation of each opinion's
+log PD with the log of the true PD
+  Ballast model (out of year)  0.644
+  Fernhill model grade         0.589
+  analysts' grade              0.556
+
+model wanted analyst   reviews  grade PD  model PD  true PD
+downgrade    moved         525     3.55%     4.16%    2.04%
+downgrade    held          195     1.47%     4.44%    2.41%
+upgrade      moved         263     0.90%     0.78%    0.18%
+upgrade      held          108     2.52%     0.89%    0.11%

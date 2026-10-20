@@ -1,0 +1,40 @@
+    metric                       appetite tolerance     now  status
+CAPITAL
+C1  CET1 ratio (standardised)     >=16.0%   >=11.5%   16.7%  green
+C2  CET1 trough, supervisor's      >=8.0%    >=4.5%   -2.1%  red
+C3  economic capital / CET1       <=73.0%  <=100.0%   78.4%  amber
+EARNINGS
+E1  base-case charge / NII        <=50.0%   <=75.0%   53.2%  amber
+E2  1-in-10 credit loss / NII    <=100.0%  <=150.0%  170.6%  red
+QUALITY
+Q1  watchlist EAD, grades 9-10    <=$283m   <=$539m $1,079m  red
+Q2  consumer arrears, 30+ days     <=2.1%    <=2.7%    1.3%  green
+Q3  commercial return, pre-cost   >=15.0%    >=0.0%   -0.4%  red
+CONCENTRATION
+N1  largest client / Tier 1       <=10.0%   <=15.0%   18.0%  red
+N2  largest sector / commercial   <=20.0%   <=25.0%   15.0%  green
+N3  largest region / retail       <=30.0%   <=35.0%   23.6%  green
+N4  commercial / all lending      <=70.0%   <=80.0%   75.5%  amber
+MODELS
+M1  tier 1 models unvalidated         <=0       <=2       8  red
+M2  open high findings, undated       <=0       <=2       6  red
+
+4 green, 3 amber, 7 red of 14
+
+    owner   basis of the thresholds
+C1  CFO     requirement + severe depletion + buffer
+C2  CRO     requirement; minimum
+C3  CRO     minimum after a 1-in-1,000 year; solvency
+E1  CFO     costs at half of NII (placeholder)
+E2  CFO     judgement
+Q1  CCO     supervisor's trough at 8.0% / 4.5%
+Q2  retail  2017-25 months: 75th / 90th pct
+Q3  CCO     hurdle; zero
+N1  CCO     1 point of CET1 a default; judgement
+N2  CCO     judgement (backstop)
+N3  retail  judgement (backstop)
+N4  CEO     strategy
+M1  CRO     model risk policy
+M2  CRO     model risk policy
+
+saved to data/ballast/appetite/appetite_2025-12-31.json

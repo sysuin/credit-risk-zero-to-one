@@ -1,0 +1,8 @@
+company-months with twelve months of history: 6,345
+  trailing / quoted volatility: median 0.85
+
+March reviews: 475 company-years, 9 defaults
+  AUC, quoted volatility    0.993
+  AUC, trailing volatility  0.990
+Alder Oak Sep 2020: DD 1.06 quoted, 0.65 trailing
+Alder Oak Oct 2020: DD 0.27 quoted, 0.08 trailing

@@ -1,0 +1,21 @@
+year   below band low-side   rate branch rate  high-side   rate
+2016        2,378       41  1.72%       2.85%         48  0.66%
+2017        2,540       45  1.77%       3.11%         63  0.81%
+2018        2,734       38  1.39%       2.67%         57  0.69%
+2019        3,415       57  1.67%       3.36%         83  1.03%
+2020        4,273       61  1.43%       2.96%         42  0.79%
+2021        2,091       19  0.91%       3.06%         81  0.65%
+2022        2,825       27  0.96%       2.93%         86  0.76%
+2023        3,868       35  0.90%       2.51%         73  0.74%
+2024        4,128       33  0.80%       2.46%         66  0.66%
+2025        4,207       39  0.93%       3.31%         92  0.88%
+low-side outside branches: 0; recorded inside the refer band: 100
+
+branch low-side rate by region, 2016-2025 (bank 2.92%)
+region        below band overrides   rate      z
+Central            2,989        76  2.54%   -1.2
+Eastvale           2,302        66  2.87%   -0.2
+Harbourside        1,645        61  3.71%   +1.9
+Northgate          2,064        66  3.20%   +0.7
+Riverside          2,768        70  2.53%   -1.2
+Westmoor           1,750        56  3.20%   +0.7

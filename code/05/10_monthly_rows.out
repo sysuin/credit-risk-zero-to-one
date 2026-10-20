@@ -1,0 +1,14 @@
+PL0017504: $23,200 at 15.5% over 48 months, opened 2023-01-14
+month         balance      due     paid  arrears mis dpd  status
+2023-01-31  23,200.00     0.00     0.00     0.00   0   0  up_to_date
+2023-02-28  22,848.10   651.57   651.57     0.00   0   0  up_to_date
+...        5 months up to date
+2023-08-31  20,639.15   651.57   651.57     0.00   0   0  up_to_date
+2023-09-30  20,254.17   651.57   651.57     0.00   0   0  up_to_date
+2023-10-31  20,515.79   651.57     0.00   651.57   1  30  arrears
+2023-11-30  20,780.78   651.57     0.00 1,303.14   2  60  arrears
+2023-12-31  19,094.50   651.57 1,954.71     0.00   0   0  up_to_date
+2024-01-31  18,689.56   651.57   651.57     0.00   0   0  up_to_date
+...        20 months up to date
+2025-10-31       0.00   651.57 9,518.63     0.00   0   0  prepaid
+the whole table: 2,487,898 rows like these, for 87,762 accounts

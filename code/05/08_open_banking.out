@@ -1,0 +1,16 @@
+first consent, by channel:
+  online  2021-03-01    18,783 consents in all
+  branch  2023-01-01    11,191 consents in all
+  broker and dealer: none
+
+consent rate among applications made after it was offered
+year     online   branch
+2021      51.5%        -
+2022      53.6%        -
+2023      55.2%    55.6%
+2024      54.8%    55.3%
+2025      54.2%    55.8%
+
+ob_consent true:                29,974 of  177,878   16.9%
+  of those asked:               29,974 of   54,855   54.6%
+rows whose five ob_ fields are all present or all missing: 177,878

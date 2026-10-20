@@ -1,0 +1,28 @@
+train 2016-2021: 7,459 entries   test 2022-2023: 3,385
+
+                    cure in 3 months   roll to 90 days
+per unit of            coef        z     coef        z
+100 points           +0.796     16.2   -0.794    -15.7
+no bureau file       -0.434     -3.7   +0.432      3.7
+log of balance       +0.039      1.4   -0.077     -2.7
+year on book         +0.128      4.8   -0.131     -4.7
+month behind *       +0.023      0.6   -0.042     -1.0
+part paid            +0.003      0.0   -0.013     -0.2
+point unempl.        -0.086     -6.1   +0.094      6.5
+card                 +0.049      0.8   -0.123     -1.9
+car loan             +0.031      0.4   +0.021      0.3
+mortgage             -0.030     -0.1   +0.250      1.1
+* each month behind in the 12 before falling behind
+
+On the test years (Gini; 0 is a single rate for everyone)
+  cure, full model   0.301
+  cure, bureau only  0.296
+  roll, full model   0.315
+
+By fifth of predicted cure   cure: pred  seen   roll: pred  seen
+  1 (677 entries)            48.4% 47.3%       46.7% 48.4%
+  2 (677 entries)            59.2% 56.4%       36.0% 40.9%
+  3 (677 entries)            66.7% 63.7%       29.1% 32.1%
+  4 (677 entries)            73.3% 70.5%       23.0% 25.0%
+  5 (677 entries)            81.5% 82.1%       15.8% 14.9%
+  all                        65.8% 64.0%       30.1% 32.3%

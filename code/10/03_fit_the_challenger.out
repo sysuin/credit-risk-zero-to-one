@@ -1,0 +1,20 @@
+training loans 12,075 (375 bads)
+  fitting fold     9,660 (300 bads)
+  validation fold  2,415 (75 bads)
+monotone constraints (+1: risk may only rise):
+  bureau_score             -1
+  enquiries_6m             +1
+  worst_status_24m         +1
+  public_records           +1
+  dti                      +1
+  revolving_utilisation    +1
+
+validation log loss:
+  1 tree 0.13792, 257 trees 0.11827, 357 trees 0.11865
+refitted on all 12,075 training loans with 257 trees
+257 trees, 1,799 leaves, 1,542 split rules
+
+sample        loans  bads   Gini
+train        12,075   375  0.674
+holdout       5,174   157  0.646
+out_of_time   4,564   114  0.634

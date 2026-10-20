@@ -1,0 +1,19 @@
+Approvals that crept in, and the loans they became
+  applied             crept  took    bad  others  took    bad
+  Jul 2019-Mar 2020     148    9%  16.7%   2,987   65%   4.3%
+  Apr 2020-Jan 2021     171   57%   4.3%   1,583   79%   1.9%
+  Feb 2021-Jun 2022     437   15%   9.4%   8,688   45%   3.9%
+  Jul 2022-Jun 2024     398   15%  11.9%   8,819   67%   2.4%
+took: share of approvals booked; bad: 3 missed in the first twelve
+payments, loans with a complete window
+
+The 2019 vintage, in default by 24 months on book (dod2021)
+  all loans            2,369 loans   7.22%
+  without the crept    2,362 loans   7.15%
+  the crept alone          7 loans  28.57%
+
+Mark I's Gini on Mark II's booked loans
+  sample         as scored  v2 ruler
+  holdout            0.467     0.485
+  out_of_time        0.414     0.419
+  out of time, correlation of the two: 0.986

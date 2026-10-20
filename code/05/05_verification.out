@@ -1,0 +1,12 @@
+applications                          count  verified
+mortgages                             8,507    100.0%
+asked for over $15,000               52,106    100.0%
+consented to open banking            29,974    100.0%
+broker or dealer, from Jul 2022      19,334    100.0%
+none of these                        93,768     10.0%
+
+personal loans: median stated income
+channel     unverified    verified   ratio
+branch          35,400      56,600    1.60
+broker          35,300      52,000    1.47
+online          36,100      52,500    1.45

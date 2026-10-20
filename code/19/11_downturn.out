@@ -1,0 +1,22 @@
+LGD by year of default (workouts in brackets)
+year  jobless       card   personal  overdraft       auto   sme_term
+2017     4.7%   70%( 79)   62%( 99)   35%(  5)   26%( 46)   21%(  9)
+2018     4.2%   66%(125)   69%(167)   75%(  2)   39%( 76)   35%( 11)
+2019     4.0%   65%(183)   63%(143)   62%( 10)   27%( 83)   19%( 18)
+2020     7.3%   69%(397)   62%(329)   61%( 27)   31%(167)   24%( 72)
+2021     5.6%   67%(280)   66%(197)   76%( 14)   28%( 95)   15%( 55)
+
+repossessed cars by year of sale
+sold    cars  used-car index    LGD
+2016       3           1.00x  34.7%
+2017      31           1.01x  22.6%
+2018      45           1.02x  23.2%
+2019      51           1.02x  21.0%
+2020      87           1.02x  22.0%
+2021      88           1.09x  15.6%
+2022      52           1.22x   9.6%
+2023      50           1.01x  22.5%
+2024      93           0.90x  24.7%
+2025      70           0.92x  21.8%
+used-car index: at the sale over at the loan's opening (median)
+index at or above opening: LGD 17.8% (395); below: 26.4% (175)

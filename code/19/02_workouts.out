@@ -1,0 +1,18 @@
+workouts (dod2021 episodes, stitched): 6,321
+
+product          cured  paid  written  open  total
+auto               142    11      737    20    910
+card               361     3     1985    78   2427
+mortgage            71     1       24    14    110
+personal           284    39     1373    63   1759
+sme_emergency       95     0      573    19    687
+sme_overdraft       20     0       87     5    112
+sme_term            60     6      232    18    316
+all               1033    60     5011   217   6321
+
+recoveries rows     246,397 rows $88,495,834.29
+in the workouts     246,397 rows $88,495,834.29
+payments in default        $ 9,943,146.71
+balances handed back cured $41,004,357.04
+
+workouts with nothing owed at default: 15 (no LGD; left out)

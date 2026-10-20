@@ -1,0 +1,6 @@
+PD 3.56%, LGD 65.1%; default rate in the year:
+correlation           median  1 in 100  1 in 1,000  ES 99.9%      K
+Fernhill's MLE 0.015   3.45%     6.26%       7.49%     8.00%  2.56%
+interval top   0.037   3.30%     8.29%      10.81%    11.87%  4.72%
+the rules'     0.099   2.86%    12.96%      19.09%    21.77% 10.11%
+check: the average year at the MLE defaults at 3.56%

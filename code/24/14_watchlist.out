@@ -1,0 +1,21 @@
+early warning = revolver_75 or revolver_up or market
+list               hit rate    caught  false  on list
+                                      alarms  a month
+grade 8 or worse       9.5%   30 of 35     74     36.2
+early warning         24.5%   23 of 35     63      6.9
+either                 9.7%   33 of 35    107     39.4
+
+clients graded 7 or better: 0.53% of months followed by
+a default; early warning hit 12.1% and caught 5 of 10
+defaults, with 55 false alarms
+
+revolver use threshold, alone
+drawn     months  hit rate  caught
+50%        2,329     11.2%      24
+60%          875     24.2%      24
+65%          631     28.8%      24
+70%          468     29.9%      22
+75%          323     33.4%      19
+80%          211     37.0%      15
+85%          111     42.3%      12
+90%           45     62.2%       6

@@ -1,0 +1,20 @@
+company-months with a grade: 6,410
+  rank correlation of DD and grade: -0.64
+
+grade  months  p10 DD  median  p90 DD
+    1     508    7.13    8.93   11.80
+    2     654    4.87    7.00    9.22
+    3     548    4.34    6.16    8.77
+    4     912    3.31    5.75    7.47
+    5     792    2.66    5.41    7.55
+    6     964    1.80    4.79    7.06
+    7     810    1.31    4.18    6.42
+    8     531    1.70    4.09    5.60
+    9     350    1.12    2.85    4.99
+   10     341    0.57    3.75    5.30
+
+grade 10 and listed, 31 October 2020
+  Alder Oak Materials      DD  0.27  PD 39.49%  defaulted Mar 2021
+  Dale Pine Homes          DD  0.49  PD 31.36%  defaulted Jan 2022
+  Flint Falcon Retail      DD  2.16  PD  1.55%  defaulted Aug 2023
+  Oak Iron Engineering     DD  3.54  PD  0.02%  no default

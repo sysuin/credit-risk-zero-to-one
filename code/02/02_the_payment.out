@@ -1,0 +1,9 @@
+by trial:   $327.56 after 32,756 tries
+by formula: $327.5580, which rounds to $327.56
+
+      product   amount  rate_pct  term  booked  formula
+         auto  24200.0      7.90    48  589.66   589.66
+     mortgage 314000.0      2.50   300 1408.66  1408.66
+     personal  15100.0     10.90    60  327.56   327.56
+sme_emergency 193000.0      2.50    72 3511.86  2889.41
+     sme_term 103000.0      4.75    60 1931.96  1931.96

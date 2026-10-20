@@ -1,0 +1,11 @@
+app_date               datetime64[us]
+stated_income_cents             int64
+bureau_score                    Int64
+worst_status_24m                int64
+ob_consent                       bool
+
+applicants with no arrears in 24 months:   72.4%
+applicants who consent to open banking:    16.9%
+mean amount a card applicant asked for:    $0
+
+TypeError: Invalid comparison between dtype=datetime64[us] and date

@@ -1,0 +1,11 @@
+quantity                                   formula   simulated
+binomial mean defaults                       20.00       19.97
+binomial variance                            19.60       19.59
+P(30 or more defaults)                      0.0207      0.0205
+P(Z < -1.96)                                0.0250      0.0254
+99.9th percentile of Z                      3.0902      3.0822
+beta mean                                   0.0087      0.0087
+P(rate above 1%)                            0.3313      0.3324
+mean asset value in a year                  105.13      105.14
+median asset value                          101.89      101.91
+P(assets below 70)                          0.0666      0.0674

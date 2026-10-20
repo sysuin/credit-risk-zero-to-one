@@ -1,0 +1,20 @@
+signed on accounts Fernhill held: 515
+  rank correlation of cap and leverage: +0.93
+  median EBITDA headroom: leverage 33%, cover 33%
+  at the 6.50x ceiling 210   already over the cap  45%
+  below it             305   already over the cap   2%
+
+practice: cap 1.62 + 0.94 x leverage; floor 0.67 x cover
+  Meridian, 2025 accounts 1.28x 10.14x -> cap 2.75x, floor 6.75x
+  Meridian, fully drawn   2.30x  5.64x -> cap 3.75x, floor 3.75x
+
+in breach of their own covenants    n  either   lev.  cover
+defaulters, last accounts          35     97%    97%    94%
+defaulters, one year earlier       34     94%    91%    76%
+defaulters, two years earlier      33     67%    64%    39%
+never defaulted, every year      1838     38%    24%    31%
+
+never defaulted       17    18    19    20    21    22    23    24
+  over the cap        9%   13%   22%   27%   32%   33%   32%   36%
+  under the floor     8%   23%    9%   11%   21%   73%   65%   53%
+  policy rate, Mar 1.00% 1.75% 0.25% 0.25% 0.50% 4.25% 4.75% 4.25%

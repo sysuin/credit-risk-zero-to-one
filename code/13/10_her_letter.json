@@ -1,0 +1,58 @@
+{
+ "score": 551,
+ "reasons": {
+  "Best bin (Chapter 11)": [
+   {
+    "code": "bureau_score",
+    "text": "credit bureau score",
+    "short": 48,
+    "gap": 5.9,
+    "actionable": true
+   },
+   {
+    "code": "revolving_utilisation",
+    "text": "share of card limits in use",
+    "short": 21,
+    "gap": 7.5,
+    "actionable": true
+   },
+   {
+    "code": "dti",
+    "text": "existing debt payments against income",
+    "short": 10,
+    "gap": -0.8,
+    "actionable": true
+   },
+   {
+    "code": "enquiries_6m",
+    "text": "recent applications for credit",
+    "short": 9,
+    "gap": -1.1,
+    "actionable": true
+   }
+  ],
+  "Against the cut-off": [
+   {
+    "code": "revolving_utilisation",
+    "text": "share of card limits in use",
+    "short": 21,
+    "gap": 7.5,
+    "actionable": true
+   },
+   {
+    "code": "worst_status_24m",
+    "text": "recent missed payments",
+    "short": 9,
+    "gap": 6.8,
+    "actionable": false
+   },
+   {
+    "code": "bureau_score",
+    "text": "credit bureau score",
+    "short": 48,
+    "gap": 5.9,
+    "actionable": true
+   }
+  ]
+ }
+}

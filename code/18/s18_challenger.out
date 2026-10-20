@@ -1,0 +1,5 @@
+Platt on the challenger's log odds: 0.843 + 1.248 x log odds
+2024 loans              mean PD  log loss
+challenger as is          2.43%    0.0945
+recalibrated              2.50%    0.0931
+defaulted                 2.56%

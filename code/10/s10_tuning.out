@@ -1,0 +1,12 @@
+ leaves min leaf  trees  val loss  holdout  out of time
+      3       50    514   0.11951    0.648        0.638
+      3      100    514   0.11958    0.647        0.637
+      3      200    404   0.11964    0.645        0.641
+      7       50    257   0.11749    0.648        0.636
+      7      100    257   0.11827    0.646        0.634
+      7      200    279   0.11869    0.640        0.634
+     15       50    248   0.11789    0.633        0.627
+     15      100    262   0.11866    0.631        0.625
+     15      200    281   0.11902    0.629        0.626
+the validation fold chooses 7 leaves, 50 a leaf
+the holdout would choose    7 leaves, 50 a leaf

@@ -1,0 +1,34 @@
+10,844 entries; cured within three months 63.9%,
+rolled to 90 days 32.3%
+
+bureau score at application
+  <620         cured  50.1%   rolled  46.2%    2,250
+  620-659      cured  60.1%   rolled  36.0%    2,670
+  660-699      cured  67.2%   rolled  28.0%    2,704
+  700+         cured  77.3%   rolled  20.0%    2,792
+
+months on book
+  1-6          cured  56.3%   rolled  40.8%    1,980
+  7-12         cured  64.6%   rolled  30.2%    2,473
+  13-24        cured  65.6%   rolled  30.7%    3,678
+  25+          cured  66.5%   rolled  30.1%    2,713
+
+balance
+  lowest 25%   cured  61.9%   rolled  34.4%    2,711
+  second       cured  62.1%   rolled  34.1%    2,711
+  third        cured  65.4%   rolled  30.6%    2,711
+  highest 25%  cured  66.1%   rolled  30.0%    2,711
+
+behind in the last 12 months
+  no           cured  64.1%   rolled  32.1%    9,948
+  yes          cured  61.7%   rolled  33.7%      896
+
+paid part of the payment
+  no           cured  64.1%   rolled  32.2%    7,508
+  yes          cured  63.5%   rolled  32.5%    3,336
+
+product
+  auto         cured  65.0%   rolled  31.8%    1,951
+  card         cured  63.3%   rolled  32.6%    4,910
+  mortgage     cured  67.6%   rolled  28.9%      204
+  personal     cured  63.8%   rolled  32.2%    3,779

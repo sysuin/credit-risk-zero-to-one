@@ -1,0 +1,21 @@
+                                      dpd90  dod2021
+default episodes                      6,054    6,381
+accounts that ever defaulted          5,950    6,274
+cures                                   789    1,019
+
+first reached 90 days past due immaterial: 874 accounts
+  by product: card 860, personal 11, mortgage 3
+  later in default under dod2021: 811, a median 2 month(s) later
+    triggered by days_past_due: 766
+    triggered by bankruptcy: 44
+    triggered by charged_off: 1
+  never in default under dod2021: 63
+
+dod2021 defaults triggered by bankruptcy: 629
+  on accounts never 90 days past due: 387
+  cured after probation: 374
+dod2021 cures of other defaults: 645
+dpd90 re-defaults within 3 months of a cure: 9
+dpd90 cures followed by a missed payment within 3 months: 54
+PL0015999 under dpd90    default 2024-08-31, cured 2024-10-31
+PL0015999 under dod2021  default 2024-08-31, cured 2025-04-30

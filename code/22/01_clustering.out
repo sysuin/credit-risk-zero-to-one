@@ -1,0 +1,12 @@
+segment        years  at risk   rate  sd seen  if alone  ratio
+personal           9    4,518  3.57%    1.19%     0.30%    4.0
+card               9    8,162  3.14%    0.92%     0.24%    3.8
+auto               9    3,502  2.54%    0.82%     0.30%    2.8
+mortgage           9    1,860  0.55%    0.16%     0.20%    0.8
+sme_term           9      833  3.62%    1.88%     0.72%    2.6
+sme_overdraft      9      545  2.53%    1.70%     1.02%    1.7
+companies          9      226  1.69%    1.68%     0.85%    2.0
+sme_emergency      5    1,642  7.92%    3.54%     0.65%    5.4
+
+companies' defaults by year, 2017-2025: 0 2 0 7 6 1 10 8 1
+  35 in 2,037 client-years

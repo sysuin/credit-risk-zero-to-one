@@ -1,0 +1,20 @@
+Card behavioural score: base 412, then per line
+  months_on_book 1-6:0 7-12:3 13-24:8 25-36:16 37+:33
+  missed_now     0:112 1:35 2:0
+  utilisation    <10%:58 10-30%:40 30-50%:31
+                 50-70%:20 70-90%:11 90%+:0
+  application    <560:0 560-589:6 590-619:21 620-649:32 650+:54
+Gini on the test quarters: 0.655
+  adding payment_ratio: Gini 0.655
+    points minimum:0 4-10%:0 10-50%:7 50-99%:2 in full:0
+  adding behind_12m: Gini 0.655
+    points none:0 1+:1
+
+Test quarters by score band
+band           rows  promised    seen
+<560          8,024    17.61%  18.76%
+560-589      27,231     4.35%   4.44%
+590-609      37,404     1.95%   1.70%
+610-629      38,820     0.98%   0.80%
+630+         34,758     0.43%   0.31%
+all         146,237     2.64%   2.58%

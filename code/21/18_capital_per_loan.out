@@ -1,0 +1,22 @@
+CET1 held per dollar of RWA: 16.7% (standardised)
+
+CET1 as a share of the balance
+product              standardised     IRB
+auto                        12.5%    7.2%
+card                        15.1%    9.4%
+commercial_revolver         24.9%   25.0%
+commercial_term             15.4%   16.6%
+mortgage                     4.8%    0.9%
+personal                    12.5%   13.5%
+sme_emergency                2.5%    3.6%
+sme_overdraft               15.4%   19.3%
+sme_term                    12.7%    6.8%
+
+personal loans by Mark II-R band, IRB
+band        loans     PD  weight   CET1
+<560          327  8.49%    109%  18.1%
+560-579     1,175  5.39%    101%  16.8%
+580-599     2,078  2.52%     90%  15.1%
+600-619     1,915  1.36%     75%  12.4%
+620+        1,074  0.65%     55%   9.1%
+weight: IRB RWA over balance; CET1: that times the ratio held

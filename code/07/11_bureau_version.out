@@ -1,0 +1,17 @@
+version 2 score -> version 3, by percentile in 2019:
+  500->524  550->581  575->610  600->637
+  650->691  700->746  750->798  800->850
+
+option                          loans  bads     IV
+raw scores, both versions      12,075   375  0.313
+version 3 loans only            6,225   228  0.540
+version 2 mapped to 3          12,075   375  0.449
+
+bad rate by score band, development loans scored on v2 or v3
+band        raw v2  raw v3  ratio  mapped v2    v3  ratio
+<600          5.5%   12.9%    2.4       6.3% 12.9%    2.1
+600-649       2.8%    5.8%    2.1       4.2%  5.8%    1.4
+650-699       1.7%    3.9%    2.3       2.9%  3.9%    1.4
+700-749       0.6%    2.2%    3.5       1.4%  2.2%    1.5
+750+          0.5%    0.8%    1.7       0.6%  0.8%    1.4
+all           2.6%    3.4%    1.3

@@ -1,0 +1,21 @@
+seed 2026
+loan book: 24 tables, as the manifest lists them
+  macro                       120   collections              51,238
+  scenarios                   300   bureau_retro             56,631
+  market_rates                120   companies                   266
+  applications            177,878   financials                2,062
+  applicant_monitoring    177,878   facilities                  897
+  sme_applications         16,436   facility_months          42,501
+  businesses                3,800   ratings                   3,126
+  accounts                 87,762   market_data               7,328
+  performance           2,487,898   corporate_defaults           35
+  account_events            8,948   corporate_recoveries         90
+  defaults                  6,279   credit_requests               1
+  recoveries              246,397   bank_capital                 10
+truth: 5 tables
+  applicants              177,878
+  corporate_pd             27,530
+  origination             184,574
+  pd12                  2,565,610
+  sme_applicants           16,436
+origination: 77,712 booked, 106,862 shadow accounts

@@ -1,0 +1,9 @@
+out-of-time below 540: 51 loans, 19 bads
+  three or more enquiries: 80% of them, 5.1% of the rest
+  low-side overrides: 1
+  Mark I: median 605, lowest 572
+
+below 540       loans  bads  bad rate  implied
+train             325    77     23.7%    22.7%
+holdout           141    33     23.4%    22.6%
+out_of_time        51    19     37.3%    21.0%

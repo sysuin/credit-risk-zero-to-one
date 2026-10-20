@@ -1,0 +1,174 @@
+{
+ "account": "CC0018280",
+ "score": 564,
+ "application": 643,
+ "lines": {
+  "months_on_book": 8,
+  "missed_now": 112,
+  "utilisation": 0,
+  "application": 32
+ },
+ "base": 412,
+ "rows": [
+  {
+   "month": "2024-01",
+   "balance": 2137.71,
+   "limit": 3400.0,
+   "paid": 53.45,
+   "minimum": 53.44,
+   "missed": 0
+  },
+  {
+   "month": "2024-02",
+   "balance": 2158.47,
+   "limit": 3400.0,
+   "paid": 170.5,
+   "minimum": 53.96,
+   "missed": 0
+  },
+  {
+   "month": "2024-03",
+   "balance": 1964.18,
+   "limit": 3400.0,
+   "paid": 92.85,
+   "minimum": 49.1,
+   "missed": 0
+  },
+  {
+   "month": "2024-04",
+   "balance": 2153.63,
+   "limit": 3400.0,
+   "paid": 55.33,
+   "minimum": 53.84,
+   "missed": 0
+  },
+  {
+   "month": "2024-05",
+   "balance": 2184.6,
+   "limit": 3400.0,
+   "paid": 55.2,
+   "minimum": 54.62,
+   "missed": 0
+  },
+  {
+   "month": "2024-06",
+   "balance": 2056.5,
+   "limit": 3400.0,
+   "paid": 55.4,
+   "minimum": 51.41,
+   "missed": 0
+  },
+  {
+   "month": "2024-07",
+   "balance": 2115.01,
+   "limit": 3400.0,
+   "paid": 101.13,
+   "minimum": 52.88,
+   "missed": 0
+  },
+  {
+   "month": "2024-08",
+   "balance": 2322.24,
+   "limit": 3400.0,
+   "paid": 132.73,
+   "minimum": 58.06,
+   "missed": 0
+  },
+  {
+   "month": "2024-09",
+   "balance": 3017.63,
+   "limit": 3400.0,
+   "paid": 78.84,
+   "minimum": 75.44,
+   "missed": 0
+  },
+  {
+   "month": "2024-10",
+   "balance": 3272.1,
+   "limit": 3400.0,
+   "paid": 254.9,
+   "minimum": 81.8,
+   "missed": 0
+  },
+  {
+   "month": "2024-11",
+   "balance": 3536.0,
+   "limit": 3400.0,
+   "paid": 0.0,
+   "minimum": 88.4,
+   "missed": 1
+  },
+  {
+   "month": "2024-12",
+   "balance": 3536.0,
+   "limit": 3400.0,
+   "paid": 176.8,
+   "minimum": 88.4,
+   "missed": 0
+  },
+  {
+   "month": "2025-01",
+   "balance": 3536.0,
+   "limit": 3400.0,
+   "paid": 223.2,
+   "minimum": 88.4,
+   "missed": 0
+  },
+  {
+   "month": "2025-02",
+   "balance": 3304.3,
+   "limit": 3400.0,
+   "paid": 0.0,
+   "minimum": 82.61,
+   "missed": 1
+  },
+  {
+   "month": "2025-03",
+   "balance": 3273.64,
+   "limit": 3400.0,
+   "paid": 0.0,
+   "minimum": 81.84,
+   "missed": 2
+  },
+  {
+   "month": "2025-04",
+   "balance": 3363.22,
+   "limit": 3400.0,
+   "paid": 12.11,
+   "minimum": 84.08,
+   "missed": 3
+  },
+  {
+   "month": "2025-05",
+   "balance": 3454.55,
+   "limit": 3400.0,
+   "paid": 0.0,
+   "minimum": 86.36,
+   "missed": 4
+  },
+  {
+   "month": "2025-06",
+   "balance": 3546.98,
+   "limit": 3400.0,
+   "paid": 0.0,
+   "minimum": 88.67,
+   "missed": 4
+  },
+  {
+   "month": "2025-07",
+   "balance": 3641.2,
+   "limit": 3400.0,
+   "paid": 0.0,
+   "minimum": 91.03,
+   "missed": 5
+  },
+  {
+   "month": "2025-08",
+   "balance": 3737.27,
+   "limit": 3400.0,
+   "paid": 0.0,
+   "minimum": 93.43,
+   "missed": 6
+  }
+ ]
+}

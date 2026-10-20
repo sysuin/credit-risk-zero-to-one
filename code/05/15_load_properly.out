@@ -1,0 +1,20 @@
+applications      177,878 loaded    177,878 in the source
+accounts           87,762 loaded     87,762 in the source
+performance     2,487,898 loaded  2,487,898 in the source
+
+app_date               date32[day][pyarrow]
+stated_income_cents                   Int64
+bureau_score                          Int64
+worst_status_24m                      Int64
+ob_consent                          boolean
+
+rule              blanked  meaning
+no_hit             72,438  no file: zeros are not a clean record
+not_employed       14,171  retired or other: no job held
+card_request      139,510  a card has no amount or term
+no_deposit_asked  134,738  loans and cards take no deposit
+ob_not_offered    123,023  never asked: False is not a no
+
+no arrears in 24 months, of those with a file: 70.4%
+consent to open banking, of those asked:       54.6%
+applications since October:                    5,149

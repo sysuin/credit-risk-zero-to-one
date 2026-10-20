@@ -1,0 +1,20 @@
+80,506 personal applicants; 0.5 = carries nothing
+characteristic              women/men  under 30
+a die (control)                 0.503     0.506
+region                          0.504     0.504
+channel                         0.503     0.511
+purpose                         0.502     0.503
+employment                      0.504     0.522
+housing                         0.503     0.757
+dependants                      0.501     0.609
+enquiries_6m                    0.502     0.558
+revolving_utilisation           0.500     0.554
+bureau_score                    0.502     0.650
+employment_months               0.501     0.778
+address_months                  0.502     0.741
+oldest_account_months           0.501     0.932
+revolving_balance               0.528     0.613
+amount_requested                0.537     0.672
+stated_income                   0.552     0.732
+Mark I score                    0.502     0.714
+Mark II-R score                 0.504     0.680

@@ -1,0 +1,30 @@
+A00000332  personal, branch, 2016-01-18, Eastvale
+  asked      $4,000 over 36 months (car)
+  told us    income $21,000 (not verified); bureau 651
+  decided    approve: score 593, cut-off 560
+  offered    $4,000 at 10.9%; booked
+account     PL0000131 opened 2016-01-26, fixed 10.9%
+  pays       $130.77 a month over 36 months
+  closed     2016-09-30 charged off, balance $3,888.61
+  months     9 month ends
+  2016-01            1  opened, nothing due  paid       $0.00
+  2016-02..03        2  up to date           paid     $261.54
+  2016-04            1  arrears, 30 days     paid       $0.00
+  2016-05            1  arrears, 60 days     paid       $0.00
+  2016-06            1  default, 90 days     paid      $68.56
+  2016-07            1  default, 120 days    paid      $62.52
+  2016-08            1  default, 150 days    paid       $0.00
+  2016-09            1  charged off          paid       $0.00
+events      none
+collections
+  2016-04            1  reminder
+  2016-05            1  phone call
+  2016-06..07        2  final notice
+  2016-08            1  agency referral
+defaults
+  2016-06-30  dpd90   days past due owed $3,846.49
+recoveries
+  2016-10..2019-05  32  collections payment           $283.51
+  2019-06            1  debt sale                     $324.46
+  2016-10..2019-05  32  cost                          -$62.34
+  net of costs                                        $545.63

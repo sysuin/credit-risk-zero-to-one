@@ -1,0 +1,128 @@
+[
+ {
+  "band": 450,
+  "channel": "branch",
+  "n": 806,
+  "ratio": 8.285687901665938
+ },
+ {
+  "band": 450,
+  "channel": "broker",
+  "n": 875,
+  "ratio": 8.994653465346534
+ },
+ {
+  "band": 450,
+  "channel": "online",
+  "n": 829,
+  "ratio": 7.9369
+ },
+ {
+  "band": 500,
+  "channel": "branch",
+  "n": 1894,
+  "ratio": 6.8034
+ },
+ {
+  "band": 500,
+  "channel": "broker",
+  "n": 1596,
+  "ratio": 7.663953418270969
+ },
+ {
+  "band": 500,
+  "channel": "online",
+  "n": 2055,
+  "ratio": 6.614509803921569
+ },
+ {
+  "band": 550,
+  "channel": "branch",
+  "n": 3512,
+  "ratio": 5.760572186434255
+ },
+ {
+  "band": 550,
+  "channel": "broker",
+  "n": 2341,
+  "ratio": 6.528235294117647
+ },
+ {
+  "band": 550,
+  "channel": "online",
+  "n": 3606,
+  "ratio": 5.780813765182186
+ },
+ {
+  "band": 600,
+  "channel": "branch",
+  "n": 4438,
+  "ratio": 4.990763955152672
+ },
+ {
+  "band": 600,
+  "channel": "broker",
+  "n": 2579,
+  "ratio": 5.689109792284866
+ },
+ {
+  "band": 600,
+  "channel": "online",
+  "n": 4443,
+  "ratio": 5.028354114713217
+ },
+ {
+  "band": 650,
+  "channel": "branch",
+  "n": 3989,
+  "ratio": 4.314234234234234
+ },
+ {
+  "band": 650,
+  "channel": "broker",
+  "n": 1829,
+  "ratio": 4.807733333333333
+ },
+ {
+  "band": 650,
+  "channel": "online",
+  "n": 4073,
+  "ratio": 4.391562499999999
+ },
+ {
+  "band": 700,
+  "channel": "branch",
+  "n": 2590,
+  "ratio": 3.616837474120083
+ },
+ {
+  "band": 700,
+  "channel": "broker",
+  "n": 967,
+  "ratio": 4.2777622377622375
+ },
+ {
+  "band": 700,
+  "channel": "online",
+  "n": 2578,
+  "ratio": 3.754546513592274
+ },
+ {
+  "band": 750,
+  "channel": "branch",
+  "n": 1141,
+  "ratio": 3.1953554502369665
+ },
+ {
+  "band": 750,
+  "channel": "broker",
+  "n": 349,
+  "ratio": 3.7468273092369473
+ },
+ {
+  "band": 750,
+  "channel": "online",
+  "n": 1122,
+  "ratio": 3.257705342902711
+ }
+]

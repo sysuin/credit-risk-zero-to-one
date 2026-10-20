@@ -1,0 +1,19 @@
+Amount lent (the limit, for a card or overdraft), and term
+product             p10    median        p90   term, months
+mortgage       $106,000  $225,000   $484,000   240-360, median 300
+sme_emergency   $46,000  $162,000   $250,000   72
+sme_term        $26,000  $127,000   $540,000   24-84, median 48
+sme_overdraft   $24,000  $117,000   $553,000   none
+auto            $10,100   $24,600    $55,500   36-72, median 60
+personal         $3,700   $10,000    $26,300   12-60, median 36
+card             $2,100    $5,500    $14,500   none
+
+Interest rate at opening (% a year), and loan-to-value
+product           p10  median    p90  LTV median  LTV p90
+mortgage         2.50    3.00   6.50         71%      86%
+sme_emergency    2.50    2.50   2.50           -        -
+sme_term         4.50    7.25  10.00         66%      92%
+sme_overdraft    4.50    7.25  10.25           -        -
+auto             6.75    8.75  11.69         80%      92%
+personal         7.90   11.30  15.90           -        -
+card            18.90   23.05  27.82           -        -

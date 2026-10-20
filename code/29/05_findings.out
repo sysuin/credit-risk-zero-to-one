@@ -1,0 +1,40 @@
+id  model ch     sev  status    issue
+F01 MK1   5,11   high open      bureau line not re-set for version 3
+F02 MK1   24     high closed    alarm rule could not ring at volume
+F03 MK1   8,11   high open      no independent validation since 2015
+F04 MK1   29     med  open      mortgage use not in 2026 record
+F05 MK2   8      med  closed    wrong signs from shared no-file bin
+F06 MK2   9      high closed    no lead over Mark I on all scored
+F07 MK2R  11,18  med  mitigated scale over-promises: it is not a PD
+F08 MK2R  13     med  accepted  over-predicts young borrowers' risk
+F09 MK2R  13,24  high open      women's 2025 approvals below parity
+F10 MK2R  29     low  open      saved file still says 'not in use'
+F11 MK2R  29     med  open      performance not saved with the model
+F12 CHAL  10     med  open      scores move with seed and refits
+F13 SME1  16     high open      owner's bureau line not re-set
+F14 SME1  16     med  open      security line points the wrong way
+F15 FRM   16     high open      analysts hold grades the model moves
+F16 RATE  16,18  med  accepted  PDs of grades 1-6 unconfirmable
+F17 PD12  18     med  open      calibration light in band 540-559
+F18 PD12  18     med  accepted  economy effect from one recession
+F19 LGD   19     med  closed    recent workouts read as finished
+F20 LGD   19,20  med  open      mortgage LGD from a benign decade
+F21 CCF   19     med  accepted  revolver CCF rests on 17 defaults
+F22 ECL   18,20  high open      commercial year-one PD unsettled
+F23 ECL   20     med  mitigated mortgage payment shock missed
+F24 PRICE 12     med  open      capital and hurdle are assumptions
+F25 SEC   28     med  open      correlation assumed; no triggers
+F26 CURE  25     low  accepted  2024 test too small for 3-month cure
+F27 MK1   4,9,29 med  open      low-side overrides at any depth
+
+also found by Chapter 23's validations: F07 = MK2R-2, F08 = MK2R-4,
+F09 = MK2R-3, F15 = FRM-2, F16 = RATE-1, F17 = PD12-1, F21 = CCF-2
+new in those validations (12): MK2R-1 med, MK2R-5 med, MK2R-6 low,
+PD12-2 med, PD12-3 med, PD12-4 low, LGD-1 med, LGD-2 med, CCF-1 med,
+RATE-2 med, RATE-3 med, FRM-1 high (blocks use)
+
+               open mitigated  accepted    closed
+high              7         0         0         2
+medium           18         2         4         2
+low               3         0         1         0
+in use with an open high finding: ECL, FRM, MK1, SME1

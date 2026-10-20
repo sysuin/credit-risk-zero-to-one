@@ -1,0 +1,18 @@
+Chapter 20's provisions: found
+product               drawn $m   EAD $m   RWA $m  density
+auto                      99.2     99.1     74.4    75.1%
+card                      37.8     46.1     34.6    75.1%
+commercial_revolver    1,336.0  2,182.3  1,999.1    91.6%
+commercial_term        2,977.1  2,977.1  2,756.3    92.6%
+mortgage                 877.0    877.0    255.3    29.1%
+personal                  59.0     58.6     44.0    75.1%
+sme_emergency             40.2     40.1      6.1    15.2%
+sme_overdraft             93.9    111.7     86.7    77.6%
+sme_term                 191.3    190.9    146.0    76.5%
+all                    5,711.5  6,582.8  5,402.4    82.1%
+
+in default: 217 exposures, $7,221,332 drawn, RWA $5,272,281
+  at 100%: 198
+  at 150%: 19
+emergency loans: $40,074,113 EAD, weight 15% after the guarantee
+credit RWA, standardised: $5,402,435,086

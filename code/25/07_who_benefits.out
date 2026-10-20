@@ -1,0 +1,23 @@
+                           n   call   text      difference (95%)
+family (does it differ? p = 0.45)
+  business               454  42.0%  40.8%    +1.2 (-7.9 to +10.3)
+  consumer             2,150  41.7%  36.7%    +5.0 (+0.9 to +9.1) *
+product (does it differ? p = 0.62)
+  auto                   331  43.5%  37.3%    +6.2 (-4.4 to +16.8)
+  business               454  42.0%  40.8%    +1.2 (-7.9 to +10.3)
+  card                 1,081  41.8%  35.8%    +6.0 (+0.2 to +11.8) *
+  mortgage                64  33.3%  45.2%   -11.8 (-35.6 to +12.0)
+  personal               674  41.5%  36.9%    +4.6 (-2.8 to +12.0)
+predicted cure (does it differ? p = 0.86)
+  business               454  42.0%  40.8%    +1.2 (-7.9 to +10.3)
+  in between           1,057  41.3%  36.1%    +5.2 (-0.7 to +11.1)
+  likely to cure         483  55.8%  49.6%    +6.2 (-2.7 to +15.1)
+  likely to roll         610  31.7%  26.9%    +4.8 (-2.4 to +12.0)
+past arrears (does it differ? p = 0.94)
+  behind before          176  38.2%  34.5%    +3.7 (-10.5 to +17.9)
+  first time           2,428  42.0%  37.5%    +4.5 (+0.6 to +8.4) *
+balance (does it differ? p = 0.44)
+  above median         1,302  41.0%  38.1%    +2.9 (-2.4 to +8.2)
+  below median         1,302  42.5%  36.6%    +5.9 (+0.6 to +11.2) *
+* interval excludes zero; 15 groups in 5 splits
+Bonferroni for 5 splits: p below 0.010 to count

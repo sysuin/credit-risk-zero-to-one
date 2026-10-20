@@ -1,0 +1,14 @@
+months                cards           overdrafts       revolvers
+before        n  drawn behind      n  drawn behind       n   drawn
+24        1,079    40%     1%     50    37%     0%      11     60%
+18        1,445    42%     2%     65    40%     0%      12     59%
+12        1,878    43%     2%     87    44%     1%      17     63%
+9         2,088    45%     1%    101    46%     1%      20     66%
+6         2,264    47%     4%    106    55%     3%      22     70%
+3         2,419    51%    48%    111    61%    33%      22     74%
+2         2,423    53%    91%    111    63%    92%      23     79%
+1         2,427    54%    94%    112    63%    92%      23     81%
+0         2,427    56%    97%    112    64%    96%      24     92%
+up to date         31%                  35%                    38%
+drawn: balances over limits; behind: share with a payment
+missed; last line: every up-to-date (performing) month end

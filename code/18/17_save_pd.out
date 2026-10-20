@@ -1,0 +1,17 @@
+product        accounts defaults  u coef  life   base  severe
+personal         26,427    1,726   0.224    60   7.1%   14.5%
+card             23,868    2,385   0.189   120  12.4%   21.9%
+auto             15,251      905   0.184    72   6.6%   12.3%
+mortgage          4,415      109   0.073   360   4.0%    4.9%
+sme_term          3,317      312   0.308    84  10.4%   30.8%
+sme_overdraft     1,486      110   0.277   120   9.1%   23.8%
+sme_emergency     2,078      655   0.050    72  33.4%   38.2%
+
+16,704 term-structure rows; saved:
+  data/ballast/parameters/pd_calibration.json               96 B
+  data/ballast/parameters/pd_model.json                    714 B
+  data/ballast/parameters/pd_hazard.json                 8,608 B
+  data/ballast/parameters/pd_term_structures.parquet   559,555 B
+  data/ballast/parameters/pd_scenarios.csv               4,873 B
+  data/ballast/parameters/pd_commercial.json             2,094 B
+Reloaded: calibration platt, hazards for 7 products, same: True

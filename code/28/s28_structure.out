@@ -1,0 +1,10 @@
+arranger's structure
+  C   0%-2%    alone: P 100.00% EL 34.68%; after: P 0.03%
+  B   2%-7%    alone: P 1.67% EL 0.12%; after: P 0.00%
+  A   7%-100%  alone: P 0.00% EL 0.00%; after: P 0.00%
+  released to C: mean 6.03% of the pool
+thinner structure
+  C   0%-1%    alone: P 100.00% EL 61.75%; after: P 0.03%
+  B   1%-5%    alone: P 20.58% EL 2.05%; after: P 0.00%
+  A   5%-100%  alone: P 0.00% EL 0.00%; after: P 0.00%
+  released to C: mean 5.88% of the pool

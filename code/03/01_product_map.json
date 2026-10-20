@@ -1,0 +1,44 @@
+[
+ {
+  "product": "auto",
+  "revolving": false,
+  "secured": 1.0,
+  "guaranteed": false
+ },
+ {
+  "product": "mortgage",
+  "revolving": false,
+  "secured": 1.0,
+  "guaranteed": false
+ },
+ {
+  "product": "sme_term",
+  "revolving": false,
+  "secured": 0.34493012191495687,
+  "guaranteed": false
+ },
+ {
+  "product": "personal",
+  "revolving": false,
+  "secured": 0.0,
+  "guaranteed": false
+ },
+ {
+  "product": "sme_emergency",
+  "revolving": false,
+  "secured": 0.0,
+  "guaranteed": true
+ },
+ {
+  "product": "card",
+  "revolving": true,
+  "secured": 0.0,
+  "guaranteed": false
+ },
+ {
+  "product": "sme_overdraft",
+  "revolving": true,
+  "secured": 0.0,
+  "guaranteed": false
+ }
+]

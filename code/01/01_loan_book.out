@@ -1,0 +1,10 @@
+product     applications    booked   share
+personal          80,506    26,688     33%
+card              54,232    24,211     45%
+auto              34,633    15,396     44%
+mortgage           8,507     4,457     52%
+all              177,878    70,752
+
+accounts, all products:          87,762
+account-months of history:    2,487,898
+from 2016-01-31 to 2025-12-31

@@ -1,0 +1,9 @@
+wrote data/ballast/mark2/model.json  (6,316 bytes)
+wrote data/ballast/mark2/points_table.csv  (823 bytes)
+wrote data/ballast/mark2/scorecard.json  (5,264 bytes)
+wrote data/ballast/mark2/performance.json  (186 bytes)
+
+reloaded: base 458, 9 characteristics, 33 bins
+every one of 22,205 loans scores the same: True
+saved coefficients all positive: True
+Gini saved: train 0.518, holdout 0.575, out_of_time 0.569

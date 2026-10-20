@@ -1,0 +1,4 @@
+inputs                             penalty  log loss   Gini
+leverage                                 0   0.05893  0.879
+leverage, cover, equity                  3   0.05773  0.877
+leverage, cover, equity, size            3   0.05816  0.873

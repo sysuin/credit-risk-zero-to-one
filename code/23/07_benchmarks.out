@@ -1,0 +1,8 @@
+Mark II-R's Gini less each benchmark's (booked + retro)
+sample           benchmark    its Gini    gain      95% interval
+2019-22 holdout  Mark I          0.473  +0.034  +0.006 to +0.059
+2019-22 holdout  Mark II         0.500  +0.007  -0.012 to +0.027
+2019-22 holdout  challenger      0.541  -0.034  -0.058 to -0.009
+2023             Mark I          0.495  +0.024  -0.007 to +0.056
+2023             Mark II         0.506  +0.012  -0.009 to +0.034
+2023             challenger      0.551  -0.032  -0.065 to -0.002

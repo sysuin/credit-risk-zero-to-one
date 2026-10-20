@@ -1,0 +1,13 @@
+                  minus_150     policy   plus_150
+approved                245      4,272        219
+Mark I                633.2      634.0      635.1
+Mark II-R             585.0      586.8      588.1
+policy price         14.85%     14.68%     14.58%
+price quoted         13.35%     14.68%     16.08%
+amount              $13,888    $13,844    $12,951
+via broker            17.1%      14.6%      15.1%
+took the loan         71.8%      64.1%      55.7%
+
+Take-up, 3 points dearer: -16.1 points (95% interval
+  -24.8 to -7.5); per point of price -5.4
+Price elasticity of take-up: -1.37 (bootstrap 95%: -2.14 to -0.63)

@@ -1,0 +1,21 @@
+where                               rows  means
+bureau_score IS NULL              12,073  no bureau file
+    bureau_hit: false 12,073
+revolving_utilisation IS NULL     12,073  no bureau file
+    bureau_hit: false 12,073
+oldest_account_months = 0         12,073  no bureau file
+    bureau_hit: false 12,073
+worst_status_24m = 0             128,807  a clean record, or no file
+    bureau_hit: true 116,734, false 12,073
+enquiries_6m = 0                  61,921  no enquiries, or no file
+    bureau_hit: true 49,918, false 12,003
+employment_months = 0             20,715  a new job, or no job
+    employment: other 7,319, retired 6,852, employed 5,161, ...
+amount_requested_cents = 0        54,232  a card: no amount asked
+    product: card 54,232
+deposit_cents = 0                135,501  no deposit, or none asked
+    product: personal 80,506, card 54,232, auto 763
+collateral_value_cents IS NULL   134,738  nothing secured
+    product: personal 80,506, card 54,232
+NOT ob_consent                   147,904  refused, or never asked
+    consent: never asked 123,023, asked 24,881

@@ -1,0 +1,56 @@
+{
+ "holdout 2019-22": {
+  "share": 0.7058,
+  "both approve": {
+   "n": 4933,
+   "known": 4385,
+   "bad_rate": 0.041277,
+   "promised": 0.040224
+  },
+  "only A approves": {
+   "n": 512,
+   "known": 317,
+   "bad_rate": 0.088328,
+   "promised": 0.078114
+  },
+  "only B approves": {
+   "n": 512,
+   "known": 363,
+   "bad_rate": 0.110193,
+   "promised": 0.128244
+  },
+  "both decline": {
+   "n": 1758,
+   "known": 895,
+   "bad_rate": 0.182123,
+   "promised": 0.183611
+  }
+ },
+ "2023": {
+  "share": 0.6446,
+  "both approve": {
+   "n": 4162,
+   "known": 3868,
+   "bad_rate": 0.029473,
+   "promised": 0.031681
+  },
+  "only A approves": {
+   "n": 504,
+   "known": 255,
+   "bad_rate": 0.07451,
+   "promised": 0.061397
+  },
+  "only B approves": {
+   "n": 504,
+   "known": 417,
+   "bad_rate": 0.069544,
+   "promised": 0.102657
+  },
+  "both decline": {
+   "n": 2069,
+   "known": 908,
+   "bad_rate": 0.148678,
+   "promised": 0.151627
+  }
+ }
+}

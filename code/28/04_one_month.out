@@ -1,0 +1,19 @@
+month 4 of the deal: April 2026, base scenario    dollars
+pool at the start of the month              80,076,638
+collected
+  interest                                       677,749
+  recoveries (cars sold)                          97,695
+  scheduled principal                          2,566,777
+  prepayments                                  1,273,717
+defaulted this month (owed, not paid)          130,252
+revenue: interest and recoveries, in order
+  1 servicing fee (1.00% a year)                  66,731
+  2 class A interest (4.48%)                     274,671
+  3 class B interest (6.38%)                      24,700
+  4 defaults made good (to the PDL)              130,252
+  5 released to class C                          279,091
+principal: scheduled, prepaid and step 4, in order
+  class A                                      3,970,746
+  class B                                              0
+  class C                                              0
+after the month: A $69.60m, B $4.65m, C $1.86m

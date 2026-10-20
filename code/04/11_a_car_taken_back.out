@@ -1,0 +1,28 @@
+A00137123  auto, dealer, 2016-10-25, Central
+  asked      $19,100 over 60 months (used car)
+  told us    income $33,500 (verified); bureau 569
+  decided    approve: score 547, cut-off 545
+  offered    $19,100 at 7.9%; booked
+account     AL0001201 opened 2016-11-10, fixed 7.9%
+  pays       $386.37 a month over 60 months
+  secured on $20,900.00 of collateral
+  closed     2017-07-31 vehicle repossessed, balance $18,250.76
+  months     9 month ends
+  2016-11            1  opened, nothing due  paid       $0.00
+  2016-12..2017-02   3  up to date           paid   $1,159.11
+  2017-03..04        2  arrears, 30 days     paid     $386.37
+  2017-05            1  arrears, 60 days     paid       $0.00
+  2017-06            1  default, 90 days     paid      $61.22
+  2017-07            1  vehicle repossessed  paid     $217.32
+events      none
+collections
+  2017-03..04        2  reminder
+  2017-05            1  phone call
+  2017-06            1  final notice
+defaults
+  2017-06-30  dpd90   days past due owed $18,347.30
+recoveries
+  2017-09            1  collateral sale            $14,393.82
+  2017-10..2021-09  48  collections payment           $374.72
+  2017-09..2021-09  49  cost                       -$1,582.42
+  net of costs                                     $13,186.12

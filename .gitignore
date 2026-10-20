@@ -1,0 +1,11 @@
+.venv/
+data/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+code/_report.json
+code/_report.json.lock
+code/_deps.*.jsonl
+code/_usage.jsonl
+.env
+.DS_Store

@@ -1,0 +1,16 @@
+$m                    IRB EL  provision     gap
+auto                    0.89       0.62   -0.27
+card                    1.05       1.08    0.03
+commercial_revolver    33.85     122.01   88.16
+commercial_term        46.46     100.86   54.40
+mortgage                0.68       0.12   -0.56
+personal                1.38       1.29   -0.09
+sme_emergency           0.28       0.17   -0.11
+sme_overdraft           2.26       3.00    0.73
+sme_term                2.47       2.05   -0.42
+all                    89.32     231.20  141.88
+
+everything on IRB: excess $141.88m;
+Tier 2 may take 0.6% of IRB credit RWA, $31.92m
+mortgages on IRB: shortfall $0.56m off CET1
+provisions by stage $m: 1 28.30, 2 201.35, 3 1.55

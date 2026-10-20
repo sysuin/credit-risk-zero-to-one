@@ -1,0 +1,193 @@
+{
+ "ranking": [
+  {
+   "name": "bureau_score",
+   "fine": 0.4856,
+   "coarse": 0.4494,
+   "holdout": 0.7167
+  },
+  {
+   "name": "oldest_account_months",
+   "fine": 0.2683,
+   "coarse": 0.1921,
+   "holdout": 0.229
+  },
+  {
+   "name": "open_accounts",
+   "fine": 0.0587,
+   "coarse": 0.0345,
+   "holdout": 0.046
+  },
+  {
+   "name": "revolving_utilisation",
+   "fine": 0.1527,
+   "coarse": 0.1305,
+   "holdout": 0.1259
+  },
+  {
+   "name": "revolving_balance",
+   "fine": 0.1253,
+   "coarse": 0.0431,
+   "holdout": 0.0789
+  },
+  {
+   "name": "enquiries_6m",
+   "fine": 0.6099,
+   "coarse": 0.3888,
+   "holdout": 0.6575
+  },
+  {
+   "name": "worst_status_24m",
+   "fine": 0.038,
+   "coarse": 0.0368,
+   "holdout": 0.0665
+  },
+  {
+   "name": "public_records",
+   "fine": 0.0102,
+   "coarse": 0.0102,
+   "holdout": 0.046
+  },
+  {
+   "name": "dti",
+   "fine": 0.1101,
+   "coarse": 0.0779,
+   "holdout": 0.0573
+  },
+  {
+   "name": "income",
+   "fine": 0.17,
+   "coarse": 0.1504,
+   "holdout": 0.1596
+  },
+  {
+   "name": "amount_requested",
+   "fine": 0.0881,
+   "coarse": 0.0515,
+   "holdout": 0.0429
+  },
+  {
+   "name": "term_requested_months",
+   "fine": 0.0042,
+   "coarse": 0.0,
+   "holdout": 0.0
+  },
+  {
+   "name": "age",
+   "fine": 0.0572,
+   "coarse": 0.0122,
+   "holdout": 0.0045
+  },
+  {
+   "name": "employment_months",
+   "fine": 0.0814,
+   "coarse": 0.0446,
+   "holdout": 0.1653
+  },
+  {
+   "name": "address_months",
+   "fine": 0.1901,
+   "coarse": 0.1495,
+   "holdout": 0.1888
+  },
+  {
+   "name": "dependants",
+   "fine": 0.0106,
+   "coarse": 0.0,
+   "holdout": 0.0
+  },
+  {
+   "name": "employment",
+   "fine": 0.0064,
+   "coarse": 0.0,
+   "holdout": 0.0
+  },
+  {
+   "name": "housing",
+   "fine": 0.0098,
+   "coarse": 0.0,
+   "holdout": 0.0
+  },
+  {
+   "name": "purpose",
+   "fine": 0.0062,
+   "coarse": 0.0,
+   "holdout": 0.0
+  },
+  {
+   "name": "channel",
+   "fine": 0.0216,
+   "coarse": 0.0199,
+   "holdout": 0.01
+  },
+  {
+   "name": "region",
+   "fine": 0.0226,
+   "coarse": 0.0175,
+   "holdout": 0.0169
+  },
+  {
+   "name": "noise",
+   "fine": 0.0486,
+   "coarse": 0.0078,
+   "holdout": 0.0
+  }
+ ],
+ "util": {
+  "fine_edges": [
+   0.02,
+   0.07,
+   0.11,
+   0.14,
+   0.17,
+   0.2,
+   0.23,
+   0.26,
+   0.29,
+   0.32,
+   0.35,
+   0.38,
+   0.42,
+   0.46,
+   0.5,
+   0.55,
+   0.61,
+   0.68
+  ],
+  "fine_woe": [
+   0.7791,
+   0.5502,
+   0.6456,
+   0.1953,
+   0.5559,
+   0.0523,
+   0.2936,
+   0.0878,
+   0.1283,
+   -0.3561,
+   0.1005,
+   -0.3424,
+   0.1244,
+   -0.2077,
+   0.0621,
+   -0.2198,
+   -0.4568,
+   -0.3666,
+   -0.4825,
+   -0.496
+  ],
+  "coarse_edges": [
+   0.11,
+   0.29,
+   0.55
+  ],
+  "coarse_woe": [
+   0.6825,
+   0.2048,
+   -0.1408,
+   -0.4393,
+   -0.496
+  ],
+  "max": 0.8890600000000013
+ }
+}

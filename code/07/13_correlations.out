@@ -1,0 +1,14 @@
+shortlist, IV 0.02 or more: 12 characteristics
+
+pair of WoE-coded characteristics              all   file
+income                amount_requested       +0.47  +0.47
+income                revolving_balance      +0.29  +0.31
+bureau_score          revolving_utilisation  +0.28  +0.24
+worst_status_24m      open_accounts          +0.27  +0.02
+revolving_balance     worst_status_24m       +0.24  +0.01
+bureau_score          income                 +0.23  +0.23
+revolving_balance     open_accounts          +0.23  +0.03
+bureau_score          enquiries_6m           +0.21  +0.18
+revolving_utilisation revolving_balance      -0.21  -0.37
+revolving_utilisation dti                    +0.21  +0.13
+pairs of 66 with |r| of 0.5 or more: 0

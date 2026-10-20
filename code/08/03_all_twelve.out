@@ -1,0 +1,19 @@
+characteristic              coef     se       p  sign
+const                      3.444  0.059   0.000  
+bureau_score               0.763  0.097   0.000  
+enquiries_6m               0.754  0.078   0.000  
+oldest_account_months      0.723  0.117   0.000  
+income                     0.491  0.181   0.007  
+address_months             0.783  0.129   0.000  
+revolving_utilisation      0.260  0.173   0.132  
+dti                        0.847  0.213   0.000  
+amount_requested           0.258  0.272   0.343  
+employment_months          0.299  0.279   0.285  
+revolving_balance         -0.333  0.292   0.254  WRONG
+worst_status_24m          -0.283  0.322   0.380  WRONG
+open_accounts             -0.556  0.304   0.067  WRONG
+wrong signs: 3 of 12
+
+revolving_balance <7,200  5  7,200+  0  no file  9
+worst_status_24m  <30  0  30+  4  no file  5
+open_accounts     <7  8  7+  0  no file 16

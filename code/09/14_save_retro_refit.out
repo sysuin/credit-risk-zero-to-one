@@ -1,0 +1,10 @@
+development applicants by outcome (Chapter 7's funnel):
+  booked         17,565
+  declined       23,862
+  not_taken_up   11,018
+  all            52,445
+frames: accepts 12,075, unknown 16,484, holdout 12,403, oot 11,044
+saved data/ballast/reject/mark2_retro_ws.json, 4,897 bytes
+fitted on 19,144 rows, 5.9% bad
+reloaded: largest difference in p(bad) 2.0e-07
+base 484; worst status line: <30 9, 30+ 0, no file 7

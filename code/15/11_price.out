@@ -1,0 +1,13 @@
+reference rate (policy rate, Dec 2025) 3.75%
+  + margin 200 bps = 5.75%; Meridian paid about 7.7% in 2025
+
+a year of a $17m facility, $000
+    drawn   margin  undrawn fee  arrangement   total
+      30%      102           83           28     214
+      38%      129           74           28     231
+      60%      204           48           28     280
+      90%      306           12           28     346
+
+provisional loss cost, Fernhill's book averages:
+  default rate 1.72% a year x loss 40% x drawn 90% of the limit
+  = $105k a year

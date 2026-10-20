@@ -1,0 +1,18 @@
+Performing personal loans on 31 December, defaults in the
+year, and the defaults each PD expected, with its light
+year   loans  seen      known u    no change          TTC   corr.
+2017   1,762    69   73.3 green   79.2 green   80.0 green   green
+2018   3,087   120  110.9 green  116.4 green  134.6 green   green
+2019   4,033   124  134.2 green  137.4 green  171.6 green   green
+2020   4,261   270  266.6 green  117.3   red  154.4   red   green
+2021   3,901   144  152.6 green  203.3 green  131.6 green   green
+2022   4,414   133  120.9 green  132.6 green  147.8 green   green
+2023   5,029   134  144.1 green  130.4 green  161.5 green   green
+2024   5,942   192  180.7 green  173.7 green  169.2 amber   green
+2025   6,267   154  170.2 green  179.6 green  165.8 green   green
+known u:   9 green, 0 amber, 0 red
+no change: 8 green, 0 amber, 1 red
+TTC:       7 green, 1 amber, 1 red
+Lights at 95% and 99.9% of the binomial; corr.: the TTC PD
+with defaults correlated as the IRB formula has them,
+at rho 0.057 to 0.082

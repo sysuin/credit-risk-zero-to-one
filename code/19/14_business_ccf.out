@@ -1,0 +1,11 @@
+                         n  used then    CCF  median  at default
+overdrafts              86        43%   0.34    0.22         63%
+revolvers               17        63%   0.76    0.68         91%
+  unsecured              9        63%   0.79    0.68         92%
+  secured                8        65%   0.71    0.77         90%
+used then: drawn over limit a year before default;
+at default: drawn at default over that limit
+
+revolver CCF, 90% bootstrap interval: 0.66 to 0.85
+smallest single revolver's CCF: 0.36
+limit changed between the two dates: 0 of 17

@@ -1,0 +1,7 @@
+segment           share   pred  cured  rolled  w/off   loss
+likely to roll      32%    52%    50%     47%    46%    42%
+in between          44%    68%    65%     30%    29%    43%
+likely to cure      25%    80%    80%     17%    15%    16%
+pred, cured: predicted and seen cure within three months;
+w/off: written off within 12 months; loss: share of the
+$4,977,448 written off less recovered to date

@@ -1,0 +1,22 @@
+True Gini, every applicant who passed the rules
+                   Mark I    Mark II  Mark II-R challenger
+  holdout           0.542      0.513      0.541      0.583
+  out_of_time       0.534      0.542      0.556      0.590
+
+Out of time, approving 64.3%: true bad rate
+  Fernhill      2.83%
+  Mark I        3.01%
+  Mark II       2.82%
+  Mark II-R     2.82%
+  challenger    2.45%
+
+Mark II-R at 554 against Fernhill's decisions
+                   people    true  promised
+  both approve      6,637    2.4%      3.4%
+  only Mark II-R    1,257    7.8%      6.8%
+  only Fernhill       464    9.1%     12.0%
+  554 to 558          666    7.5%      8.3%
+
+If every approval took the loan, per 1,000 applicants:
+  Fernhill            643 loans, true bad rate 2.83%, $435,731
+  Mark II-R at 554    715 loans, true bad rate 3.26%, $463,737

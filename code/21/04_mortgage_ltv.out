@@ -1,0 +1,11 @@
+loan-to-value   loans  balance $m  weight   RWA $m
+up to 50%         657       108.1     20%     21.8
+50-60%            865       187.0     25%     47.0
+60-80%          1,799       486.2     30%    147.1
+80-90%            284        90.2     40%     36.6
+90-100%            18         5.6     50%      2.8
+over 100%           0         0.0     70%      0.0
+all             3,623       877.0   29.1%    255.3
+
+balance-weighted LTV 64.5%; in default: 14 loans at 100%
+one weight of 35% for every mortgage: RWA $307.0m

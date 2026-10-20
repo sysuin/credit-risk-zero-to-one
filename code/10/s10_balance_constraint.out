@@ -1,0 +1,13 @@
+              holdout  out of time  balance splits
+as built        0.646        0.634              63
+balance +1      0.639        0.633               6
+
+average score with the balance set for everyone (out of time)
+  balance    as built  balance +1
+        0       604.9       606.9
+    2,000       605.6       606.8
+    5,000       607.8       606.8
+    7,200       607.9       606.8
+   10,000       608.9       606.8
+   15,000       608.9       606.8
+   25,000       608.6       606.5

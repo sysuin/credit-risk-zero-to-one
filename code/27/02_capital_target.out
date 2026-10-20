@@ -1,0 +1,15 @@
+CET1 ratio today 16.7%; requirement 8.0%; minimum 4.5%
+
+scenario       trough  depletion      $m  start needed
+base            15.7%       0.9%      57          8.9%
+severe           9.7%       7.0%     437         15.0%
+stress_2026     -2.1%      18.8%   1,178         26.8%
+
+target: 8.0% + severe 7.0% + buffer 1.0% = 16.0%
+tolerance: minimum 4.5% + severe 7.0% = 11.5%
+CET1 above the target $40.9m; above the requirement $543.1m
+to come through the supervisor's scenario at 8.0%: $635.3m more
+
+economic capital $820.1m = 78.4% of CET1
+most that leaves the 4.5% minimum after a 1-in-1,000 year: 73.0%
+  ($762.8m; CET1 less 4.5% of RWA)

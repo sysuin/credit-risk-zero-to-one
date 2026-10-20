@@ -1,0 +1,15 @@
+product              exposures  drawn $m  undrawn $m  in default
+auto                     5,130      99.2         0.0          20
+card                    15,262      37.8        84.3          78
+commercial_revolver        164   1,336.0     2,115.6           0
+commercial_term            201   2,977.1         0.0           0
+mortgage                 3,623     877.0         0.0          14
+personal                 6,634      59.0         0.0          63
+sme_emergency            1,339      40.2         0.0          19
+sme_overdraft            1,194      93.9       181.3           5
+sme_term                 1,368     191.3         0.0          18
+all                     34,915   5,711.5     2,381.2         217
+
+source: performance $1,398,447,097 + facilities $4,313,091,009
+book:   $5,711,538,106
+small-business accounts over $1m, treated as companies: 72

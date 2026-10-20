@@ -1,0 +1,143 @@
+{
+ "base": 458,
+ "lines": [
+  {
+   "name": "bureau_file",
+   "bins": [
+    "file",
+    "no file"
+   ],
+   "points": [
+    11,
+    0
+   ],
+   "coef": 0.767
+  },
+  {
+   "name": "enquiries_6m",
+   "bins": [
+    "<1",
+    "1-2",
+    "3+",
+    "no file"
+   ],
+   "points": [
+    41,
+    34,
+    0,
+    31
+   ],
+   "coef": 0.757
+  },
+  {
+   "name": "bureau_score",
+   "bins": [
+    "<630",
+    "630-679",
+    "680-709",
+    "710-759",
+    "760+",
+    "no file"
+   ],
+   "points": [
+    0,
+    15,
+    20,
+    35,
+    50,
+    19
+   ],
+   "coef": 0.742
+  },
+  {
+   "name": "oldest_account_months",
+   "bins": [
+    "<54",
+    "54+",
+    "no file"
+   ],
+   "points": [
+    0,
+    29,
+    23
+   ],
+   "coef": 0.836
+  },
+  {
+   "name": "address_months",
+   "bins": [
+    "<10",
+    "10+"
+   ],
+   "points": [
+    0,
+    20
+   ],
+   "coef": 0.745
+  },
+  {
+   "name": "dti",
+   "bins": [
+    "<0.17",
+    "0.17-0.32",
+    "0.32+",
+    "no file"
+   ],
+   "points": [
+    24,
+    8,
+    0,
+    10
+   ],
+   "coef": 1.196
+  },
+  {
+   "name": "income",
+   "bins": [
+    "<27,000",
+    "27,000-39,999",
+    "40,000-91,999",
+    "92,000+"
+   ],
+   "points": [
+    0,
+    4,
+    7,
+    21
+   ],
+   "coef": 0.402
+  },
+  {
+   "name": "revolving_utilisation",
+   "bins": [
+    "<0.11",
+    "0.11-0.29",
+    "0.29-0.55",
+    "0.55+",
+    "no file"
+   ],
+   "points": [
+    20,
+    12,
+    5,
+    0,
+    8
+   ],
+   "coef": 0.623
+  },
+  {
+   "name": "revolving_balance",
+   "bins": [
+    "<7,200",
+    "7,200+",
+    "no file"
+   ],
+   "points": [
+    0,
+    11,
+    1
+   ],
+   "coef": 0.771
+  }
+ ]
+}

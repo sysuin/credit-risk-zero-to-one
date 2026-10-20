@@ -1,0 +1,20 @@
+A00054251  personal loan, online, 2023-03-02
+WHAT THEY TOLD US
+  asked for        $17,800 over 36 months, home_improvement
+  age, region      37, Central
+  stated income    $33,100 a year, verified: True
+  verified income  $31,700 a year
+  employment       part_time, 2 months
+  housing          renter, 47 months at address, 2 dependants
+WHAT THE BUREAU SAID (score version v3)
+  score            799
+  oldest account   128 months, 5 accounts open
+  revolving        $3,010 used of $8,503 (35%)
+  enquiries, 6m    1; worst status, 24m: 0; public records: 0
+  other payments   $220 a month
+WHAT THEIR BANK ACCOUNT SAID (consent: True)
+  average balance  $1,783; overdrawn 0 days in 12 months
+  income volatility 0.071; returned payments 0; betting 0.0%
+WHAT FERNHILL DID
+  Mark I score 641 against a cut-off of 580: approve
+  offered $17,800 at 12.4% over 36 months: booked as PL0018183

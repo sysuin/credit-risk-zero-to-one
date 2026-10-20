@@ -1,0 +1,12 @@
+regulatory: CET1 / 16.0% carries RWA of $6,533m, against $6,278m
+  today: room for $255m more
+  at the retail weight of 75%, $341m of retail lending
+economic: budget $762.8m against $820.1m used
+
+segment           EAD     EC  per $  budget  EAD limit   change
+retail          1,479    3.6   0.2%     4.5      1,849     +370
+grades 1-5      2,572   84.2   3.3%   105.3      3,215     +643
+grades 6-8      2,266  361.2  15.9%   361.2      2,266       +0
+grades 9-10     1,079  371.1  34.4%   292.0        849     -230
+$m; per $ = economic capital per dollar of EAD (its share of
+the tail); a limit is the budget divided by it

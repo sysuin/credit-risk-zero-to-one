@@ -1,0 +1,32 @@
+                                DD, months before    grade
+company                  default  24  12   6   3   1  24 12  6  3  1
+Alder Oak Materials      Mar 21  1.9 0.2 1.1 0.2 0.1   9 10 10 10 10
+Ash Birch Logistics      Jun 21  3.4 2.0 0.9 0.7 0.0   6  7  7  7  7
+Dale Pine Homes          Jan 22  1.3 1.4 0.4 0.2 0.2   9 10 10 10 10
+River Beacon Engineering Jan 23  1.3 0.7 1.2 0.4 0.3   6  7  8  8  8
+Alder Pine Retail        Apr 23  2.7 1.1 1.1 1.0 0.1   5  5  5  5 10
+Granite Elm Industries   Apr 23  2.0 0.7 0.7 0.6 0.0   6  7  7  7  7
+Elm Willow Foods         May 23  2.1 1.2 0.8 0.8 0.2   8  9  9  9 10
+Flint Falcon Retail      Aug 23  0.7 0.6 0.6 0.2 0.2  10 10 10 10 10
+Vale Linden Retail       Jun 24  1.8 1.1 1.3 0.7 0.6   6  7  7  8  8
+
+agency letter                    24  12   6   3   1
+Ash Birch Logistics              BB   B CCC CCC CCC
+Granite Elm Industries            B CCC CCC CCC CCC
+Vale Linden Retail              CCC CCC CCC CCC CCC
+
+reviews in those two years where the grade was set better than
+the rating model's
+  Alder Pine Retail        Mar 2021   model  6, grade  5
+  Ash Birch Logistics      Mar 2021   model 10, grade  7
+  River Beacon Engineering Mar 2021   model  8, grade  7
+  Elm Willow Foods         Mar 2022   model 10, grade  9
+  Alder Pine Retail        Mar 2022   model 10, grade  5
+  Granite Elm Industries   Mar 2023   model 10, grade  7
+  Vale Linden Retail       Mar 2023   model  8, grade  7
+  Vale Linden Retail       Mar 2024   model  9, grade  8
+
+median rank among listed clients that month (0 = riskiest)
+  months before     24    18    12     9     6     3     1
+  by DD            10%    7%    6%    5%    5%    3%    2%
+  by grade         36%   22%   22%   17%   17%   17%    6%

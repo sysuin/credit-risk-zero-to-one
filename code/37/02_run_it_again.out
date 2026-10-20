@@ -1,0 +1,8 @@
+seed 2026; last 12 digits of each table's checksum
+table                rows      published      run again
+applications      177,878   728877269522   728877269522
+performance     2,487,898   587156342491   587156342491
+recoveries        246,397   890149533571   890149533571
+pd12            2,565,610   374731067417   374731067417
+corporate_pd       27,530   899291791014   899291791014
+tables identical, both databases: 29 of 29

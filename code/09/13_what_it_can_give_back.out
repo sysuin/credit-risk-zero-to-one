@@ -1,0 +1,10 @@
+                         Gini   Gini  approve  approve  coef
+model                    hold    OOT     hold      OOT    ws
+Mark II as built        0.513  0.543    3.79%    2.79%     -
++ worst status          0.524  0.555    3.61%    2.70%  0.54
+retro                   0.531  0.544    3.61%    2.90%     -
+retro + worst status    0.542  0.557    3.44%    2.76%  0.36
+truth + worst status    0.543  0.557    3.48%    2.86%  0.40
+Mark I                  0.542  0.534    3.26%    3.01%     -
+
+approve: true bad rate approving 69.7% (holdout) and 64.3% (OOT)

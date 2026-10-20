@@ -1,0 +1,32 @@
+section                                                 checks  pass
+Size                                                         3     3
+Default rates (first 90 days past due, by calendar year      6     6
+The bureau's new scale (Chapters 5, 11, 24)                  2     2
+Price test and adverse selection (Chapter 12)                2     2
+Rejects (Chapter 9)                                          2     2
+Fraud (Chapter 13)                                           1     1
+Payment holidays and what they hid (Chapters 6, 24, 25)      2     2
+Definition of default (Chapter 6)                            3     3
+Exposure at default (Chapter 19)                             1     1
+Loss given default (Chapter 19)                              5     5
+Rates and mortgages (Chapters 3, 26)                         1     1
+Collections test (Chapter 25)                                1     1
+Stated income (Chapters 5, 13)                               1     1
+Cards moved to a new processor (Chapter 6)                   1     1
+Fair lending (Chapter 13)                                    1     1
+Small business and the emergency loans (Chapters 16, 19      2     2
+The commercial book (Chapters 14-18)                         5     5
+Fixes found while writing Part I                             9     9
+all                                                         48    48
+verifier exit status 0
+
+  mean bureau score, v3 minus v2                            29.826
+  take-up, minus_150 arm minus plus_150 arm                  0.161
+  latent quality, booked minus walked away                  -0.164
+  declined personal applicants' true 12-month bad rate       0.155
+  fraud accounts missing their first payment                 1.000
+  missed a payment Oct 2020-Jun 2021: holiday / none         2.095
+  defaulted cards: utilisation 12 months before          0.47/0.64
+  cured next month: call_first minus sms_first               0.042
+  emergency loans ever 90 days past due                      0.309
+  internal grades unchanged at annual review                 0.501

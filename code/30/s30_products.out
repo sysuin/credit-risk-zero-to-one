@@ -1,0 +1,11 @@
+Default rate by product and year, % (2021 definition)
+            2017  2018  2019  2020  2021  2022  2023  2024  2025
+personal    3.78  3.85  3.00  6.47  3.68  3.00  2.71  3.23  2.43
+card        3.41  2.90  3.07  5.32  3.24  2.22  2.80  3.05  2.23
+auto        2.99  2.73  2.24  4.44  2.20  1.79  2.52  2.17  1.77
+mortgage    0.52  0.25  0.43  0.72  0.57  0.67  0.41  0.75  0.64
+correlation of products' yearly rates, 6 pairs: 0.04 to 0.95
+  personal   worst year 2020, 2020 / 2019 2.16x, mean corr 0.70
+  card       worst year 2020, 2020 / 2019 1.73x, mean corr 0.70
+  auto       worst year 2020, 2020 / 2019 1.99x, mean corr 0.64
+  mortgage   worst year 2024, 2020 / 2019 1.68x, mean corr 0.16

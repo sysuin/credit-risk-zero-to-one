@@ -1,0 +1,17 @@
+product    applied declined approved walked open booked  rate
+personal    80,506   37,634   42,872 16,082  102 26,688   33%
+card        54,232   23,186   31,046  6,730  105 24,211   45%
+auto        34,633   11,936   22,697  7,255   46 15,396   44%
+mortgage     8,507    3,686    4,821    353   11  4,457   52%
+all        177,878   76,442  101,436 30,420  264 70,752   40%
+
+channel    applied declined approved walked open booked  rate
+branch      74,769   30,903   43,866 11,954   85 31,827   43%
+online      50,385   22,053   28,332  8,031  115 20,186   40%
+broker      31,158   16,150   15,008  5,933   33  9,042   29%
+dealer      21,566    7,336   14,230  4,502   31  9,697   45%
+
+branch   27% of approvals walked away
+online   28% of approvals walked away
+broker   40% of approvals walked away
+dealer   32% of approvals walked away

@@ -1,0 +1,23 @@
+personal-loan applicants, 2016-2025, frauds left out
+z               apps bureau v3   income approved   took  true PD
+below -1.5     7,483       491   26,800     2.5%  34.9%   39.11%
+-1.5 to -0.5  21,944       573   35,300    20.4%  38.4%   14.76%
+-0.5 to 0.5   29,838       645   44,300    64.3%  57.9%    4.33%
+0.5 to 1.5    16,597       717   56,000    90.1%  71.5%    0.86%
+above 1.5      4,136       792   70,350    95.0%  75.3%    0.11%
+correlation with z: bureau score 0.90, Mark I 0.84,
+  log of true income 0.44
+
+two 2025 applicants on the same Mark I score, 600
+  app_id                         A00077005       A00076791
+  z                                  -0.72            1.11
+  age                                   54              21
+  bureau_score                         586             672
+  revolving_utilisation               0.38            0.49
+  enquiries_6m                           2               0
+  worst_status_24m                       0               0
+  stated_income                    $59,800         $17,900
+  true_income                      $59,849         $17,950
+  decision                         approve         approve
+  offered_rate_pct                   15.7%           15.7%
+  outcome                           booked    not_taken_up

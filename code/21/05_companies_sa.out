@@ -1,0 +1,13 @@
+rating           firms   drawn  undrawn     EAD  weight     RWA
+AAA                  6     295      193     372     20%      74
+AA                   2      43       51      63     20%      13
+A                    7     188       88     223     50%     112
+BBB                  9     194       90     230     75%     173
+BB                   3      97       40     113    100%     113
+B                    3     105       46     124    150%     185
+CCC                  3     141       44     159    150%     238
+unrated, small      35     150       89     186     85%     158
+unrated            162   3,100    1,474   3,690    100%   3,690
+all                230   4,313    2,116   5,159   92.2%   4,755
+$m; undrawn: revolvers' headroom, converted at 40%
+rated: 33 firms, 25% of EAD

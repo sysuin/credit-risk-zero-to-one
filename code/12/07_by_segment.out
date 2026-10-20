@@ -1,0 +1,12 @@
+                    n -1.5 took n +1.5 took    gap    95% interval
+branch and online      203  74%    186  55%  -18.5   -27.9 to -9.2
+broker                  42  62%     33  58%   -4.3   -26.7 to +18.0
+Mark II-R under 590    153  63%    118  39%  -23.8   -35.4 to -12.1
+Mark II-R 590 up        92  87%    101  75%  -11.7   -22.6 to -0.8
+
+Logistic model on all 4,736 approvals of 2024, tier and broker held
+  log odds of taking the loan per point -0.403
+  (95% interval -0.562 to -0.244)
+  from 30% at today's price: 39% a point cheaper, 22% a point dearer
+  from 64% at today's price: 73% a point cheaper, 54% a point dearer
+  from 90% at today's price: 93% a point cheaper, 86% a point dearer

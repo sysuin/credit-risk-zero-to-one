@@ -1,0 +1,9 @@
+open instalment loans: 18,094
+no fees or commissions in Fernhill's records, so the EIR is
+the rate booked, to within 0.009 points (payments are rounded)
+
+rate type              loans  booked  in force
+fixed                 14,557   9.56%     9.56%
+fixed_then_variable    1,274   4.01%     5.88%
+variable               2,263   6.59%     7.35%
+mean rates; a floating loan's EIR is the rate in force

@@ -1,0 +1,21 @@
+31 Dec 2025: unemployment 5.03%, policy rate 3.75%
+
+Unemployment, % (yearly average; peak month to 2030)
+scenario     weight   2026   2027   2028   peak
+upside          15%   4.73   4.47   4.42   4.96
+base            40%   4.95   4.87   4.82   4.99
+downside        30%   6.04   7.13   6.44   7.40
+severe          15%   6.95   9.82   8.94  10.40
+stress_2026    none   6.78   8.80   8.14   9.10
+
+Policy rate and prices (lowest index against Dec 2025)
+scenario     rate 2027 rate peak   houses    cars  GDP low
+upside           3.69%     3.75%    +0.7%   +0.4%     1.5%
+base             3.44%     3.71%    +0.4%   +0.2%     1.4%
+downside         2.54%     3.61%    -8.0%   -4.8%    -1.6%
+severe           1.09%     3.44%   -24.0%  -14.4%    -5.2%
+stress_2026      6.20%     6.50%   -29.0%  -17.4%    -4.4%
+
+The decade, 2016-2025: unemployment peaked at 9.65% (Apr 2020),
+highest yearly average 7.32% (2020); policy rate at most 4.75%;
+worst fall in house prices 9.3%, in used cars 20.6%

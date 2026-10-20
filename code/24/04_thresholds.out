@@ -1,0 +1,12 @@
+Personal-loan applicants; rolling = the 12 months before;
+fixed = 2016's applicants. Noise = the 99% level for the month.
+alarm rule                       false    first      rang
+                                alarms    after   Jul-Mar
+score PSI >= 0.10, rolling           0    never    0 of 9
+score PSI >= noise, rolling          0  2019-07    4 of 9
+score PSI >= noise, fixed            0  2019-07    6 of 9
+mean shift |z| >= 3, rolling         0  2019-07    4 of 9
+bureau line >= 0.10, rolling         0  2019-07    4 of 9
+bureau line >= noise, rolling        0  2019-07    7 of 9
+(false alarms counted over 30 months, Jan 2017 - Jun 2019)
+July 2019: bureau line 0.197 against noise 0.036; score z 4.9

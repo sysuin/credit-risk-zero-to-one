@@ -1,0 +1,18 @@
+CDS quotes: 2,621 month ends on 25 clients, from Jan 2016
+  percentile       10      25      50      75      90      99
+  spread, bp       10      13      16      20     174    3107
+
+widest quotes ever
+  Ash Birch Logistics         16,680 bp   defaulted Jun 2021
+  Vale Linden Retail           9,748 bp   defaulted Jun 2024
+  Oak Cedar Engineering        6,570 bp   no default
+  Elm Harbour Components       6,256 bp   no default
+
+what a spread implies (loss given default 60%)
+  spread, bp    hazard  1-year PD  5-year PD
+          15     0.25%      0.25%       1.2%
+          50     0.83%      0.83%       4.1%
+         100     1.67%      1.65%       8.0%
+         300     5.00%      4.88%      22.1%
+       1,000    16.67%     15.35%      56.5%
+       3,000    50.00%     39.35%      91.8%

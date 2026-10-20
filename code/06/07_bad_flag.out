@@ -1,0 +1,12 @@
+personal loans opened 2019-2023: 12,835; first 12 months:
+  good: never missed a payment         11,582  90.24%
+  indeterminate: worst 30 or 60 dpd       859   6.69%
+  bad: reached 90 days past due           394   3.07%
+  (of the good, closed inside 12 months: 3,269)
+bad rate excluding indeterminates: 3.29%
+
+window         bad  bad rate  indeterminate
+ 6 months     165     1.29%          3.26%
+12 months     394     3.07%          6.69%
+18 months     602     4.69%          9.16%
+24 months     741     5.77%         11.03%

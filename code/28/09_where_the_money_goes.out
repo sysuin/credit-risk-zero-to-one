@@ -1,0 +1,16 @@
+base scenario, the whole life of the deal            dollars
+the loans pay interest                          13,297,354
+and the sold cars bring in                       1,668,470
+which pays, in the waterfall's order
+  the servicer (Fernhill)                          1,296,760
+  class A interest                                 4,658,156
+  class B interest                                 1,087,955
+  defaulted principal made good                    2,294,141
+  released to class C                              5,628,812
+if Fernhill kept the loans
+  interest                                        13,297,354
+  less funding at its cost of funds, 3.25%        -4,214,471
+  less net losses                                   -625,671
+  margin, before running costs and capital         8,457,212
+class C: face $1,858,320; pays back $7,487,132
+  worth $5,691,639 discounted at 15% a year, 3.1 times its face

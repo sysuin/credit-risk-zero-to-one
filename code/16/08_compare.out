@@ -1,0 +1,14 @@
+1,829 reviews, 35 defaults: Gini with its 95% interval
+                         Gini        interval    gain   P>0
+Ballast PD              0.873    0.792  0.938  +0.097   99%
+Ballast grade           0.865    0.789  0.927  +0.089   99%
+Fernhill model grade    0.857    0.781  0.918  +0.081   99%
+analysts' grade         0.776    0.641  0.867
+
+share of the 35 defaulters graded 8 or worse (PD 5%+)
+reviews before default     n  Ballast  Fernhill  analysts
+1                         35      83%       91%       86%
+2                         35      54%       83%       69%
+3                         33      24%       39%       39%
+all reviews (2017-24)   1829      11%       20%       17%
+median grade at the last review: Ballast 9, Fernhill 10, analysts 9

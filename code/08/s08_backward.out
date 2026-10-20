@@ -1,0 +1,9 @@
+drop open_accounts            p 0.373
+drop employment_months        p 0.360
+drop amount_requested         p 0.259
+drop worst_status_24m         p 0.083
+kept 8 besides bureau_file:
+  address_months, bureau_score, dti
+  enquiries_6m, income, oldest_account_months
+  revolving_balance, revolving_utilisation
+same set as forward selection: True

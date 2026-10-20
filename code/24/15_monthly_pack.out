@@ -1,0 +1,107 @@
+FERNHILL BANK  CREDIT MONITORING PACK
+Month end 31 December 2025; produced by Ballast
+
+FOR ATTENTION
+  1. card Mark I +11.1 points on 2016 (PSI 0.082)
+  2. auto Mark I +15.3 points on 2016 (PSI 0.092)
+  3. Mark II-R promise outside the seen interval in 2024Q2
+  4. 1 new on the commercial watchlist
+  5. Ballast's 2025 approval ratio F/M 0.957, interval below 1
+  6. never-paid loans up in branch
+
+1 WHO IS APPLYING: SCORE STABILITY
+----------------------------------
+December 2025 against the 12 months before and a fixed reference
+(Mark I: 2016's applicants; Mark II-R: Jan 2023-Jun 2024)
+score                  apps   mean  shift  PSI fix  PSI 12m   noise
+personal, Mark I        724  583.1   +9.7    0.032    0.007   0.032
+card, Mark I            547  592.0  +11.1    0.082    0.031   0.043
+auto, Mark I            307  598.8  +15.3    0.092    0.035   0.076
+personal, Mark II-R     724  565.3   -1.3    0.013    0.010   0.031
+bureau score (all applicants with a file): PSI 12m 0.002
+Mark II-R's line that moved most: address_months
+  PSI 0.007, -0.4 points
+
+2 EARLY ARREARS BY QUARTER OPENED
+---------------------------------
+share of loans 30+ days behind by month 3 / 60+ by month 6;
+norm = the mean of the eight quarters before those shown
+product      opened  loans   30+ m3   60+ m6
+personal     2024Q3    682    1.76%    1.32%
+             2024Q4    747    1.47%    1.87%
+             2025Q1    853    0.94%    0.70%
+             2025Q2    740    2.16%    2.43%
+             2025Q3    761    1.97%       ..
+               norm           1.99%    1.84%
+card         2024Q3    695    1.01%    1.29%
+             2024Q4    714    0.98%    1.40%
+             2025Q1    627    1.28%    1.44%
+             2025Q2    701    1.71%    1.85%
+             2025Q3    715    1.68%       ..
+               norm           1.37%    1.39%
+
+3 THE BAND ABOVE THE CUT-OFF (554-569)
+--------------------------------------
+2025 loans with 3+ months: 230, 30+ by month 3 4.78%
+same band, Jan 2023-Jun 2024: 563 loans, 3.20%; z +1.2
+
+4 MARK II-R: PROMISES AND RANKING (COMPLETE WINDOWS)
+----------------------------------------------------
+quarter     loans  promised    seen       interval
+2023Q3        735     3.10%   3.40%    2.21%-4.98%
+2023Q4        745     3.20%   2.42%    1.44%-3.79%
+2024Q1        830     3.26%   3.49%    2.35%-4.98%
+2024Q2        729     3.14%   1.78%    0.95%-3.03%  out
+Gini: development 2016-22 0.539; since 2023 0.551
+
+5 EXISTING CUSTOMERS: BEHAVIOURAL SCORE, DEC 2025
+-------------------------------------------------
+product        band  accounts   balance   vs Sep   12m bad
+personal       <560        89      1.2%    -0.2%    33.69%
+            560-589     1,752     32.9%    +0.4%     3.62%
+            590-609     1,107     12.0%    -0.3%     2.23%
+               610+     3,637     53.8%    +0.1%     0.93%
+                all     6,585      100%              2.31%
+card           <560       320      2.7%    -0.1%    21.88%
+            560-589     2,430     17.6%    +0.1%     4.08%
+            590-609     3,868     27.3%    -0.8%     1.93%
+               610+     8,564     52.4%    +0.9%     0.69%
+                all    15,182      100%              2.00%
+accounts open, not in default, at most two payments behind
+
+6 COMMERCIAL CLIENTS: THE WATCHLIST, DEC 2025
+---------------------------------------------
+230 clients; 70 on the list (69 by grade 8+, 4 by early warning)
+client name                       grade  drawn      trigger
+C0001  Upland Falcon Partners         9    76%  revolver_75
+C0014  Falcon Maple Engineering       8    46%  revolver_up
+C0159  Iron Vale Systems              8    72%  revolver_up
+C0160  River Juniper Retail           6    48%  revolver_up new
+
+7 SMALL BUSINESS: SME-1 + BANK DATA (SHADOW), 2025
+--------------------------------------------------
+1,248 applications with bank data; SME-1 approved 60.5%
+shadow at the same approval rate agrees on 88.1%;
+  it would approve 74 SME-1 declined and decline 74 it approved
+
+8 FAIR LENDING
+--------------
+approval, women over men (F/M), 95% interval
+decisions          ratio      interval
+Fernhill 2023      1.041   1.001-1.084
+Fernhill 2024      0.987   0.945-1.026
+Fernhill 2025      0.976   0.938-1.015
+Ballast 2025       0.957   0.922-0.993
+seen / promised bad rate by age: 18-24 0.40  35-49 0.73  65+ 0.99
+first reasons, 2,598 score declines and referrals: 7 different;
+  most common enquiries_6m 41%, then dti 21%
+
+9 FRAUD
+-------
+2025 referrals by Ballast's rules: 155 (12.9 a month)
+  branch 37, broker 37, online 81
+loans that never paid (first three payments missed)
+channel       2024   never    2025   never
+branch       1,023   0.20%     774   0.65%
+broker         358   0.28%     256   0.00%
+online       1,508   1.19%   1,222   0.57%

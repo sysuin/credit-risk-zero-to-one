@@ -1,0 +1,16 @@
+product         workouts  2016-21    LGD  downturn  worst  cured
+auto                 910    30.8%  29.4%     39.3%   2018    16%
+card               2,427    67.5%  68.8%     70.1%   2017    15%
+mortgage             110     2.1%   2.7%      2.7%      -    65%
+personal           1,759    64.6%  65.1%     68.8%   2018    16%
+sme_emergency        687    16.3%  17.3%     17.7%   2023    14%
+sme_overdraft        112    59.3%  66.1%     66.1%      -    18%
+sme_term             316    21.3%  23.3%     24.1%   2020    19%
+2016-21: finished workouts only; LGD: every year, unfinished
+ones completed by the recovery curve; worst: the year that
+sets the downturn LGD (30 workouts or more, to 2023)
+
+CCF, cards, by use of the limit a year before:
+  0%-30% 0.32  30%-50% 0.30  50%-70% 0.30  70%-90% 0.05  90%+ 0.00
+CCF, sme_overdraft 0.34; commercial revolvers 0.76
+saved: lgd.json, ead.json in data/ballast/parameters/

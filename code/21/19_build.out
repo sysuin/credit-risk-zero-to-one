@@ -1,0 +1,15 @@
+rwa_2025-12-31.parquet: 34,915 exposures, 34 columns
+IRB RWA saved $5,320,552,984; run again $5,320,552,984
+
+$m                     SA RWA  IRB RWA  IRB EL
+auto                     74.4     43.2    0.89
+card                     34.6     21.5    1.05
+commercial_revolver   1,999.1  2,003.4   33.85
+commercial_term       2,756.3  2,959.4   46.46
+mortgage                255.3     49.2    0.68
+personal                 44.0     47.8    1.38
+sme_emergency             6.1      8.5    0.28
+sme_overdraft            86.7    109.8    2.26
+sme_term                146.0     77.7    2.47
+commercial            4,755.4  4,962.8
+retail                  647.0    357.8

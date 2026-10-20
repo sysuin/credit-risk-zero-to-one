@@ -1,0 +1,22 @@
+A00071007, 2025-01-07, broker, $8,400 over 60 months
+Fernhill: Mark I 573 against 580 -> approve, not_taken_up
+
+Mark II-R, line by line (base 484)
+  line                  bin              points  best
+  bureau_file           file                  7     7
+  enquiries_6m          1-2                  15    24
+  bureau_score          630-679              15    48
+  oldest_account_months <54                   0    13
+  address_months        10+                  10    10
+  dti                   0.32+                 0    20
+  income                40,000-91,999         3     7
+  revolving_utilisation 0.55+                 0    21
+  revolving_balance     7,200+                9     9
+  worst_status_24m      30+                   0     9
+  score                                     543
+
+Ballast: decline at the score (cut-off 554, refer from 550)
+  1. credit bureau score (can act)
+  2. share of card limits in use (can act)
+  3. existing debt payments against income (can act)
+  4. length of credit history (cannot act)

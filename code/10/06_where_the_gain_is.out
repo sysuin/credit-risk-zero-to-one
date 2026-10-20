@@ -1,0 +1,11 @@
+bads missing the first payment: holdout 39/157, out_of_time 31/114
+
+                                     holdout   out of time
+model                            Gini   gain   Gini   gain
+Mark II                         0.575 +0.000  0.569 +0.000
+challenger, 21 characteristics  0.646 +0.070  0.634 +0.065
+Mark II's 8, raw                0.639 +0.063  0.627 +0.058
+21, no interactions             0.604 +0.028  0.603 +0.035
+without the first-payment bads:
+  Mark II                       0.455 +0.000  0.441 +0.000
+  challenger                    0.543 +0.089  0.514 +0.073

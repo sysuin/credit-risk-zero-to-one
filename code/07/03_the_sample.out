@@ -1,0 +1,9 @@
+split         loans  bads  indet.  bad rate  holiday
+train        12,295   375     220     3.11%      279
+holdout       5,270   157      96     3.03%       96
+out_of_time   4,640   114      76     2.50%        0
+fitted to    12,075   375
+
+development loans with a 2020 payment holiday in their window:
+  no holiday   16,883 loans  517 bads  3.06%
+  holiday         366 loans   15 bads  4.10%

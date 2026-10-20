@@ -1,0 +1,17 @@
+Personal approvals: 42,872; offered less than asked 1,180;
+  amount rule reproduces 100.0%
+Card approvals: 31,046; limit grid reproduces 100.0%
+
+The card limit grid: opening limit by Mark I score and income
+      income      under 620        620-659   660 and over
+     $20,000         $1,400         $2,400         $3,600
+     $40,000         $2,800         $4,800         $7,200
+     $60,000         $4,200         $7,200        $10,800
+    $100,000         $7,000        $12,000        $18,000
+    $150,000        $10,500        $18,000        $20,000
+
+Cards opened 2016-2020, by score band
+  band            cards  median limit  used at 12m  90+ by 12m
+  under 620       4,340        $3,000          40%        4.0%
+  620-659         3,565        $6,000          30%        2.1%
+  660 and over    2,278       $10,600          21%        0.8%

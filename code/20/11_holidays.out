@@ -1,0 +1,13 @@
+scenarios moved +1.84 points to start at Dec 2020's unemployment
+retail, performing   accounts stage 2     PD expected actual  ratio
+no holiday             16,303   12.1%  4.22%      689    392   0.57
+took a holiday          3,400   17.7%  7.26%      247    212   0.86
+
+missed a payment in Oct-Dec 2020: holiday 6.2%, others 2.2%
+holiday group riskier by: engine x1.72, Oct-Dec misses x2.78
+
+holiday group's provision $1.92m; overlays:
+  on the day, x1.62: +$1.18m
+  in hindsight, x1.51: +$0.98m
+  all holiday takers in stage 2: +$0.98m
+all performing retail: expected 935 defaults in 2021, saw 604

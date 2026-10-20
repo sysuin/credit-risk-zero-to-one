@@ -1,0 +1,14 @@
+product           loans  to the cent
+auto             15,396       15,396
+mortgage          4,457        4,457
+personal         26,688       26,688
+sme_emergency     2,080        2,080
+sme_term          3,363        3,363
+all              51,984       51,984
+
+loans with a first instalment so far: 51,457
+  asked for the booked payment:       50,612
+  asked for something else:           845
+    mortgage (variable): 202
+    sme_term (variable): 643
+  ...reproduced at the rate in force: 845 of 845

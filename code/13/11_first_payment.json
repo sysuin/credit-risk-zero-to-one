@@ -1,0 +1,46 @@
+{
+ "never_paid": {
+  "before the push": {
+   "branch": 0.00319,
+   "online": 0.00553,
+   "broker": 0.00569
+  },
+  "the push": {
+   "branch": 0.00833,
+   "online": 0.02504,
+   "broker": 0.00988
+  },
+  "after the push": {
+   "branch": 0.00266,
+   "online": 0.01463,
+   "broker": 0.01017
+  },
+  "from June 2023": {
+   "branch": 0.00374,
+   "online": 0.00859,
+   "broker": 0.00372
+  }
+ },
+ "then_paid": {
+  "before the push": {
+   "branch": 0.00194,
+   "online": 0.00173,
+   "broker": 0.00284
+  },
+  "the push": {
+   "branch": 0.00167,
+   "online": 0.00334,
+   "broker": 0.0037
+  },
+  "after the push": {
+   "branch": 0.00266,
+   "online": 0.00258,
+   "broker": 0.0
+  },
+  "from June 2023": {
+   "branch": 0.00208,
+   "online": 0.002,
+   "broker": 0.0
+  }
+ }
+}

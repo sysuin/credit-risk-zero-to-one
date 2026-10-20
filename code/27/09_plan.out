@@ -1,0 +1,17 @@
+repricing, bps: grade 5 +64, grade 6 +93, grade 7 +188, grade 8 +266
+
+supervisor scenario                 trough    loss    NII  watch
+today                                -2.1%
+watchlist headroom cancelled          1.2%   1,056    207    819
+watchlist maturities not renewed      1.8%   1,012    201    648
+clients cut to 10% of Tier 1          2.0%     987    195    648
+grades 5-8 repriced                   3.6%     987    223    648
+watchlist down to its limit           9.5%     697    214    283
+loss over three years and NII a year, $m; watch = watchlist EAD
+the first four steps are 2026's plan; the fifth is 2027's
+2026 plan, severe   trough 13.5% (today 9.7%)
+2026 plan, base     trough 18.5% (today 15.7%)
+
+economic capital $820.1m -> $629.7m (60.2% of CET1);
+expected loss $150.3m -> $107.5m; largest client 10.0% of Tier 1
+saved to data/ballast/appetite/plan_2025-12-31.json

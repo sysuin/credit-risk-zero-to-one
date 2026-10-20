@@ -1,0 +1,24 @@
+retail (personal, card, car, small business)  75%
+residential mortgage, by loan-to-value:
+  up to 50%       20%
+  50% to 60%      25%
+  60% to 80%      30%
+  80% to 90%      40%
+  90% to 100%     50%
+  over 100%       70%
+companies, by agency rating:
+  AAA             20%
+  AA              20%
+  A               50%
+  BBB             75%
+  BB             100%
+  B              150%
+  CCC            150%
+  unrated        100%   (sales under $50m: 85%)
+defaulted: 150%; 100% if provisions are 20%+ of it;
+  mortgages 100%; the exposure is net of its provision
+undrawn limits converted at:
+  card                    10%
+  sme_overdraft           10%
+  commercial_revolver     40%
+guaranteed by the government: 80% of each emergency loan, at 0%

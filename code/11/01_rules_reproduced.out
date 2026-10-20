@@ -1,0 +1,19 @@
+Mark I recomputed from its points table
+  product     applications  same score
+  auto              34,633      34,633
+  card              54,232      54,232
+  personal          80,506      80,506
+
+Policy rules recomputed against the recorded reason
+  rule                       fires  recorded  as fraud
+  recent_serious_arrears    11,459    11,437        22
+  public_record              7,717     7,696        21
+  thin_file                  6,683     6,670        13
+  affordability              6,045     6,031        14
+  none, but recorded             0
+
+Personal loans 2016-2025 that passed the rules
+  zone             applicants  approved  overrides
+  below the band       16,675      1.2%        197
+  refer band            6,933     46.4%         75
+  above the band       39,743     99.3%        282

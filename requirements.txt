@@ -1,0 +1,27 @@
+# Everything the book runs on, grouped by the part that first needs it. Python 3.12.
+#
+# Lower bounds, not pins, as in the earlier books of the series. A pin in a book is a
+# promise that expires; a lower bound says what the code assumes. Appendix C lists the
+# exact versions the book's printed output came from.
+
+# --- Part I: a loan book in Python
+numpy>=2.0
+pandas>=2.2
+duckdb>=1.1           # Fernhill's loan book: an analytical database in a file
+pyarrow>=17.0
+
+# --- Part II: scoring and deciding
+scipy>=1.13           # distributions, optimisation, the Vasicek and Merton formulas
+statsmodels>=0.14     # logistic regression with standard errors, the scorecard's model
+scikit-learn>=1.5     # splits, metrics, isotonic calibration
+lightgbm>=4.3         # gradient boosting with monotone constraints, Chapter 10
+
+# --- The toolchain the repository itself uses
+pytest>=8.0
+ruff>=0.6
+pyyaml>=6.0
+matplotlib>=3.9       # a few figures are plotted from listing output
+pypdf>=4.0            # the build's page count
+pdfplumber>=0.11      # check_release.py: margins, type size and index pages, measured
+fonttools>=4.50       # _lint_glyphs.py: what the mono font can actually print
+pillow>=10.4          # figlib.py measures text with the real fonts; cover.py

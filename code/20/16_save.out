@@ -1,0 +1,11 @@
+saved data/ballast/ecl/ecl_2025-12-31.parquet
+read back: 34,915 accounts, 21 columns
+
+segment      stage  accounts     balance   provision   cover
+commercial       1       244      3,015m      24.62m   0.82%
+commercial       2       121      1,299m     198.26m  15.27%
+retail           1    32,779      1,348m       3.68m   0.27%
+retail           2     1,554         43m       3.09m   7.23%
+retail           3       217          7m       1.55m  21.48%
+all                   34,915      5,712m     231.20m   4.05%
+CECL alongside: $289.67m

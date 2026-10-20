@@ -1,0 +1,9 @@
+DD         company-years  defaults    rate  mean PD  expected
+below 1               16         7   43.8%    27.8%      4.45
+1 to 2                29         2    6.9%     7.5%      2.19
+2 to 3                43         0    0.0%     0.6%      0.27
+3 and up             398         0    0.0%     0.0%      0.02
+all                  486         9    1.9%     1.4%      6.92
+
+if the PDs were right, 90% of runs of these company-years
+  would see between 3 and 12 defaults; there were 9

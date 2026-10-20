@@ -1,0 +1,5 @@
+          definition   mean rate    MLE   90% interval
+card      dpd90            3.02%  0.015    0.007-0.036
+personal  dpd90            3.36%  0.015    0.007-0.038
+card      dod2021          3.14%  0.012    0.006-0.029
+personal  dod2021          3.57%  0.015    0.007-0.037

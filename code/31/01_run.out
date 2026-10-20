@@ -1,0 +1,77 @@
+ 1 data        rerun  Ch 5        3 checks, all equal
+ 2 performance rerun  Ch 1, 6     3 checks, all equal
+ 3 decisions   rerun  Ch 11       6 checks, all equal
+ 4 prices      rerun  Ch 12       2 checks, all equal
+ 5 parameters  saved  Ch 18, 19   3 checks, all equal
+ 6 provision   rerun  Ch 20       6 checks, all equal
+ 7 capital     rerun  Ch 21       4 checks, all equal
+ 8 portfolio   saved  Ch 22       3 checks, all equal
+ 9 stress      rerun  Ch 26       4 checks, all equal
+10 validation  saved  Ch 23, 29   1 check, all equal
+11 monitoring  rerun  Ch 24, 29   3 checks, all equal
+12 governance  rerun  Ch 29       2 checks, all equal
+13 appetite    rerun  Ch 27       2 checks, all equal
+14 pack        rerun  Ch 27       2 checks, all equal
+44 of 44 figures equal
+
+  figure                                    now in its chapter  =
+DATA  (rerun, Ch 5)
+  applications, every check             177,878        177,878  yes
+  accounts                               87,762         87,762  yes
+  account-months                      2,487,898      2,487,898  yes
+PERFORMANCE  (rerun, Ch 1, 6)
+  personal charge-offs, 2024          1,706,057      1,706,057  yes
+  personal charge-offs, 2025          1,360,891      1,360,891  yes
+  personal default rate, 2025             2.43%          2.43%  yes
+DECISIONS  (rerun, Ch 11)
+  decisions, rerun = saved file      9,691 rows           file  yes
+  2025 applications decided               9,691          9,691  yes
+  approved                                5,120          5,120  yes
+  referred to an underwriter                697            697  yes
+  declined at the rules                   1,973          1,973  yes
+  declined on the score                   1,901          1,901  yes
+PRICES  (rerun, Ch 12)
+  approved or referred, priced            5,817          5,817  yes
+  Ballast's price, quoted ones           13.37%         13.37%  yes
+PARAMETERS  (saved, Ch 18, 19)
+  personal hazard, a point of u           0.224          0.224  yes
+  personal-loan LGD                       65.1%          65.1%  yes
+  commercial revolver CCF                  0.76           0.76  yes
+PROVISION  (rerun, Ch 20)
+  provision, rerun = saved file    $231,203,252           file  yes
+  CECL, rerun = saved file         $289,672,613           file  yes
+  personal 12-month PD, weighted          2.98%          2.98%  yes
+  provision, 31 Dec 2025                231.20m        231.20m  yes
+  accounts and facilities                34,915         34,915  yes
+  CECL alongside                       $289.67m       $289.67m  yes
+CAPITAL  (rerun, Ch 21)
+  RWA, rerun = saved file        $5,320,552,984           file  yes
+  credit RWA, standardised       $5,402,435,086 $5,402,435,086  yes
+  credit RWA, IRB                $5,320,552,984 $5,320,552,984  yes
+  CET1 ratio, standardised                16.7%          16.7%  yes
+PORTFOLIO  (saved, Ch 22)
+  expected loss, simulated              $150.3m        $150.3m  yes
+  loss in 1 year in 1,000               $970.4m        $970.4m  yes
+  economic capital                      $820.1m        $820.1m  yes
+STRESS  (rerun, Ch 26)
+  supervisor's, rerun = saved        0.00 cents           file  yes
+  CET1 trough, severe                      9.7%           9.7%  yes
+  CET1 trough, supervisor's               -2.1%          -2.1%  yes
+  reverse stress, saved                  x 0.51         x 0.51  yes
+VALIDATION  (saved, Ch 23, 29)
+  approved with conditions, not            5, 1           5, 1  yes
+MONITORING  (rerun, Ch 24, 29)
+  December pack, rerun = saved        107 lines           file  yes
+  card score PSI on 2016                  0.082          0.082  yes
+  alerts for attention                        6              6  yes
+GOVERNANCE  (rerun, Ch 29)
+  inventory, rerun = saved                   21           file  yes
+  models, live                           21, 20         21, 20  yes
+APPETITE  (rerun, Ch 27)
+  statement, rerun = saved           14 metrics           file  yes
+  green, amber, red                     4, 3, 7        4, 3, 7  yes
+PACK  (rerun, Ch 27)
+  pack, written = saved             6,921 bytes           file  yes
+  pack lines                                172            172  yes
+
+saved data/ballast/run/run_2025-12-31.json

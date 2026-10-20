@@ -1,0 +1,13 @@
+characteristic            VIF all  VIF file
+income                       1.43      1.47
+revolving_balance            1.40      1.41
+amount_requested             1.37      1.38
+revolving_utilisation        1.33      1.35
+bureau_score                 1.24      1.21
+worst_status_24m             1.21      1.02
+open_accounts                1.18      1.02
+dti                          1.14      1.09
+enquiries_6m                 1.09      1.04
+oldest_account_months        1.07      1.03
+employment_months            1.06      1.06
+address_months               1.01      1.01

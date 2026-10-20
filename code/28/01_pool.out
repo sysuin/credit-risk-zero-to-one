@@ -1,0 +1,16 @@
+                                    loans       balance $
+car loans open on 31 Dec 2025       5,130      99,182,583
+  up to date                        5,086      98,344,906
+  and at least one payment made     4,942      93,501,906
+  and never in default              4,903      92,916,018
+  and something still owed          4,896      92,916,018
+
+Mark I band   loans     balance $    rate  months left    LTV
+<600            369     6,240,577  14.82%         41.7    66%
+600-629       1,066    19,727,466  11.26%         40.0    62%
+630-659       1,494    27,676,357  10.02%         39.9    61%
+660+          1,967    39,271,617   8.89%         39.8    58%
+all           4,896    92,916,018  10.13%         40.0    60%
+
+weighted age 17.1 months; largest loan $82,918;
+1.6% of the balance at an indexed LTV of 90% or more

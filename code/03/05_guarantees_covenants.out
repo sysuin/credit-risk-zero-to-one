@@ -1,0 +1,21 @@
+Small-business accounts, by what backs them
+product        guarantee          secured  unsecured
+sme_emergency  government_80pct         0      2,080
+sme_overdraft  director                 0        906
+sme_overdraft  none                     0        611
+sme_term       director               851      1,191
+sme_term       none                   309      1,012
+
+Small-business workouts closed with a loss, and what came back
+product        security   closed  guarantor  asset sold
+sme_emergency  none          573        572           0
+sme_overdraft  none           87         23           0
+sme_term       none          146         46           0
+sme_term       secured        86          8          82
+
+Commercial facilities and their covenants (medians)
+kind      secured   count         limit  max leverage  min cover
+revolver  no          227   $14,269,000         5.75x      5.00x
+revolver  yes         179   $14,944,000         6.00x      5.25x
+term      no          122   $14,212,000         6.25x      4.75x
+term      yes         369   $14,476,000         5.75x      5.25x

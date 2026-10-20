@@ -1,0 +1,467 @@
+{
+ "curve": [
+  {
+   "cutoff": 530,
+   "approval": 0.92711,
+   "bad_rate": 0.0597,
+   "marginal": 0.17366
+  },
+  {
+   "cutoff": 531,
+   "approval": 0.92177,
+   "bad_rate": 0.05897,
+   "marginal": 0.16851
+  },
+  {
+   "cutoff": 532,
+   "approval": 0.91751,
+   "bad_rate": 0.05842,
+   "marginal": 0.16414
+  },
+  {
+   "cutoff": 533,
+   "approval": 0.91145,
+   "bad_rate": 0.05764,
+   "marginal": 0.15988
+  },
+  {
+   "cutoff": 534,
+   "approval": 0.9061,
+   "bad_rate": 0.05699,
+   "marginal": 0.155
+  },
+  {
+   "cutoff": 535,
+   "approval": 0.89913,
+   "bad_rate": 0.05615,
+   "marginal": 0.14955
+  },
+  {
+   "cutoff": 536,
+   "approval": 0.89234,
+   "bad_rate": 0.05536,
+   "marginal": 0.14542
+  },
+  {
+   "cutoff": 537,
+   "approval": 0.88519,
+   "bad_rate": 0.05455,
+   "marginal": 0.14167
+  },
+  {
+   "cutoff": 538,
+   "approval": 0.87966,
+   "bad_rate": 0.05395,
+   "marginal": 0.13868
+  },
+  {
+   "cutoff": 539,
+   "approval": 0.87061,
+   "bad_rate": 0.05299,
+   "marginal": 0.13514
+  },
+  {
+   "cutoff": 540,
+   "approval": 0.85866,
+   "bad_rate": 0.05175,
+   "marginal": 0.13043
+  },
+  {
+   "cutoff": 541,
+   "approval": 0.84942,
+   "bad_rate": 0.05081,
+   "marginal": 0.12602
+  },
+  {
+   "cutoff": 542,
+   "approval": 0.84127,
+   "bad_rate": 0.05001,
+   "marginal": 0.12193
+  },
+  {
+   "cutoff": 543,
+   "approval": 0.83394,
+   "bad_rate": 0.0493,
+   "marginal": 0.11801
+  },
+  {
+   "cutoff": 544,
+   "approval": 0.82733,
+   "bad_rate": 0.04869,
+   "marginal": 0.11397
+  },
+  {
+   "cutoff": 545,
+   "approval": 0.81945,
+   "bad_rate": 0.04798,
+   "marginal": 0.10992
+  },
+  {
+   "cutoff": 546,
+   "approval": 0.81103,
+   "bad_rate": 0.04725,
+   "marginal": 0.10729
+  },
+  {
+   "cutoff": 547,
+   "approval": 0.80234,
+   "bad_rate": 0.04652,
+   "marginal": 0.10475
+  },
+  {
+   "cutoff": 548,
+   "approval": 0.79229,
+   "bad_rate": 0.04569,
+   "marginal": 0.1027
+  },
+  {
+   "cutoff": 549,
+   "approval": 0.77707,
+   "bad_rate": 0.04447,
+   "marginal": 0.10019
+  },
+  {
+   "cutoff": 550,
+   "approval": 0.75607,
+   "bad_rate": 0.04279,
+   "marginal": 0.0961
+  },
+  {
+   "cutoff": 551,
+   "approval": 0.74348,
+   "bad_rate": 0.0418,
+   "marginal": 0.09307
+  },
+  {
+   "cutoff": 552,
+   "approval": 0.73017,
+   "bad_rate": 0.04076,
+   "marginal": 0.0894
+  },
+  {
+   "cutoff": 553,
+   "approval": 0.72202,
+   "bad_rate": 0.04014,
+   "marginal": 0.08633
+  },
+  {
+   "cutoff": 554,
+   "approval": 0.71478,
+   "bad_rate": 0.03961,
+   "marginal": 0.08345
+  },
+  {
+   "cutoff": 555,
+   "approval": 0.70373,
+   "bad_rate": 0.03883,
+   "marginal": 0.08027
+  },
+  {
+   "cutoff": 556,
+   "approval": 0.69558,
+   "bad_rate": 0.03826,
+   "marginal": 0.07865
+  },
+  {
+   "cutoff": 557,
+   "approval": 0.68517,
+   "bad_rate": 0.03757,
+   "marginal": 0.07602
+  },
+  {
+   "cutoff": 558,
+   "approval": 0.67195,
+   "bad_rate": 0.0367,
+   "marginal": 0.07438
+  },
+  {
+   "cutoff": 559,
+   "approval": 0.65447,
+   "bad_rate": 0.03557,
+   "marginal": 0.07262
+  },
+  {
+   "cutoff": 560,
+   "approval": 0.6312,
+   "bad_rate": 0.03407,
+   "marginal": 0.06968
+  },
+  {
+   "cutoff": 561,
+   "approval": 0.62007,
+   "bad_rate": 0.03335,
+   "marginal": 0.06791
+  },
+  {
+   "cutoff": 562,
+   "approval": 0.59363,
+   "bad_rate": 0.03164,
+   "marginal": 0.065
+  },
+  {
+   "cutoff": 563,
+   "approval": 0.58231,
+   "bad_rate": 0.0309,
+   "marginal": 0.06329
+  },
+  {
+   "cutoff": 564,
+   "approval": 0.57352,
+   "bad_rate": 0.03035,
+   "marginal": 0.06174
+  },
+  {
+   "cutoff": 565,
+   "approval": 0.55623,
+   "bad_rate": 0.02926,
+   "marginal": 0.05917
+  },
+  {
+   "cutoff": 566,
+   "approval": 0.54301,
+   "bad_rate": 0.02844,
+   "marginal": 0.05733
+  },
+  {
+   "cutoff": 567,
+   "approval": 0.53151,
+   "bad_rate": 0.02774,
+   "marginal": 0.05551
+  },
+  {
+   "cutoff": 568,
+   "approval": 0.52282,
+   "bad_rate": 0.02722,
+   "marginal": 0.05368
+  },
+  {
+   "cutoff": 569,
+   "approval": 0.51331,
+   "bad_rate": 0.02666,
+   "marginal": 0.05173
+  },
+  {
+   "cutoff": 570,
+   "approval": 0.49973,
+   "bad_rate": 0.02588,
+   "marginal": 0.04941
+  },
+  {
+   "cutoff": 571,
+   "approval": 0.49221,
+   "bad_rate": 0.02546,
+   "marginal": 0.04827
+  },
+  {
+   "cutoff": 572,
+   "approval": 0.48434,
+   "bad_rate": 0.02503,
+   "marginal": 0.04725
+  },
+  {
+   "cutoff": 573,
+   "approval": 0.4732,
+   "bad_rate": 0.02444,
+   "marginal": 0.04598
+  },
+  {
+   "cutoff": 574,
+   "approval": 0.45916,
+   "bad_rate": 0.02371,
+   "marginal": 0.0445
+  },
+  {
+   "cutoff": 575,
+   "approval": 0.44078,
+   "bad_rate": 0.02274,
+   "marginal": 0.04234
+  },
+  {
+   "cutoff": 576,
+   "approval": 0.43109,
+   "bad_rate": 0.02223,
+   "marginal": 0.04115
+  },
+  {
+   "cutoff": 577,
+   "approval": 0.42322,
+   "bad_rate": 0.02182,
+   "marginal": 0.04003
+  },
+  {
+   "cutoff": 578,
+   "approval": 0.41425,
+   "bad_rate": 0.02138,
+   "marginal": 0.0386
+  },
+  {
+   "cutoff": 579,
+   "approval": 0.40502,
+   "bad_rate": 0.02093,
+   "marginal": 0.03702
+  },
+  {
+   "cutoff": 580,
+   "approval": 0.39252,
+   "bad_rate": 0.02033,
+   "marginal": 0.03545
+  },
+  {
+   "cutoff": 581,
+   "approval": 0.38654,
+   "bad_rate": 0.02005,
+   "marginal": 0.03455
+  },
+  {
+   "cutoff": 582,
+   "approval": 0.37975,
+   "bad_rate": 0.01974,
+   "marginal": 0.03375
+  },
+  {
+   "cutoff": 583,
+   "approval": 0.36934,
+   "bad_rate": 0.01928,
+   "marginal": 0.03279
+  },
+  {
+   "cutoff": 584,
+   "approval": 0.35449,
+   "bad_rate": 0.01863,
+   "marginal": 0.03164
+  },
+  {
+   "cutoff": 585,
+   "approval": 0.34018,
+   "bad_rate": 0.018,
+   "marginal": 0.0305
+  },
+  {
+   "cutoff": 586,
+   "approval": 0.32832,
+   "bad_rate": 0.01748,
+   "marginal": 0.02964
+  },
+  {
+   "cutoff": 587,
+   "approval": 0.31827,
+   "bad_rate": 0.01703,
+   "marginal": 0.02893
+  },
+  {
+   "cutoff": 588,
+   "approval": 0.30723,
+   "bad_rate": 0.01655,
+   "marginal": 0.02783
+  },
+  {
+   "cutoff": 589,
+   "approval": 0.29636,
+   "bad_rate": 0.01608,
+   "marginal": 0.0266
+  },
+  {
+   "cutoff": 590,
+   "approval": 0.28595,
+   "bad_rate": 0.01563,
+   "marginal": 0.02528
+  },
+  {
+   "cutoff": 591,
+   "approval": 0.28024,
+   "bad_rate": 0.01539,
+   "marginal": 0.02461
+  },
+  {
+   "cutoff": 592,
+   "approval": 0.27644,
+   "bad_rate": 0.01523,
+   "marginal": 0.02405
+  },
+  {
+   "cutoff": 593,
+   "approval": 0.26829,
+   "bad_rate": 0.01492,
+   "marginal": 0.02327
+  },
+  {
+   "cutoff": 594,
+   "approval": 0.25851,
+   "bad_rate": 0.01454,
+   "marginal": 0.02255
+  },
+  {
+   "cutoff": 595,
+   "approval": 0.24484,
+   "bad_rate": 0.01401,
+   "marginal": 0.02176
+  },
+  {
+   "cutoff": 596,
+   "approval": 0.23669,
+   "bad_rate": 0.01369,
+   "marginal": 0.02119
+  },
+  {
+   "cutoff": 597,
+   "approval": 0.22745,
+   "bad_rate": 0.01334,
+   "marginal": 0.02068
+  },
+  {
+   "cutoff": 598,
+   "approval": 0.21586,
+   "bad_rate": 0.01289,
+   "marginal": 0.01979
+  },
+  {
+   "cutoff": 599,
+   "approval": 0.20599,
+   "bad_rate": 0.0125,
+   "marginal": 0.01888
+  },
+  {
+   "cutoff": 600,
+   "approval": 0.19893,
+   "bad_rate": 0.01222,
+   "marginal": 0.01817
+  }
+ ],
+ "fernhill": {
+  "approval": 0.64297,
+  "bad_rate": 0.03984
+ },
+ "mark1": [
+  {
+   "cutoff": 610,
+   "approval": 0.47166,
+   "bad_rate": 0.02832
+  },
+  {
+   "cutoff": 580,
+   "approval": 0.66244,
+   "bad_rate": 0.0406
+  },
+  {
+   "cutoff": 575,
+   "approval": 0.69196,
+   "bad_rate": 0.04263
+  },
+  {
+   "cutoff": 560,
+   "approval": 0.77599,
+   "bad_rate": 0.04878
+  },
+  {
+   "cutoff": 525,
+   "approval": 0.89134,
+   "bad_rate": 0.05878
+  }
+ ],
+ "chosen": 554,
+ "refer": [
+  550,
+  557
+ ],
+ "break_even": 0.12799
+}

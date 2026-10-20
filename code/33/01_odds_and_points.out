@@ -1,0 +1,21 @@
+scale: 600 points = odds of 50 to 1; 20 points double the odds
+ score  odds g:b  log odds  bad rate  logistic
+   540       6.3     1.833   13.793%   13.793%
+   560      12.5     2.526    7.407%    7.407%
+   580      25.0     3.219    3.846%    3.846%
+   600      50.0     3.912    1.961%    1.961%
+   620     100.0     4.605    0.990%    0.990%
+   640     200.0     5.298    0.498%    0.498%
+   660     400.0     5.991    0.249%    0.249%
+
+training sample: 12,075 loans, 375 bad, bad rate 0.0311
+odds 31.20 to 1, log odds 3.4404, 586.4 points
+bureau bin       WoE   ratio  prior x ratio  bin odds
+<630          -0.882   0.414          12.91     12.91
+630-679       -0.185   0.831          25.94     25.94
+680-709       +0.072   1.075          33.55     33.55
+710-759       +0.738   2.093          65.29     65.29
+760+          +1.457   4.295         134.00    134.00
+no file       -0.496   0.609          19.00     19.00
+
+fraud: prior 0.4%, likelihood ratio 15, after a flag 5.7%

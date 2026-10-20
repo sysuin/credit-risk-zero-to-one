@@ -1,0 +1,15 @@
+$m                      flat  Ballast     gap
+auto                    74.4     74.4     0.0
+card                    28.4     34.6    -6.2
+commercial_revolver  2,182.3  1,999.1   183.2
+commercial_term      3,598.6  2,756.3   842.3
+mortgage               307.0    255.3    51.7
+personal                44.2     44.0     0.2
+sme_emergency            8.0      6.1     1.9
+sme_overdraft           79.8     86.7    -6.9
+sme_term               162.6    146.0    16.6
+credit RWA           6,485.3  5,402.4 1,082.9
+
+repaid term-loan principal counted as a commitment: $621.5m
+flat weights           total RWA $7,361m, CET1 14.2%
+Ballast, standardised  total RWA $6,278m, CET1 16.7%

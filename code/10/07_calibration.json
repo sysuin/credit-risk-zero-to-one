@@ -1,0 +1,65 @@
+[
+ {
+  "band": "<540",
+  "loans": 34,
+  "bads": 25,
+  "observed": 0.735294,
+  "predicted": 0.477703,
+  "expected": 16.241918,
+  "p_value": 0.003058
+ },
+ {
+  "band": "540-559",
+  "loans": 105,
+  "bads": 13,
+  "observed": 0.12381,
+  "predicted": 0.095901,
+  "expected": 10.069653,
+  "p_value": 0.319001
+ },
+ {
+  "band": "560-579",
+  "loans": 526,
+  "bads": 22,
+  "observed": 0.041825,
+  "predicted": 0.050486,
+  "expected": 26.555761,
+  "p_value": 0.425183
+ },
+ {
+  "band": "580-599",
+  "loans": 1100,
+  "bads": 31,
+  "observed": 0.028182,
+  "predicted": 0.027234,
+  "expected": 29.956942,
+  "p_value": 0.781474
+ },
+ {
+  "band": "600-619",
+  "loans": 1256,
+  "bads": 21,
+  "observed": 0.01672,
+  "predicted": 0.014451,
+  "expected": 18.150577,
+  "p_value": 0.47677
+ },
+ {
+  "band": "620-639",
+  "loans": 1196,
+  "bads": 2,
+  "observed": 0.001672,
+  "predicted": 0.007072,
+  "expected": 8.458205,
+  "p_value": 0.022394
+ },
+ {
+  "band": "640+",
+  "loans": 347,
+  "bads": 0,
+  "observed": 0.0,
+  "predicted": 0.004463,
+  "expected": 1.548694,
+  "p_value": 0.415004
+ }
+]

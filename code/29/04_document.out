@@ -1,0 +1,24 @@
+Identity and ownership                      filled
+Purpose, use and limits of use              filled
+Status, approval and history                 owner
+Data and sample                             filled
+Method                                      filled
+The model itself                            filled
+Performance                                  empty
+Calibration and use as a probability        filled
+Where its output goes                       filled
+Limitations and findings                    filled
+Monitoring                                  filled
+Design choices and why                       owner
+Independent validation                      filled
+
+## The model itself
+
+- Base 484, highest score 652; lines: bureau_file, enquiries_6m,
+  bureau_score, oldest_account_months, address_months, dti,
+  income, revolving_utilisation, revolving_balance,
+  worst_status_24m.
+## Calibration and use as a probability
+
+- The scale is not a PD. First-year PD = 1 / (1 + exp(-(20.456
+  -0.0412 x score))), method platt.

@@ -1,0 +1,13 @@
+                                     Mark II  challenger
+characteristics read                       9          21
+  ... used at least once                   9          20
+rules (bin edges, split rules)            17       1,542
+values (points, leaf values)              34       1,799
+never split on: public_records
+
+characteristics the challenger splits on most often:
+  bureau_score              252 split rules
+  oldest_account_months     190 split rules
+  enquiries_6m              158 split rules
+  address_months            139 split rules
+  dti                       137 split rules

@@ -1,0 +1,17 @@
+reviews where the model wanted a move (complete years)
+model      analyst   reviews defaults   rate  PD given  model PD
+downgrade  moved         525       15   2.9%      3.6%      4.2%
+downgrade  held          195        8   4.1%      1.5%      4.4%
+upgrade    moved         263        1   0.4%      0.9%      0.8%
+upgrade    held          108        0   0.0%      2.5%      0.9%
+
+of these, 24 defaulted within the year; the grade was held in 8
+client   review   was  model  kept   defaulted
+C0047      2020     2      8     2    Jun 2020
+C0077      2021     7     10     7    Jun 2021
+C0134      2021     9     10     9    Jul 2021
+C0076      2023     7     10     7    Apr 2023
+C0168      2023     8     10     8    Apr 2023
+C0230      2023     8     10     8    Jan 2024
+C0019      2024     8     10     8    Apr 2024
+C0038      2024     8     10     8    Jan 2025

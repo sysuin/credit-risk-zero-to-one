@@ -1,0 +1,19 @@
+Mortgage quarter ends 2017-2024: 59,045 rows, 347 defaults
+logit(default in 12 months), coefficient (se):
+  shock       1.767 (0.325)
+  missed_1    4.653 (0.214)
+  missed_2    5.347 (0.305)
+  u           0.106 (0.051)
+a payment 48% above the first: odds x 2.00
+
+3,611 performing mortgages on 31 Dec 2025; payment
+against today's, and the odds multiplier on default it brings
+                       loans  median  >20% up  odds x
+base at 3.71% (Jan 2026)
+  fixed                 1452   +0.0%     0.0%    1.00
+  fixed_then_variable   1269   -0.3%     0.5%    1.00
+  variable               890   -0.3%     0.0%    1.00
+stress_2026 at 6.50% (Mar 2027)
+  fixed                 1452   +0.0%     0.0%    1.00
+  fixed_then_variable   1269  +22.2%    62.3%    1.43
+  variable               890  +25.3%    87.0%    1.45

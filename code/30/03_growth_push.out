@@ -1,0 +1,9 @@
+personal loans             loans lent $m    m12    m24   profit $
+before the push: 575       3,094   38.70   3.8%   7.4%  2,487,731
+push, normal policy too    3,437   44.72   2.7%   4.7%  1,514,010
+push only                    543    5.63  13.6%  20.6%   -139,536
+after the push: 580        4,416   59.62   2.7%   5.2%  2,573,673
+push only: 543 of 3,980 push loans; they lost $139,536
+m12, m24: in default (2021 definition) by that month on
+book; profit: cash to December 2025 after funding and a
+running cost of 2.5% a year (Chapter 11's loan_economics)

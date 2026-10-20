@@ -1,0 +1,15 @@
+illustrative rule: capital 10% of the pool, borne by whoever
+bears its first 10% of losses (Chapter 21 does it properly)
+
+                                capital   share of loss sold
+option                           % pool   expected  1 in 1,000
+keep the loans                   10.00%         0%          0%
+sell A, keep B and C              7.00%         0%          0%
+sell A and B, keep C              2.00%         1%         40%
+sell all, keep 5% of each         0.50%        95%         95%
+keep loans, protect B only        5.00%         1%         40%
+
+protecting B: premium 2.50% of $4,645,801 = $116,145 a year;
+  B's expected loss 0.12% of B over the deal;
+  capital freed $4,645,801, which at a 15% hurdle
+  would cost $696,870 a year to hold

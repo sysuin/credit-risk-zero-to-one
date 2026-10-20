@@ -1,0 +1,51 @@
+{
+ "rows": [
+  {
+   "measure": "expected loss, one year",
+   "loss": 150.32270942998287,
+   "used": null
+  },
+  {
+   "measure": "provision held",
+   "loss": 231.20325208075343,
+   "used": null
+  },
+  {
+   "measure": "1 year in 10",
+   "loss": 326.1611549761156,
+   "used": null
+  },
+  {
+   "measure": "1 year in 100",
+   "loss": 637.3633064033213,
+   "used": null
+  },
+  {
+   "measure": "1 year in 1,000",
+   "loss": 970.3947834305033,
+   "used": null
+  },
+  {
+   "measure": "beyond 1 in 1,000, average",
+   "loss": 1106.2858415787387,
+   "used": null
+  },
+  {
+   "measure": "base, three years",
+   "loss": 344.68808265445455,
+   "used": 57.445219148628844
+  },
+  {
+   "measure": "severe, three years",
+   "loss": 567.7572397205035,
+   "used": 437.2357734388709
+  },
+  {
+   "measure": "supervisor's, three years",
+   "loss": 1223.5150939663317,
+   "used": 1178.4076235609753
+  }
+ ],
+ "cet1": 1045.35785384,
+ "spare": 543.1136281935871
+}

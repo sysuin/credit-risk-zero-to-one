@@ -1,0 +1,22 @@
+reviews with a previous grade: 1,794
+held flag in the ratings table agrees with the moves: True
+
+model wanted (rows) against analyst moved (columns), notches
+          -4    -3    -1     0     1     3     4
+    -4     3     0     0     1     0     0     0
+    -3     0    20     0     4     0     0     0
+    -2     0     0    68    32     0     0     0
+    -1     0     0   219    96     0     0     0
+     0     0     0     0   559     0     0     0
+     1     0     0     0   122   348     0     0
+     2     0     0     0    60   154     0     0
+     3     0     0     0    16     0    65     0
+     4     0     0     0     8     0     0    19
+
+wanted    reviews  one notch  to model    held
+1             785        72%       72%     28%
+2             314        71%        0%     29%
+3             105         0%       81%     19%
+4+             31         0%       71%     29%
+
+the model wanted a move in 1,235 reviews; held in 339 (27.4%)

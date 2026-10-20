@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "code/05/16_check_fails.py", line 11, in <module>
+    data.check_performance(again)
+  File "code/ballast/data.py", line 320, in check_performance
+    c.done(df)
+  File "code/ballast/data.py", line 234, in done
+    raise DataCheckError(
+ballast.data.DataCheckError: performance failed 2 check(s):
+  account-month repeated: 3,630 rows, e.g. MG0000001
+  loaded 229,725 rows; the source holds 226,095

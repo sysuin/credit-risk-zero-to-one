@@ -1,0 +1,21 @@
+workouts by LGD, % of each group
+                <5%    <20%    <40%    <60%    <80%    <95%    95%+
+unsecured       17%      0%      0%      4%     29%     44%      5%
+secured         40%     14%     16%      7%      6%     10%      7%
+
+product          cured  without    with  bankrupt  cured
+auto               16%    36.1%   30.8%        54    59%
+card               15%    80.8%   67.5%       118    64%
+mortgage           64%     6.6%    2.1%         8    88%
+personal           17%    77.9%   64.6%        83    49%
+sme_emergency      19%    20.7%   16.3%         8    75%
+sme_overdraft      17%    76.4%   59.3%         6    83%
+sme_term           22%    27.8%   21.3%        16    88%
+without / with: LGD with cures left out, and counted as zero;
+bankrupt: workouts a bankruptcy started, and the share cured
+
+          definition  workouts  cured    LGD
+card      dpd90          1,049    12%  71.8%
+card      dod2021        1,081    15%  67.5%
+personal  dpd90            915    15%  68.0%
+personal  dod2021          959    17%  64.6%

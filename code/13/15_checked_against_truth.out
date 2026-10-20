@@ -1,0 +1,15 @@
+Personal applications 80,506; frauds 508
+  branch  fraud rate 2016-20 0.39%, 2021-25 0.46%
+  online  fraud rate 2016-20 0.51%, 2021-25 1.31%
+  broker  fraud rate 2016-20 0.33%, 2021-25 0.35%
+
+Booked loans: 146 frauds, 165 never paid; both 146
+  never paid but genuine 19; fraud that paid something 0
+
+Fernhill's fraud-check declines 181: frauds 181
+Ballast refers 995: frauds 486, genuine 509
+applied      frauds  Fernhill caught  Ballast refers
+2016-Jan 21     143              33%             96%
+the push         89              12%             96%
+Jul 22-May 23     61              18%             95%
+from Jun 23     215              52%             96%

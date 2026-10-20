@@ -1,0 +1,9 @@
+personal applicants with no bureau file: 5,650
+  of whom other payments are exactly $0: 4,710
+
+debt-to-income bins on the training loans
+bin         own bin: loans    bad  zeros taken: loans    bad
+<0.17                3,948   2.1%               4,164   2.2%
+0.17-0.32            4,787   3.2%               4,932   3.3%
+0.32+                2,960   4.1%               2,979   4.0%
+no file                380   5.0%

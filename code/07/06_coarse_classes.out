@@ -1,0 +1,13 @@
+rule applied               bins  turns      IV
+fine classes                 19     10   0.486
+1 every bin 5% or more       13      7   0.464
+2 + bad rate falls            6      0   0.452
+3 + neighbours differ         5      0   0.449
+
+bin         loans  share  bads  bad rate
+<630        1,628  13.5%   117      7.2%
+630-679     3,179  26.3%   118      3.7%
+680-709     2,280  18.9%    66      2.9%
+710-759     2,718  22.5%    41      1.5%
+760+        1,890  15.7%    14      0.7%
+no file       380   3.1%    19      5.0%

@@ -1,0 +1,27 @@
+Mark II-R  today  took  floor  best  took per approval at best
+550-564    18.17   36%  16.38 17.67   41%          214     216
+565-579    16.10   50%  12.00 15.85   53%          416     416
+580-594    14.11   68%   9.67 15.11   59%          591     612
+595-609    11.52   78%   8.43 13.02   65%          504     614
+610-652    10.04   87%   7.77 11.54   79%          519     747
+(per approval: take-up times what a loan earns after every cost,
+ in dollars; best searched within 1.5 points of today's price)
+
+Limits: no tier below its floor, none more than 3 points above it,
+none cheaper than a safer tier, every move within the tested
+1.5 points
+Mark II-R   today   best   2026  margin  took  RAROC
+550-564     18.17  17.67  17.65    1.27   41%    56%
+565-579     16.10  15.85  15.00    3.00   61%    58%
+580-594     14.11  15.11  12.65    2.98   79%    51%
+595-609     11.52  13.02  11.40    2.97   78%    48%
+610-652     10.04  11.54  10.75    2.98   84%    48%
+(took and RAROC at the 2026 price, for the tier's average applicant)
+  today  value per approval $461, loans per 100 approvals 64.5
+  best   value per approval $532, loans per 100 approvals 59.7
+  grid   value per approval $455, loans per 100 approvals 69.8
+
+At the line, priced 17.65%: what a booked loan is worth
+  Mark II-R 546-549: $  26 at the book's PD, $ -304 at 1.25 times it
+  Mark II-R 550-553: $ 223 at the book's PD, $  -68 at 1.25 times it
+  Mark II-R 554-557: $ 401 at the book's PD, $  145 at 1.25 times it

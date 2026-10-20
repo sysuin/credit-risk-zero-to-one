@@ -1,0 +1,14 @@
+Gini                    Mark II-R      no income  no time lines
+booked, OOT                 0.551          0.555          0.463
++ retro, holdout            0.507          0.503          0.488
++ retro, 2023               0.518          0.520          0.485
+
+Approving 71.5% of 11,044 applicants, 2023 to mid-2024
+                        Mark II-R      no income  no time lines
+women / men                 0.992          0.992          0.977
+aged 18-24                  38.5%          40.3%          52.2%
+aged 25-34                  64.2%          64.4%          64.2%
+aged 35-49                  74.8%          74.3%          73.3%
+aged 65+                    86.0%          87.6%          84.0%
+decade of age              +0.154         +0.157         +0.096
+(on the log odds of booked loans, at the same score)

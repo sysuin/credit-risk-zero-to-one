@@ -1,0 +1,16 @@
+company-months with both: 2,329 on 25 companies
+  rank correlation of the two PDs: +0.38; where Merton's
+  PD is above 0.1% (371 months): +1.00
+
+Merton PD   months  CDS, bp   CDS PD  Merton PD  ratio
+< 0.01%       1894       15    0.25%     0.000%      -
+0.01-0.1%       64       15    0.24%     0.030%   7.58
+0.1-1%          97       33    0.55%     0.317%   1.76
+1-5%           103      290    4.71%     2.772%   1.68
+5-20%          127     1105   16.82%    10.002%   1.66
+> 20%           44     3227   41.59%    25.356%   1.64
+
+where Merton's PD is below 0.01%: CDS median 15.1 bp,
+  middle half 12.3 to 17.5 bp, implying a PD of about 0.25%
+where it is above 1%: CDS PD / Merton PD median 1.66,
+  middle half 1.64 to 1.68

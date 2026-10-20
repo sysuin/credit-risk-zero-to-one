@@ -1,0 +1,10 @@
+months, 15 Jan to 31 Jan  0
+months, 31 Jan to 28 Feb  1
+month end of 10 Feb 2024  2024-02-29
+31 Jan 2023 plus a month  2023-02-28
+1,541 personal loans opened Jan-Jun 2023
+window                      rows  ever 90+
+months on book 1-12       16,770        30
+open date + 12 months     17,036        29
+pandas, months on book    16,770        30
+the interval adds 1,481 rows of month 0 and drops 1,215 of month 12

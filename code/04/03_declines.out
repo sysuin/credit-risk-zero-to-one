@@ -1,0 +1,11 @@
+reason                  check           declines  share
+score_below_cutoff      score             41,140  53.8%
+recent_serious_arrears  policy rule       11,782  15.4%
+public_record           policy rule        7,965  10.4%
+affordability           affordability      7,585   9.9%
+thin_file               policy rule        6,786   8.9%
+credit_officer          override             785   1.0%
+fraud_check             fraud check          363   0.5%
+ltv_over_limit          policy rule           36   0.0%
+all declines                              76,442
+as a share of applications                        43.0%

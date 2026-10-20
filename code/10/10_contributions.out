@@ -1,0 +1,14 @@
+A00052447: challenger 565.8, Mark II 576
+characteristic              value  challenger  Mark II
+average applicant                       600.3 base 458
+bureau_score                  589       -28.9        0
+dti                           0.3        -5.0        8
+income                     27,800        -4.1        4
+age                            32        +3.5         
+amount_requested           10,900        +1.9         
+address_months                 95        -1.6       20
+employment_months               6        -1.5         
+oldest_account_months         112        +1.3       29
+the other 13                             -0.2
+total                                   565.8
+adds up to the challenger's score (within 1e-9): True

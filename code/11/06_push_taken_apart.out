@@ -1,0 +1,23 @@
+push loans            loans    m12    m18   1st    each     total
+approved at 580 too   3,437   2.7%   3.8%  0.9%     441 1,514,010
+580's refer band        154  13.6%  16.9%  7.1%    -136   -20,975
+below 580's band        246  15.0%  19.1%  5.7%    -276   -67,816
+instant: 515-534         83  14.5%  27.7%  9.6%    -950   -78,835
+DTI 0.50-0.55            56   5.4%   7.1%  0.0%     584    32,679
+overrides below 515       4  25.0%  50.0%  0.0%  -1,147    -4,589
+before: 575           3,094   3.8%   6.0%  0.5%     804 2,487,731
+after: 580            4,416   2.7%   4.2%  1.0%     583 2,573,673
+m12, m18: in default (dod2021) by that month on book;
+1st: missed the first payment; each, total: profit in $
+
+Loans only the push made: 543 of 3,980, $5.63m lent,
+a loss of $139,536
+
+Loans the normal policy would also have made
+  push: approved at 580 too   rate  9.60%, funding 3.3% of lent
+  before: 575                 rate 11.04%, funding 1.5% of lent
+  after: 580                  rate 12.34%, funding 4.8% of lent
+
+Refer-band loans booked 2019-2023, by who said yes
+  underwriters            307 loans, in default by month 12 6.2%
+  instant, in the push     92 loans, in default by month 12 15.2%

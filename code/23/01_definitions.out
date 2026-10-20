@@ -1,0 +1,13 @@
+22,205 booked loans, applied 2016 to mid-2024
+Mark II-R label     loans  2021 default in 12m  by bankruptcy
+good               21,167                   43             43
+indeterminate         392                   13             13
+bad                   646                  646             23
+all                22,205                  702             79
+
+Gini of Mark II-R     loans  on its bad  on 2021 def.    bad   def.
+holdout               5,270       0.579         0.550  3.03%  3.19%
+out_of_time           4,640       0.551         0.504  2.50%  2.69%
+
+Defaults the bad flag does not count: 56 (8.0%); Mark II-R
+mean 581 against 565 for the bads and 589 for all

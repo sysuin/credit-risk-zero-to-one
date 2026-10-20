@@ -1,0 +1,17 @@
+base                   458
+bureau_file           file 11  no file 0
+enquiries_6m          <1 41  1-2 34  3+ 0
+                      no file 31
+bureau_score          <630 0  630-679 15  680-709 20
+                      710-759 35  760+ 50  no file 19
+oldest_account_months <54 0  54+ 29  no file 23
+address_months        <10 0  10+ 20
+dti                   <0.17 24  0.17-0.32 8  0.32+ 0
+                      no file 10
+income                <27,000 0  27,000-39,999 4  40,000-91,999 7
+                      92,000+ 21
+revolving_utilisation <0.11 20  0.11-0.29 12  0.29-0.55 5
+                      0.55+ 0  no file 8
+revolving_balance     <7,200 0  7,200+ 11  no file 1
+lowest possible score 458, highest 685
+rounding: largest gap from the exact score 3.36 points

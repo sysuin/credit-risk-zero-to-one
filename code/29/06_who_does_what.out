@@ -1,0 +1,24 @@
+                           owners  build credit  valid    CRO  audit
+line of defence                 1      1      2      2      2      3
+--------------------------------------------------------------------
+build or change a model         C      R      I      C      A      I
+own a model and its use         A      C      C      C      I      I
+validate a model                I      C      I      R      A      I
+approve a model for use         C      C      C      C      A      I
+monitor a model                 R      R      I      C      A      I
+keep the model inventory        I      C      I      C      A      I
+override a score or grade       R      I      A      C      I      I
+approve commercial credit       R      I      A      I      I      I
+set credit policy               C      C      R      I      A      I
+audit the whole                 I      I      I      I      I      A
+
+owners  1  retail lending, underwriters, branches, relationship
+           managers, collections
+build   1  credit risk modelling: build and run models
+credit  2  chief credit officer, credit officers, credit committee
+valid   2  model validation: independent of the builders
+CRO     2  chief risk officer: model risk policy, the inventory,
+           reports to the board
+audit   3  internal audit: reports to the board's audit committee
+
+one role answers for each task: True

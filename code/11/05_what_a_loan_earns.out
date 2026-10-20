@@ -1,0 +1,12 @@
+Personal loans applied for 2019-2021, to December 2025
+  outcome         loans     lent     back   costs   profit
+  good            6,601   12,695   14,249     684      870
+  indeterminate     138   10,460   11,465     630      375
+  bad               244   10,803    5,218     343   -5,928
+  (averages per loan, in dollars; back = everything repaid,
+   recovered or still owed on a loan still open)
+  still open in December 2025: 3.5%
+
+One bad loan costs what 6.8 good loans earn.
+Break-even: odds of 6.8 to 1, a bad rate of 12.8%,
+which Mark II's scale puts at 542 points.

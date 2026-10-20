@@ -1,0 +1,17 @@
+loans with bank-account data: 1,750, bad 122
+bad / loans: 2019 40/333  2020 22/254
+             2021 20/353  2022 19/404  2023 21/406
+
+score                  Gini  vs SME-1         interval   P>0
+SME-1                 0.427
+data, files only      0.371    -0.055   -0.131  +0.019    6%
+data, files + bank    0.436    +0.009   -0.070  +0.094   59%
+SME-1 + bank          0.457    +0.030   -0.039  +0.105   79%
+bank fields added to the files: +0.065 (+0.013 to +0.119)
+
+SME-1 + bank on all years: coefficient (p)
+  ob_balance            0.557 (0.002)  IV 0.400
+  ob_volatility         0.736 (0.008)  IV 0.138
+  ob_overdraft_days     0.565 (0.001)  IV 0.372
+  ob_returned_items     0.552 (0.004)  IV 0.230
+  sme1                  0.499 (0.000)

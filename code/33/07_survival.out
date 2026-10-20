@@ -1,0 +1,8 @@
+20,000 loans, 36 months; hazards 0.3% default, 2.0% close
+36-month PD                            formula  estimate
+share that default before closing       0.0740    0.0755
+cumulative incidence (censored)         0.0740    0.0752
+Kaplan-Meier (closure censored)         0.1025    0.1040
+defaults seen / loans                             0.0439
+open at the reporting date: 66.9% of loans
+Kaplan-Meier over cumulative incidence: 1.38

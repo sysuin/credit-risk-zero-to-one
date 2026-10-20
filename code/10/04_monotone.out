@@ -1,0 +1,12 @@
+               trees  holdout  out of time
+constrained      257    0.646        0.634
+free             248    0.640        0.633
+
+made riskier                    risk falls, free  constrained
+dti +0.05                                   6.7%         0.0%
+revolving_utilisation +0.10                16.6%         0.0%
+enquiries_6m +1                             8.6%         0.0%
+bureau_score -20                            8.8%         0.0%
+worst_status_24m +30 days                   0.9%         0.0%
+
+largest wrong-way move, free model: A00065034, utilisation 0.00

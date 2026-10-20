@@ -1,0 +1,26 @@
+VALIDATION REPORT  FRM  Fernhill rating model
+====================================================================
+Date 6 February 2026; data to 31 December 2025; by model validation
+(second line).
+
+Scope
+  - reproduction of the grades from the documented inputs
+  - ranking and the analysts' holds of its grades
+
+Confirmed
+  - its grades rank defaults well (Gini 0.857)
+
+Findings
+  FRM-1 (high, blocks use, section 23.7)
+    The model cannot be reproduced: from leverage, cover and size
+    its grade is matched only two times in three.
+    Action: Replace it with the Ballast rating model at the 2026
+            reviews, after RATE's conditions are met.
+  FRM-2 (high, section 23.7)
+    Analysts held 195 grades the model wanted worse; held clients
+    defaulted at 4.1% on a grade PD of 1.47%. No hold has a reason
+    on file.
+    Action: Every override recorded with its reasons and approved by
+            the credit function.
+
+Conclusion: NOT APPROVED

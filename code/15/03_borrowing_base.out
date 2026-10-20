@@ -1,0 +1,24 @@
+$m, end of 2025
+  receivables                            23.03
+  less ineligible (15% assumed)          -3.45
+  eligible receivables                   19.57
+    x 80%                                15.66
+  inventory, at cost                     13.29
+  less ineligible (20% assumed)          -2.66
+  eligible inventory                     10.63
+    x 50%                                 5.32
+  borrowing base                         20.97
+
+limit 17.00; drawn on day one 5.18; free to draw 11.82
+
+base as the ineligible receivables change
+    5% ineligible   base  22.82   binds: no
+   15% ineligible   base  20.97   binds: no
+   25% ineligible   base  19.13   binds: no
+   35% ineligible   base  17.29   binds: no
+   45% ineligible   base  15.45   binds: yes
+  the base falls below the limit above 36.6% ineligible
+
+eligible collateral at book value 30.20
+  repaid in full, drawn to the limit, if it fetches 56%
+  repaid in full, drawn to the base, if it fetches 69%

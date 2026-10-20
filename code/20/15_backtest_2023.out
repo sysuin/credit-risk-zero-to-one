@@ -1,0 +1,12 @@
+on 31 Dec 2023          defaults in 2024        loss in 2024, $m
+                       expected   actual    expected      actual
+personal                    199      200        0.90        1.06
+auto                         98      105        0.54        0.62
+mortgage                     15       22        0.06        0.18
+sme_term                     46       41        1.35        0.94
+sme_emergency               125      110        1.72        1.40
+card                        391      388        0.77        0.80
+sme_overdraft                19       16        1.73        0.79
+commercial                   12       12       96.09      113.42
+expected: weighted 12-month PD and ECL (rebuilt scenarios);
+actual loss: EAD at default x LGD, recent workouts completed

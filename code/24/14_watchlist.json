@@ -1,0 +1,106 @@
+{
+ "sweep": [
+  {
+   "k": 0.5,
+   "hit": 0.1125,
+   "caught": 24
+  },
+  {
+   "k": 0.6,
+   "hit": 0.2423,
+   "caught": 24
+  },
+  {
+   "k": 0.65,
+   "hit": 0.2884,
+   "caught": 24
+  },
+  {
+   "k": 0.7,
+   "hit": 0.2991,
+   "caught": 22
+  },
+  {
+   "k": 0.75,
+   "hit": 0.3344,
+   "caught": 19
+  },
+  {
+   "k": 0.8,
+   "hit": 0.3697,
+   "caught": 15
+  },
+  {
+   "k": 0.85,
+   "hit": 0.4234,
+   "caught": 12
+  },
+  {
+   "k": 0.9,
+   "hit": 0.6222,
+   "caught": 6
+  }
+ ],
+ "triggers": [
+  {
+   "flag": "revolver_75",
+   "hit": 0.3344,
+   "caught": 19,
+   "months": 323
+  },
+  {
+   "flag": "revolver_up",
+   "hit": 0.2116,
+   "caught": 16,
+   "months": 345
+  },
+  {
+   "flag": "covenants",
+   "hit": 0.0924,
+   "caught": 34,
+   "months": 3529
+  },
+  {
+   "flag": "market",
+   "hit": 0.1146,
+   "caught": 1,
+   "months": 96
+  },
+  {
+   "flag": "held",
+   "hit": 0.0595,
+   "caught": 9,
+   "months": 891
+  },
+  {
+   "flag": "grade_8",
+   "hit": 0.0948,
+   "caught": 30,
+   "months": 3407
+  },
+  {
+   "flag": "any",
+   "hit": 0.0719,
+   "caught": 35,
+   "months": 5479
+  },
+  {
+   "flag": "grade 8 or worse",
+   "hit": 0.0948,
+   "caught": 30,
+   "months": 3407
+  },
+  {
+   "flag": "early warning",
+   "hit": 0.245,
+   "caught": 23,
+   "months": 649
+  },
+  {
+   "flag": "either",
+   "hit": 0.0969,
+   "caught": 33,
+   "months": 3705
+  }
+ ]
+}

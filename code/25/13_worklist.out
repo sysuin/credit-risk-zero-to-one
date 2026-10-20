@@ -1,0 +1,16 @@
+model fitted on 13,074 entries, 2016-2024
+fell behind on 31 December 2025: 147 consumer accounts
+first_action
+phone_call    137
+sms            10
+
+work order account    product      balance  p(cure)  first action
+1          PL0024199  personal      12,140    45.9%  phone_call
+2          CC0022376  card           2,396    49.0%  phone_call
+3          CC0018291  card           4,743    49.1%  phone_call
+4          PL0024733  personal       1,248    50.7%  phone_call
+5          CC0021035  card             653    51.1%  phone_call
+...
+145        CK0000512  card           1,078    84.7%  phone_call
+146        CC0016298  card           2,104    88.2%  phone_call
+147        CC0022226  card           2,694    88.2%  sms

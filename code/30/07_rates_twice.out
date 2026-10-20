@@ -1,0 +1,27 @@
+Fixed-rate loans up to date on 31 Dec 2021: their remaining
+payments valued at December 2021's rates and at December
+2023's (funding curve +3.17 points at two years)
+            loans years left  value $m  change $m   change
+auto        3,749        3.0      71.4       -2.4    -3.4%
+mortgage      897       24.0     219.1      -28.6   -13.1%
+personal    4,524        2.3      39.0       -1.2    -3.1%
+all         9,170        4.7     329.5      -32.3    -9.8%
+fall in value / CET1 at December 2023: 3.4%
+
+The same rise, through borrowers
+Mortgages 30+ days behind, average month end, %; and the
+median payment in December 2023 over the payment at opening
+                       2021   2022   2023   2024   2025  payment
+fixed                  0.47   0.56   0.41   0.50   0.38    1.00x
+fixed_then_variable    0.48   0.53   0.50   0.86   0.85    1.43x
+variable               1.03   0.82   1.37   0.90   0.82    1.44x
+Commercial clients' accounts below their interest-cover
+covenant, and above their leverage covenant, by year
+accounts for   clients   cover  leverage  policy rate
+2019               229     17%       32%        1.75%
+2020               227     17%       34%        0.25%
+2021               228     26%       38%        0.25%
+2022               228     77%       43%        3.75%
+2023               228     74%       39%        4.75%
+2024               229     62%       37%        4.25%
+policy rate: December of the accounts' year

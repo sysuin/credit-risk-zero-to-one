@@ -1,0 +1,20 @@
+outcomes            rows bads   Mark I  Mark II     II-R   chall.
+booked, holdout    5,174  157    0.467    0.575    0.579    0.646
+booked, OOT        4,564  114    0.414    0.569    0.551    0.634
++ retro, holdout   5,960  412    0.473    0.500    0.507    0.541
++ retro, 2023      5,448  297    0.495    0.506    0.518    0.551
+II-R: Mark II-R; chall.: Chapter 10's challenger
+
+Gains, with 95% paired bootstrap intervals
+  booked, holdout   II-R - Mark I    +0.111  (+0.057 to +0.163)
+  booked, holdout   II-R - Mark II   +0.003  (-0.029 to +0.033)
+  booked, holdout   chall. - II-R    +0.067  (+0.029 to +0.107)
+  booked, OOT       II-R - Mark I    +0.137  (+0.069 to +0.204)
+  booked, OOT       II-R - Mark II   -0.018  (-0.052 to +0.016)
+  booked, OOT       chall. - II-R    +0.083  (+0.036 to +0.130)
+  + retro, holdout  II-R - Mark I    +0.034  (+0.005 to +0.061)
+  + retro, holdout  II-R - Mark II   +0.007  (-0.012 to +0.025)
+  + retro, holdout  chall. - II-R    +0.034  (+0.008 to +0.057)
+  + retro, 2023     II-R - Mark I    +0.024  (-0.009 to +0.054)
+  + retro, 2023     II-R - Mark II   +0.012  (-0.010 to +0.033)
+  + retro, 2023     chall. - II-R    +0.032  (+0.001 to +0.064)

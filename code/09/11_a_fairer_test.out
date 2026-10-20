@@ -1,0 +1,11 @@
+                          n  Mark I Mark II    gain     95% interval
+holdout, booked       5,174   0.467   0.575  +0.108 +0.033 to +0.179
+holdout, scored      12,403   0.542   0.513  -0.029 -0.056 to -0.003
+holdout, everyone    15,734   0.583   0.522  -0.060 -0.079 to -0.041
+OOT, booked           4,564   0.414   0.569  +0.155 +0.081 to +0.233
+OOT, scored          11,044   0.534   0.542  +0.008 -0.020 to +0.036
+OOT, everyone        13,887   0.573   0.546  -0.027 -0.047 to -0.007
+
+approving as many as Fernhill did (scored): true bad rate
+  holdout  69.7%: Mark I 3.26%, Mark II 3.77%, Fernhill 3.43%
+  OOT      64.3%: Mark I 3.01%, Mark II 2.82%, Fernhill 2.83%

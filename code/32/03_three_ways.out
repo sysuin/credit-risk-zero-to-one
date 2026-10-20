@@ -1,0 +1,13 @@
+product         accounts  30+ dpd   share     balance 30+
+auto               5,275       52   0.99%   $1,061,231.91
+card              15,396      238   1.55%     $798,982.14
+mortgage           3,630       18   0.50%   $3,800,470.86
+personal           6,894      142   2.06%   $1,230,914.01
+sme_emergency      1,342       32   2.38%   $1,059,701.08
+sme_overdraft      1,202       19   1.58%   $1,693,192.75
+sme_term           1,404       41   2.92%   $4,566,035.41
+all               35,143      542   1.54%  $14,210,528.16
+pandas agrees: True
+NumPy agrees:  True
+summed in cents:   $102,063,189,840.35
+divided, summed:   $102,063,189,840.34

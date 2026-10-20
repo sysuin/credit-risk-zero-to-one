@@ -1,0 +1,200 @@
+[
+ {
+  "app_id": "A00061530",
+  "label": "no bureau file",
+  "mark2": 550,
+  "challenger": 554,
+  "challenger_reasons": [
+   {
+    "characteristic": "no_file",
+    "value": "no file",
+    "points": -33.5,
+    "reason": "no credit history at the bureau",
+    "actionable": true
+   },
+   {
+    "characteristic": "address_months",
+    "value": "6",
+    "points": -8.9,
+    "reason": "time at current address",
+    "actionable": false
+   },
+   {
+    "characteristic": "income",
+    "value": "13,200",
+    "points": -5.7,
+    "reason": "income",
+    "actionable": false
+   },
+   {
+    "characteristic": "region",
+    "value": "Riverside",
+    "points": -2.7,
+    "reason": "where the applicant lives",
+    "actionable": false
+   }
+  ],
+  "mark2_reasons": [
+   {
+    "characteristic": "bureau_score",
+    "bin": "no file",
+    "short": 31,
+    "reason": "credit bureau score",
+    "actionable": true
+   },
+   {
+    "characteristic": "income",
+    "bin": "<27,000",
+    "short": 21,
+    "reason": "income",
+    "actionable": false
+   },
+   {
+    "characteristic": "address_months",
+    "bin": "<10",
+    "short": 20,
+    "reason": "time at current address",
+    "actionable": false
+   },
+   {
+    "characteristic": "dti",
+    "bin": "no file",
+    "short": 14,
+    "reason": "existing debt payments against income",
+    "actionable": true
+   }
+  ]
+ },
+ {
+  "app_id": "A00061514",
+  "label": "channel among the reasons",
+  "mark2": 585,
+  "challenger": 570,
+  "challenger_reasons": [
+   {
+    "characteristic": "bureau_score",
+    "value": "650",
+    "points": -12.8,
+    "reason": "credit bureau score",
+    "actionable": true
+   },
+   {
+    "characteristic": "dti",
+    "value": "0.35",
+    "points": -9.9,
+    "reason": "existing debt payments against income",
+    "actionable": true
+   },
+   {
+    "characteristic": "revolving_utilisation",
+    "value": "0.64",
+    "points": -9.0,
+    "reason": "share of card limits in use",
+    "actionable": true
+   },
+   {
+    "characteristic": "channel",
+    "value": "online",
+    "points": -1.6,
+    "reason": "how the application was made",
+    "actionable": true
+   }
+  ],
+  "mark2_reasons": [
+   {
+    "characteristic": "bureau_score",
+    "bin": "630-679",
+    "short": 35,
+    "reason": "credit bureau score",
+    "actionable": true
+   },
+   {
+    "characteristic": "dti",
+    "bin": "0.32+",
+    "short": 24,
+    "reason": "existing debt payments against income",
+    "actionable": true
+   },
+   {
+    "characteristic": "revolving_utilisation",
+    "bin": "0.55+",
+    "short": 20,
+    "reason": "share of card limits in use",
+    "actionable": true
+   },
+   {
+    "characteristic": "income",
+    "bin": "40,000-91,999",
+    "short": 14,
+    "reason": "income",
+    "actionable": false
+   }
+  ]
+ },
+ {
+  "app_id": "A00061564",
+  "label": "five or more enquiries",
+  "mark2": 529,
+  "challenger": 518,
+  "challenger_reasons": [
+   {
+    "characteristic": "enquiries_6m",
+    "value": "6",
+    "points": -55.6,
+    "reason": "recent applications for credit",
+    "actionable": true
+   },
+   {
+    "characteristic": "bureau_score",
+    "value": "514",
+    "points": -30.7,
+    "reason": "credit bureau score",
+    "actionable": true
+   },
+   {
+    "characteristic": "address_months",
+    "value": "3",
+    "points": -7.7,
+    "reason": "time at current address",
+    "actionable": false
+   },
+   {
+    "characteristic": "revolving_utilisation",
+    "value": "0.87",
+    "points": -5.3,
+    "reason": "share of card limits in use",
+    "actionable": true
+   }
+  ],
+  "mark2_reasons": [
+   {
+    "characteristic": "bureau_score",
+    "bin": "<630",
+    "short": 50,
+    "reason": "credit bureau score",
+    "actionable": true
+   },
+   {
+    "characteristic": "enquiries_6m",
+    "bin": "3+",
+    "short": 41,
+    "reason": "recent applications for credit",
+    "actionable": true
+   },
+   {
+    "characteristic": "address_months",
+    "bin": "<10",
+    "short": 20,
+    "reason": "time at current address",
+    "actionable": false
+   },
+   {
+    "characteristic": "revolving_utilisation",
+    "bin": "0.55+",
+    "short": 20,
+    "reason": "share of card limits in use",
+    "actionable": true
+   }
+  ]
+ }
+]

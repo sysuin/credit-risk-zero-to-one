@@ -1,0 +1,22 @@
+{
+ "best bin": {
+  "enquiries_6m": 30,
+  "dti": 0,
+  "oldest_account_months": 0,
+  "revolving_utilisation": 1,
+  "address_months": 0,
+  "worst_status_24m": 0,
+  "bureau_score": 2499,
+  "no_file": 68
+ },
+ "cut-off": {
+  "enquiries_6m": 1078,
+  "dti": 537,
+  "oldest_account_months": 387,
+  "revolving_utilisation": 286,
+  "address_months": 186,
+  "worst_status_24m": 88,
+  "bureau_score": 36,
+  "no_file": 0
+ }
+}

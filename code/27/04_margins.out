@@ -1,0 +1,17 @@
+grade    drawn   EAD    EL    ES  margin  needed    gap
+1          254    6%    0%    0%     125      70    -55
+2          199    5%    0%    0%     146     126    -20
+3          396   11%    0%    2%     151     164    +12
+4          559   13%    1%    3%     145     162    +17
+5          377    9%    1%    4%     160     224    +64
+6          662   16%    5%    9%     189     282    +93
+7          605   13%    8%   16%     231     419   +188
+8          443    9%   13%   16%     234     735   +501
+9          393    9%   25%   21%     257   1,383 +1,126
+10         426    9%   46%   27%     283   2,040 +1,757
+drawn $m; shares of the commercial book's EAD, expected loss
+and expected shortfall; margins in basis points over the
+policy rate; needed = a 15% return on capital before running costs
+  grades 1-5   EAD 43.5%, EL 3.0%, ES 9.4%
+  grades 6-8   EAD 38.3%, EL 26.1%, ES 41.9%
+  grades 9-10  EAD 18.2%, EL 70.9%, ES 48.8%

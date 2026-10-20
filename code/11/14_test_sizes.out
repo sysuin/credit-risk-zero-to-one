@@ -1,0 +1,17 @@
+2025: 808 personal applications a month, 643 past the rules;
+  62% of approvals booked
+
+2023 applicants, both approving 72.1%: they disagree
+  on 12.0%
+  seen bad rate: challenger only 8.7%, Mark II-R only 12.5%,
+  both 3.0%
+
+Design 1: split every applicant at random, compare the arms
+  bad rate 3.79% against 3.47%: 53,229 loans an arm,
+  144 a month each: 383 months to the last outcome
+Design 2: decide the agreements as both say; split only the
+  disagreements, and compare those approved in each arm
+  bad rate 12.5% against 8.7%: 993 loans an arm,
+  12.0 a month each: 97 months to the last outcome
+  after a year (143 an arm) it could tell 12.5%
+  only from 3.6% or less

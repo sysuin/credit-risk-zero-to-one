@@ -1,0 +1,402 @@
+[
+ {
+  "channel": "branch",
+  "half": "2016H1",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2016H2",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2017H1",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2017H2",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2018H1",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2018H2",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2019H1",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2019H2",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2020H1",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2020H2",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2021H1",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2021H2",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2022H1",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2022H2",
+  "present": 0.0
+ },
+ {
+  "channel": "branch",
+  "half": "2023H1",
+  "present": 0.5539944903581268
+ },
+ {
+  "channel": "branch",
+  "half": "2023H2",
+  "present": 0.5573078006195438
+ },
+ {
+  "channel": "branch",
+  "half": "2024H1",
+  "present": 0.555137481910275
+ },
+ {
+  "channel": "branch",
+  "half": "2024H2",
+  "present": 0.55
+ },
+ {
+  "channel": "branch",
+  "half": "2025H1",
+  "present": 0.546572394712573
+ },
+ {
+  "channel": "branch",
+  "half": "2025H2",
+  "present": 0.5695169712793734
+ },
+ {
+  "channel": "broker",
+  "half": "2016H1",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2016H2",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2017H1",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2017H2",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2018H1",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2018H2",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2019H1",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2019H2",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2020H1",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2020H2",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2021H1",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2021H2",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2022H1",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2022H2",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2023H1",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2023H2",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2024H1",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2024H2",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2025H1",
+  "present": 0.0
+ },
+ {
+  "channel": "broker",
+  "half": "2025H2",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2016H1",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2016H2",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2017H1",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2017H2",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2018H1",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2018H2",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2019H1",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2019H2",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2020H1",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2020H2",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2021H1",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2021H2",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2022H1",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2022H2",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2023H1",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2023H2",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2024H1",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2024H2",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2025H1",
+  "present": 0.0
+ },
+ {
+  "channel": "dealer",
+  "half": "2025H2",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2016H1",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2016H2",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2017H1",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2017H2",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2018H1",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2018H2",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2019H1",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2019H2",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2020H1",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2020H2",
+  "present": 0.0
+ },
+ {
+  "channel": "online",
+  "half": "2021H1",
+  "present": 0.33533653846153844
+ },
+ {
+  "channel": "online",
+  "half": "2021H2",
+  "present": 0.5156121610517667
+ },
+ {
+  "channel": "online",
+  "half": "2022H1",
+  "present": 0.5152354570637119
+ },
+ {
+  "channel": "online",
+  "half": "2022H2",
+  "present": 0.5544492843808339
+ },
+ {
+  "channel": "online",
+  "half": "2023H1",
+  "present": 0.5478502080443828
+ },
+ {
+  "channel": "online",
+  "half": "2023H2",
+  "present": 0.5563420158550396
+ },
+ {
+  "channel": "online",
+  "half": "2024H1",
+  "present": 0.557958687727825
+ },
+ {
+  "channel": "online",
+  "half": "2024H2",
+  "present": 0.5387426900584795
+ },
+ {
+  "channel": "online",
+  "half": "2025H1",
+  "present": 0.5384448305821026
+ },
+ {
+  "channel": "online",
+  "half": "2025H2",
+  "present": 0.5454744206383909
+ }
+]

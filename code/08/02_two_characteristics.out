@@ -1,0 +1,8 @@
+correlation of the two WoE columns: +0.21
+
+model                       bureau  enquiries    log-lik
+bureau_score                 1.000               -1594.7
+enquiries_6m                            1.000    -1590.9
+bureau_score + enquiries_6m   0.846      0.839    -1540.6
+adding the other to bureau_score: likelihood ratio 108.3
+adding the other to enquiries_6m: likelihood ratio 100.6

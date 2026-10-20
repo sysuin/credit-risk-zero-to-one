@@ -1,0 +1,10 @@
+training 11,695 loans, out of time 4,500; 600 no-file rows set aside
+                    Logit        GLM   std err
+const            3.741201   3.741201  0.628696
+bureau_score    -0.011473  -0.011473  0.000938
+dti              2.209397   2.209397  0.468801
+log-likelihood -1503.861 and -1503.861
+same seed, same predictions: True
+seed + 1, largest change in a PD: 0.0349
+AUC logistic  Ballast 0.696720  scikit-learn 0.696720
+AUC LightGBM  Ballast 0.644397  scikit-learn 0.644397

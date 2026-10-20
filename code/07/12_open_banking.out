@@ -1,0 +1,8 @@
+split         loans  with bank data  share
+train        12,295             732   6.0%
+holdout       5,270             319   6.1%
+out_of_time   4,640           2,560  55.2%
+
+training loans with bank data, by channel and year:
+  online  2021   284 loans  14 bads
+  online  2022   439 loans   7 bads

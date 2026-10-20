@@ -1,0 +1,15 @@
+$m                  balance stage 1 stage 2 stage 3   total  cover
+personal                 59    0.72    0.20    0.37    1.29  2.18%
+auto                     99    0.40    0.09    0.13    0.62  0.62%
+mortgage                877    0.05    0.01    0.06    0.12  0.01%
+sme_term                191    1.22    0.48    0.35    2.05  1.07%
+sme_emergency            40    0.05    0.00    0.12    0.17  0.43%
+card                     38    0.41    0.47    0.20    1.08  2.86%
+sme_overdraft            94    0.84    1.83    0.32    3.00  3.19%
+commercial_term       2,977   12.29   88.57    0.00  100.86  3.39%
+commercial_revolver   1,336   12.33  109.69    0.00  122.01  9.13%
+------------------------------------------------------------------
+all                   5,712   28.30  201.35    1.55  231.20  4.05%
+
+personal loans performing, a month old or more: 6,311; 12-month PD
+weighted 2.98%, base 2.62% (Chapter 18's model: 2.97%, 2.50%)

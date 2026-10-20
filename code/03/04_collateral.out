@@ -1,0 +1,14 @@
+sold       count  sale/value  sale/owed  months  owed/value
+cars         570         53%        91%      20         63%
+homes         24         76%       114%      34         69%
+business      82         42%       101%      24         42%
+
+AL0003235, opened 2018-03-19, repossessed and closed 2019-06-30
+  price of the car       35,600.00
+  lent                   28,200.00
+  owed at default        24,366.59
+  car sold for           21,869.87
+  costs                  -1,516.67
+  collected later            75.85
+  loss                    3,937.54
+  loss given default           16%

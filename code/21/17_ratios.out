@@ -1,0 +1,13 @@
+minimums: cet1 4.5%, tier1 6.0%, total 8.0%
+required, with conservation and an illustrative 1%
+countercyclical buffer:
+  cet1 8.0%, tier1 9.5%, total 11.5%
+
+                      RWA $m   CET1  Tier 1  total  CET1 spare $m
+standardised           6,278  16.7%   18.4%  21.0%            543
+mortgages on IRB       6,072  17.2%   19.0%  21.7%            559
+everything on IRB      6,196  16.9%   18.7%  21.8%            550
+
+leverage: Tier 1 $1,156m over loan-book exposure $6,584m
+= 17.6% (minimum 3%)
+loan book needed for 3% at today's Tier 1: $38,526m

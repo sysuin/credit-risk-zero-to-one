@@ -1,0 +1,8 @@
+reference compared        n     PSI  KL + KL  noise 99%
+2018 H1   2018 H2     7,295  0.0012   0.0012     0.0059
+2019 H1   2019 H2     7,701  0.2052   0.2052     0.0056
+
+characteristic                IV  KL + KL
+bureau_score              0.4494   0.4494
+enquiries_6m              0.3888   0.3888
+region                    0.0175   0.0175

@@ -1,0 +1,12 @@
+               fit n   CCF  test n   predicted      actual  ratio
+card             947  0.31     896  $2,663,803  $2,574,858  1.035
+  used 0%+              232    $668,762    $611,142  1.094
+  used 30%+              262    $662,766    $693,367  0.956
+  used 50%+              226    $757,035    $723,015  1.047
+  used 70%+              103    $339,378    $324,384  1.046
+  used 90%+               73    $235,862    $222,950  1.058
+sme_overdraft     46  0.26      40  $4,217,881  $4,852,378  0.869
+
+Revolvers: 17 defaults, 7 after 2022; CCF 0.76;
+leaving one out moves it between 0.71 and 0.78; fitted to 2022 0.77,
+after 2022 0.74

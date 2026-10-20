@@ -1,0 +1,6 @@
+truth.pd12: 2,565,610 rows on 87,762 accounts;
+  77,712 account-months appear twice (opening, month end)
+2021-definition defaults: 4,218; triggered by bankruptcy 413 (9.8%)
+  of which never three payments behind: 267 (invisible to pd12)
+CDS quotes: 2,621; below 27 bp: 2,263 (86%), median 15.0 bp
+  lowest 1.6 bp, widest 16,680 bp

@@ -1,0 +1,28 @@
+sector                EAD     EL     ES  (shares of the book's)
+manufacturing       15.0%  18.8%  19.2%
+retail              13.2%  16.4%  13.7%
+real_estate         12.7%  12.4%  11.5%
+technology           9.2%  12.3%  10.1%
+transport            9.1%   7.2%   9.9%
+business_services   12.4%   8.0%   9.5%
+construction         6.9%   7.8%   8.2%
+energy               8.5%   5.5%   6.0%
+healthcare           7.5%   6.4%   5.9%
+wholesale            5.3%   5.2%   5.2%
+
+largest in the tail       grade    EAD    EL     ES  ES/EAD  ($m)
+Falcon Vale Holdings          7  208.2   3.2   71.2   34.2%
+Birch Willow Energy           8  139.2   5.1   58.1   41.8%
+Juniper River Freight        10   95.6  11.2   54.6   57.1%
+Delta Copper Energy          10   83.6  10.5   48.6   58.1%
+Birch Quarry Retail          10   54.9   6.4   33.4   60.7%
+Delta Birch Components        7   89.7   1.6   26.7   29.8%
+top six: 11.3% of EAD, 26.5% of ES
+
+Meridian, grade 5, $17m, LGD 58.4%:
+  expected loss         $      57,199
+  adds to 99.9% VaR     $      29,553
+  adds to 99.9% ES      $     940,510
+  share of the ES, its own defaults $   940,510
+  share of the ES, its PD in them   $   978,427 (5.8% of EAD)
+  defaults in 0.58% of years, 8.0% of the worst 0.1%

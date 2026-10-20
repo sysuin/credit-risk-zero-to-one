@@ -1,0 +1,16 @@
+pro forma on 2025 EBITDA, interest at 7.7%
+  $20m on top of all today's debt     3.01x   4.31x
+  $20m, replacing short-term debt     2.56x   5.06x
+  $17m, replacing short-term debt     2.30x   5.64x
+
+covenants, 30% headroom on the last case:
+  debt / EBITDA at most 3.25x; EBITDA / interest at least 4.00x
+
+                  leverage  headroom     cover  headroom
+  2022               2.22x       32%     8.66x       54%
+  2023               1.16x       64%    11.07x       64%
+  2024               1.08x       67%    11.46x       65%
+  2025               1.28x       61%    10.14x       61%
+  pro forma          2.30x       29%     5.64x       29%
+
+fully drawn, EBITDA of $11.55m could fall to $8.20m before a breach

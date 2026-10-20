@@ -1,0 +1,15 @@
+data/ballast/stress/ holds:
+  paths_2025-12-31.csv                  8.3 KB
+  products_2025-12-31.csv               9.4 KB
+  reverse_2025-12-31.json               0.4 KB
+  summary_2025-12-31.json               0.7 KB
+  years_2025-12-31.csv                  2.7 KB
+9 scenario-years, 81 product-years, 180 path-months
+stress_2026 run again: largest difference 0.00 cents
+
+CET1 requirement 8.0%; lowest CET1 ratio, 2026-2028:
+  base          15.7% standardised in 2028,  15.9% on IRB
+  severe         9.7% standardised in 2028,   8.9% on IRB
+  stress_2026   -2.1% standardised in 2028,  -1.7% on IRB
+  reverse, stress_2026 shape: x 0.51, unemployment 7.09%
+  reverse, severe shape: x 1.14, unemployment 11.15%

@@ -1,0 +1,6 @@
+scorecard                   holdout  out of time  wrong signs
+Mark II                       0.575        0.569            0
+enquiries 0,1,2,3,4,5+        0.590        0.568            0
+bureau in 20s                 0.566        0.561            0
+both                          0.582        0.560            0
+challenger                    0.646        0.634

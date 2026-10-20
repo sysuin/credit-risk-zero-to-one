@@ -1,0 +1,20 @@
+open on 2025-12-31
+product          open up to date 30 days   60  90+  balance $m
+auto            5,130      5,086      23   11   10        99.2
+card           15,262     15,045      96   41   80        37.8
+mortgage        3,623      3,606       3    2   12       877.0
+personal        6,634      6,500      62   23   49        59.0
+sme_emergency   1,339      1,308      11    4   16        40.2
+sme_overdraft   1,194      1,177      11    2    4        93.9
+sme_term        1,368      1,330      16    9   13       191.3
+all            34,550   behind: 498 (1.4%)
+
+closed during the month
+  prepaid                 233
+  repaid                  197
+  closed by customer      119
+  charged off              33
+  vehicle repossessed       8
+  collateral sold           2
+  property sold             1
+card accounts: 34,261; limit raised on 4,026, cut on 0

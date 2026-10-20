@@ -1,0 +1,10 @@
+sale            debts   still owed      price  later, net  cents
+Jun 2019 sold     282    1,290,683    116,162           0    9.0
+Jun 2019 kept      47      262,552          0      13,999    5.3
+Nov 2023 sold   1,280    5,391,900    647,028           0   12.0
+Nov 2023 kept     350    1,356,751          0      20,947    1.5
+debts charged off 6+ months before a sale, still paying the
+agency in the 6 months before it; dollars
+still owed: written off less collected before the sale;
+later, net: collections less costs after the sale, to Dec 2025;
+cents: price (sold) or later net (kept) per dollar still owed

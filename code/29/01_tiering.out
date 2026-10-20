@@ -1,0 +1,22 @@
+id    use      level       $m evidence  doubt      own tier via
+MK1   decide   medium     223        -  not held     1    1
+MK2   decide                       375  not adopted
+MK2R  decide   medium    45.2    1,122  -            2    1 HAZ,PD12
+CHAL  decide   medium       -      375  judgement    1    1
+SME1  decide   medium     154        -  judgement    1    1
+SME1B inform   low          -      122  -            3    3
+FRM   external high     5,917       35  thin         1    1
+RATE  external high     5,917       35  thin         1    1
+MERT  inform   low      1,741        9  judgement    2    2
+PD12  external high      59.0    1,723  -            1    1
+HAZ   external high     1,486    6,279  -            1    1
+LGD   external high     7,403    6,321  -            1    1
+CCF   external high     3,160       17  thin         1    1
+ECL   external high     7,403        -  judgement    1    1
+CAP   external high     7,403        -  -            1    1
+BEH   inform   low        123    4,181  -            3    3
+CURE  inform   low       14.8   19,041  -            3    3
+FRAUD decide   medium    45.2      165  -            2    2
+PRICE decide   medium    45.2    1,723  -            2    2
+SEC   inform   low       92.9      886  judgement    2    2
+BMAP  inform   low          -   15,541  -            3    3

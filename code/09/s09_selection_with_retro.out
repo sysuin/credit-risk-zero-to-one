@@ -1,0 +1,20 @@
+bureau_score            LR   502.9  p 2.25e-111
+enquiries_6m            LR   108.0  p 2.64e-25
+dti                     LR    57.6  p 3.15e-14
+oldest_account_months   LR    46.0  p 1.19e-11
+revolving_utilisation   LR    31.7  p 1.82e-08
+address_months          LR    27.3  p 1.75e-07
+worst_status_24m        LR    20.4  p 6.35e-06
+revolving_balance       LR    15.8  p 6.88e-05
+(stop)                  LR     3.3  p 0.0704
+
+Mark II has: enquiries_6m, bureau_score, oldest_account_months,
+  address_months, dti, income, revolving_utilisation,
+  revolving_balance
+retro chooses: bureau_score, enquiries_6m, dti,
+  oldest_account_months, revolving_utilisation, address_months,
+  worst_status_24m, revolving_balance
+left out: income; added: worst_status_24m
+
+Mark II          Gini, truth: holdout 0.513, OOT 0.543
+retro selection  Gini, truth: holdout 0.540, OOT 0.558

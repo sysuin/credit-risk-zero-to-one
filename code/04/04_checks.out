@@ -1,0 +1,16 @@
+                              A00000004    A00137123
+worst arrears, 24 months              0           30
+public records                        0            0
+bureau file                         yes          yes
+age                                  46           39
+monthly income                $5,991.67    $2,791.67
+existing debt payments        $1,719.45      $279.00
+new payment, test rate          $327.56      $386.37
+debt-to-income                    0.342        0.238
+debt-to-income limit               0.50         0.50
+
+rule, personal and auto            broke it  approved
+arrears of 90+ days in 24 months      7,638         0
+a public record                       6,867         0
+no bureau file and under 25           4,531         0
+debt-to-income over the limit         6,784         0

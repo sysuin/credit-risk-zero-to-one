@@ -1,0 +1,18 @@
+21,414 company-months on 264 clients; 1.95% followed by a default
+within 12 months; 35 clients defaulted
+
+trigger       months clients    hit  caught  false  warning
+                               rate         alarms   months
+revolver_75      323      29  33.4%   19 of 35   10        8
+revolver_up      345      80  21.2%   16 of 35   64        8
+covenants      3,529     134   9.2%   34 of 35  100       12
+market            96       8  11.5%    1 of 35    7       12
+held             891      66   5.9%    9 of 35   57       10
+grade_8        3,407     104   9.5%   30 of 35   74       12
+any            5,479     183   7.2%   35 of 35  148       12
+  revolver_75  revolvers 75% or more drawn
+  revolver_up  revolver use up 15 points since the review
+  covenants    leverage and cover both outside covenant
+  market       distance to default below 1.5, grade 6 or better
+  held         grade held 2+ notches better than the model
+  grade_8      internal grade 8 or worse

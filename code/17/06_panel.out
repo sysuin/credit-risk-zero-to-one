@@ -1,0 +1,15 @@
+estimates: 6,410 company-months, 72 companies, Mar 2017 to Dec 2025
+  solver converged: 6,410
+  median equity vol 33.7%, asset vol 24.4%
+
+month end   firms  median DD  p10 DD  DD < 1  DD < 2
+Dec 2017       59       5.36    3.36      0%      3%
+Dec 2018       59       5.62    2.78      2%      5%
+Dec 2019       59       5.47    2.67      0%      7%
+Mar 2020       59       5.17    1.79      5%     12%
+Dec 2020       59       5.06    2.21      3%      8%
+Dec 2021       60       5.15    1.67      7%     18%
+Dec 2022       63       5.16    1.31      8%     14%
+Dec 2023       59       5.08    2.22      0%      8%
+Dec 2024       62       5.66    1.87      3%     13%
+Dec 2025       63       5.28    2.19      2%      6%

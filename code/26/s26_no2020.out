@@ -1,0 +1,8 @@
+2020's unemployment 7.32%; fitted on 2017-19 and 2021-25
+                    b  predicted    seen  seen/pred
+personal        0.016      3.22%   6.47%       2.01
+card            0.075      3.28%   5.32%       1.62
+auto           -0.056      1.90%   4.44%       2.33
+mortgage        0.236      1.03%   0.72%       0.70
+sme_term        0.545     11.04%   7.59%       0.69
+sme_overdraft   0.132      2.40%   5.69%       2.37

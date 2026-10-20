@@ -1,0 +1,10 @@
+applied            cut  apps  appr loans   rate  took  broker
+Jan 2019-Mar 2020  575   638   329   206  51.5%   63%   17.4%
+Apr 2020-Jan 2021  610   532   175   136  33.0%   77%   16.8%
+Feb 2021-Jun 2022  525   809   537   234  66.4%   44%   36.1%
+Jul 2022-Dec 2023  580   740   377   245  50.9%   65%   17.4%
+Jan 2024-Dec 2025  580   792   401   253  50.7%   63%   17.3%
+apps, appr, loans: a month; took: loans per approval
+push approvals through broker  2,866, taken up 29%
+push approvals through branch  3,634, taken up 52%
+push approvals through online  2,625, taken up 48%

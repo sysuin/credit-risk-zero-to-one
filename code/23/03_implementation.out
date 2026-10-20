@@ -1,0 +1,10 @@
+Sample: saved 22,205 loans, rebuilt 22,205, matched 22,205
+  same split 100.0%, same outcome 100.0%
+                           bad           good  indeterminate
+  holdout                  157          5,017             96
+  out_of_time              114          4,450             76
+  train                    375         11,700            220
+
+Champion Mark II-R: 10 lines, base 484, top score 652, cut-off 554
+2025 applications scored by the engine: 7,718; rescored
+from the saved table: 7,718, identical 7,718, largest gap 0

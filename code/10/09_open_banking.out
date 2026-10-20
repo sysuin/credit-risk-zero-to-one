@@ -1,0 +1,18 @@
+out-of-time loans
+                  loans  bads  bad rate  Mark II   Gini
+consented         2,521    34     1.35%    610.3  0.496
+asked, refused    1,480    64     4.32%    603.8  0.591
+never asked         563    16     2.84%    603.4  0.546
+
+consenting loans: fitted on 2021-22 (1,037, 26 bads, online only),
+  tested on 2023-24 (2,521, 34 bads, 44% from branches)
+  adding the five fields on 2021-22: LR 17.9 on 5 df, p 0.003
+    balance      -0.31  (p 0.211)
+    overdraft    +0.52  (p 0.034)
+    volatility   +0.19  (p 0.896)
+    returned     +0.80  (p 0.011)
+    betting      -0.11  (p 0.828)
+  Gini on 2023-24:
+    Mark II alone       0.496  (0.349 to 0.641)
+    with bank data      0.562  (0.400 to 0.694)
+    gain               +0.066  (-0.024 to +0.169), 90.6% above 0

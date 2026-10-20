@@ -1,0 +1,15 @@
+               pools accounts   EAD $m     PD    LGD  cure  EL $m
+auto              12    5,110     98.8  1.98%  29.4%   16%   0.58
+card              12   15,184     64.0  1.85%  68.8%   15%   0.82
+mortgage           8    3,609    873.8  0.40%   2.7%   65%   0.09
+personal          14    6,571     58.4  2.53%  65.1%   16%   0.96
+sme_emergency      3    1,320     39.5  2.20%  17.3%   14%   0.15
+sme_overdraft      3    1,189    154.9  1.86%  66.1%   18%   1.90
+sme_term           3    1,350    189.8  4.19%  23.3%   19%   1.85
+companies                 230  5,917.1  3.80%  64.6%       143.53
+expected loss, PD x LGD x EAD: $149,880,338
+
+retail EAD $1,479,145,749; Chapter 21's $1,479,145,749
+companies' EAD, Fernhill's revolver CCF $5,917.1m;
+  supervisory CCF $5,159.3m
+left out, already in default: 217 exposures, $7.3m

@@ -1,0 +1,4 @@
+retro rows         weight  declines    Gini
+as they come        7,069     13.5%   0.531
+reweighted         11,066     14.1%   0.530
+true bad rate of the holdout's declines: 15.1%

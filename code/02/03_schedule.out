@@ -1,0 +1,23 @@
+month    opening  interest  principal    closing
+    1  15,100.00    137.16     190.40  14,909.60
+    2  14,909.60    135.43     192.13  14,717.47
+    3  14,717.47    133.68     193.88  14,523.59
+  ...
+   58     964.96      8.77     318.79     646.17
+   59     646.17      5.87     321.69     324.48
+   60     324.48      2.95     324.48       0.00
+
+total paid      $ 19,653.47
+of it interest  $  4,553.47
+
+MG0003444: $396,000 over 360 months at 6.75%
+                             PL0000001   MG0003444
+interest share, month 1            42%         87%
+principal overtakes in         month 1   month 238
+interest / amount lent             30%        133%
+
+months compared: 60
+largest gap, schedule minus ledger: -13 cents
+gap in the last month: 0 cents
+Fernhill collected $19,653.60; last payment $327.56
+largest gap, ledger's own arithmetic: 0 cents

@@ -1,0 +1,10 @@
+Alder Oak Materials, $m      short   long  total  default
+accounts  in use from         term   term   debt    point
+FY2016    31 Mar 2017         18.82  20.05  38.88    28.85
+FY2017    31 Mar 2018         19.56  20.84  40.40    29.98
+FY2018    31 Mar 2019         20.19  21.51  41.70    30.94
+FY2019    31 Mar 2020         21.25  22.64  43.89    32.57
+
+every listed client's accounts: 549 company-years, 72 companies
+  short-term share of debt     p10 24%  median 36%  p90 47%
+  default point / total debt   p10 62%  median 68%  p90 73%

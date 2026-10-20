@@ -1,0 +1,12 @@
+ln_leverage + ln_cover + size:
+  R-squared 0.945; grade reproduced 67.9%, within one notch 99.5%
+ln_leverage + ln_cover + equity_ratio + size:
+  R-squared 0.945; grade reproduced 68.2%, within one notch 99.5%
+
+Reviews where the model wanted a downgrade (complete years)
+analyst   reviews  defaulted  grade PD  model PD
+moved         525       2.9%     3.55%     4.16%
+held          195       4.1%     1.47%     4.44%
+Holds flagged in the ratings table: 339; its columns:
+  company_id, rating_date, internal_grade, model_grade,
+  analyst_override, agency_rating

@@ -1,0 +1,23 @@
+account_id      month  balance_cents  missed     status
+ CC0000002 2022-02-28          95233       0 up_to_date
+ CK0000001 2022-03-31         121171       0 up_to_date
+ CK0000001 2022-04-30         111921       0 up_to_date
+ CK0000001 2022-05-31          50915       0 up_to_date
+accounts with a predecessor: 10,050 (all CK: True)
+
+opened    cards     m6    m12    m24    m36    m48
+2016      1,918   0.8%   3.0%   6.3%   8.4%  10.5%
+2017      2,158   0.7%   2.2%   5.0%   8.1%  10.1%
+2018      2,335   0.8%   2.2%   6.5%  11.1%  12.6%
+2019      2,158   0.5%   2.9%   8.5%  10.2%  11.1%
+2020      1,614   1.2%   3.0%   5.8%   7.0%   8.2%
+2021      3,001   1.4%   3.9%   8.1%  12.0%  14.4%
+2022      2,908   1.2%   2.8%   7.5%  11.3%      .
+2023      2,635   1.0%   3.2%   6.3%      .      .
+2024      2,690   0.6%   1.9%      .      .      .
+2025      2,794      .      .      .      .      .
+
+default episodes: 6,381 by account id, 6,321 stitched
+CK cards in default in March 2022: 81, of which 60
+  were already in default under their old number
+the same cards in Fernhill's defaults table: 81

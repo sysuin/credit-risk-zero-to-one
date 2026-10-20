@@ -1,0 +1,17 @@
+development      applicants  true bad  Mark II says
+booked               17,565      3.0%          3.3%
+not_taken_up         11,018      4.2%          5.5%
+declined             12,599     14.7%         14.2%
+declined, rules      11,263     20.0%         14.0%
+
+true bad rate by Mark II score, policy rules passed
+Mark II   promise  booked  walked  declined      n
+<540        25.6%   23.1%    7.3%     20.4%  4,697
+540-559     10.1%    7.5%    6.2%     13.5%  2,948
+560-579      5.3%    4.3%    6.0%     10.6%  3,272
+580-599      2.8%    2.9%    3.7%      9.6%  1,411
+600-619      1.5%    1.7%    1.6%      4.8%    230
+620-639      0.8%    0.3%    0.3%      3.4%     29
+640+         0.3%    0.2%    0.4%      0.0%     12
+
+declined for score, Mark II 580+: 1,542; promised 2.85%, true 9.08%

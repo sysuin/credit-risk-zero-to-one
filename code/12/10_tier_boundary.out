@@ -1,0 +1,17 @@
+Mark I    price  took MkII-R loans   bad promised ratio
+570-579    18.7   12%  556.6   126 13.5%    10.2%  1.32
+580-589    19.0   12%  560.4   157 10.8%     8.5%  1.27
+590-599    19.5   13%  564.2   248  8.5%     7.4%  1.14
+600-609    14.5   55%  569.3 1,070  5.8%     6.2%  0.93
+610-619    14.5   54%  575.0 1,017  4.4%     5.1%  0.87
+620-629    14.6   53%  580.2   931  4.6%     4.4%  1.04
+
+Booked loans, seen against promised
+  580-599 (dear)      38 bads,  31.7 promised: 1.20 (0.85 to 1.64)
+  600-619 (cheaper)  107 bads, 118.1 promised: 0.91 (0.74 to 1.09)
+
+Who walked away, as the bureau saw them later (to 2023)
+  580-599: 2,627 walked; 85% borrowed elsewhere,
+    and 7.9% of those loans went bad
+  600-619: 1,589 walked; 85% borrowed elsewhere,
+    and 7.3% of those loans went bad

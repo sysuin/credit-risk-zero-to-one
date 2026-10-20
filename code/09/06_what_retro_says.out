@@ -1,0 +1,16 @@
+characteristic            booked  + retro  ratio
+bureau_score               0.449    0.527    1.2
+enquiries_6m               0.389    0.251    0.6
+worst_status_24m           0.037    0.138    3.8
+revolving_utilisation      0.130    0.179    1.4
+oldest_account_months      0.192    0.063    0.3
+income                     0.150    0.099    0.7
+address_months             0.149    0.076    0.5
+employment_months          0.045    0.077    1.7
+dti                        0.078    0.063    0.8
+
+worst status in 24 months: bad rate by bin
+bin                 booked      retro-labelled
+<30         2.9% of 10,702      9.1% of  4,700
+30+         4.8% of    993     14.1% of  1,972
+no file     5.0% of    380     10.3% of    397

@@ -1,0 +1,14 @@
+                        train   hold    OOT  z hold  z OOT
+const                    3.34   3.47   3.43    +1.1   +0.7
+bureau_file              0.77   1.86   0.13    +1.4   -0.4
+enquiries_6m             0.76   0.94   1.12    +1.4   +2.5
+bureau_score             0.74   0.99   0.95    +1.3   +1.0
+oldest_account_months    0.84   0.72   1.23    -0.6   +1.7
+address_months           0.74   0.84   1.00    +0.4   +0.9
+dti                      1.20   0.62   0.83    -1.4   -0.8
+income                   0.40   0.25  -0.12    -0.5   -1.8
+revolving_utilisation    0.62   0.39   0.22    -0.7   -1.1
+revolving_balance        0.77   0.45   0.22    -0.5   -0.8
+holdout: bads 157, wrong signs on refit: none
+out_of_time: bads 114, wrong signs on refit: income
+without the 274 holiday loans: largest change 0.062 (bureau_file)

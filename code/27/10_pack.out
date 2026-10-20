@@ -1,0 +1,174 @@
+# FERNHILL BANK: RISK COMMITTEE PACK
+
+Board risk committee, Thursday 8 January 2026.
+Position at 31 December 2025; produced by Ballast.
+
+## 1 Headline
+
+- CET1 is 16.7% against a target of 16.0%: inside appetite, $40.9m
+  above the target. The $543.1m above the requirement is not spare.
+- The supervisor's scenario takes CET1 to -2.1%, below its tolerance
+  of 4.5%. The watchlist (grades 9-10, $1,078.9m of exposure) is the
+  cause; the scenario can carry $283.3m of it.
+- Economic capital is 78.4% of CET1 against a ceiling of 73.0%.
+- The commercial book returns -0.4% on its capital before running
+  costs; retail returns 45.9%.
+- Of 14 appetite metrics, 7 are red, 3 amber and 4 green.
+
+## 2 Risk appetite dashboard
+
+```
+    metric                           now  appetite  status
+CAPITAL
+C1  CET1 ratio (standardised)      16.7%   >=16.0%   GREEN
+C2  CET1 trough, supervisor's      -2.1%    >=8.0%     RED
+C3  economic capital / CET1        78.4%   <=73.0%   AMBER
+EARNINGS
+E1  base-case charge / NII         53.2%   <=50.0%   AMBER
+E2  1-in-10 credit loss / NII     170.6%  <=100.0%     RED
+QUALITY
+Q1  watchlist EAD, grades 9-10   $1,079m   <=$283m     RED
+Q2  consumer arrears, 30+ days      1.3%    <=2.1%   GREEN
+Q3  commercial return, pre-cost    -0.4%   >=15.0%     RED
+CONCENTRATION
+N1  largest client / Tier 1        18.0%   <=10.0%     RED
+N2  largest sector / commercial    15.0%   <=20.0%   GREEN
+N3  largest region / retail        23.6%   <=30.0%   GREEN
+N4  commercial / all lending       75.5%   <=70.0%   AMBER
+MODELS
+M1  tier 1 models unvalidated          8       <=0     RED
+M2  open high findings, undated        6       <=0     RED
+```
+
+Green: inside the appetite. Amber: beyond it, inside the tolerance.
+Red: beyond the tolerance. Thresholds and owners are in the
+statement (appendix to the board paper).
+
+## 3 Provisions
+
+```
+$m            stage 1  stage 2  stage 3    total   cover
+retail            3.7      3.1      1.6      8.3   0.60%
+commercial       24.6    198.3      0.0    222.9   5.17%
+total            28.3    201.4      1.6    231.2   4.05%
+```
+
+By scenario: upside 171.0, base 183.9, downside 258.2, severe 363.6
+($m); weighted $231.2m, 25.7% above the base. Stage 2 holds 1,675
+accounts and 23.5% of the balance. CECL, computed alongside,
+$289.7m. In the supervisor's scenario the provision would be $808.9m
+at the end of 2026.
+
+## 4 Capital and stress
+
+CET1 $1,045.4m on standardised RWA of $6,278m: CET1 16.7%, Tier 1
+18.4%, total 21.0%. Requirement 8.0%; target 16.0%; tolerance 11.5%.
+Economic capital at 99.9% $820.1m, 78.4% of CET1.
+
+```
+three years       trough   losses  CET1 used
+base               15.7%      345         57
+severe (own)        9.7%      568        437
+supervisor's       -2.1%    1,224      1,178
+```
+
+Reverse stress: 0.51 of the supervisor's scenario takes CET1 to 8.0%
+(unemployment 7.1%, policy rate 5.1%).
+
+## 5 Concentrations
+
+```
+client                      grade  EAD $m   of T1    limit
+Falcon Vale Holdings            7   208.2   18.0%     over
+Cedar Oak Foods                 1   165.7   14.3%     over
+Willow Ember Healthcare         3   163.0   14.1%     over
+Birch Willow Energy             8   139.2   12.0%     over
+Alder Harbour Logistics         3   139.0   12.0%     over
+Juniper River Freight          10    95.6    8.3%
+```
+
+5 clients exceed the limit of 10% of Tier 1 ($115.6m). Largest
+sector manufacturing 15.0% of commercial exposure; largest region
+23.6% of retail; commercial lending 75.5% of the book. Watchlist
+exposure $1,078.9m against a limit of $283.3m.
+
+## 6 Monitoring alerts
+
+From the December monitoring pack, items beyond their limits:
+
+1. card Mark I +11.1 points on 2016 (PSI 0.082)
+2. auto Mark I +15.3 points on 2016 (PSI 0.092)
+3. Mark II-R promise outside the seen interval in 2024Q2
+4. 1 new on the commercial watchlist
+5. Ballast's 2025 approval ratio F/M 0.957, interval below 1
+6. never-paid loans up in branch
+
+For noting: collections now open with a phone call at the first
+missed payment, with 10% of accounts given a text first so that the
+effect is still measured.
+
+## 7 Model risk
+
+8 tier 1 models in use have no independent validation on file: MK1,
+SME1, FRM, PD12, HAZ, LGD, CCF, ECL. The findings log holds 27
+findings; 6 high findings are open, and none has a date for its fix:
+
+```
+F01  MK1   bureau line not re-set for version 3
+F03  MK1   no independent validation since 2015
+F09  MK2R  women's 2025 approvals below parity
+F13  SME1  owner's bureau line not re-set
+F15  FRM   analysts hold grades the model moves
+F22  ECL   commercial year-one PD unsettled
+```
+
+## 8 The commercial plan, measured
+
+```
+supervisor scenario, cumulative         trough  watchlist
+today                                    -2.1%      1,079
+watchlist headroom cancelled              1.2%        819
+watchlist maturities not renewed          1.8%        648
+clients cut to 10% of Tier 1              2.0%        648
+grades 5-8 repriced                       3.6%        648
+watchlist down to its limit               9.5%        283
+```
+
+Each step is measured as if complete, on Chapter 26's static book.
+The first four are the plan for 2026; with them, Fernhill's own
+severe scenario leaves CET1 at 13.5% and economic capital falls from
+$820.1m to $629.7m. The fifth, the watchlist run down to its limit,
+is the work of 2027.
+
+## 9 Decisions requested
+
+1. Recommend the 2026 risk appetite statement (14 metrics; today 7
+   red, 3 amber) to the board in February.
+2. Hold CET1 at or above the 16.0% target. Decline the proposal to
+   return or lend the $543.1m above the requirement, and make no
+   distribution while the supervisor's scenario leaves CET1 below
+   8.0%.
+3. Approve the watchlist plan: no new money for grades 9-10; undrawn
+   revolver headroom cancelled at review; facilities maturing in
+   2026 not renewed; watchlist exposure down to $283.3m by December
+   2027.
+4. Approve a single-client limit of 10% of Tier 1. Allow the 5
+   clients above it (Falcon Vale Holdings, Cedar Oak Foods, Willow
+   Ember Healthcare, Birch Willow Energy, Alder Harbour Logistics)
+   as exceptions until December 2026, to be reduced by
+   participations or bought protection.
+5. Reprice grades 5-8 at their 2026 reviews (grade 5 +64, grade 6
+   +93, grade 7 +188, grade 8 +266 bps), and approve new commercial
+   lending only at a margin that earns the 15% hurdle on its
+   capital.
+6. Let retail lending grow within its limits, and direct the head of
+   retail credit to re-set Mark I's bureau points for cards, car
+   loans and mortgages (open since July 2019).
+7. Approve a validation plan for the 8 tier 1 models in use without
+   one, the provision engine and Mark I first, with a date for every
+   open high finding.
+8. Aim any risk transfer bought in 2026 at the commercial clients
+   above the limit, not at the retail book: the car loans, $98.8m of
+   exposure, carry $0.5m of the $820.1m of economic capital.
+
+[saved to data/ballast/report/pack_2026-01.md; 172 lines, widest 68]

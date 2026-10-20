@@ -1,0 +1,25 @@
+A00073784: Mark II-R 551, refer (cut-off 554, refer 550-557)
+  line                     points  best  short  at cut-off    gap
+  bureau_file                   7     7      0         6.9   -0.1
+  enquiries_6m                 15    24      9        13.9   -1.1
+  bureau_score                  0    48     48         5.9   +5.9
+  oldest_account_months        13    13      0        11.4   -1.6
+  address_months               10    10      0         7.2   -2.8
+  dti                          10    20     10         9.2   -0.8
+  income                        3     7      4         1.8   -1.2
+  revolving_utilisation         0    21     21         7.5   +7.5
+  revolving_balance             9     9      0         0.9   -8.1
+  worst_status_24m              0     9      9         6.8   +6.8
+  gaps add up to +4.6: the reference applicant's 555.6
+  less her 551
+
+Best bin (Chapter 11):
+  1. credit bureau score (can act)
+  2. share of card limits in use (can act)
+  3. existing debt payments against income (can act)
+  4. recent applications for credit (can act)
+
+Against the cut-off:
+  1. share of card limits in use (can act)
+  2. recent missed payments (cannot act)
+  3. credit bureau score (can act)

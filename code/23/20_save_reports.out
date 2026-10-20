@@ -1,0 +1,22 @@
+Validations dated 6 February 2026, data to 31 December 2025
+id    model                  high med low  conclusion
+--------------------------------------------------------------------
+MK2R  Mark II-R scorecard       1   4   1  approved with conditions
+PD12  12-month PD, personal     0   3   1  approved with conditions
+LGD   Workout LGD               0   2   0  approved with conditions
+CCF   Conversion factors        0   2   0  approved with conditions
+RATE  Ballast rating model      0   3   0  approved with conditions
+FRM   Fernhill rating model     2   0   0  not approved
+
+Saved 7 files to data/ballast/validation/:
+  reports.json, MK2R.txt, PD12.txt, LGD.txt,
+  CCF.txt, RATE.txt, FRM.txt
+
+What the register reads back
+  id    year  conclusion                high/med/low
+  MK2R  2026  approved with conditions  1/4/1
+  PD12  2026  approved with conditions  0/3/1
+  LGD   2026  approved with conditions  0/2/0
+  CCF   2026  approved with conditions  0/2/0
+  RATE  2026  approved with conditions  0/3/0
+  FRM   2026  not approved              2/0/0

@@ -1,0 +1,16 @@
+3,032 loans booked in 2025; hurdle 15%
+RAROC  p10 27%  p25 34%  median 41%  p75 57%  p90 76%
+Whole book 46%; below the hurdle 3.7% (113 loans), losing money 1.7%
+
+Mark II-R   loans   rate    PD  RAROC  below
+<560          196  16.80 13.2%    13%    42%
+560-569       250  15.88  7.4%    51%     8%
+570-579       387  14.61  4.9%    55%     2%
+580-589       494  13.46  3.3%    55%     1%
+590-599       479  12.13  2.1%    50%     0%
+600-609       457  11.12  1.4%    45%     0%
+610+          769  10.20  0.7%    40%     0%
+
+The loans below the hurdle, by Mark I price tier:
+  <600 10  600-629 52  630-659 40  660+ 11
+  median Mark II-R 551; median rate 15.70%

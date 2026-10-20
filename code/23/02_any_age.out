@@ -1,0 +1,12 @@
+Loan-quarters 2016-2024 with a complete year after, by months
+on book: Gini of the application score alone and of the
+12-month PD (score, age, arrears, economy; fitted 2016-2022)
+on book       rows  defaults   score      PD  Dec 2025 book
+1-6         41,774     1,599   0.438   0.510          22.5%
+7-12        32,804     1,344   0.398   0.533          20.1%
+13-24       43,182     1,612   0.468   0.612          27.7%
+25-36       20,247       562   0.485   0.632          18.2%
+37+          8,792       137   0.354   0.572          11.5%
+
+Up to date at the quarter end: score Gini 0.397 in the first
+year, 0.451 after two

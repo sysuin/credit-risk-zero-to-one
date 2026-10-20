@@ -1,0 +1,27 @@
+stated income / revolving limit (median)
+score        branch   online   broker  broker vs branch
+550-599        5.76     5.78     6.53              +13%
+600-649        4.99     5.03     5.69              +14%
+650-699        4.31     4.39     4.81              +11%
+other payments / stated income (median, no mortgage)
+score        branch   online   broker  broker vs branch
+550-599       10.5%    10.4%     9.8%               -7%
+600-649        9.9%     9.7%     8.6%              -14%
+650-699        9.0%     8.7%     8.1%              -10%
+applications
+score        branch   online   broker
+550-599       3,512    3,606    2,341
+600-649       4,438    4,443    2,579
+650-699       3,989    4,073    1,829
+mean bureau score
+score        branch   online   broker
+550-599       576.2    576.1    575.4
+600-649       625.0    624.6    623.8
+650-699       673.6    673.6    672.6
+
+550-699: stated income / revolving limit (median)
+  broker, unverified        2,555    5.79
+  broker, verified          4,194    5.64
+  broker, to Jun 2022       3,689    5.81
+  broker, from Jul 2022     3,060    5.57
+  branch, from Jul 2022     6,185    4.94

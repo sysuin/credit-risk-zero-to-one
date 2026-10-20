@@ -1,0 +1,26 @@
+Reference: 473 applicants of 2023 to mid-2024 scoring 554-557
+  line                     best bin  at cut-off
+  bureau_file                     7         6.9
+  enquiries_6m                   24        13.9
+  bureau_score                   48         5.9
+  oldest_account_months          13        11.4
+  address_months                 10         7.2
+  dti                            20         9.2
+  income                          7         1.8
+  revolving_utilisation          21         7.5
+  revolving_balance               9         0.9
+  worst_status_24m                9         6.8
+
+First reason, 2,598 score declines and referrals, 2025
+                            best bin  cut-off
+  enquiries_6m                    30    1,078
+  dti                              0      537
+  oldest_account_months            0      387
+  revolving_utilisation            1      286
+  address_months                   0      186
+  worst_status_24m                 0       88
+  bureau_score                 2,499       36
+  no_file                         68        0
+best bin: 4.0 reasons each; first reason one they can act on 100%
+cut-off: 3.8 reasons each; first reason one they can act on 75%
+Same first reason both ways: 2.5%

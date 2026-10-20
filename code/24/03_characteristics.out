@@ -1,0 +1,20 @@
+Mark I's lines, July 2019 against Jul 2018-Jun 2019
+line                        PSI   points  points   shift
+                                  before    July        
+bureau_score              0.197     49.5    62.2   +12.7
+address_months            0.013     47.2    46.4    -0.8
+age                       0.009     47.8    47.5    -0.3
+dti                       0.007     47.8    48.0    +0.2
+worst_status_24m          0.004     49.0    49.9    +0.9
+enquiries_6m              0.004     50.8    51.3    +0.5
+revolving_utilisation     0.002     48.0    48.2    +0.2
+housing                   0.002     48.8    48.8    +0.0
+employment_months         0.002     42.7    42.6    -0.1
+all lines                          431.6   445.0   +13.4
+
+The raw fields, same months (PSI over the reference deciles)
+  bureau score            0.200   mean    603.7 ->    639.2
+  age                     0.024   mean     39.7 ->     39.0
+  stated income           0.013   mean  $46,610 ->  $48,919
+  card utilisation        0.014   mean    41.7% ->    41.4%
+  enquiries, 6 months     0.004   mean     1.43 ->     1.35

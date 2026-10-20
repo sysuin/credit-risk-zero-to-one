@@ -1,0 +1,9 @@
+retail, 31 Dec 2021  accounts  expected  actual
+auto                    3,804        76      68
+card                    9,694       295     215
+mortgage                2,227        11      15
+personal                4,630       153     139
+sme_emergency           1,980       259     242
+sme_overdraft             622        12       5
+sme_term                  937        31      15
+all                    23,894       838     699

@@ -1,0 +1,15 @@
+product             accounts  balance stage 1 stage 2 stage 3 in 2+3
+personal               6,634      59m   6,462     109      63   2.3%
+auto                   5,130      99m   5,058      52      20   1.4%
+mortgage               3,623     877m   3,580      29      14   1.2%
+sme_term               1,368     191m   1,285      65      18   6.0%
+sme_emergency          1,339      40m   1,292      28      19   3.4%
+card                  15,262      38m  14,044   1,140      78  13.3%
+sme_overdraft          1,194      94m   1,058     131       5  19.6%
+commercial_term          201   2,977m     136      65       0  29.2%
+commercial_revolver      164   1,336m     108      56       0  32.2%
+--------------------------------------------------------------------
+all                   34,915   5,712m  33,023   1,675     217  23.6%
+
+stage 2, by the first rule that applies:
+  pd 1,151   arrears 318   cured 128   watchlist 78

@@ -1,0 +1,7 @@
+band        capital  charge  flat charge
+<560          18.1%   2.11%        1.17%
+560-579       16.8%   1.96%        1.17%
+580-599       15.1%   1.76%        1.17%
+600-619       12.4%   1.45%        1.17%
+620+           9.1%   1.06%        1.17%
+charge: capital x (hurdle - transfer price), a year, of balance

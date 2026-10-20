@@ -1,0 +1,12 @@
+sample          AUC   Gini     KS  KS<=Gini  Gini<=2KS
+train         0.759  0.518  0.353      True       True
+holdout       0.788  0.575  0.415      True       True
+out_of_time   0.784  0.569  0.403      True       True
+
+out of time: 4,450 goods x 114 bads = 507,300 pairs
+share of pairs the good wins: 0.784439
+rank formula:                 0.784439
+seed 2026,   200 resamples: Gini 95% interval 0.481 to 0.655
+seed 2026, 2,000 resamples: Gini 95% interval 0.483 to 0.653
+seed 2027,   200 resamples: Gini 95% interval 0.478 to 0.641
+seed 2027, 2,000 resamples: Gini 95% interval 0.481 to 0.652

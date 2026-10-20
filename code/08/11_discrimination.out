@@ -1,0 +1,4 @@
+sample        loans  bads    AUC   Gini   95% interval    KS   at
+train        12,075   375  0.759  0.518 0.473 to 0.562 0.353  572
+holdout       5,174   157  0.788  0.575 0.505 to 0.641 0.415  592
+out_of_time   4,564   114  0.784  0.569 0.484 to 0.652 0.403  598

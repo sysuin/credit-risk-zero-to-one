@@ -1,0 +1,58 @@
+[
+ {
+  "group": "approved at 580 too",
+  "loans": 3437,
+  "m18": 0.0378,
+  "each": 440.5033,
+  "total": 1514009.82
+ },
+ {
+  "group": "580's refer band",
+  "loans": 154,
+  "m18": 0.1688,
+  "each": -136.2028,
+  "total": -20975.23
+ },
+ {
+  "group": "below 580's band",
+  "loans": 246,
+  "m18": 0.1911,
+  "each": -275.6739,
+  "total": -67815.77
+ },
+ {
+  "group": "instant: 515-534",
+  "loans": 83,
+  "m18": 0.2771,
+  "each": -949.8155,
+  "total": -78834.69
+ },
+ {
+  "group": "DTI 0.50-0.55",
+  "loans": 56,
+  "m18": 0.0714,
+  "each": 583.5548,
+  "total": 32679.07
+ },
+ {
+  "group": "overrides below 515",
+  "loans": 4,
+  "m18": 0.5,
+  "each": -1147.3175,
+  "total": -4589.27
+ },
+ {
+  "group": "before: 575",
+  "loans": 3094,
+  "m18": 0.0601,
+  "each": 804.05,
+  "total": 2487730.75
+ },
+ {
+  "group": "after: 580",
+  "loans": 4416,
+  "m18": 0.0421,
+  "each": 582.8063,
+  "total": 2573672.57
+ }
+]

@@ -1,0 +1,13 @@
+6,410 company-months
+  correlation of Ballast's DD with the true DD 0.999
+  Ballast's DD minus the true DD: p10 -0.25, median -0.17, p90 -0.03
+
+medians by true PD      months    true  Merton  ratio     CDS  ratio
+  < 0.1%                  5269   0.00%   0.00%   2.49   0.25%      -
+  0.1-1%                   425   0.31%   0.50%   1.63   0.89%   2.47
+  1-5%                     311   2.29%   3.11%   1.40   5.80%   2.47
+  5-20%                    297  10.02%  12.50%   1.27  20.04%   1.98
+  > 20%                    108  27.78%  31.42%   1.16  44.64%   1.75
+
+March reviews, 486 company-years: 9 defaults in the next year
+  expected on Merton's PD 6.92, on the true PD 5.55

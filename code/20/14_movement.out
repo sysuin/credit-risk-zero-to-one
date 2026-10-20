@@ -1,0 +1,20 @@
+accounts by stage, December 2024 (rows) to December 2025
+            left       1       2       3
+1          5,836  24,309     675     132
+2            381   1,192     413      22
+3            201       0      45       5
+new                7,522     542      58
+
+provision, $m               retail  commercial       all
+opening                       9.55      266.89    276.43
+new loans                     3.14       16.01     19.15
+repaid or closed             -0.81       -2.13     -2.94
+written off                  -2.18       -1.20     -3.38
+remeasured in stage          -1.55      -64.22    -65.77
+stage transfers               0.44       22.29     22.73
+parameters                    0.03        0.00      0.03
+scenarios                    -0.29      -14.76    -15.05
+closing                       8.33      222.88    231.20
+the steps add up to the closing provision: True
+commercial facilities in both: 338; months to maturity 39 -> 27
+  regraded worse 94, better 74, same 170

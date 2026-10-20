@@ -1,0 +1,13 @@
+fit to 2019, test 2020-2021: Gini 0.235, predicted 57.6%, seen 62.4%
+  unemployment coef -0.193  bureau coef +0.706
+  by quarter:  predicted  seen
+  2020Q1          62.4%  56.9%
+  2020Q2          47.6%  58.3%
+  2020Q3          53.1%  62.5%
+  2020Q4          57.2%  63.3%
+  2021Q1          61.0%  70.9%
+  2021Q2          62.5%  63.8%
+  2021Q3          64.2%  66.9%
+  2021Q4          66.5%  61.2%
+fit to 2021, test 2022-2023: Gini 0.301, predicted 65.8%, seen 64.0%
+  unemployment coef -0.086  bureau coef +0.796

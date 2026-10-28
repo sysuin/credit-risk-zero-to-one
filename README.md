@@ -1,7 +1,7 @@
 # Credit Risk from Zero to One: the code
 
 The companion code for *Credit Risk from Zero to One: Lending, Scoring and Risk Management with Python* by Sunny Singh,
-Book 4 of the Zero to One Series.
+part of the Zero to One Series.
 
 It holds **Ballast**, the credit risk platform the book builds across thirty-one
 chapters, and every listing in the book with the output it printed. Ballast belongs to

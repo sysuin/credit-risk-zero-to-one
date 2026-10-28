@@ -27,7 +27,7 @@ options = [("keep the loans", {"A": 1, "B": 1, "C": 1}),
 k_pct = sec.CAPITAL_PCT
 print(f"illustrative rule: capital {k_pct:.0f}% of the pool, borne by "
       f"whoever\nbears its first {k_pct:.0f}% of losses "
-      "(Chapter 21 does it properly)\n")
+      "(Appendix C gives the real rules)\n")
 print(f"{'':<30}{'capital':>9}{'share of loss sold':>21}")
 print(f"{'option':<30}{'% pool':>9}{'expected':>11}{'1 in 1,000':>12}")
 for label, kept in options:

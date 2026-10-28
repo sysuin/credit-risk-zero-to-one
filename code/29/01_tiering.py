@@ -25,8 +25,10 @@ for e in inv:
               f"{e['evidence_n']:>9,}  {e['status']}")
         continue
     ev = "-" if e["evidence_n"] is None else f"{e['evidence_n']:,}"
-    by = [u for u in e["used_by"] if tier[u] == e["tier"]] \
-        if e["tier"] < e["own_tier"] else []
+    # the models that raised this one's tier, if any did
+    by = []
+    if e["tier"] < e["own_tier"]:
+        by = [u for u in e["used_by"] if tier[u] == e["tier"]]
     print(f"{e['id']:<6}{e['use']:<9}{e['level']:<7}"
           f"{gv.money(e['materiality_cents']):>7}{ev:>9}  "
           f"{doubt(e):<10}{e['own_tier']:>4}{e['tier']:>5} "

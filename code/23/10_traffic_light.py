@@ -15,6 +15,7 @@ panel = pdm.account_months(con, loans(con))
 bt = vd.pd_backtest(panel, range(2017, 2026),
                     pdm.long_run_unemployment(con),
                     pdm.unemployment(con))
+# The three PDs: unemployment known, assumed unchanged, long-run
 COLS = {"pit": "known u", "flat": "no change", "ttc": "TTC"}
 print("Performing personal loans on 31 December, defaults in the")
 print("year, and the defaults each PD expected, with its light")
@@ -24,11 +25,13 @@ fig, rhos = [], []
 for y, g in bt.groupby("year"):
     n, d = len(g), int(g["y"].sum())
     row = {"year": int(y), "n": n, "d": d}
+    # Each PD's expected defaults, light and amber/red limits
     for k in COLS:
         p = g[k].mean()
         row[k] = float(g[k].sum())
         row[k + "_light"] = vd.traffic_light(n, d, p)
         row[k + "_lim"] = [round(x, 1) for x in vd.limits(n, p)]
+    # The TTC PD again, with defaults correlated as in the IRB formula
     rho = float(capital.correlation(g["ttc"].mean(), "other_retail"))
     rhos.append(rho)
     row["ttc_corr"] = vd.traffic_light(n, d, g["ttc"].mean(), rho)

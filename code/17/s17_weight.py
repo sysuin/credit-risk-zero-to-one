@@ -21,9 +21,11 @@ print(f"{'long-term weight':<18}{'Alder Oak DD':>14}{'PD':>8}"
 for w in (0.0, 0.5, 1.0):
     p = mk.merton_panel(con, weight=w).merge(d, on="company_id",
                                              how="left")
-    m, dm = pd.to_datetime(p.month), pd.to_datetime(p.default_month)
-    p["before"] = (dm.dt.year - m.dt.year) * 12 \
-        + (dm.dt.month - m.dt.month)
+    # Months from each month end to the company's default.
+    month = pd.to_datetime(p.month)
+    default = pd.to_datetime(p.default_month)
+    p["before"] = ((default.dt.year - month.dt.year) * 12
+                   + (default.dt.month - month.dt.month))
     s = next_year(p)
     march = s[[x.month == 3 for x in s.month]]
     a = p[(p.company_id == cid) & (p.month == dt.date(2020, 9, 30))]

@@ -12,23 +12,30 @@ DATE = dt.date(2020, 12, 31)
 con = fernhill.connect()
 params = ecl.parameters(con, DATE)
 r = ecl.run(con, DATE, params)
+
+# Every account that took a payment holiday, and every default of 2021.
 hol = {x[0] for x in con.execute("""SELECT account_id FROM
     account_events WHERE event = 'payment_holiday_start'""").fetchall()}
 eps = perf.default_episodes(con)
 dm = pd.to_datetime(eps["default_month"])
 d21 = set(eps["account_id"][dm.dt.year == 2021])
+
+# The performing retail accounts, marked by holiday and by default.
 x = r[(r["segment"] == "retail") & (r["stage"] < 3)].copy()
 x["holiday"] = x["account_id"].isin(hol)
 x["y"] = x["root_id"].isin(d21)
+x["in_stage_2"] = x["stage"] == 2
 
 print(f"scenarios moved {params['scenarios'].attrs['shift']:+.2f}"
       f" points to start at Dec 2020's unemployment")
 print(f"{'retail, performing':<20}{'accounts':>9}{'stage 2':>8}"
       f"{'PD':>7}{'expected':>9}{'actual':>7}{'ratio':>7}")
-g = x.groupby("holiday").agg(n=("y", "size"), s2=("stage", "mean"),
+# Per group: accounts, share in stage 2, mean PD, expected defaults
+# (the sum of the PDs) and actual defaults.
+g = x.groupby("holiday").agg(n=("y", "size"),
+                             s2=("in_stage_2", "mean"),
                              pd=("pd12", "mean"), e=("pd12", "sum"),
                              a=("y", "sum"))
-g["s2"] = x.groupby("holiday")["stage"].apply(lambda s: (s == 2).mean())
 for k, name in ((False, "no holiday"), (True, "took a holiday")):
     v = g.loc[k]
     print(f"{name:<20}{v.n:>9,.0f}{v.s2:>8.1%}{v.pd:>7.2%}{v.e:>9.0f}"

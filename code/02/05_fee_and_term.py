@@ -4,22 +4,27 @@ import json
 from ballast.config import ROOT
 from ballast.loanmath import apr, effective_annual_rate, schedule
 
-AMOUNT, RATE = 1_280_000, 9.9    # PL0023628's amount and rate
-FEE = 64_000                     # hypothetical, as in the last listing
+AMOUNT = 1_280_000    # PL0023628's amount, in cents
+RATE = 9.9            # and its rate, percent a year
+FEE = 64_000          # hypothetical, as in the last listing
 
 print(f"effective annual rate at {RATE}%, any term:"
       f" {effective_annual_rate(RATE):.2f}%")
 print()
 print(f"{'term':>6}{'payment':>10}{'interest':>11}{'APR':>8}")
-points = []
+points = []                      # (term, APR) pairs, for the figure
+
+# Every term from 12 to 60 months, six months apart.
 for term in range(12, 61, 6):
-    s = schedule(AMOUNT, RATE, term)
-    payments = s["payment"].tolist()
-    rate = apr(AMOUNT - FEE, payments)
+    loan = schedule(AMOUNT, RATE, term)
+    payment = loan["payment"][0] / 100
+    interest = loan["interest"].sum() / 100
+    rate = apr(AMOUNT - FEE, loan["payment"].tolist())
     points.append((term, rate))
+    # Print whole years only: 12, 24, 36, 48 and 60 months.
     if term % 12 == 0:
-        print(f"{term:>6}{s['payment'][0] / 100:>10,.2f}"
-              f"{s['interest'].sum() / 100:>11,.2f}{rate:>7.2f}%")
+        print(f"{term:>6}{payment:>10,.2f}{interest:>11,.2f}"
+              f"{rate:>7.2f}%")
 
 json.dump({"rate": RATE, "ear": effective_annual_rate(RATE),
            "points": points},

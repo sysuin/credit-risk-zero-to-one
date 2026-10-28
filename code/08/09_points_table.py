@@ -24,12 +24,14 @@ exact = points.exact_score(mark2.params.to_dict(), bins, s)
 print(f"rounding: largest gap from the exact score "
       f"{(scored - exact).abs().max():.2f} points")
 
-out = {"base": card.base,
-       "lines": [{"name": n, "bins": card.table.loc[
-           card.table["characteristic"] == n, "bin"].tolist(),
-           "points": card.table.loc[card.table["characteristic"] == n,
-                                    "points"].tolist(),
-           "coef": round(float(mark2.params[n]), 3)}
-           for n in card.characteristics]}
+# Save the table for the figure: one entry per line of the card.
+lines = []
+for n in card.characteristics:
+    rows = card.table[card.table["characteristic"] == n]
+    lines.append({"name": n,
+                  "bins": rows["bin"].tolist(),
+                  "points": rows["points"].tolist(),
+                  "coef": round(float(mark2.params[n]), 3)})
+out = {"base": card.base, "lines": lines}
 path = ROOT / "code" / "08" / "09_points_table.json"
 path.write_text(json.dumps(out, indent=1) + "\n")

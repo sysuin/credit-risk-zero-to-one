@@ -8,13 +8,16 @@ from ballast.parameters import ead as eadm
 con = fernhill.connect()
 r = capital.load()
 w = ecl.commercial_lgd(con)          # Chapter 20's commercial workouts
-own = {k: (g.lgd * g.ead_cents).sum() / g.ead_cents.sum()
-       for k, g in w.groupby("secured")}
+# Fernhill's own LGD, weighted by EAD, for secured and unsecured loans.
+own = {}
+for secured, g in w.groupby("secured"):
+    own[secured] = (g.lgd * g.ead_cents).sum() / g.ead_cents.sum()
 ccf = eadm.load()["ccf"]["revolver"]
 print(f"commercial workouts: {len(w)}; LGD secured {own[True]:.1%}, "
       f"unsecured {own[False]:.1%}")
 print(f"supervisory LGD {capital.FIRB_LGD:.0%}; revolver CCF: "
       f"supervisory {capital.FIRB_CCF:.0%}, Fernhill's {ccf:.2f}")
+# The companies four ways: the supervisor's numbers, then Fernhill's.
 c = r[r.segment == "commercial"].copy()
 lgd = np.where(c.secured.astype(bool), own[True], own[False])
 runs = {"supervisory": capital.irb(c),

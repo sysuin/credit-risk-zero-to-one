@@ -25,6 +25,7 @@ card = points.scorecard(r.params.to_dict(), binset)
 print()
 for name in model.wrong_signs(r):
     rows = card.table[card.table["characteristic"] == name]
-    cells = "  ".join(f"{b} {p:>2}" for b, p in
-                      zip(rows["bin"], rows["points"]))
-    print(f"{name:<18}{cells}")
+    cells = []
+    for bin_label, pts in zip(rows["bin"], rows["points"]):
+        cells.append(f"{bin_label} {pts:>2}")
+    print(f"{name:<18}" + "  ".join(cells))

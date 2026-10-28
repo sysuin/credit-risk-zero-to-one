@@ -20,16 +20,17 @@ for name, r in t.iterrows():
           f"{r['out_of_time_coef']:>7.2f}{r['holdout_z']:>+8.1f}"
           f"{r['out_of_time_z']:>+7.1f}")
 for split in ("holdout", "out_of_time"):
-    neg = t.index[(t[f"{split}_coef"] <= 0) & (t.index != "const")]
+    negative = t[f"{split}_coef"] <= 0
+    neg = t.index[negative & (t.index != "const")]
     bads = int((1 - good[det["split"] == split]).sum())
     print(f"{split}: bads {bads}"
           f", wrong signs on refit: {', '.join(neg) or 'none'}")
 
 # The 2020 payment holidays: fit without those loans.
-keep = (det["split"] == "train") & ~det["holiday"]
-all_ = model.fit(X[det["split"] == "train"],
-                 good[det["split"] == "train"], chosen)
-noh = model.fit(X[keep], good[keep], chosen)
-gap = (noh.params - all_.params).abs()
+in_train = det["split"] == "train"
+keep = in_train & ~det["holiday"]
+with_hol = model.fit(X[in_train], good[in_train], chosen)
+without = model.fit(X[keep], good[keep], chosen)
+gap = (without.params - with_hol.params).abs()
 print(f"without the {int(train['holiday'].sum())} holiday loans: "
       f"largest change {gap.max():.3f} ({gap.idxmax()})")

@@ -13,10 +13,11 @@ sa = capital.credit_rwa(r) + other
 floor = capital.OUTPUT_FLOOR * sa
 print(f"standardised total RWA ${sa / 1e8:,.0f}m; floor at "
       f"{capital.OUTPUT_FLOOR:.1%}: ${floor / 1e8:,.0f}m")
+products = list(r["product"].unique())
+retail = [p for p in products if not p.startswith("commercial")]
 cases = {"mortgages on IRB": ["mortgage"],
-         "all retail on IRB": [p for p in r["product"].unique()
-                               if not p.startswith("commercial")],
-         "everything on IRB": list(r["product"].unique())}
+         "all retail on IRB": retail,
+         "everything on IRB": products}
 print(f"\n{'':<20}{'RWA $m':>8}{'of SA':>7}{'floored $m':>12}")
 bars = {"standardised": sa}
 for name, prods in cases.items():
@@ -30,6 +31,8 @@ ms, mi = m.sa_rwa.sum(), m.irb_rwa.sum()
 rest = sa - ms
 print(f"\nmortgages alone: IRB ${mi / 1e8:,.1f}m is {mi / ms:.0%} of "
       f"SA; floored ${capital.output_floor(mi, ms) / 1e8:,.1f}m")
+# Grow the mortgage book x times. The floor binds when total RWA,
+# rest + x * mi, falls to 72.5% of the standardised, rest + x * ms.
 x = (1 - capital.OUTPUT_FLOOR) * rest / (capital.OUTPUT_FLOOR * ms - mi)
 print(f"the floor binds once the mortgage book is {x:.1f} times "
       f"today's,")

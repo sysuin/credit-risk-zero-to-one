@@ -56,9 +56,11 @@ for band in ("1-3", "4-6", "7-10"):
 
 # The letter against the market: distance to default at quarter ends.
 
+# Keep the quarter ends that have an agency letter.
 p = mk.grade_in_force(con, mk.merton_panel(con))
-quarter = p.month.map(lambda m: m.month % 3 == 0)
-q = p[p.agency_rating.notna() & quarter]
+quarter_end = [m.month % 3 == 0 for m in p.month]
+q = p[quarter_end]
+q = q[q.agency_rating.notna()]
 q = q.assign(notch=q.agency_rating.map(LETTERS.index))
 rho_dd = q[["notch", "dd"]].corr(method="spearman").iloc[0, 1]
 g = q[q.internal_grade.notna()]

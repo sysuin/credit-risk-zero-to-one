@@ -65,6 +65,7 @@ for no, item in gv.AGENDA:
     print(f"    {ev}")
     md += [f"## {no}. {item} ({st})", "", f"- {ev}", ""]
 counts = pd.Series([v[0] for v in evidence.values()]).value_counts()
-print("ready {ready}, partial {partial}, gap {gap}".format(**counts))
+print(f"ready {counts['ready']}, partial {counts['partial']}, "
+      f"gap {counts['gap']}")
 (gv.OUT / f"exam_{AS_OF:%Y-%m}.md").write_text("\n".join(md) + "\n")
 (gv.OUT / "exam.json").write_text(json.dumps(evidence, indent=1) + "\n")

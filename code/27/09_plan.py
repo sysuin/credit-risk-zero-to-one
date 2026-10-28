@@ -14,9 +14,12 @@ P = stress.paths(con)
 saved = stress.load()["summary"]["trough_sa"]
 g = ap.margins(con, ap.returns(con, by="grade"))
 CEILING = 500           # the highest margin Fernhill has charged, bps
-gap = {k: min(r.gap_bps, CEILING - r.now_bps) for k, r in
-       ((int(i.split()[1]), r) for i, r in g.iterrows())
-       if 5 <= k <= 8}
+# Grades 5 to 8 are repriced by their gap, up to the ceiling.
+gap = {}
+for label, r in g.iterrows():
+    grade = int(label.split()[1])
+    if 5 <= grade <= 8:
+        gap[grade] = min(r.gap_bps, CEILING - r.now_bps)
 print("repricing, bps: " + ", ".join(f"grade {k} +{v:.0f}"
                                      for k, v in gap.items()))
 limit = ap.load_limits()["appetite"]

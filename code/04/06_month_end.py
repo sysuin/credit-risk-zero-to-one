@@ -4,6 +4,7 @@ from ballast.config import AS_OF
 
 con = fernhill.connect()
 
+# Accounts open at the month end, by how many payments they had missed.
 rows = con.execute("""
     SELECT product, count(*),
            count(*) FILTER (WHERE missed = 0),
@@ -25,6 +26,7 @@ n = sum(r[1] for r in rows)
 behind = sum(r[1] - r[2] for r in rows)
 print(f"{'all':<14}{n:>7,}   behind: {behind:,} ({behind / n:.1%})")
 
+# Accounts that closed during the month, by how they closed.
 print()
 closed = con.execute("""
     SELECT status, count(*) FROM performance
@@ -36,17 +38,26 @@ print("closed during the month")
 for status, k in closed:
     print(f"  {status.replace('_', ' '):<22}{k:>5}")
 
-changed = con.execute("""
+# Card limits: each month's limit beside the month before's.
+con.execute("""
+    CREATE TEMP VIEW card_limits AS
+    SELECT account_id, limit_cents,
+           lag(limit_cents) OVER (PARTITION BY account_id
+                                  ORDER BY month) AS prev
+    FROM performance WHERE product = 'card'
+""")
+# For each card, how many times its limit went up and down.
+con.execute("""
+    CREATE TEMP VIEW limit_moves AS
+    SELECT account_id,
+           count(*) FILTER (WHERE limit_cents > prev) AS ups,
+           count(*) FILTER (WHERE limit_cents < prev) AS downs
+    FROM card_limits GROUP BY account_id
+""")
+raised, cut, cards = con.execute("""
     SELECT count(*) FILTER (WHERE ups > 0),
            count(*) FILTER (WHERE downs > 0), count(*)
-    FROM (SELECT account_id,
-                 count(*) FILTER (WHERE limit_cents > prev) AS ups,
-                 count(*) FILTER (WHERE limit_cents < prev) AS downs
-          FROM (SELECT account_id, limit_cents,
-                       lag(limit_cents) OVER (PARTITION BY account_id
-                                              ORDER BY month) AS prev
-                FROM performance WHERE product = 'card')
-          GROUP BY account_id)
+    FROM limit_moves
 """).fetchone()
-print(f"card accounts: {changed[2]:,}; limit raised on {changed[0]:,},"
-      f" cut on {changed[1]:,}")
+print(f"card accounts: {cards:,}; limit raised on {raised:,},"
+      f" cut on {cut:,}")

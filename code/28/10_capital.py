@@ -36,7 +36,9 @@ for label, kept in options:
     print(f"{label:<30}{k:>9.2%}{sold.mean() / loss.mean():>11.0%}"
           f"{sold[tail].mean() / loss[tail].mean():>12.0%}")
 
-b = dict((n, s) for n, s, _ in sec.notes(deal))["B"]
+# The case for protecting class B's slice alone.
+sizes = {name: size for name, size, _ in sec.notes(deal)}
+b = sizes["B"]
 freed = k_pct / 100 - sec.illustrative_capital(options[4][1])
 thick = att["B"][1] - att["B"][0]
 cost = freed * total * sec.HURDLE_PCT / 100     # cents a year

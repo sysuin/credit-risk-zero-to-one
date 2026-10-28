@@ -24,8 +24,9 @@ p = sec.pool(con)
 p["band"] = p["band"].astype(str)
 print(f"\n{'Mark I band':<12}{'loans':>7}{'balance $':>14}{'rate':>8}"
       f"{'months left':>13}{'LTV':>7}")
-order = ["<600", "600-629", "630-659", "660+"]
-for b, g in [(b, p[p.band == b]) for b in order] + [("all", p)]:
+for b in ["<600", "600-629", "630-659", "660+", "all"]:
+    g = p if b == "all" else p[p.band == b]
+    # Each loan's weight is its share of the band's balance.
     gw = g["balance_cents"] / g["balance_cents"].sum()
     print(f"{b:<12}{len(g):>7,}"
           f"{int(g.balance_cents.sum()) / 100:>14,.0f}"

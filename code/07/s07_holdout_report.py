@@ -7,8 +7,8 @@ hold = s[(s["split"] == "holdout") & (s["outcome"] != "indeterminate")]
 name = "bureau_score"
 _, bins = binning.bin_characteristic(name, train[name], train["bad"],
                                      sample.BINNING[name])
-tt = woe.woe_table(bins, train[name], train["bad"])
-th = woe.woe_table(bins, hold[name], hold["bad"])
+tt = woe.woe_table(bins, train[name], train["bad"])   # training
+th = woe.woe_table(bins, hold[name], hold["bad"])     # holdout
 print(f"{'bin':<9}{'train bads':>11}{'WoE':>7}{'IV':>7}"
       f"{'hold bads':>11}{'WoE':>7}{'IV':>7}")
 for (_, a), (_, b) in zip(tt.iterrows(), th.iterrows()):

@@ -10,18 +10,26 @@ loans = con.execute("""
     WHERE payment_cents IS NOT NULL
     ORDER BY account_id
 """).df()
-# The emergency business loans of 2020-21 had nothing to pay for
-# their first twelve months.
-loans["free"] = [12 if p == "sme_emergency" else 0
-                 for p in loans["product"]]
-loans["ours"] = [monthly_payment(a, r, t, f) for a, r, t, f in
-                 zip(loans["amount_cents"], loans["rate_pct"],
-                     loans["term"], loans["free"])]
+
+# Ballast's payment for each loan. The emergency business loans of
+# 2020-21 had nothing to pay for their first twelve months.
+free_months = []
+ours = []
+for loan in loans.itertuples():
+    if loan.product == "sme_emergency":
+        free = 12
+    else:
+        free = 0
+    free_months.append(free)
+    ours.append(monthly_payment(loan.amount_cents, loan.rate_pct,
+                                loan.term, free))
+loans["free"] = free_months
+loans["ours"] = ours
 loans["same"] = loans["ours"] == loans["booked"]
 
 print(f"{'product':<15}{'loans':>8}{'to the cent':>13}")
-for product, g in loans.groupby("product"):
-    print(f"{product:<15}{len(g):>8,}{g['same'].sum():>13,}")
+for product, group in loans.groupby("product"):
+    print(f"{product:<15}{len(group):>8,}{group['same'].sum():>13,}")
 print(f"{'all':<15}{len(loans):>8,}{loans['same'].sum():>13,}")
 
 # The first instalment each borrower was actually asked for, from
@@ -36,22 +44,22 @@ first = con.execute("""
     GROUP BY account_id
 """).df()
 both = loans.merge(first, on="account_id")
-both["moved"] = both["asked"] != both["booked"]
+moved = both[both["asked"] != both["booked"]]
+same = len(both) - len(moved)
 print()
 print(f"loans with a first instalment so far: {len(both):,}")
-same = (~both["moved"]).sum()
 print(f"  asked for the booked payment:       {same:,}")
-moved = both[both["moved"]]
 print(f"  asked for something else:           {len(moved):,}")
-for (product, kind), g in moved.groupby(["product", "rate_type"]):
-    print(f"    {product} ({kind}): {len(g):,}")
+for (product, kind), group in moved.groupby(["product", "rate_type"]):
+    print(f"    {product} ({kind}): {len(group):,}")
 
 # Those loans' rate had moved before the first payment fell due.
 # Recompute at the rate in force then.
-moved = moved.assign(again=[
-    monthly_payment(a, r, t, f) for a, r, t, f in
-    zip(moved["amount_cents"], moved["rate_then"], moved["term"],
-        moved["free"])])
+matched = 0
+for loan in moved.itertuples():
+    again = monthly_payment(loan.amount_cents, loan.rate_then,
+                            loan.term, loan.free)
+    if again == loan.asked:
+        matched = matched + 1
 print(f"  ...reproduced at the rate in force:"
-      f" {(moved['again'] == moved['asked']).sum():,}"
-      f" of {len(moved):,}")
+      f" {matched:,} of {len(moved):,}")

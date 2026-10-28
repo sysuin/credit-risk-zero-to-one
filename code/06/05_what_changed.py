@@ -5,6 +5,14 @@ import pandas as pd
 import fernhill
 from ballast import performance as perf
 
+
+def months_between(start, end):
+    """Whole months from one month end to a later one."""
+    start, end = pd.to_datetime(start), pd.to_datetime(end)
+    years = end.dt.year - start.dt.year
+    return years * 12 + end.dt.month - start.dt.month
+
+
 con = fernhill.connect()
 old = perf.default_episodes(con, "dpd90", stitched=False)
 new = perf.default_episodes(con, "dod2021", stitched=False)
@@ -29,14 +37,14 @@ imm = con.execute("""
     ORDER BY 1""").df()
 print(f"\nfirst reached 90 days past due immaterial: {len(imm):,} "
       f"accounts")
+by_product = imm["product"].value_counts()
 print("  by product: " + ", ".join(
-    f"{k} {v}" for k, v in imm["product"].value_counts().items()))
+    f"{product} {n}" for product, n in by_product.items()))
+# Which of them defaulted later under dod2021, and how much later?
 later = perf.first_defaults(new).set_index("account_id")
 f90 = first.set_index("account_id")["default_month"]
 caught = imm["account_id"][imm["account_id"].isin(later.index)]
-lag = (pd.to_datetime(later.loc[caught, "default_month"])
-       .dt.to_period("M") - pd.to_datetime(f90[caught])
-       .dt.to_period("M")).map(lambda d: d.n)
+lag = months_between(f90[caught], later.loc[caught, "default_month"])
 print(f"  later in default under dod2021: {len(caught):,}, "
       f"a median {lag.median():.0f} month(s) later")
 for why, n in later.loc[caught, "trigger"].value_counts().items():
@@ -59,20 +67,20 @@ print(f"dod2021 cures of other defaults: "
 #    the same account's previous cure.
 o = old.sort_values(["account_id", "default_month"]).copy()
 o["prev_cure"] = o.groupby("account_id")["cure_month"].shift()
-gap = (pd.to_datetime(o["default_month"]).dt.to_period("M")
-       - pd.to_datetime(o["prev_cure"]).dt.to_period("M"))
-quick = gap.dropna().map(lambda d: d.n) <= 3
+gap = months_between(o["prev_cure"], o["default_month"])
 print(f"dpd90 re-defaults within 3 months of a cure: "
-      f"{int(quick.sum()):,}")
+      f"{int((gap <= 3).sum()):,}")
+# Cures followed by a missed payment within the next three months.
+cured = old.dropna(subset=["cure_month"])[["account_id", "cure_month"]]
+con.register("cured", cured)
 slip = con.execute("""
-    SELECT count(*) FROM (SELECT unnest(?) AS a, unnest(?) AS c) k
+    SELECT count(*) FROM cured c
     WHERE EXISTS (SELECT 1 FROM performance p
-                  WHERE p.account_id = k.a AND p.missed >= 1
-                    AND p.month > k.c
-                    AND p.month <= last_day(k.c + INTERVAL 3 MONTH))
-""", [list(old.dropna(subset=["cure_month"])["account_id"]),
-      list(old.dropna(subset=["cure_month"])["cure_month"])]
-                   ).fetchone()[0]
+                  WHERE p.account_id = c.account_id AND p.missed >= 1
+                    AND p.month > c.cure_month
+                    AND p.month <= last_day(c.cure_month
+                                            + INTERVAL 3 MONTH))
+""").fetchone()[0]
 print(f"dpd90 cures followed by a missed payment within 3 months: "
       f"{slip:,}")
 for name, eps in [("dpd90", old), ("dod2021", new)]:

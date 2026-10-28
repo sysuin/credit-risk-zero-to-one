@@ -24,5 +24,7 @@ print(f"{'year':<6}{'open 1 Jan':>11}{'recorded':>14}{'dpd90':>14}"
       f"{'dod2021':>14}")
 for y in range(2019, 2026):
     cells = [count[n][y] for n in ("recorded", "dpd90", "dod2021")]
-    print(f"{y:<6}{open_jan[y]:>11,}" + "".join(
-        f"{c:>7}{c / open_jan[y]:>7.2%}" for c in cells))
+    line = f"{y:<6}{open_jan[y]:>11,}"
+    for c in cells:
+        line += f"{c:>7}{c / open_jan[y]:>7.2%}"
+    print(line)

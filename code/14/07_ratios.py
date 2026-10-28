@@ -23,10 +23,20 @@ show = [
     ("equity_ratio", "equity / total assets", "%"),
     ("payout", "dividends / net income", "%"),
 ]
+
+
+def cell(v, unit):
+    # A blank for a missing value (NaN), else a share or a multiple.
+    if v != v:
+        return ""
+    if unit == "%":
+        return f"{v:.1%}"
+    return f"{v:.2f}x"
+
+
 print(f"{'':<26}" + "".join(f"{y:>10}" for y in r.columns))
 for key, label, unit in show:
-    cells = ["" if v != v else f"{v:.1%}" if unit == "%" else
-             f"{v:.2f}x" for v in r.loc[key]]
+    cells = [cell(v, unit) for v in r.loc[key]]
     print(f"{label:<26}" + "".join(f"{c:>10}" for c in cells))
 
 lines = ["revenue", "ebitda", "net_income", "receivables",

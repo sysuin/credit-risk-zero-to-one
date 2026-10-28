@@ -9,9 +9,12 @@ ladder = con.execute("""
     FROM collections c JOIN performance p USING (account_id, month)
     GROUP BY ALL ORDER BY ALL
 """).fetchall()
+# grid["phone_call"][2] counts phone calls at two missed payments.
 grid = {}
 for action, m, n in ladder:
-    grid.setdefault(action, {})[m] = n
+    if action not in grid:
+        grid[action] = {}
+    grid[action][m] = n
 ORDER = ["reminder", "sms", "phone_call", "final_notice",
          "agency_referral"]
 MISSED = ["1", "2", "3", "4", "5", "6+"]

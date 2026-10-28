@@ -25,8 +25,11 @@ EDGES = [0, 0.05, 0.2, 0.4, 0.6, 0.8, 0.95, np.inf]
 groups = {"unsecured": ["card", "personal", "sme_overdraft"],
           "secured": ["auto", "mortgage", "sme_term"]}
 print("workouts by LGD, % of each group")
-print(f"{'':<11}" + "".join(f"{f'<{e:.0%}':>8}" for e in EDGES[1:-1])
-      + f"{'95%+':>8}")
+header = f"{'':<11}"
+for e in EDGES[1:-1]:
+    label = f"<{e:.0%}"
+    header += f"{label:>8}"
+print(header + f"{'95%+':>8}")
 hist = {}
 for name, ps in groups.items():
     x = w.loc[w["product"].isin(ps), "lgd"]

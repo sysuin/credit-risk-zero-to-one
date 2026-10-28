@@ -6,12 +6,14 @@ from ballast.config import ROOT
 
 con = fernhill.connect()
 
+# Every account whose collateral was sold: what the asset was worth,
+# what was lent and owed at default, and what came back afterwards.
 WORKOUTS = """
-    WITH d AS (                  -- the first default on each account
+    WITH first_default AS (
         SELECT account_id, arg_min(ead_cents, default_month) AS ead
         FROM defaults GROUP BY account_id
     ),
-    r AS (
+    came_back AS (
         SELECT account_id,
                sum(amount_cents) FILTER (WHERE kind = 'collateral_sale')
                    AS sale,
@@ -25,11 +27,15 @@ WORKOUTS = """
     )
     SELECT a.account_id, a.product, a.open_date, a.close_date,
            a.collateral_value_cents AS value, a.amount_cents AS lent,
-           d.ead, r.sale, coalesce(r.cost, 0) AS cost,
-           coalesce(r.collected, 0) AS collected, r.sold
-    FROM accounts a JOIN d USING (account_id) JOIN r USING (account_id)
-    WHERE r.sale IS NOT NULL
+           f.ead, c.sale, coalesce(c.cost, 0) AS cost,
+           coalesce(c.collected, 0) AS collected, c.sold
+    FROM accounts a
+    JOIN first_default f USING (account_id)
+    JOIN came_back c USING (account_id)
+    WHERE c.sale IS NOT NULL
 """
+# Medians for each product whose collateral was sold.
+LABELS = {"auto": "cars", "mortgage": "homes", "sme_term": "business"}
 print(f"{'sold':<10}{'count':>6}{'sale/value':>12}{'sale/owed':>11}"
       f"{'months':>8}{'owed/value':>12}")
 for row in con.execute(f"""
@@ -40,11 +46,9 @@ for row in con.execute(f"""
            median(ead / value)
     FROM ({WORKOUTS}) GROUP BY product ORDER BY product
 """).fetchall():
-    p, n, sv, so, months, ltv = row
-    label = {"auto": "cars", "mortgage": "homes",
-             "sme_term": "business"}[p]
-    print(f"{label:<10}{n:>6}{sv:>12.0%}{so:>11.0%}{months:>8.0f}"
-          f"{ltv:>12.0%}")
+    product, n, sale_value, sale_owed, months, owed_value = row
+    print(f"{LABELS[product]:<10}{n:>6}{sale_value:>12.0%}"
+          f"{sale_owed:>11.0%}{months:>8.0f}{owed_value:>12.0%}")
 
 # One repossession followed to the end: a workout closed by 2022, so
 # its recoveries have had three years to arrive, and the median loss.

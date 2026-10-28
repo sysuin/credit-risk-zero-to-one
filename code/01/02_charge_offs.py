@@ -6,6 +6,8 @@ from ballast.config import ROOT
 
 con = fernhill.connect()
 
+# Two steps: what was written off each year, and what was owed at
+# the start of that year. Then put them side by side.
 rows = con.execute("""
     WITH yearly AS (
         SELECT year(month) AS yr,
@@ -35,6 +37,8 @@ for yr, n, lost, owed in rows:
     print(f"{yr:<6}{n:>9}{lost / 100:>14,.0f}"
           f"{owed / 100:>16,.0f}{lost / owed:>7.1%}")
 
-json.dump([{"year": y, "lost": lost, "owed": owed}
-           for y, _, lost, owed in rows],
-          open(ROOT / "code/01/02_charge_offs.json", "w"))
+# Save the numbers for the figure.
+for_figure = []
+for yr, n, lost, owed in rows:
+    for_figure.append({"year": yr, "lost": lost, "owed": owed})
+json.dump(for_figure, open(ROOT / "code/01/02_charge_offs.json", "w"))

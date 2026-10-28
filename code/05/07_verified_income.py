@@ -3,6 +3,7 @@
 import fernhill
 
 con = fernhill.connect()
+# Is there a verified figure exactly when the flag says verified?
 missing = con.execute("""
     SELECT count(*) FILTER (WHERE income_verified
                               AND verified_income_cents IS NULL),
@@ -16,7 +17,9 @@ print()
 print("personal loans, income verified: verified / stated income")
 print(f"{'channel':<10}{'checked':>9}{'median':>9}{'lower':>9}"
       f"{'same':>8}")
-for ch, n, ratio, lower, same in con.execute("""
+# For each channel: how many were checked, the median of verified
+# over stated income, and how often the check found less or the same.
+checked = con.execute("""
     SELECT channel, count(*),
            median(verified_income_cents / stated_income_cents),
            avg((verified_income_cents < stated_income_cents)::INT),
@@ -24,5 +27,6 @@ for ch, n, ratio, lower, same in con.execute("""
     FROM applications
     WHERE product = 'personal' AND income_verified
     GROUP BY channel ORDER BY channel
-""").fetchall():
+""").fetchall()
+for ch, n, ratio, lower, same in checked:
     print(f"{ch:<10}{n:>9,}{ratio:>9.2f}{lower:>9.1%}{same:>8.1%}")

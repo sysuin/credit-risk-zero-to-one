@@ -3,6 +3,8 @@
 import fernhill
 
 con = fernhill.connect()
+# The first personal loan opened in early 2023 that fell two
+# payments behind and had caught up by its last month.
 account = con.execute("""
     SELECT account_id FROM performance
     WHERE product = 'personal' AND account_id IN (
@@ -23,17 +25,25 @@ rows = con.execute("""
            arrears_cents, missed, days_past_due, status
     FROM performance WHERE account_id = ? ORDER BY month""",
                    [account]).fetchall()
-behind = [i for i, r in enumerate(rows) if r[5] > 0]
-show = {0, 1, len(rows) - 1} | set(
-    range(behind[0] - 2, behind[-1] + 3))
+# The row numbers of the months it was behind (row[5] is missed).
+behind = []
+for i, row in enumerate(rows):
+    if row[5] > 0:
+        behind.append(i)
+# Show the first two months, the last, and two months either side
+# of the trouble. Count the months in between instead.
+show = {0, 1, len(rows) - 1}
+show.update(range(behind[0] - 2, behind[-1] + 3))
 print(f"{'month':<11}{'balance':>10}{'due':>9}{'paid':>9}{'arrears':>9}"
       f"{'mis':>4}{'dpd':>4}  status")
+hidden = 0
 for i, (m, bal, due, paid, arr, mis, dpd, st) in enumerate(rows):
     if i not in show:
-        if i - 1 in show:
-            hidden = min(j for j in show if j > i) - i
-            print(f"{'...':<11}{hidden} months up to date")
+        hidden += 1
         continue
+    if hidden > 0:
+        print(f"{'...':<11}{hidden} months up to date")
+        hidden = 0
     print(f"{m!s:<11}{bal / 100:>10,.2f}{due / 100:>9,.2f}"
           f"{paid / 100:>9,.2f}{arr / 100:>9,.2f}{mis:>4}{dpd:>4}"
           f"  {st}")

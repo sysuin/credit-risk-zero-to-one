@@ -30,7 +30,8 @@ rows = con.execute("""
 print(f"\n{'month end':<11}{'market value':>14}{'change':>9}"
       f"{'grade':>7}{'Fernhill lent':>15}")
 for month, eq, ch, grade, drawn in rows[1:]:
-    value, lent = f"${eq / 1e8:.2f}m", f"${drawn / 1e8:.2f}m"
+    value = f"${eq / 1e8:.2f}m"
+    lent = f"${drawn / 1e8:.2f}m"
     print(f"{month:%b %Y}{value:>17}{ch:>+9.0%}{grade:>7.0f}"
           f"{lent:>15}")
 

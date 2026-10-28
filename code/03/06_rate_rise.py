@@ -20,36 +20,42 @@ PICK = """
     LIMIT 1
 """
 kinds = ["fixed", "variable", "fixed_then_variable"]
-ids = [con.execute(PICK, [k]).fetchone()[0] for k in kinds]
+ids = []
+for kind in kinds:
+    ids.append(con.execute(PICK, [kind]).fetchone()[0])
 
-rows = con.execute("""
-    SELECT p.month, m.policy_rate_pct,
-           list(p.rate_pct ORDER BY a.account_id),
-           list(p.scheduled_cents ORDER BY a.account_id)
-    FROM performance p
-    JOIN accounts a USING (account_id)
-    JOIN market_rates m USING (month)
-    WHERE p.account_id IN (?, ?, ?)
+# Each loan's rate and payment at every month end of the rise,
+# beside the policy rate that month.
+RISE = """
+    SELECT p.month, m.policy_rate_pct, p.rate_pct, p.scheduled_cents
+    FROM performance p JOIN market_rates m USING (month)
+    WHERE p.account_id = ?
       AND p.month BETWEEN '2021-12-31' AND '2024-12-31'
-    GROUP BY p.month, m.policy_rate_pct
     ORDER BY p.month
-""", ids).fetchall()
-order = sorted(ids)                 # the lists above are in id order
-col = [order.index(i) for i in ids] # fixed, variable, resetting
+"""
+loans = []
+for acc in ids:
+    loans.append(con.execute(RISE, [acc]).fetchall())
 
+# One line per quarter end: the policy rate, then each loan's rate
+# and payment, in the order fixed, variable, resetting.
 print("fixed", ids[0], "| variable", ids[1], "| resetting", ids[2])
 print(f"{'month':<9}{'policy':>7}{'fixed':>16}{'variable':>16}"
       f"{'resetting':>16}")
-for m, policy, rate, pay in rows:
-    if m.month % 3 == 0:
-        cells = "".join(f"{rate[c]:>7.2f}%{pay[c] / 100:>8,.0f}"
-                        for c in col)
-        print(f"{m:%Y-%m}  {policy:>6.2f}%{cells}")
+for fixed, variable, resetting in zip(loans[0], loans[1], loans[2]):
+    month, policy = fixed[0], fixed[1]
+    if month.month % 3 == 0:
+        line = f"{month:%Y-%m}  {policy:>6.2f}%"
+        for _, _, rate, pay in (fixed, variable, resetting):
+            line += f"{rate:>7.2f}%{pay / 100:>8,.0f}"
+        print(line)
 
-first, last = rows[0][3], rows[-1][3]
-print(f"{'change':<16}" + "".join(
-    f"{last[c] / first[c] - 1:>16.0%}" for c in col))
-
+# How much each payment changed from the first month to the last.
+line = f"{'change':<16}"
+for loan in loans:
+    first_pay, last_pay = loan[0][3], loan[-1][3]
+    line += f"{last_pay / first_pay - 1:>16.0%}"
+print(line)
 
 
 def payment(balance, rate_pct, months):
@@ -69,18 +75,25 @@ for kind, acc in zip(["variable", "resetting"], ids[1:]):
         FROM performance p JOIN accounts a USING (account_id)
         WHERE account_id = ? ORDER BY p.month
     """, [acc]).fetchall()
-    changes = match = 0
+    changes = 0
+    matched = 0
+    # Compare each month with the month before it.
     for k in range(2, len(hist)):
-        _, bal, _, old, term = hist[k - 1]
-        _, _, sched, new, _ = hist[k]
-        if new != old:
+        _, owed, _, old_rate, term = hist[k - 1]
+        _, _, booked, new_rate, _ = hist[k]
+        if new_rate != old_rate:
             left = term - (k - 1)   # payments made before this month
             changes += 1
-            match += abs(payment(bal, new, left) - sched) < 1
+            if abs(payment(owed, new_rate, left) - booked) < 1:
+                matched += 1
     print(f"{kind:<10}{changes:>3} rate changes to 2025,"
-          f"{match:>3} matched to the cent")
+          f"{matched:>3} matched to the cent")
 
-json.dump({"ids": ids, "months": [str(r[0]) for r in rows],
-           "policy": [r[1] for r in rows],
-           "pay": [[r[3][c] for r in rows] for c in col]},
+# Save the payments for the figure.
+pay = []
+for loan in loans:
+    pay.append([row[3] for row in loan])
+json.dump({"ids": ids, "months": [str(row[0]) for row in loans[0]],
+           "policy": [row[1] for row in loans[0]],
+           "pay": pay},
           open(ROOT / "code/03/06_rate_rise.json", "w"))

@@ -15,10 +15,17 @@ con.execute("""
       AND a.product IN ('personal', 'card', 'auto')
       AND a.close_date <= DATE '2019-12-31'
 """)
+
+# What was owed when each group of accounts closed.
+owed_by_group = {}
+for product, reason, owed in con.execute("""
+        SELECT product, close_reason, sum(owed) FROM ended
+        GROUP BY ALL""").fetchall():
+    owed_by_group[(product, reason)] = owed
+
+# What came back on each group, split by kind of recovery.
 rows = con.execute("""
     SELECT e.product, e.close_reason, count(DISTINCT e.account_id),
-        (SELECT sum(owed) FROM ended x WHERE x.product = e.product
-           AND x.close_reason = e.close_reason),
         sum(r.amount_cents) FILTER (WHERE r.kind = 'collateral_sale'),
         sum(r.amount_cents) FILTER (WHERE r.kind IN
             ('collections_payment', 'debt_sale')),
@@ -28,10 +35,15 @@ rows = con.execute("""
 """).fetchall()
 print(f"{'closed 2016-2019':<29}{'loans':>6}{'owed $k':>9}{'sale':>6}"
       f"{'coll.':>6}{'cost':>6}{'net':>6}")
-for product, reason, n, owed, sale, coll, cost in rows:
-    sale, coll, cost = sale or 0, coll or 0, cost or 0
+for product, reason, n, sale, coll, cost in rows:
+    owed = owed_by_group[(product, reason)]
+    # A group with no recoveries of a kind has None; count it as 0.
+    sale = sale or 0
+    coll = coll or 0
+    cost = cost or 0
     net = sale + coll + cost
-    print(f"{product + ', ' + reason.replace('_', ' '):<29}{n:>6,}"
+    label = product + ", " + reason.replace("_", " ")
+    print(f"{label:<29}{n:>6,}"
           f"{owed / 1e5:>9,.0f}{sale / owed:>6.0%}{coll / owed:>6.0%}"
           f"{cost / owed:>6.0%}{net / owed:>6.0%}")
 

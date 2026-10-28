@@ -7,6 +7,7 @@ from ballast.config import ROOT
 con = fernhill.connect()
 ACCOUNT = "PL0000001"
 
+# The loan's terms, as Fernhill recorded them.
 loan = con.execute("""
     SELECT open_date, amount_cents, term_months::INT, rate_pct,
            payment_cents, close_date, close_reason
@@ -21,13 +22,12 @@ print(f"  ${payment / 100:,.2f} a month; opened {opened},"
 # off, the payoff too), and pays its own funders for the money it
 # has lent out: the balance owed that month at the month's cost of
 # funds.
-paid, funding = con.execute("""
+received, funding = con.execute("""
     SELECT sum(p.paid_cents),
            sum(p.balance_cents * r.cost_of_funds_pct / 100 / 12)
     FROM performance p JOIN market_rates r USING (month)
     WHERE p.account_id = ?
 """, [ACCOUNT]).fetchone()
-received = paid
 
 interest = received - amount
 print()

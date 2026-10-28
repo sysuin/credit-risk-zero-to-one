@@ -1,5 +1,7 @@
 # The cycle in Fernhill's own book: each product's default rate, year
 # by year, beside the average unemployment rate.
+import pandas as pd
+
 import fernhill
 from ballast import performance as perf
 from ballast.parameters import pd as pdm
@@ -18,8 +20,13 @@ print("Default rate (dod2021), accounts open on 1 January; "
 head = "".join(f"{s:>7}" for s in short)
 print(f"{'year':<6}{head}{'unemp':>7}")
 for y, row in t.iterrows():
-    cells = "".join(f"{v:>7.2%}" if v == v else f"{'-':>7}"
-                    for v in row)
+    cells = ""
+    for v in row:
+        # a product with no accounts open that year shows a dash
+        if pd.isna(v):
+            cells += f"{'-':>7}"
+        else:
+            cells += f"{v:>7.2%}"
     print(f"{y:<6}{cells}{u_year[y]:>7.2f}")
 print(f"{'mean':<6}" + "".join(f"{v:>7.2%}" for v in t.mean())
       + f"{u_year.loc[2017:2025].mean():>7.2f}")

@@ -21,7 +21,9 @@ pl = ok[ok["product"] == "personal"]
 print("\npersonal loans by Mark II-R band, IRB")
 print(f"{'band':<10}{'loans':>7}{'PD':>7}{'weight':>8}{'CET1':>7}")
 order = ["<560", "560-579", "580-599", "600-619", "620+"]
-for b, g in sorted(pl.groupby("band"), key=lambda t: order.index(t[0])):
+bands = dict(list(pl.groupby("band")))
+for b in order:
+    g = bands[b]
     d = g.drawn_cents.sum()
     rw = g.irb_rwa.sum() / d
     pdw = (g.pd_floored * g.drawn_cents).sum() / d

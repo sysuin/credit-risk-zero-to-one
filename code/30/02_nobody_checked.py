@@ -14,7 +14,14 @@ pl = apps[apps["product"].astype(str).eq("personal")
 out = sample.outcomes(con)
 pl = pl.merge(out[out["complete"]][["account_id", "bad"]],
               on="account_id")
-limit = pl["app_date"].map(lambda d: pol.period_of(d)[2]).astype(float)
+
+
+def dti_limit(day):
+    """The debt-to-income limit of the policy in force that day."""
+    return pol.period_of(day)[2]
+
+
+limit = pl["app_date"].map(dti_limit).astype(float)
 checked = pl["income_verified"].astype(bool)
 ratio = fraud.income_ratio(pl)
 
@@ -33,8 +40,10 @@ print("Booked personal loans, January 2016 to June 2024")
 print(f"  {'':<36}{'loans':>6}{'bad':>8}")
 print("Income checked: passed on the stated figure, and on the")
 print("verified one?")
-flip = checked & fails_on(pl["verified_income_cents"].where(
-    checked, pl["stated_income_cents"]).astype(float))
+# the verified income where there is one, the stated one otherwise
+best_income = pl["verified_income_cents"].where(
+    checked, pl["stated_income_cents"]).astype(float)
+flip = checked & fails_on(best_income)
 show("failed on the verified income", pl[flip])
 show("passed on both", pl[checked & ~flip])
 broker = pl["channel"].astype(str).eq("broker")

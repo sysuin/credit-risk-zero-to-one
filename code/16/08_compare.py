@@ -20,22 +20,34 @@ dev["cv_grade"] = rt.grade_of(dev.cv_pd)
 views = [("cv_pd", "Ballast PD"), ("cv_grade", "Ballast grade"),
          ("model_grade", "Fernhill model grade"),
          ("grade", "analysts' grade")]
+
+
+def gini_of(score, bad):
+    """Gini of a score where a higher value means riskier."""
+    return mt.gini(-score, bad)
+
+
+def gain_over(score, analysts, bad):
+    """How much better a score ranks than the analysts' grade."""
+    return gini_of(score, bad) - gini_of(analysts, bad)
+
+
 rng = np.random.default_rng(SEED)
 print(f"{len(dev):,} reviews, {y.sum()} defaults: Gini with its 95%"
       " interval")
 print(f"{'':<22}{'Gini':>7}{'interval':>16}{'gain':>8}{'P>0':>6}")
 for col, label in views:
-    g = mt.gini(-dev[col], y)
-    lo, hi = mt.interval(mt.bootstrap(
-        lambda s, b: mt.gini(-s, b), dev[col], y, n=500, rng=rng))
+    g = gini_of(dev[col], y)
+    draws = mt.bootstrap(gini_of, dev[col], y, n=500, rng=rng)
+    lo, hi = mt.interval(draws)
     if col == "grade":
         print(f"{label:<22}{g:>7.3f}{lo:>9.3f} {hi:>6.3f}")
         continue
-    diff = mt.bootstrap(lambda s, a, b: mt.gini(-s, b)
-                        - mt.gini(-a, b), dev[col], dev.grade, y,
+    # paired draws: the same resampled reviews for both opinions
+    diff = mt.bootstrap(gain_over, dev[col], dev.grade, y,
                         n=500, rng=rng)
     print(f"{label:<22}{g:>7.3f}{lo:>9.3f} {hi:>6.3f}"
-          f"{g - mt.gini(-dev.grade, y):>+8.3f}"
+          f"{g - gini_of(dev.grade, y):>+8.3f}"
           f"{(diff > 0).mean():>6.0%}")
 
 # The defaulters' reviews, counted back from the default.

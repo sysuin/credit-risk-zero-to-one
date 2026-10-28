@@ -54,16 +54,20 @@ open_jan = dict(con.execute("""
     WHERE month(month) = 12
       AND status IN ('up_to_date', 'arrears', 'default')
     GROUP BY 1""").fetchall())
-year = {n: pd.to_datetime(e["default_month"]).dt.year.value_counts()
-        for n, e in [("recorded", rec), ("dpd90", old),
-                     ("dod2021", new)]}
+# Defaults per year in each of the three series.
+year = {}
+for name, eps in [("recorded", rec), ("dpd90", old), ("dod2021", new)]:
+    year[name] = pd.to_datetime(eps["default_month"]).dt.year \
+        .value_counts()
 print(f"{'year':<6}{'open 1 Jan':>11}{'recorded':>14}{'dpd90':>14}"
       f"{'dod2021':>14}")
 series = []
 for y in range(2017, 2026):
     cells = [year[n][y] for n in ("recorded", "dpd90", "dod2021")]
-    print(f"{y:<6}{open_jan[y]:>11,}" + "".join(
-        f"{c:>7}{c / open_jan[y]:>7.2%}" for c in cells))
+    line = f"{y:<6}{open_jan[y]:>11,}"
+    for c in cells:
+        line += f"{c:>7}{c / open_jan[y]:>7.2%}"
+    print(line)
     series.append({"year": y, "open": open_jan[y],
                    "recorded": int(cells[0]), "dpd90": int(cells[1]),
                    "dod2021": int(cells[2])})

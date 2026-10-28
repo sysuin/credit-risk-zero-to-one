@@ -17,11 +17,16 @@ print(f"no-file loans in training: {no_file.sum()}, "
 print(f"shortlisted columns with a 'no file' bin: {len(bureau)} "
       f"of {len(short)}")
 
+# What each bureau column does to a no-file applicant's log odds.
 every = model.fit(X, good, short)
 w = binset["bureau_score"].woe[sample.NO_FILE]
-push = {n: every.params[n] * w for n in bureau}
-right = [v for v in push.values() if v < 0]
-back = [v for v in push.values() if v > 0]
+right, back = [], []
+for n in bureau:
+    push = every.params[n] * w
+    if push < 0:
+        right.append(push)
+    elif push > 0:
+        back.append(push)
 print()
 print("log odds a no-file applicant gets from the bureau columns")
 print(f"  {len(right)} right-signed columns  {sum(right):+.3f}")
@@ -32,11 +37,13 @@ seen = train.loc[no_file, "bad"].mean()
 print(f"no-file bad rate: observed {seen:.1%}"
       f", all twelve {p[no_file].mean():.1%}")
 
-hit = model.fit(X[~no_file], good[~no_file], short)
+# Refit on the loans that have a file, where no-file bins are empty.
+has_file = ~no_file
+refit = model.fit(X[has_file], good[has_file], short)
 print()
-print(f"refitted on the {(~no_file).sum():,} loans with a file:")
+print(f"refitted on the {has_file.sum():,} loans with a file:")
 for n in model.wrong_signs(every):
     print(f"  {n:<20}{every.params[n]:>+7.3f}  ->  "
-          f"{hit.params[n]:>+7.3f}")
+          f"{refit.params[n]:>+7.3f}")
 print(f"wrong signs among loans with a file: "
-      f"{len(model.wrong_signs(hit))}")
+      f"{len(model.wrong_signs(refit))}")

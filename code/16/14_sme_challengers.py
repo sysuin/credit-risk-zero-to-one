@@ -42,6 +42,11 @@ def left_out(fields, extra=()):
     return out
 
 
+def gini_gap(a, b, bad):
+    """How much better score a ranks the loans than score b."""
+    return mt.gini(a, bad) - mt.gini(b, bad)
+
+
 views = {"SME-1": o.sme1_score,
          "data, files only": left_out(sme.FILE_FIELDS),
          "data, files + bank": left_out(sme.FILE_FIELDS
@@ -56,16 +61,15 @@ for label, sc in views.items():
     if label == "SME-1":
         print(f"{label:<20}{g:>7.3f}")
         continue
-    d = mt.bootstrap(lambda a, b, y: mt.gini(a, y) - mt.gini(b, y),
-                     sc, o.sme1_score, o.bad, n=1000, rng=rng)
+    d = mt.bootstrap(gini_gap, sc, o.sme1_score, o.bad,
+                     n=1000, rng=rng)
     lo, hi = mt.interval(d)
     print(f"{label:<20}{g:>7.3f}{g - base:>+10.3f}{lo:>+9.3f} "
           f"{hi:>+7.3f}{(d > 0).mean():>6.0%}")
 a, b = views["data, files + bank"], views["data, files only"]
-d = mt.bootstrap(lambda p, q, y: mt.gini(p, y) - mt.gini(q, y),
-                 a, b, o.bad, n=1000, rng=rng)
+d = mt.bootstrap(gini_gap, a, b, o.bad, n=1000, rng=rng)
 lo, hi = mt.interval(d)
-gain = mt.gini(a, o.bad) - mt.gini(b, o.bad)
+gain = gini_gap(a, b, o.bad)
 print(f"bank fields added to the files: {gain:+.3f}"
       f" ({lo:+.3f} to {hi:+.3f})")
 

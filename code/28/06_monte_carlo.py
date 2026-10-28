@@ -22,12 +22,11 @@ expect = (det.defaulted - det.recovered).sum() / total
 print(f"{SIMS:,} lives of the pool, asset correlation {RHO:.2f}")
 print(f"pool net loss, % of the pool at closing: mean {loss.mean():.2%}"
       f"\n  (the projection says {expect:.2%})")
-qs = [("median", 0.5), ("1 in 10", 0.9), ("1 in 100", 0.99),
-      ("1 in 1,000", 0.999)]
-print("  " + "; ".join(f"{a} {np.quantile(loss, q):.2%}"
-                       for a, q in qs[:3]) + ";")
-print(f"  {qs[3][0]} {np.quantile(loss, qs[3][1]):.2%}; "
-      f"worst {loss.max():.2%}")
+# The loss in the middle life, and one life in 10, 100 and 1,000.
+q = np.quantile(loss, [0.5, 0.9, 0.99, 0.999])
+print(f"  median {q[0]:.2%}; 1 in 10 {q[1]:.2%}; "
+      f"1 in 100 {q[2]:.2%};")
+print(f"  1 in 1,000 {q[3]:.2%}; worst {loss.max():.2%}")
 
 att = sec.attachment()
 print(f"\n{'':<20}{'losses alone':>18}{'after the waterfall':>24}")

@@ -1,5 +1,7 @@
 # Recovery by months since default, one row per year of default: the
 # triangle, and two ways of finishing its unfinished rows.
+import pandas as pd
+
 import fernhill
 from ballast.parameters import lgd
 
@@ -15,8 +17,12 @@ cols = [3, 6, 12, 24, 36, 48, 60]
 print("cards: recovered, % of EAD, by months since default")
 print(f"{'default':<9}" + "".join(f"{c:>7}" for c in cols))
 for c, row in tri.iterrows():
-    cells = "".join("      ." if row[k] != row[k] else
-                    f"{row[k]:>7.1%}" for k in cols)
+    cells = ""
+    for k in cols:
+        if pd.isna(row[k]):           # not reached yet
+            cells += "      ."
+        else:
+            cells += f"{row[k]:>7.1%}"
     print(f"{c:<9}{cells}")
 
 print(f"\n{'':<9}{'cards':^24}{'personal loans':^24}")

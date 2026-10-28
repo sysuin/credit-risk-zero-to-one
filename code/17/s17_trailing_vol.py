@@ -8,23 +8,31 @@ from _listed import listed_panel, next_year
 from ballast import market as mk
 from ballast.scorecard import metrics as mt
 
+
+def trailing_vol(changes):
+    # The last twelve changes' standard deviation, scaled to a year.
+    return changes.rolling(12).std() * np.sqrt(12)
+
+
 con = fernhill.connect()
 p = listed_panel(con)
 m = mk.market_months(con).sort_values(["company_id", "month"])
-m["ret"] = m.groupby("company_id").equity.transform(
-    lambda e: np.log(e).diff())
-m["trailing"] = m.groupby("company_id").ret.transform(
-    lambda r: r.rolling(12).std() * np.sqrt(12))
+# Each month's log change in market value, company by company.
+m["log_value"] = np.log(m.equity)
+m["ret"] = m.groupby("company_id").log_value.diff()
+m["trailing"] = m.groupby("company_id").ret.transform(trailing_vol)
 p = p.merge(m[["company_id", "month", "trailing"]],
             on=["company_id", "month"])
 p = p[p.trailing.notna()].copy()
 print(f"company-months with twelve months of history: {len(p):,}")
 print(f"  trailing / quoted volatility: median "
       f"{(p.trailing / p.sigma_e).median():.2f}")
-out = [mk.solve_assets(e, s, d, r) for e, s, d, r in
-       zip(p.equity, p.trailing, p.default_point, p.r)]
-p["dd_trailing"] = [mk.distance_to_default(v, s, d, r) for (v, s, _),
-                    d, r in zip(out, p.default_point, p.r)]
+# Solve Merton again with the trailing volatility, row by row.
+dd_trailing = []
+for e, vol, d, r in zip(p.equity, p.trailing, p.default_point, p.r):
+    assets, asset_vol, _ = mk.solve_assets(e, vol, d, r)
+    dd_trailing.append(mk.distance_to_default(assets, asset_vol, d, r))
+p["dd_trailing"] = dd_trailing
 s = next_year(p)
 march = s[[x.month == 3 for x in s.month]]
 print(f"\nMarch reviews: {len(march)} company-years, "

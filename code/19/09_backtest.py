@@ -27,8 +27,10 @@ for p in ("card", "personal", "auto", "sme_emergency"):
     for y in (2020, 2021):
         if str(y) not in chain:
             continue
-        pick = lambda d: d[(d["product"] == p)  # noqa: E731
-                           & (d["default_month"].dt.year == y)]
+        def pick(d):
+            """This product's workouts that defaulted in year y."""
+            return d[(d["product"] == p)
+                     & (d["default_month"].dt.year == y)]
         naive = lgd.pooled(pick(then), by="product")["lgd"].iloc[0]
         actual = lgd.pooled(pick(now), by="product")["lgd"].iloc[0]
         print(f"{p:<15}{y:>5}{naive:>8.1%}{chain[str(y)]:>8.1%}"

@@ -36,7 +36,9 @@ line("less net losses", -net)
 line("margin, before running costs and capital",
      cf.interest.sum() - funding - net)
 
-c_size = dict((n, s) for n, s, _ in notes)["C"]
+# Class C's cash each month, discounted at the hurdle rate.
+sizes = {name: size for name, size, _ in notes}
+c_size = sizes["C"]
 c_cash = w["residual"] + w["principal"]["C"]
 months = np.arange(1, len(c_cash) + 1)
 pv = (c_cash / (1 + sec.HURDLE_PCT / 100) ** (months / 12)).sum()

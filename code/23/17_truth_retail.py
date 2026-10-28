@@ -15,14 +15,16 @@ from ballast.scorecard import points, reject, sample
 
 con = fernhill.connect()
 truth = fernhill.connect(truth=True)            # the answer
+# tb: would the applicant have gone bad if Fernhill had lent?
 t = truth.execute("""SELECT app_id, bad_12m_if_booked::DOUBLE AS tb
                      FROM origination ORDER BY app_id""").df()
 a = reject.applicants()
 a = a[~a["policy"] & (a["split"] == "out_of_time")]
-a = a.merge(reject.retro(), on="app_id", how="left").merge(
-    t, on="app_id", how="left").merge(
-    sample.load_sample()[["app_id", "worst_missed"]], on="app_id",
-    how="left")
+a = a.merge(reject.retro(), on="app_id", how="left")
+a = a.merge(t, on="app_id", how="left")
+worst = sample.load_sample()[["app_id", "worst_missed"]]
+a = a.merge(worst, on="app_id", how="left")
+# The truth: Fernhill's own outcome where it lent, else the answer
 a["truth"] = np.where(a["known"], (a["worst_missed"] >= 3) * 1.0,
                       a["tb"])
 a["score"] = reject.load_refit("mark2_retro_ws").scorecard().score(a)

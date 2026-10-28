@@ -28,7 +28,8 @@ print(f"\n2. Last year's default rate (dod2021, Chapter 6's measure)"
       f"\n   {last.rate:.2%}  ({last.defaults:,} of "
       f"{last.at_risk:,} loans open on 1 January 2025)")
 
+low_year = r.year[r.rate.idxmin()]
+high_year = r.year[r.rate.idxmax()]
 print("\n3. The long-run average of the yearly rates, 2017-2025"
       f"\n   {r.rate.mean():.2%}  (lowest {r.rate.min():.2%} in "
-      f"{r.year[r.rate.idxmin()]}, highest {r.rate.max():.2%} in "
-      f"{r.year[r.rate.idxmax()]})")
+      f"{low_year}, highest {r.rate.max():.2%} in {high_year})")

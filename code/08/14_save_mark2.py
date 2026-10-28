@@ -9,9 +9,10 @@ binset = woe.load_binset(sample.MARK2 / "bins.json")
 train = model.with_file_flag(s[s["fit"]])
 design = model.separate_no_file(binset, train, train["bad"])
 saved_bins = json.loads((sample.MARK2 / "bins.json").read_text())
+# The shortlist: information value 0.02 or more, strongest first.
 iv = {n: b["iv"] for n, b in saved_bins.items()}
-short = [n for n in sorted(iv, key=iv.get, reverse=True)
-         if iv[n] >= 0.02]
+by_iv = sorted(iv, key=iv.get, reverse=True)
+short = [n for n in by_iv if iv[n] >= 0.02]
 X = woe.encode(train, {n: design[n] for n in short + ["bureau_file"]})
 chosen, steps = model.select(X, model.target(train), short,
                              force=["bureau_file"])
@@ -22,12 +23,13 @@ card = points.scorecard(mark2.params.to_dict(), bins)
 files = [model.save_model(mark2, chosen, bins, steps=steps,
                           force=["bureau_file"])]
 files += points.save_scorecard(card)
+# The Gini on each sample, for monitoring to compare against.
 det = s[s["outcome"] != "indeterminate"]
-perf = {split: {"loans": int((det["split"] == split).sum()),
-                "gini": round(metrics.gini(
-                    card.score(det[det["split"] == split]),
-                    det.loc[det["split"] == split, "bad"]), 6)}
-        for split in model.SPLITS}
+perf = {}
+for split in model.SPLITS:
+    d = det[det["split"] == split]
+    gini = metrics.gini(card.score(d), d["bad"])
+    perf[split] = {"loans": len(d), "gini": round(gini, 6)}
 f = sample.MARK2 / "performance.json"
 f.write_text(json.dumps(perf, indent=2) + "\n")
 files.append(f)
@@ -43,5 +45,5 @@ print(f"reloaded: base {back.base}, {len(back.characteristics)} "
 print(f"every one of {len(s):,} loans scores the same: {same}")
 print(f"saved coefficients all positive: "
       f"{all(v > 0 for v in saved['coef'].values())}")
-print("Gini saved: " + ", ".join(f"{k} {v['gini']:.3f}"
-                                   for k, v in perf.items()))
+ginis = [f"{k} {v['gini']:.3f}" for k, v in perf.items()]
+print("Gini saved: " + ", ".join(ginis))

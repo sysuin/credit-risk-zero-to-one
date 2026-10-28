@@ -14,6 +14,7 @@ OPEN = dt.date(2024, 12, 31)
 p0, p1 = ecl.parameters(con, OPEN), ecl.parameters(con)
 r0, r1 = ecl.run(con, OPEN, p0), ecl.run(con, ecl.AS_OF, p1)
 
+# Each account's stage at the two dates; 0 means it has left.
 a = r0.set_index("account_id")["stage"]
 b = r1.set_index("account_id")["stage"]
 moves = pd.crosstab(a, b.reindex(a.index).fillna(0).astype(int))
@@ -22,9 +23,15 @@ print("accounts by stage, December 2024 (rows) to December 2025")
 print(f"{'':<8}" + "".join(f"{str(c):>8}" for c in moves.columns))
 for s, row in moves.iterrows():
     print(f"{s:<8}" + "".join(f"{v:>8,}" for v in row))
-print(f"{'new':<8}" + "".join(
-    f"{(b.drop(a.index, errors='ignore') == c).sum():>8,}"
-    if c != "left" else f"{'':>8}" for c in moves.columns))
+# Accounts new in 2025, by their stage in December.
+new = b.drop(a.index, errors="ignore")
+cells = ""
+for c in moves.columns:
+    if c == "left":
+        cells += f"{'':>8}"
+    else:
+        cells += f"{(new == c).sum():>8,}"
+print(f"{'new':<8}{cells}")
 
 m = ecl.movement(con, r0, r1, p0, p1)
 print(f"\n{'provision, $m':<24}{'retail':>10}{'commercial':>12}"

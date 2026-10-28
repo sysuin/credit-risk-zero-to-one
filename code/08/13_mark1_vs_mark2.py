@@ -33,8 +33,9 @@ print(f"{'sample':<12}{'Mark I':>8}{'Mark II':>9}{'gain':>8}"
 out = {}
 for split in ("holdout", "out_of_time"):
     d = det[det["split"] == split]
-    a, b, bad = (d["mark1_score"].to_numpy(), d["mark2"].to_numpy(),
-                 d["bad"].to_numpy())
+    a = d["mark1_score"].to_numpy()
+    b = d["mark2"].to_numpy()
+    bad = d["bad"].to_numpy()
     g1, g2 = metrics.gini(a, bad), metrics.gini(b, bad)
     draws = metrics.bootstrap(gap, a, b, bad, n=1000, rng=rng)
     lo, hi = metrics.interval(draws)
@@ -44,7 +45,8 @@ for split in ("holdout", "out_of_time"):
         metrics.gini, a, bad, n=1000, rng=rng))
     ci2 = metrics.interval(metrics.bootstrap(
         metrics.gini, b, bad, n=1000, rng=rng))
-    out[split] = {"mark1": [g1, *ci1], "mark2": [g2, *ci2],
+    out[split] = {"mark1": [g1, ci1[0], ci1[1]],
+                  "mark2": [g2, ci2[0], ci2[1]],
                   "gain": [g2 - g1, lo, hi]}
 
 d = det[det["split"] == "out_of_time"]

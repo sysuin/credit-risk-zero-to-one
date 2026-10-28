@@ -6,6 +6,7 @@ from ballast.config import ROOT
 
 con = fernhill.connect()
 
+# One query, run twice: {key} becomes "product", then "channel".
 FUNNEL = """
     SELECT {key},
            count(*) AS applied,
@@ -19,6 +20,7 @@ FUNNEL = """
 
 
 def show(key, rows):
+    # Print a header line (if there is a key), then one line per row.
     if key:
         print(f"{key:<10}{'applied':>8}{'declined':>9}{'approved':>9}"
               f"{'walked':>7}{'open':>5}{'booked':>7}{'rate':>6}")
@@ -30,8 +32,14 @@ def show(key, rows):
 
 products = con.execute(FUNNEL.format(key="product")).fetchall()
 show("product", products)
-total = [sum(r[i] for r in products) for i in range(1, 7)]
-show("", [("all", *total)])
+
+# Add up each column over every product for an "all" line.
+total = ["all", 0, 0, 0, 0, 0, 0]
+for row in products:
+    for i in range(1, 7):
+        total[i] += row[i]
+show("", [total])
+
 print()
 channels = con.execute(FUNNEL.format(key="channel")).fetchall()
 show("channel", channels)

@@ -4,6 +4,9 @@ import json
 import fernhill
 
 con = fernhill.connect()
+# For each age group: the share with no file ("no hit"), the share
+# whose oldest account is under a year old ("thin"), and the share
+# with one open account or none.
 rows = con.execute("""
     SELECT CASE WHEN age < 21 THEN '18-20' WHEN age < 23 THEN '21-22'
                 WHEN age < 25 THEN '23-24' WHEN age < 27 THEN '25-26'
@@ -28,14 +31,19 @@ print(f"{'all':<8}{total:>13,}{nohit / total:>9.1%}")
 
 print()
 print("no-hit applicants, by age and what Fernhill decided:")
-for young, decision, reason, n in con.execute("""
+decided = con.execute("""
     SELECT age < 25, decision, coalesce(decline_reason, '-'), count(*)
     FROM applications WHERE NOT bureau_hit
     GROUP BY ALL HAVING count(*) >= 100 ORDER BY ALL DESC
-""").fetchall():
+""").fetchall()
+for young, decision, reason, n in decided:
     ages = "under 25" if young else "25 and over"
     print(f"  {ages:<13}{decision:<9}{reason:<20}{n:>7,}")
 
+# Save the shares by age for the chapter's figure.
+records = []
+for ages, n, nohit, thin, few in rows:
+    records.append({"ages": ages, "n": n, "nohit": nohit,
+                    "thin": thin})
 with open("code/05/03_no_hits_by_age.json", "w") as f:
-    json.dump([{"ages": r[0], "n": r[1], "nohit": r[2], "thin": r[3]}
-               for r in rows], f, indent=1)
+    json.dump(records, f, indent=1)

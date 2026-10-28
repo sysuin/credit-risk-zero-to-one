@@ -15,7 +15,18 @@ hold = hold.copy()
 rng = np.random.default_rng(SEED)
 train["noise"] = rng.random(len(train))
 hold["noise"] = rng.random(len(hold))
-spec = sample.BINNING | {"noise": {"kind": "numeric", "decimals": 2}}
+spec = dict(sample.BINNING)
+spec["noise"] = {"kind": "numeric", "decimals": 2}
+
+
+def trend_of(bins, bad_rates):
+    """Which way the bad rate moves from the first bin to the last."""
+    if bins.kind == "categorical":
+        return "cat"
+    if len(bad_rates) < 2:
+        return "-"
+    return "rises" if bad_rates[-1] > bad_rates[0] else "falls"
+
 
 rows, keep = [], {}
 for name, sp in spec.items():
@@ -23,9 +34,7 @@ for name, sp in spec.items():
         name, train[name], train["bad"], sp)
     t = woe.woe_table(bins, train[name], train["bad"])
     ordinary = t.iloc[: len(t) - (1 if bins.missing else 0)]
-    r = ordinary["bad_rate"].to_numpy()
-    trend = ("cat" if bins.kind == "categorical" else "-"
-             if len(r) < 2 else "rises" if r[-1] > r[0] else "falls")
+    trend = trend_of(bins, ordinary["bad_rate"].to_numpy())
     rows.append((name, len(ordinary), trend,
                  woe.information_value(fine, train[name], train["bad"]),
                  t["iv"].sum(),

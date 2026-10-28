@@ -35,9 +35,10 @@ for p in ("auto", "mortgage"):
     g = w[w["product"] == p].copy()
     g["ltv"] = g["ead_cents"] / indexed(g, p)
     g["band"] = pd.cut(g["ltv"], BANDS, right=False)
+    g["cured"] = g["outcome"] == "cured"
     cols[p] = g.groupby("band", observed=False).agg(
         n=("lgd", "size"), lgd=("lgd", "mean"),
-        cured=("outcome", lambda s: (s == "cured").mean()))
+        cured=("cured", "mean"))
     out[p] = g[["ltv", "lgd"]].values.tolist()
 for band in cols["auto"].index:
     cells = ""
@@ -46,7 +47,8 @@ for band in cols["auto"].index:
         cells += (f"{r['n']:>6.0f}{r['cured']:>8.0%}{r['lgd']:>8.1%}"
                   if r["n"] else f"{0:>6}")
     hi = "+" if band.right > 2 else f"-{band.right:.0%}"
-    print(f"{f'{band.left:.0%}{hi}':<10}{cells}")
+    label = f"{band.left:.0%}{hi}"
+    print(f"{label:<10}{cells}")
 
 cars = np.array(out["auto"])
 slope, icept = np.polyfit(cars[:, 0], cars[:, 1], 1)

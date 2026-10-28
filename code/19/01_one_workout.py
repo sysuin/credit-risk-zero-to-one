@@ -32,22 +32,26 @@ FLOWS = """
 # the June 2019 debt sale, with the median LGD of such loans.
 pick = con.execute(f"""
     WITH f AS ({FLOWS}),
+    -- step 1: each account's discounted LGD, if it was in a sale
     lgd AS (
         SELECT account_id,
                1 - sum(amount / (1 + rate / 1200) ** months)
                    / any_value(ead) AS lgd
         FROM f GROUP BY 1
-        HAVING bool_or(kind = 'debt_sale'))
-    SELECT l.account_id FROM lgd l JOIN accounts a USING (account_id)
-    WHERE a.product = 'personal' AND a.close_reason = 'charged_off'
-      AND a.close_date < DATE '2019-01-01'
-    ORDER BY abs(lgd - (SELECT median(lgd) FROM lgd l2
-                        JOIN accounts a2 USING (account_id)
-                        WHERE a2.product = 'personal'
-                          AND a2.close_date < DATE '2019-01-01')),
-             l.account_id
+        HAVING bool_or(kind = 'debt_sale')),
+    -- step 2: keep the personal loans closed before 2019
+    old AS (
+        SELECT l.account_id, l.lgd, a.close_reason
+        FROM lgd l JOIN accounts a USING (account_id)
+        WHERE a.product = 'personal'
+          AND a.close_date < DATE '2019-01-01')
+    -- step 3: the charged-off one nearest their median LGD
+    SELECT account_id FROM old
+    WHERE close_reason = 'charged_off'
+    ORDER BY abs(lgd - (SELECT median(lgd) FROM old)), account_id
     LIMIT 1""", {"prem": PREMIUM}).fetchone()[0]
 
+# Its cash flows, one row per kind of flow.
 rows = con.execute(f"""
     SELECT kind, min(months), max(months), count(*), sum(amount),
            sum(amount / (1 + rate / 1200) ** months),
@@ -55,23 +59,24 @@ rows = con.execute(f"""
     FROM ({FLOWS}) WHERE account_id = $acc
     GROUP BY kind ORDER BY min(months), kind""",
                    {"prem": PREMIUM, "acc": pick}).fetchall()
-ead, dm, rate = rows[0][6], rows[0][7], rows[0][8]
-close = con.execute("SELECT open_date, amount_cents, close_date "
-                    "FROM accounts WHERE account_id = ?",
-                    [pick]).fetchone()
-print(f"{pick}: ${close[1] / 100:,.0f} lent {close[0]}")
-print(f"defaulted {dm}, charged off {close[2]}")
+ead, dm, rate = rows[0][6:9]      # the same on every row
+opened, lent, closed = con.execute(
+    "SELECT open_date, amount_cents, close_date "
+    "FROM accounts WHERE account_id = ?", [pick]).fetchone()
+print(f"{pick}: ${lent / 100:,.0f} lent {opened}")
+print(f"defaulted {dm}, charged off {closed}")
 print(f"owed at default (EAD)      ${ead / 100:>10,.2f}")
 print(f"discount rate              {rate:>10.2f}% a year "
       f"({rate - PREMIUM:.2f} + {PREMIUM:.0f})")
 print(f"\n{'':<20}{'months':>8}{'rows':>6}{'cash':>12}"
       f"{'value at default':>18}")
-tot = pv = 0
+tot = pv = 0                      # total cash, and its present value
 for kind, m0, m1, n, cash, val, *_ in rows:
     span = f"{m0}" if m0 == m1 else f"{m0}-{m1}"
     print(f"{kind:<20}{span:>8}{n:>6}{cash / 100:>12,.2f}"
           f"{val / 100:>18,.2f}")
-    tot, pv = tot + cash, pv + val
+    tot += cash
+    pv += val
 print(f"{'net':<34}{tot / 100:>12,.2f}{pv / 100:>18,.2f}")
 print(f"\nloss, undiscounted   ${(ead - tot) / 100:>9,.2f}   "
       f"LGD {1 - tot / ead:.1%}")

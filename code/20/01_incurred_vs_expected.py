@@ -12,27 +12,27 @@ DATE = dt.date(2019, 12, 31)
 con = fernhill.connect()
 params = ecl.parameters(con, DATE)
 r = ecl.run(con, DATE, params)
-ok = r[r["stage"] < 3]
+performing = r[r["stage"] < 3]
 
-# Loss on loans performing at the date that defaulted in 2020: the
-# exposure at default times the loss given default (each commercial
-# facility's own workout; the product's LGD for retail).
+# Retail: performing loans that defaulted in 2020. Each one lost its
+# exposure at default times its product's loss given default.
 eps = perf.default_episodes(con)
 d20 = eps[pd.to_datetime(eps["default_month"]).dt.year == 2020]
-ret = ok[ok["segment"] == "retail"].merge(
+retail = performing[performing["segment"] == "retail"].merge(
     d20.drop_duplicates("account_id"), left_on="root_id",
     right_on="account_id", suffixes=("", "_d"))
 lgd = params["lgd"]["lgd"]
-cl = ecl.commercial_lgd(con)
+retail_loss = (retail["ead_cents_d"] * retail["product"].map(lgd)).sum()
+
+# Commercial: performing facilities that defaulted in 2020. Each one
+# lost what its own workout lost.
+workouts = ecl.commercial_lgd(con)
 gone = con.execute("""SELECT facility_id FROM facility_months
                       WHERE status = 'defaulted'
                         AND year(month) = 2020""").df()
-com = cl[cl["facility_id"].isin(gone["facility_id"])
-         & cl["facility_id"].isin(ok["account_id"])]
-lost = {"retail": (ret["ead_cents_d"]
-                   * ret["product"].map(lgd)).sum(),
-        "commercial": (com["lgd"] * com["ead_cents"]).sum()}
-count = {"retail": len(ret), "commercial": len(com)}
+com = workouts[workouts["facility_id"].isin(gone["facility_id"])
+               & workouts["facility_id"].isin(performing["account_id"])]
+com_loss = (com["lgd"] * com["ead_cents"]).sum()
 
 
 def line(name, values):
@@ -40,20 +40,20 @@ def line(name, values):
     print(f"{name:<32}{cells}")
 
 
-s3 = r["stage"] == 3
-seg = r["segment"]
+def provision(rows):
+    # The provision on the chosen rows: retail, then commercial.
+    return [r.loc[rows & (r["segment"] == g), "ecl"].sum()
+            for g in ("retail", "commercial")]
+
+
+in_default = r["stage"] == 3
+every_row = r["stage"] > 0
 print(f"31 December 2019{'':16}{'retail':>12}{'commercial':>12}")
-line("book, $m", [r.loc[seg == g, "balance_cents"].sum()
+line("book, $m", [r.loc[r["segment"] == g, "balance_cents"].sum()
                   for g in ("retail", "commercial")])
-line("incurred: in default only, $m",
-     [r.loc[s3 & (seg == g), "ecl"].sum()
-      for g in ("retail", "commercial")])
-line("expected: IFRS 9, $m", [r.loc[seg == g, "ecl"].sum()
-                              for g in ("retail", "commercial")])
-line("  of it on performing loans", [r.loc[~s3 & (seg == g), "ecl"]
-                                     .sum()
-                                     for g in ("retail", "commercial")])
+line("incurred: in default only, $m", provision(in_default))
+line("expected: IFRS 9, $m", provision(every_row))
+line("  of it on performing loans", provision(~in_default))
 print("then, in 2020, on loans performing at the date:")
-print(f"{'  defaults':<32}{count['retail']:>12,}"
-      f"{count['commercial']:>12,}")
-line("  their loss, $m", [lost["retail"], lost["commercial"]])
+print(f"{'  defaults':<32}{len(retail):>12,}{len(com):>12,}")
+line("  their loss, $m", [retail_loss, com_loss])

@@ -31,27 +31,30 @@ tiers = con.execute(f"""
 
 # What each band actually did: the share of personal loans booked
 # April 2019 to December 2024 that were 90 days past due (three
-# payments missed) within 12 months of opening.
-seen = dict(con.execute(f"""
-    SELECT band, avg(bad)
-    FROM (SELECT {BANDS} AS band,
-                 max(p.missed >= 3 AND p.month <= a.open_date
-                     + INTERVAL 12 MONTH)::INT AS bad
-          FROM accounts a
-          JOIN applications ap USING (account_id)
-          JOIN performance p USING (account_id)
-          WHERE a.product = 'personal'
-            AND a.open_date BETWEEN '2019-04-01' AND '2024-12-31'
-          GROUP BY a.account_id, band)
-    GROUP BY band
-""").fetchall())
+# payments missed) within 12 months of opening. First one row per
+# loan, with bad = 1 if it got there; then the average by band.
+rates_seen = con.execute(f"""
+    WITH loans AS (
+        SELECT {BANDS} AS band,
+               max(p.missed >= 3 AND p.month <= a.open_date
+                   + INTERVAL 12 MONTH)::INT AS bad
+        FROM accounts a
+        JOIN applications ap USING (account_id)
+        JOIN performance p USING (account_id)
+        WHERE a.product = 'personal'
+          AND a.open_date BETWEEN '2019-04-01' AND '2024-12-31'
+        GROUP BY a.account_id, band
+    )
+    SELECT band, avg(bad) FROM loans GROUP BY band
+""").fetchall()
+seen = dict(rates_seen)           # look up a band's rate by its name
 
 print(f"cost of funds, December 2025: {cof:.2f}%")
 print(f"assumed: LGD {LGD:.0%}, operating cost {OPEX}% a year")
 print()
 print(f"{'Mark I score':<14}{'price':>7}{'margin':>8}{'break-even':>12}"
       f"{'seen':>7}")
-rows = []
+rows = []                         # one per tier, for the figure
 for band, rate in tiers:
     margin = rate - cof - OPEX
     even = break_even_default_rate(rate, cof, OPEX, LGD)
@@ -60,11 +63,18 @@ for band, rate in tiers:
     print(f"{band:<14}{rate:>6.1f}%{margin:>7.2f}%{even:>11.1f}%"
           f"{seen[band]:>7.1%}")
 
+
+def net_per_100(rate, default):
+    """What $100 of balance makes in a year, after every cost."""
+    return rate - cof - OPEX - default * LGD
+
+
+# A risky loan at a high price, and a safe one at a low price.
+high = net_per_100(18.0, 5.0)
+low = net_per_100(6.0, 2.0)
 print()
-for rate, default in [(18.0, 5.0), (6.0, 2.0)]:
-    net = rate - cof - OPEX - default * LGD
-    print(f"price {rate:>4.1f}%, defaults {default:.0f}% a year:"
-          f" {net:+.2f} per $100 a year")
+print(f"price 18.0%, defaults 5% a year: {high:+.2f} per $100 a year")
+print(f"price  6.0%, defaults 2% a year: {low:+.2f} per $100 a year")
 
 json.dump({"cof": cof, "lgd": LGD, "opex": OPEX, "tiers": rows},
           open(ROOT / "code/02/09_break_even.json", "w"))

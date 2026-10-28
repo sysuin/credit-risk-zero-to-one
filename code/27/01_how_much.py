@@ -3,17 +3,20 @@
 import json
 from pathlib import Path
 
+import pandas as pd
+
 import fernhill
 from ballast import appetite as ap
 
 con = fernhill.connect()
 cap = ap.capital_now(con)
-L = ap.losses()
-m = 1e8
+losses = ap.losses()
+m = 1e8                    # cents in a million dollars
 spare = cap["cet1"] - cap["requirement"] * cap["sa_rwa"]
 print(f"{'measure':<29}{'loss':>9}{'of CET1':>9}{'CET1 used':>11}")
-for _, row in L.iterrows():
-    stressed = row.cet1_used == row.cet1_used
+for _, row in losses.iterrows():
+    # Only the stress rows have a figure for the CET1 they use up.
+    stressed = pd.notna(row.cet1_used)
     used = f"{row.cet1_used / m:>11,.1f}" if stressed else f"{'':>11}"
     share = f"{row.loss / cap['cet1']:>9.0%}"
     if row.measure == "provision held":
@@ -30,6 +33,6 @@ print(f"requirement with buffers {cap['requirement']:.1%}: "
 
 Path(__file__).with_suffix(".json").write_text(json.dumps({
     "rows": [{"measure": r.measure, "loss": r.loss / m,
-              "used": (r.cet1_used / m if r.cet1_used == r.cet1_used
-                       else None)} for _, r in L.iterrows()],
+              "used": (r.cet1_used / m if pd.notna(r.cet1_used)
+                       else None)} for _, r in losses.iterrows()],
     "cet1": cap["cet1"] / m, "spare": spare / m}, indent=1))

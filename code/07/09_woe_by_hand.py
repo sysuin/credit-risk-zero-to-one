@@ -20,12 +20,17 @@ print(f"{'bin':<9}{'goods':>7}{'bads':>5}{'odds':>7}{'%good':>7}"
 iv = 0.0
 for _, r in c.iterrows():
     odds = r["goods"] / r["bads"]
-    pg, pb = r["goods"] / G, r["bads"] / B
-    w = math.log(pg / pb)               # = ln(odds / overall odds)
-    part = (pg - pb) * w
+    # The bin's share of all the goods, and of all the bads.
+    share_good = r["goods"] / G
+    share_bad = r["bads"] / B
+    # Weight of evidence: the same as ln(odds / overall odds).
+    weight = math.log(share_good / share_bad)
+    # This bin's part of the information value.
+    part = (share_good - share_bad) * weight
     iv += part
     print(f"{r['bin']:<9}{r['goods']:>7,}{r['bads']:>5}{odds:>7.1f}"
-          f"{pg:>7.1%}{pb:>7.1%}{w:>7.3f}{part:>9.4f}")
+          f"{share_good:>7.1%}{share_bad:>7.1%}{weight:>7.3f}"
+          f"{part:>9.4f}")
 print(f"{'IV':<9}{iv:>58.4f}")
 print(f"woe.information_value agrees: "
       f"{woe.information_value(bins, x, bad):.4f}")

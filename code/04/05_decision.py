@@ -22,6 +22,8 @@ con.execute("""
        OR decline_reason IN ('score_below_cutoff', 'credit_officer')
 """)
 
+# The approval rate in each band. (decision = 'approve')::INT is 1 for
+# an approval and 0 otherwise, so its average is the share approved.
 print(f"{'score against cut-off':<24}{'apps':>8}{'approved':>10}"
       f"{'low-side':>10}{'high-side':>10}")
 rows = con.execute("""
@@ -35,14 +37,19 @@ for band, n, rate, low, high in rows:
 
 print()
 print("refer band, approved")
-for push, n, rate in con.execute("""
-        SELECT push, count(*), avg((decision = 'approve')::INT)
-        FROM scored WHERE band = '2 refer band'
-        GROUP BY push ORDER BY push""").fetchall():
+# The refer band, split into the growth push's instant decisions and
+# the applications underwriters read.
+split = con.execute("""
+    SELECT push, count(*), avg((decision = 'approve')::INT)
+    FROM scored WHERE band = '2 refer band'
+    GROUP BY push ORDER BY push
+""").fetchall()
+for push, n, rate in split:
     when = ("growth push, personal and card" if push
             else "every other time")
     print(f"  {when:<32}{n:>8,}{rate:>10.1%}")
 
+# Declines coded "score below cut-off" whose score was not below it.
 trap = con.execute("""
     SELECT count(*) FROM applications
     WHERE decline_reason = 'score_below_cutoff'

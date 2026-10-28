@@ -14,21 +14,26 @@ rng = np.random.default_rng(SEED)
 
 
 def gap(m1, m2, bad):
+    """How much better Mark II ranks than Mark I."""
     return metrics.gini(m2, bad) - metrics.gini(m1, bad)
 
 
-groups = {
-    "booked": lambda d: d[d["known"] & d["bad"].notna()],
-    "scored": lambda d: d[~d["policy"]],
-    "everyone": lambda d: d,
-}
+def pick(d, group):
+    """Booked loans, applicants who passed the rules, or everyone."""
+    if group == "booked":
+        return d[d["known"] & d["bad"].notna()]
+    if group == "scored":
+        return d[~d["policy"]]
+    return d
+
+
 print(f"{'':<20}{'n':>7}{'Mark I':>8}{'Mark II':>8}{'gain':>8}"
       f"{'95% interval':>17}")
 out = {}
 for split, sname in (("holdout", "holdout"), ("out_of_time", "OOT")):
     d0 = a[a["split"] == split]
-    for g, pick in groups.items():
-        d = pick(d0)
+    for g in ("booked", "scored", "everyone"):
+        d = pick(d0, g)
         y = (d["bad"] if g == "booked" else d["truth"])
         y = y.to_numpy().astype(int)
         m1, m2 = d["mark1_score"].to_numpy(), d["mark2"].to_numpy()

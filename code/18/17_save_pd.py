@@ -39,8 +39,13 @@ for product, life in LIFE.items():
     mix = dur.band.value_counts(normalize=True)
     pd_life = {}
     for s, path in paths.items():
-        u = (np.full(life, lr) if path is None else
-             np.r_[path, np.full(max(life - len(path), 0), path[-1])])
+        if path is None:
+            # through the cycle: the long-run rate in every month
+            u = np.full(life, lr)
+        else:
+            # the scenario's path, its last value held to the end
+            extra = max(life - len(path), 0)
+            u = np.concatenate([path, np.full(extra, path[-1])])
         lifetime = {}
         for b in hm.bands:
             ts = hm.term_structure(b, u[:life])

@@ -31,8 +31,11 @@ print(f"Tested on {len(test):,} loans opened in 2024 "
 edges = [540, 560, 580, 600, 620]
 models = {"Platt": platt.pd, "isotonic": iso.pd,
           "scale": points.bad_rate_at}
-t = test.assign(band=metrics.bands(test.score, edges).to_numpy(),
-                **{k: f(test.score) for k, f in models.items()})
+# each 2024 loan's band, and its PD under each of the three maps
+t = test.copy()
+t["band"] = metrics.bands(test.score, edges).to_numpy()
+for k, f in models.items():
+    t[k] = f(test.score)
 print(f"\n{'band':<9}{'loans':>6}{'def':>5}{'observed':>10}"
       f"{'Platt':>8}{'isotonic':>10}{'scale':>8}")
 rows = []
@@ -43,8 +46,11 @@ for b in order:
           f"{g.Platt.mean():>8.2%}{g.isotonic.mean():>10.2%}"
           f"{g.scale.mean():>8.2%}")
     lo, hi = mg.interval(int(g.d12.sum()), len(g))
-    rows.append({"band": b, "observed": g.d12.mean(), "lower": lo,
-                 "upper": hi, **{k: g[k].mean() for k in models}})
+    row = {"band": b, "observed": g.d12.mean(), "lower": lo,
+           "upper": hi}
+    for k in models:
+        row[k] = g[k].mean()
+    rows.append(row)
 
 print(f"\n{'':<10}{'fit sample':>22}{'2024 loans':>24}")
 print(f"{'':<10}{'mean':>8}{'log loss':>9}{'HL p':>6}"

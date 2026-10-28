@@ -34,13 +34,15 @@ for label, v in [("free cash flow, $000", fcf),
     print(f"{label:<34}" + "".join(f"{x / 1e5:>8,.0f}" for x in v))
 
 
-def m_(cents):
+def millions(cents):
+    # Cents as "$12.3m", with a minus sign in front if negative.
     return f"{'-' if cents < 0 else ''}${abs(cents) / 1e8:.1f}m"
 
 
-print(f"four years: net income {m_(s.loc['net_income'].sum())}, "
-      f"free cash flow {m_(fcf.sum())},")
-print(f"            dividends {m_(div.sum())}")
+income = millions(s.loc["net_income"].sum())
+print(f"four years: net income {income}, "
+      f"free cash flow {millions(fcf.sum())},")
+print(f"            dividends {millions(div.sum())}")
 
 json.dump({"years": list(s.columns),
            "ebitda": [int(v) for v in s.loc["ebitda"]],

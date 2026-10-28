@@ -37,16 +37,23 @@ print(f"{'chance, sd':<13}"
       + "".join(f"{x:>+11.1f}" for x in r["chance"] / sd))
 print(f"one sd of chance in a year: about ${sd.mean():,.0f}")
 
+# the same split again for 2,000 draws of the model's coefficients
 rng = np.random.default_rng(SEED)
-sims = [by_year(components(c, b, lr)) for _, b in
-        draws(res, 2000, rng).iterrows()]
+sims = []
+for _, coefs in draws(res, 2000, rng).iterrows():
+    sims.append(by_year(components(c, coefs, lr)))
 
 
-def change(a, z):
-    d = {p: t.loc[z, p] - t.loc[a, p] for p in PARTS + ["push"]}
-    s = {p: [x.loc[z, p] - x.loc[a, p] for x in sims]
-         for p in PARTS + ["push"]}
-    return d, {p: np.percentile(v, [5, 95]) for p, v in s.items()}
+def change(start, end):
+    """Each part's change between two years, and its 90% interval
+    across the 2,000 draws."""
+    moved, interval = {}, {}
+    for part in PARTS + ["push"]:
+        moved[part] = t.loc[end, part] - t.loc[start, part]
+        sims_moved = [x.loc[end, part] - x.loc[start, part]
+                      for x in sims]
+        interval[part] = np.percentile(sims_moved, [5, 95])
+    return moved, interval
 
 
 print(f"\n{'change, $000':<13}{'2023 to 2024':>22}{'2024 to 2025':>22}")

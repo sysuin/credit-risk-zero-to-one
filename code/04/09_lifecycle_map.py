@@ -18,9 +18,14 @@ REACHED = {
     "offer": "SELECT count(*) FROM applications"
              " WHERE outcome = 'booked'",
 }
+# The table each step writes to, looked up by the step's name.
+TABLE = {}
+for s in STEPS:
+    TABLE[s.name] = s.table
+
 for step in ("book", "service", "events", "collect", "default",
              "close", "recover"):
-    table = next(s.table for s in STEPS if s.name == step)
+    table = TABLE[step]
     where = ""
     if step == "close":
         where = ("WHERE t.close_date IS NOT NULL"

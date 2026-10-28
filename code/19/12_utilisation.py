@@ -34,8 +34,8 @@ for k in MONTHS:
     cells = ""
     for p in ("card", "sme_overdraft"):
         r = tab.loc[(p, k)]
-        cells += f"{r['n']:>7,.0f}{r['utilisation']:>7.0%}" \
-                 f"{r['behind']:>7.0%}"
+        cells += (f"{r['n']:>7,.0f}{r['utilisation']:>7.0%}"
+                  f"{r['behind']:>7.0%}")
     n, x = rev.get(k, (0, float("nan")))
     print(f"{k:<8}{cells}{n:>8}{x:>8.0%}")
 perf_u = {p: ead.performing_utilisation(con, p)

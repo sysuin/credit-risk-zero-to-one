@@ -21,8 +21,10 @@ print(f"economic: budget ${budget / m:,.1f}m against "
 t = ap.returns(con)
 c = ap.allocate(ap.pf.load_contributions(), ap.pf.load()["ec_999"])
 f = ap.segment_frame(ap.ecl.load(), ap.capital.load(), c)["c"]
-ead = f.groupby(f.seg.where(f.kind == "name", "retail")).ead.sum()
-ec = f.groupby(f.seg.where(f.kind == "name", "retail")).ec.sum()
+# Every retail pool counts as "retail"; clients keep their grade band.
+seg = f.seg.where(f.kind == "name", "retail")
+ead = f.groupby(seg).ead.sum()
+ec = f.groupby(seg).ec.sum()
 # Fernhill's allocation: retail and grades 1-5 may grow by a quarter,
 # grades 6-8 keep what they use, the watchlist gets what is left.
 alloc = {"retail": 1.25 * ec["retail"],

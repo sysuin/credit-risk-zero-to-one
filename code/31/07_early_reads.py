@@ -34,7 +34,10 @@ u = unemployment(con, 0)
 rows = []
 print(f"\n{'opened':<8}{'loans':>6}{'promise':>9}{'60+ by month 6':>20}"
       f"{'90+ by 12':>11}{'jobless':>9}")
-for v in [f"{y}{h}" for y in range(2021, 2026) for h in ("H1", "H2")]:
+vintages = []
+for y in range(2021, 2026):
+    vintages += [f"{y}H1", f"{y}H2"]
+for v in vintages:
     r = reads.loc[v]
     start = pd.Timestamp(int(v[:4]), 1 if v[4:] == "H1" else 7, 1)
     jobless = u[start + pd.offsets.MonthEnd(1):

@@ -3,6 +3,8 @@
 import fernhill
 from ballast.loanmath import apr, effective_interest_rate, schedule
 
+# One row per loan: its terms, how it ended, how many months it ran,
+# and everything it paid back (the final balance is the payoff).
 con = fernhill.connect()
 loans = con.execute("""
     SELECT a.account_id, year(a.open_date) AS vintage, a.close_reason,
@@ -15,40 +17,43 @@ loans = con.execute("""
     GROUP BY ALL ORDER BY a.account_id
 """).df()
 
+# One line per vintage: the share of loans that ended each way.
 print(f"{'vintage':<9}{'loans':>7}{'prepaid':>9}{'to term':>9}"
       f"{'charged':>9}{'prepaid at':>12}")
-for vintage, g in loans.groupby("vintage"):
-    reason = g["close_reason"].value_counts()
-    pre = g[g["close_reason"] == "prepaid"]
-    print(f"{vintage:<9}{len(g):>7,}"
-          f"{reason.get('prepaid', 0) / len(g):>9.0%}"
-          f"{reason.get('repaid', 0) / len(g):>9.0%}"
-          f"{reason.get('charged_off', 0) / len(g):>9.0%}"
-          f"{pre['age'].mean():>8.1f} mo")
+for vintage, group in loans.groupby("vintage"):
+    count = len(group)
+    ended = group["close_reason"].value_counts()
+    prepaid = ended.get("prepaid", 0) / count
+    to_term = ended.get("repaid", 0) / count
+    charged = ended.get("charged_off", 0) / count
+    months = group[group["close_reason"] == "prepaid"]["age"].mean()
+    print(f"{vintage:<9}{count:>7,}{prepaid:>9.0%}{to_term:>9.0%}"
+          f"{charged:>9.0%}{months:>8.1f} mo")
 print(f"average term: {loans['term'].mean():.0f} months")
 
 # Interest the prepaid loans earned, against what their schedules
 # promised if every one had run to term.
 pre = loans[loans["close_reason"] == "prepaid"]
 earned = (pre["received"] - pre["amount_cents"]).sum()
-promised = sum(schedule(a, r, t)["interest"].sum()
-               for a, r, t in zip(pre["amount_cents"], pre["rate_pct"],
-                                  pre["term"]))
+promised = 0
+for loan in pre.itertuples():
+    plan = schedule(loan.amount_cents, loan.rate_pct, loan.term)
+    promised = promised + plan["interest"].sum()
 print()
 print(f"prepaid loans: {len(pre):,}")
 print(f"  interest scheduled  ${promised / 100:>14,.0f}")
 print(f"  interest earned     ${earned / 100:>14,.0f}"
       f"  ({earned / promised:.0%})")
 
-# The broker loan, repaid in full with its 12th payment.
-s = schedule(1_280_000, 9.9, 36)
-early = s["payment"].tolist()[:12]
-early[-1] += s["closing"][11]           # the payoff, with payment 12
-print()
-print(f"PL0023628 repaid at month 12: payoff"
-      f" ${s['closing'][11] / 100:,.2f}")
+# The broker loan, repaid in full with its 12th payment: the first
+# 12 payments, with the payoff added to the last of them.
+plan = schedule(1_280_000, 9.9, 36)
+payoff = plan["closing"][11]
+early = plan["payment"].tolist()[:12]
+early[-1] = early[-1] + payoff
 her_apr = apr(1_216_000, early)
+eir = effective_interest_rate(1_280_000, early, costs_paid_cents=25_600)
+print()
+print(f"PL0023628 repaid at month 12: payoff ${payoff / 100:,.2f}")
 print(f"  her APR on $12,160 received:      {her_apr:.2f}%")
-print(f"  Fernhill's EIR, after commission: "
-      f"{effective_interest_rate(1_280_000, early,
-                                 costs_paid_cents=25_600):.2f}%")
+print(f"  Fernhill's EIR, after commission: {eir:.2f}%")

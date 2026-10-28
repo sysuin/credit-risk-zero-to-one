@@ -20,11 +20,11 @@ for b in sorted(d.band.unique(), key=pdm._band_key):
     t = pdm.life_table(g, 60)
     km, ci = pdm.kaplan_meier(t), pdm.cumulative_incidence(t)
     o = old[old.band == b]
-    for i, m in enumerate((12, 36, 60)):
+    head = f"{b:<9}{len(g):>6,}{(g.event == 1).mean():>7.1%}"
+    for m in (12, 36, 60):
         vint = ((o.event == 1) & (o.t <= m)).mean()
-        head = (f"{b:<9}{len(g):>6,}{(g.event == 1).mean():>7.1%}"
-                if i == 0 else " " * 22)
         print(f"{head}  {m:>5}{km[m]:>7.1%}{ci[m]:>7.1%}{vint:>9.1%}")
+        head = " " * 22    # later rows leave the first columns blank
 t = pdm.life_table(d, 60)
 print(f"\nAll loans at 60 months: KM {pdm.kaplan_meier(t)[60]:.1%}, "
       f"CI {pdm.cumulative_incidence(t)[60]:.1%}, vintage "

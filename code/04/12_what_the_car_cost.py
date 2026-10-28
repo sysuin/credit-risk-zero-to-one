@@ -41,7 +41,8 @@ for r in lf.recoveries:
     left -= r["amount_cents"]
     out[r["month"]] = left
 last = max(out)
-funding, balance = 0.0, 0
+funding = 0.0
+balance = 0
 for month in sorted(rates):
     if month < months[0]["month"] or month > last:
         continue

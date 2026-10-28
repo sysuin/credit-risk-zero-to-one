@@ -36,9 +36,9 @@ for y in sorted(year.unique()):
     s = year == y
     print(f"{y:<6}{known.month[s].map(u).mean():>7.2f}"
           f"{known.u_ahead[s].mean():>9.2f}{known.y[s].mean():>11.2%}"
-          + "".join(f"{fits[k][s].mean():>{w}.2%}"
-                    for k, w in (("none", 8), ("u now", 8),
-                                 ("u ahead", 9))))
+          f"{fits['none'][s].mean():>8.2%}"
+          f"{fits['u now'][s].mean():>8.2%}"
+          f"{fits['u ahead'][s].mean():>9.2%}")
 
 calm = (year <= 2018) | year.between(2021, 2022)
 shock = year.between(2019, 2020)
@@ -48,10 +48,9 @@ for macro in (False, True):
     model = pdm.fit_pd_model(known[calm], macro=macro)
     p = model.pd(known)
     coef = model.params.get("u_ahead", np.nan)
-    print(f"{'u ahead' if macro else 'none':<9}{coef:>7.3f}"
-          + "".join(f"{p[year == y].mean():>8.2%}"
-                    for y in (2019, 2020))
-          + f"{pdm.log_loss(p[shock], known.y[shock]):>9.5f}")
-print(f"{'defaulted':<16}"
-      + "".join(f"{known.y[year == y].mean():>8.2%}"
-                for y in (2019, 2020)))
+    name = "u ahead" if macro else "none"
+    loss = pdm.log_loss(p[shock], known.y[shock])
+    print(f"{name:<9}{coef:>7.3f}{p[year == 2019].mean():>8.2%}"
+          f"{p[year == 2020].mean():>8.2%}{loss:>9.5f}")
+print(f"{'defaulted':<16}{known.y[year == 2019].mean():>8.2%}"
+      f"{known.y[year == 2020].mean():>8.2%}")

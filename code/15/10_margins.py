@@ -5,6 +5,8 @@ from _book import accounts, latest_year
 from ballast.commercial import structure as st
 
 con = fernhill.connect()
+# Each facility with its margin, security, whether the borrower later
+# defaulted, and the latest internal grade on or before signing.
 f = con.execute("""
     SELECT f.company_id, f.start_date, f.margin_bps, f.secured,
            d.company_id IS NOT NULL AS dflt,
@@ -35,9 +37,11 @@ print(f"correlation of grade at signing and margin: {rho:+.2f}")
 
 # Borrowers whose accounts at signing looked like Meridian's.
 f["fy"] = f.start_date.dt.date.map(latest_year)
-s = f.merge(accounts(con), on=["company_id", "fy"])
-r = st.breaches(s.debt, s.ebitda, s.interest, 1.0, 1.0)
-like = s[r.leverage.between(1.5, 3.0) & (r.cover >= 5)]
+signed = f.merge(accounts(con), on=["company_id", "fy"])
+ratios = st.breaches(signed.debt, signed.ebitda, signed.interest,
+                     1.0, 1.0)
+like = signed[ratios.leverage.between(1.5, 3.0)
+              & (ratios.cover >= 5)]
 q = like.margin_bps.quantile([0.25, 0.5, 0.75])
 print(f"\nsigned at 1.5x-3.0x leverage and 5x+ cover: {len(like)}")
 print(f"  margin p25 {q[0.25]:.0f}, median {q[0.5]:.0f}, "

@@ -4,11 +4,15 @@ import fernhill
 
 con = fernhill.connect()
 print(f"{'aged 25 and over':<34}{'hit':>12}{'no hit':>10}")
-for label, expr in [
-        ("worst status in 24 months is 0", "worst_status_24m = 0"),
-        ("no enquiries in 6 months", "enquiries_6m = 0"),
-        ("no public records", "public_records = 0"),
-        ("approved", "decision = 'approve'")]:
+# Each check pairs a label with a condition in SQL. The query gives
+# the share of applicants meeting it, with a file and without one.
+checks = [
+    ("worst status in 24 months is 0", "worst_status_24m = 0"),
+    ("no enquiries in 6 months", "enquiries_6m = 0"),
+    ("no public records", "public_records = 0"),
+    ("approved", "decision = 'approve'"),
+]
+for label, expr in checks:
     hit, nohit = con.execute(f"""
         SELECT avg(({expr})::INT) FILTER (WHERE bureau_hit),
                avg(({expr})::INT) FILTER (WHERE NOT bureau_hit)
@@ -19,7 +23,10 @@ for label, expr in [
 # Booked personal and car loans opened before 2025, so every one has
 # had twelve months to show how it is going. "Bad" here means three
 # payments missed (90 days past due) within twelve months of opening.
-for hit, n, bad in con.execute("""
+# Step 1: for each loan, whether it was ever three payments behind
+# in its first twelve months. Step 2: the share of such loans, for
+# applicants with a file and without.
+outcomes = con.execute("""
     WITH first_year AS (
         SELECT p.account_id, max(p.missed) >= 3 AS bad
         FROM performance p JOIN accounts c USING (account_id)
@@ -30,7 +37,8 @@ for hit, n, bad in con.execute("""
     WHERE a.age >= 25 AND a.product IN ('personal', 'auto')
       AND a.app_date < DATE '2025-01-01'
     GROUP BY a.bureau_hit ORDER BY a.bureau_hit DESC
-""").fetchall():
+""").fetchall()
+for hit, n, bad in outcomes:
     label = "hit" if hit else "no hit"
     print(f"booked loans, {label:<7}{n:>8,}   bad in first year "
           f"{bad:>6.1%}")

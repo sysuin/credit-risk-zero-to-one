@@ -49,10 +49,14 @@ for name, lo, hi in PERIODS:
     ok = g["decision"].astype(str).eq("approve")
     crept = int((ok & (g["rescored"] < cut - pol.REFER)
                  & (g["mark1_score"] >= cut - pol.REFER)).sum())
-    # The cut-off on the old ruler that passes as many as `cut` did.
+    # The cut-off on the old ruler that passes as many as `cut` did:
+    # try every score and keep the first whose pass rate is closest.
     share = (g["mark1_score"] >= cut).mean()
-    as_if = min(range(400, 700),
-                key=lambda c: abs((g["rescored"] >= c).mean() - share))
+    as_if, best = None, 2.0
+    for c in range(400, 700):
+        gap = abs((g["rescored"] >= c).mean() - share)
+        if gap < best:
+            as_if, best = c, gap
     print(f"  {name:<19}{cut:>4}{above:>7.1%}{fixed:>9.1%}"
           f"{ok.mean():>9.1%}{crept:>6,}{as_if:>6}")
 
@@ -64,6 +68,11 @@ m["above_v2"] = m["rescored"] >= m["cutoff"] + pol.REFER
 monthly = m.groupby("month").agg(above=("above", "mean"),
                                  above_v2=("above_v2", "mean"),
                                  cutoff=("cutoff", "first"))
-(ROOT / "code" / "11" / "02_the_ruler.json").write_text(json.dumps(
-    [{"month": k, **{c: round(float(v), 4) for c, v in r.items()}}
-     for k, r in monthly.iterrows()], indent=1) + "\n")
+rows = []
+for month, r in monthly.iterrows():
+    row = {"month": month}
+    for col, v in r.items():
+        row[col] = round(float(v), 4)
+    rows.append(row)
+path = ROOT / "code" / "11" / "02_the_ruler.json"
+path.write_text(json.dumps(rows, indent=1) + "\n")

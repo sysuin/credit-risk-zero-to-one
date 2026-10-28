@@ -13,24 +13,31 @@ branch = a["channel"] == "branch"
 
 print(f"{'year':<6}{'below band':>11}{'low-side':>9}{'rate':>7}"
       f"{'branch rate':>12}{'high-side':>11}{'rate':>7}")
-for y, g in a.groupby("year"):
-    b, br = g.zone == "below", (g.zone == "below") & (g.channel ==
-                                                        "branch")
-    lo = (g.override == "low_side") & b
-    hi = (g.override == "high_side") & (g.zone == "above")
-    print(f"{y:<6}{b.sum():>11,}{lo.sum():>9}{lo.sum() / b.sum():>7.2%}"
-          f"{(lo & br).sum() / br.sum():>12.2%}{hi.sum():>11}"
-          f"{hi.sum() / (g.zone == 'above').sum():>7.2%}")
+for year in sorted(a["year"].unique()):
+    # count each kind of application in this year
+    in_year = a["year"] == year
+    n_below = (in_year & below).sum()
+    n_low = (in_year & below & low).sum()
+    n_branch = (in_year & below & branch).sum()
+    n_low_branch = (in_year & below & branch & low).sum()
+    n_above = (in_year & above).sum()
+    n_high = (in_year & above & high).sum()
+    print(f"{year:<6}{n_below:>11,}{n_low:>9}{n_low / n_below:>7.2%}"
+          f"{n_low_branch / n_branch:>12.2%}{n_high:>11}"
+          f"{n_high / n_above:>7.2%}")
 print(f"low-side outside branches: {(low & ~branch).sum()}; "
       f"recorded inside the refer band: {(low & ~below).sum()}")
 
-bb = below & branch
-p = (low & bb).sum() / bb.sum()
+# each region's branch override rate against the bank's
+branch_below = below & branch
+bank_rate = (low & branch_below).sum() / branch_below.sum()
 print(f"\nbranch low-side rate by region, 2016-2025 "
-      f"(bank {p:.2%})")
+      f"(bank {bank_rate:.2%})")
 print(f"{'region':<13}{'below band':>11}{'overrides':>10}{'rate':>7}"
       f"{'z':>7}")
-for r, g in a[bb].groupby("region"):
-    x = int((g.override == "low_side").sum())
-    print(f"{r:<13}{len(g):>11,}{x:>10}{x / len(g):>7.2%}"
-          f"{gv.binomial_z(x, len(g), p):>+7.1f}")
+for region, g in a[branch_below].groupby("region"):
+    n = len(g)
+    overrides = int((g.override == "low_side").sum())
+    z = gv.binomial_z(overrides, n, bank_rate)
+    print(f"{region:<13}{n:>11,}{overrides:>10}{overrides / n:>7.2%}"
+          f"{z:>+7.1f}")

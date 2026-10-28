@@ -8,9 +8,12 @@ rows = con.execute("""
     SELECT year(app_date) AS year, channel, count(*) AS n
     FROM applications GROUP BY ALL ORDER BY year, channel
 """).fetchall()
+# by_year[2016]["branch"] is the number of branch applications in 2016.
 by_year = {}
 for year, channel, n in rows:
-    by_year.setdefault(year, {})[channel] = n
+    if year not in by_year:
+        by_year[year] = {}
+    by_year[year][channel] = n
 
 print(f"{'year':<6}" + "".join(f"{c:>9}" for c in CHANNELS)
       + f"{'total':>9}{'online':>9}")
@@ -25,11 +28,19 @@ mix = con.execute("""
     SELECT product, channel, count(*) FROM applications
     GROUP BY ALL ORDER BY product, channel
 """).fetchall()
+# table["auto"]["dealer"] is the number of car loans from dealers.
 table = {}
 for product, channel, n in mix:
-    table.setdefault(product, {})[channel] = n
+    if product not in table:
+        table[product] = {}
+    table[product][channel] = n
 print(f"{'product':<10}" + "".join(f"{c:>9}" for c in CHANNELS))
 for product, counts in table.items():
-    cells = "".join(f"{counts[c]:>9,}" if c in counts else f"{'-':>9}"
-                    for c in CHANNELS)
+    # A dash where a product never came through a channel.
+    cells = ""
+    for c in CHANNELS:
+        if c in counts:
+            cells += f"{counts[c]:>9,}"
+        else:
+            cells += f"{'-':>9}"
     print(f"{product:<10}{cells}")

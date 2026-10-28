@@ -29,8 +29,10 @@ print("supervisor's shape, its unemployment and prices scaled)")
 ks = [0.0, 0.5, 1.0, 1.5]
 rates = [("rates held", 0.0), ("half the rise", 0.5),
          ("full rise", 1.0)]
-print(f"{'peak unemployment':<20}" + "".join(f"{n:>15}"
-                                            for n, _ in rates))
+header = f"{'peak unemployment':<20}"
+for n, _ in rates:
+    header += f"{n:>15}"
+print(header)
 grid = {n: [] for n, _ in rates}
 for k in ks:
     cells, peak = [], None
@@ -41,7 +43,10 @@ for k in ks:
         grid[n].append(t)
         cells.append(t)
         peak = p.u.max()
-    print(f"{peak:>17.2f}%  " + "".join(f"{t:>15.1%}" for t in cells))
+    row = f"{peak:>17.2f}%  "
+    for t in cells:
+        row += f"{t:>15.1%}"
+    print(row)
 
 flat = stress.scaled(paths["stress_2026"], s0, 0.0, every)
 houses = flat.copy()
@@ -54,14 +59,15 @@ print(f"\nhouse prices alone {houses.hpi.min() / s0['hpi'] - 1:+.0%}, "
 print(f"three-year mortgage loss ${mort / 1e8:.1f}m")
 
 print("\nHow much the supervisor's answer rests on the commercial book")
-for name, kw in (("as projected", {}),
-                 ("no rate effect", {"rate_beta": 0.0}),
-                 ("satellite's unemployment b", "corp")):
-    if kw == "corp":
-        r = stress.project(inp, paths["stress_2026"],
-                           corp_u=inp["corp_u_beta"])
-    else:
-        r = stress.project(dict(inp, **kw), paths["stress_2026"])
+supervisor = paths["stress_2026"]
+# The projection as it stands; then with a copy of the inputs whose
+# rate effect is zero; then with the satellite's unemployment slope.
+no_rate = dict(inp, rate_beta=0.0)
+runs = [("as projected", stress.project(inp, supervisor)),
+        ("no rate effect", stress.project(no_rate, supervisor)),
+        ("satellite's unemployment b",
+         stress.project(inp, supervisor, corp_u=inp["corp_u_beta"]))]
+for name, r in runs:
     print(f"  {name:<28}trough {r['trough_sa']:>6.1%}, loss "
           f"${r['years'].loss.sum() / 1e8:,.0f}m")
 

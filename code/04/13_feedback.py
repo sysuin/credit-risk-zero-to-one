@@ -3,25 +3,31 @@ import fernhill
 
 con = fernhill.connect()
 
-# For every application: where it scored against the cut-off, whether
-# it became a loan, and, for loans with a full year on the book,
-# whether it was ever 90 days behind in that year (the label a
-# scorecard learns from).
+# Step 1: every personal, card and car application, and where it
+# scored against the cut-off.
+con.execute("""
+    CREATE TEMP VIEW apps AS
+    SELECT app_id, account_id, outcome,
+           CASE WHEN mark1_score < cutoff - 10 THEN '1 below refer'
+                WHEN mark1_score < cutoff + 10 THEN '2 refer band'
+                ELSE '3 above refer' END AS band
+    FROM applications WHERE product IN ('personal', 'card', 'auto')
+""")
+
+# Step 2: for loans with a full year on the book, whether each was
+# ever 90 days behind in that year (the label a scorecard learns from).
+con.execute("""
+    CREATE TEMP VIEW first_year AS
+    SELECT a.account_id, max(p.missed) >= 3 AS bad
+    FROM accounts a JOIN performance p USING (account_id)
+    WHERE a.open_date <= DATE '2024-12-31'
+      AND p.month < a.open_date + INTERVAL 12 MONTH
+      AND a.predecessor_id IS NULL
+    GROUP BY a.account_id
+""")
+
+# Step 3: by band, how many applied, became loans and carry a label.
 rows = con.execute("""
-    WITH apps AS (
-        SELECT app_id, account_id, outcome,
-               CASE WHEN mark1_score < cutoff - 10 THEN '1 below refer'
-                    WHEN mark1_score < cutoff + 10 THEN '2 refer band'
-                    ELSE '3 above refer' END AS band
-        FROM applications WHERE product IN ('personal', 'card', 'auto')
-    ), first_year AS (
-        SELECT a.account_id, max(p.missed) >= 3 AS bad
-        FROM accounts a JOIN performance p USING (account_id)
-        WHERE a.open_date <= DATE '2024-12-31'
-          AND p.month < a.open_date + INTERVAL 12 MONTH
-          AND a.predecessor_id IS NULL
-        GROUP BY a.account_id
-    )
     SELECT band, count(*),
            count(*) FILTER (WHERE outcome = 'booked'),
            count(f.bad), count(*) FILTER (WHERE f.bad)

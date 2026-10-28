@@ -21,21 +21,28 @@ shift = {"minus_150": -1.5, "policy": 0.0, "plus_150": 1.5}
 t["change"] = t["arm"].map(shift)
 t["policy_rate"] = t["offered_rate_pct"] - t["change"]
 order = ["minus_150", "policy", "plus_150"]
-print(f"{'':<16}" + "".join(f"{k:>11}" for k in order))
-rows = {
-    "approved": lambda g: f"{len(g):,}",
-    "Mark I": lambda g: f"{g['mark1_score'].mean():.1f}",
-    "Mark II-R": lambda g: f"{g['m2r'].mean():.1f}",
-    "policy price": lambda g: f"{g['policy_rate'].mean():.2f}%",
-    "price quoted": lambda g: f"{g['offered_rate_pct'].mean():.2f}%",
-    "amount": lambda g:
-        f"${g['offered_amount_cents'].mean() / 100:,.0f}",
-    "via broker": lambda g: f"{g['channel'].eq('broker').mean():.1%}",
-    "took the loan": lambda g: f"{g['took'].mean():.1%}",
-}
+
+
+def column(g):
+    """One arm's column of the table, as printed text."""
+    return {
+        "approved": f"{len(g):,}",
+        "Mark I": f"{g['mark1_score'].mean():.1f}",
+        "Mark II-R": f"{g['m2r'].mean():.1f}",
+        "policy price": f"{g['policy_rate'].mean():.2f}%",
+        "price quoted": f"{g['offered_rate_pct'].mean():.2f}%",
+        "amount": f"${g['offered_amount_cents'].mean() / 100:,.0f}",
+        "via broker": f"{g['channel'].eq('broker').mean():.1%}",
+        "took the loan": f"{g['took'].mean():.1%}",
+    }
+
+
 arms = {k: t[t["arm"] == k] for k in order}
-for name, f in rows.items():
-    print(f"{name:<16}" + "".join(f"{f(arms[k]):>11}" for k in order))
+columns = [column(arms[k]) for k in order]
+print(f"{'':<16}" + "".join(f"{k:>11}" for k in order))
+for name in columns[0]:
+    cells = "".join(f"{c[name]:>11}" for c in columns)
+    print(f"{name:<16}" + cells)
 
 
 def interval(g):

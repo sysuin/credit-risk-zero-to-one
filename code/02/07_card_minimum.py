@@ -30,19 +30,25 @@ due, fits = con.execute("""
 """).fetchone()
 print(f"minimums due that fit the rule:     {fits:,} of {due:,}")
 
-# No new spending, and the minimum paid each month.
+# No new spending. First the minimum paid each month, then the first
+# month's minimum paid every month. Each table has a row per month.
 at_min = revolve(balance, rate)
-fixed = revolve(balance, rate, payment_cents=at_min["payment"][0])
+first_minimum = at_min["payment"][0]
+fixed = revolve(balance, rate, payment_cents=first_minimum)
+
+interest_min = at_min["interest"].sum() / 100
+interest_fixed = fixed["interest"].sum() / 100
 print()
 print(f"{'':<22}{'at the minimum':>16}{'fixed payment':>16}")
 print(f"{'first payment':<22}"
-      f"{at_min['payment'][0] / 100:>16,.2f}"
+      f"{first_minimum / 100:>16,.2f}"
       f"{fixed['payment'][0] / 100:>16,.2f}")
 print(f"{'months to clear':<22}{len(at_min):>16}{len(fixed):>16}")
 print(f"{'years':<22}{len(at_min) / 12:>16.1f}{len(fixed) / 12:>16.1f}")
 print(f"{'interest paid':<22}"
-      f"{at_min['interest'].sum() / 100:>16,.2f}"
-      f"{fixed['interest'].sum() / 100:>16,.2f}")
+      f"{interest_min:>16,.2f}{interest_fixed:>16,.2f}")
+
+# The first month in which the minimum is the $25 floor.
 floor = at_min[at_min["payment"] == 2500]["month"].min()
 print(f"{'minimum hits $25 in':<22}{'month ' + str(floor):>16}")
 
@@ -62,7 +68,7 @@ print(f"  paid exactly the minimum: {exactly:>6,} ({exactly / n:.1%})")
 print(f"  paid the whole balance:   {full:>6,} ({full / n:.1%})")
 
 json.dump({"rate": rate, "balance": balance,
-           "fixed_payment": int(at_min["payment"][0]),
+           "fixed_payment": int(first_minimum),
            "minimum": at_min["closing"].tolist(),
            "fixed": fixed["closing"].tolist()},
           open(ROOT / "code/02/07_card_minimum.json", "w"))

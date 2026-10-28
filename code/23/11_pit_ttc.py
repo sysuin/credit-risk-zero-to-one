@@ -21,13 +21,13 @@ print(f"{'':<22}{'PIT':>8}{'TTC':>8}{'defaulted':>11}")
 for name, f in (("highest year", np.max), ("lowest year", np.min)):
     print(f"{name:<22}{f(yr['pit']):>8.2%}{f(yr['ttc']):>8.2%}"
           f"{f(yr['y']):>11.2%}")
-print(f"{'swing, high/low':<22}"
-      + "".join(f"{yr[k].max() / yr[k].min():>8.2f}"
-                for k in ("pit", "ttc"))
-      + f"{yr['y'].max() / yr['y'].min():>11.2f}")
-print(f"{'corr. with the rate':<22}"
-      + "".join(f"{np.corrcoef(yr[k], yr['y'])[0, 1]:>8.2f}"
-                for k in ("pit", "ttc")))
+# Swing: the highest year's average over the lowest year's
+swing = yr.max() / yr.min()
+print(f"{'swing, high/low':<22}{swing['pit']:>8.2f}"
+      f"{swing['ttc']:>8.2f}{swing['y']:>11.2f}")
+corr_pit = np.corrcoef(yr["pit"], yr["y"])[0, 1]
+corr_ttc = np.corrcoef(yr["ttc"], yr["y"])[0, 1]
+print(f"{'corr. with the rate':<22}{corr_pit:>8.2f}{corr_ttc:>8.2f}")
 
 clean = dec[dec["missed"] == 0].assign(year=dec["month"].dt.year)
 for k in ("pit", "ttc"):
@@ -38,6 +38,6 @@ print(f"\nUp to date at two December ends in a row ({len(pairs):,}):"
       "\nshare given a different grade the second time")
 print(f"{'from':<22}{'PIT':>8}{'TTC':>8}")
 for y, x in pairs.groupby("year"):
-    sh = [vd.migration_share(x[k + "_g"], x[k + "_g_next"])
-          for k in ("pit", "ttc")]
-    print(f"Dec {y:<18}{sh[0]:>8.1%}{sh[1]:>8.1%}")
+    moved_pit = vd.migration_share(x["pit_g"], x["pit_g_next"])
+    moved_ttc = vd.migration_share(x["ttc_g"], x["ttc_g_next"])
+    print(f"Dec {y:<18}{moved_pit:>8.1%}{moved_ttc:>8.1%}")

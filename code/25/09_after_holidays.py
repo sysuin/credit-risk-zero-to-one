@@ -41,23 +41,31 @@ pool = con.execute("""
     ORDER BY b.account_id""").df()
 score = coll._bureau_v3(con)[["account_id", "bureau_v3"]]
 pool = pool.merge(score, on="account_id", how="left")
+# Each account's bureau-score quarter, and whether it took a holiday.
 pool["band"] = pd.qcut(pool["bureau_v3"].fillna(0), 4, labels=False)
 pool["took"] = pool["months"].gt(0)
 ys = ["missed_any", "reached_90", "written_off"]
+widths = [8, 9, 8]
 print("\nConsumer accounts up to date on 31 March 2020; what they did")
 print("from October 2020 to September 2022")
 print(f"{'':<26}{'n':>7}{'missed':>8}{'90 days':>9}{'w/off':>8}")
-for name, g in [("took a holiday", pool[pool["took"]]),
-                ("  of three months", pool[pool["months"] == 3]),
-                ("  of six months", pool[pool["months"] == 6]),
-                ("did not", pool[~pool["took"]])]:
-    print(f"{name:<26}{len(g):>7,}" + "".join(
-        f"{g[y].mean():>{w}.1%}" for y, w in zip(ys, (8, 9, 8))))
+groups = [("took a holiday", pool[pool["took"]]),
+          ("  of three months", pool[pool["months"] == 3]),
+          ("  of six months", pool[pool["months"] == 6]),
+          ("did not", pool[~pool["took"]])]
+for name, g in groups:
+    row = f"{name:<26}{len(g):>7,}"
+    for y, w in zip(ys, widths):
+        row += f"{g[y].mean():>{w}.1%}"
+    print(row)
+# The non-takers' rates in each cell of product, score quarter and
+# past arrears, given to every holiday taker in the same cell.
 cells = ["product", "band", "behind_before"]
 rates = pool[~pool["took"]].groupby(cells)[ys].mean()
 took = pool[pool["took"]].join(rates, on=cells, rsuffix="_like")
-like = [took[f"{y}_like"].mean() for y in ys]
-print(f"{'non-takers like them *':<26}{'':>7}" + "".join(
-    f"{v:>{w}.1%}" for v, w in zip(like, (8, 9, 8))))
+row = f"{'non-takers like them *':<26}{'':>7}"
+for y, w in zip(ys, widths):
+    row += f"{took[y + '_like'].mean():>{w}.1%}"
+print(row)
 print("* same product, bureau-score quarter and arrears in the year")
 print("  to March 2020, weighted to the holiday takers' mix")

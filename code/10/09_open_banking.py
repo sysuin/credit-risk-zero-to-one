@@ -22,8 +22,10 @@ d = s[s["outcome"] != "indeterminate"].merge(ob, on="app_id")
 when = d["app_date"]
 asked = (((d["ch"] == "online") & (when >= dt.date(2021, 3, 1)))
          | ((d["ch"] == "branch") & (when >= dt.date(2023, 1, 1))))
-d["group"] = np.where(d["ob_avg_balance_cents"].notna(), "consented",
-                      np.where(asked, "asked, refused", "never asked"))
+# Each loan's group: bank data, asked and refused, or never asked.
+d["group"] = "never asked"
+d.loc[asked, "group"] = "asked, refused"
+d.loc[d["ob_avg_balance_cents"].notna(), "group"] = "consented"
 
 print("out-of-time loans")
 print(f"{'':<16}{'loans':>7}{'bads':>6}{'bad rate':>10}"
@@ -69,12 +71,20 @@ for name in OB:
     print(f"    {name:<11}{r1.params[name]:>+7.2f}"
           f"  (p {r1.pvalues[name]:.3f})")
 
-p0, p1 = -predict(r0, ["lo"], test), -predict(r1, ["lo"] + OB, test)
+
+
+def gini_gain(a, b, y):
+    """How much better score b ranks the loans than score a."""
+    return metrics.gini(b, y) - metrics.gini(a, y)
+
+
+# Minus the chance of going bad, so that higher means safer, as a
+# score does.
+p0 = -predict(r0, ["lo"], test)
+p1 = -predict(r1, ["lo"] + OB, test)
 bad = test["bad"].to_numpy()
 rng = np.random.default_rng(SEED)
-draws = metrics.bootstrap(
-    lambda a, b, y: metrics.gini(b, y) - metrics.gini(a, y),
-    p0, p1, bad, n=1000, rng=rng)
+draws = metrics.bootstrap(gini_gain, p0, p1, bad, n=1000, rng=rng)
 ci0 = metrics.interval(metrics.bootstrap(metrics.gini, p0, bad,
                                          n=1000, rng=rng))
 ci1 = metrics.interval(metrics.bootstrap(metrics.gini, p1, bad,

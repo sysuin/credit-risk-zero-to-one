@@ -1,6 +1,7 @@
 # Young books look good: the share of each year's personal loans that
 # has ever defaulted, against the share in default by the same age.
 import numpy as np
+import pandas as pd
 
 import fernhill
 from ballast import performance as perf
@@ -18,5 +19,8 @@ print(f"{'opened':<8}{'median age':>11}{'ever defaulted':>16}"
 for y, g in acc.groupby("year"):
     ever = g["default_mob"].notna().mean()
     m12 = table.loc[str(y), 12]
-    m12 = f"{m12:>13.2%}" if m12 == m12 else f"{'not yet':>13}"
+    if pd.isna(m12):  # the youngest loans are not 12 months old
+        m12 = f"{'not yet':>13}"
+    else:
+        m12 = f"{m12:>13.2%}"
     print(f"{y:<8}{np.median(g['age']):>9.0f} m{ever:>16.2%}{m12}")

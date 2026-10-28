@@ -15,12 +15,14 @@ a["seen"] = np.where(a["known"], a["bad"],
                      np.where(seen_else, a["bad_elsewhere"], np.nan))
 year = pd.to_datetime(a["app_date"].astype("datetime64[s]")).dt.year
 EDGES = [540, 560, 580, 600, 620]
-for name, m in (("Booked, 2023 to mid-2024", (a["split"] ==
-                 "out_of_time") & a["known"]),
-                ("Booked and bureau-seen, 2023", (a["split"] ==
-                 "out_of_time") & (year == 2023))):
+# The two samples: booked loans only, then booked plus bureau-seen
+late = a["split"] == "out_of_time"
+SAMPLES = {"Booked, 2023 to mid-2024": late & a["known"],
+           "Booked and bureau-seen, 2023": late & (year == 2023)}
+for name, m in SAMPLES.items():
     d = a[m & a["seen"].notna()]
     y = d["seen"].astype(int)
+    # Promised against seen bad rates, band by band, with p-values
     t = metrics.calibration(d["score"], y, d["promised"], EDGES)
     hl, df, p = metrics.hosmer_lemeshow(d["promised"], y)
     print(f"{name}: {len(d):,} loans,\n  promised "

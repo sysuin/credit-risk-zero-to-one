@@ -32,18 +32,23 @@ print(f"{len(peers)} wholesale clients, fiscal {latest}; "
       f"Meridian {latest} and 2025")
 
 
-def f(v, unit):
-    return (f"{v:.0%}" if unit == "%" else f"{v:.1f}x" if unit == "x"
-            else f"{v:.0f}")
+def fmt(v, unit):
+    # A share, a multiple, or a number of days.
+    if unit == "%":
+        return f"{v:.0%}"
+    if unit == "x":
+        return f"{v:.1f}x"
+    return f"{v:.0f}"
 
 
 print(f"{'':<20}{'p25':>7}{'median':>7}{'p75':>7}{'M 2024':>8}"
       f"{'M 2025':>8}{'below':>7}")
 for key, label, unit in show:
     a, b = c24.loc[key], c25.loc[key]
-    print(f"{label:<20}{f(a.p25, unit):>7}{f(a['median'], unit):>7}"
-          f"{f(a.p75, unit):>7}{f(a.value, unit):>8}"
-          f"{f(b.value, unit):>8}{b.share_below:>7.0%}")
+    print(f"{label:<20}{fmt(a.p25, unit):>7}"
+          f"{fmt(a['median'], unit):>7}{fmt(a.p75, unit):>7}"
+          f"{fmt(a.value, unit):>8}{fmt(b.value, unit):>8}"
+          f"{b.share_below:>7.0%}")
 print("below: share of peers below Meridian's 2025 value")
 
 first = latest - 2

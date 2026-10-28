@@ -16,8 +16,10 @@ models = {"constrained": gbm.fit(s), "free": gbm.fit(s, monotone={})}
 print(f"{'':<14}{'trees':>6}{'holdout':>9}{'out of time':>13}")
 for name, m in models.items():
     sc = m.score(det)
-    g = [metrics.gini(sc[det["split"] == k], det.loc[
-        det["split"] == k, "bad"]) for k in ("holdout", "out_of_time")]
+    g = []
+    for k in ("holdout", "out_of_time"):
+        part = det["split"] == k
+        g.append(metrics.gini(sc[part], det.loc[part, "bad"]))
     print(f"{name:<14}{m.rounds:>6}{g[0]:>9.3f}{g[1]:>13.3f}")
 
 # Move one characteristic the risky way for every out-of-time
@@ -43,14 +45,23 @@ for k, m in models.items():
         m, oot, name, grid).round(5).tolist()
 # The applicant the free model moves the wrong way the most: the
 # largest total fall in risk as utilisation rises.
+
+
+def at_level(frame, v):
+    """The same applicants, with utilisation set to v."""
+    moved = frame.copy()
+    moved[name] = v
+    return moved
+
+
 f = oot[oot[name].notna()]
-curves = np.column_stack([models["free"].raw(f.assign(**{name: v}))
+curves = np.column_stack([models["free"].raw(at_level(f, v))
                           for v in grid])
 fall = np.clip(-np.diff(curves, axis=1), 0, None).sum(axis=1)
 who = f.iloc[[int(np.argmax(fall))]]
 for k, m in models.items():
-    out["one"][k] = [round(float(m.raw(who.assign(**{name: v}))[0]),
-                           5) for v in grid]
+    out["one"][k] = [round(float(m.raw(at_level(who, v))[0]), 5)
+                     for v in grid]
 out["app_id"] = who["app_id"].iloc[0]
 print()
 print(f"largest wrong-way move, free model: {out['app_id']}, "

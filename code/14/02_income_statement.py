@@ -3,7 +3,7 @@
 import fernhill
 
 con = fernhill.connect()
-rows = {fy: r for fy, *r in con.execute("""
+result = con.execute("""
     SELECT fiscal_year, revenue_cents, cogs_cents, opex_cents,
            ebitda_cents, depreciation_cents, ebit_cents,
            interest_cents, tax_cents, net_income_cents
@@ -11,7 +11,9 @@ rows = {fy: r for fy, *r in con.execute("""
         SELECT company_id FROM companies
         WHERE name = 'Meridian Supply Co.')
       AND fiscal_year IN (2022, 2025)
-    ORDER BY fiscal_year""").fetchall()}
+    ORDER BY fiscal_year""").fetchall()
+# Key each year's figures by the fiscal year in the first column.
+rows = {row[0]: row[1:] for row in result}
 
 
 def lines(r):

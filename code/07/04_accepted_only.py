@@ -11,9 +11,20 @@ apps = con.execute("""
     WHERE product = 'personal' AND app_date BETWEEN ? AND ?
 """, [sample.DEV_FROM, sample.DEV_TO]).df()
 d = apps.merge(out, on="app_id", how="left")
-d["band"] = d["margin"].apply(
-    lambda m: "1 below refer" if m < -10 else "2 refer band"
-    if m < 10 else "3 10-39 above" if m < 40 else "4 40+ above")
+
+
+def band_of(margin):
+    """The band for a margin; its digit keeps the bands in order."""
+    if margin < -10:
+        return "1 below refer"
+    if margin < 10:
+        return "2 refer band"
+    if margin < 40:
+        return "3 10-39 above"
+    return "4 40+ above"
+
+
+d["band"] = d["margin"].apply(band_of)
 
 print("development applications by Mark I points from the cut-off")
 print(f"{'band':<16}{'applied':>9}{'booked':>8}{'share':>7}"

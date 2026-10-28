@@ -15,12 +15,17 @@ rows = con.execute("""
     SELECT month, balance_cents, scheduled_cents FROM performance
     WHERE account_id = 'BE0000001' ORDER BY month LIMIT 15
 """).fetchall()
-free = [r for r in rows[1:] if r[2] == 0]      # after the first row
-owed = free[-1][1]
+# The months after opening (the first row) with nothing due.
+free = []
+for month, balance, scheduled in rows[1:]:
+    if scheduled == 0:
+        free.append(balance)
+owed = free[-1]                          # the balance after the last
 print(f"months with nothing due after opening: {len(free)};"
       f" owed then: ${owed / 100:,.2f}")
-print(f"first payment asked for: ${rows[len(free) + 1][2] / 100:,.2f}"
-      f" in {rows[len(free) + 1][0]}")
+first_month, _, first_payment = rows[len(free) + 1]
+print(f"first payment asked for: ${first_payment / 100:,.2f}"
+      f" in {first_month}")
 left = term - len(free)
 print(f"annuity on ${owed / 100:,.2f} over {left} months:"
       f" ${monthly_payment(owed, rate, left) / 100:,.2f}")

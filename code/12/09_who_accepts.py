@@ -25,20 +25,28 @@ late = con.execute("""
 t = t.merge(late, on="app_id")
 order = ["minus_150", "policy", "plus_150"]
 arms = {k: t[t["arm"] == k] for k in order}
-rows = {
-    "loans": lambda g: f"{len(g):,}",
-    "Mark II-R": lambda g: f"{g['m2r'].mean():.1f}",
-    "promised bad": lambda g: f"{g['promise'].mean():.2%}",
-    "late 30+ on file": lambda g: f"{(g['ws'] >= 30).mean():.1%}",
-    "via broker": lambda g: f"{g['channel'].eq('broker').mean():.1%}",
-    "missed 1+ by Dec": lambda g: f"{(g['worst'] >= 1).mean():.1%}",
-    "missed 3+ by Dec": lambda g: f"{(g['worst'] >= 3).mean():.1%}",
-    "  (count)": lambda g: f"{(g['worst'] >= 3).sum()}",
-}
+
+
+def column(g):
+    """One arm's column of the table, as printed text."""
+    return {
+        "loans": f"{len(g):,}",
+        "Mark II-R": f"{g['m2r'].mean():.1f}",
+        "promised bad": f"{g['promise'].mean():.2%}",
+        "late 30+ on file": f"{(g['ws'] >= 30).mean():.1%}",
+        "via broker": f"{g['channel'].eq('broker').mean():.1%}",
+        "missed 1+ by Dec": f"{(g['worst'] >= 1).mean():.1%}",
+        "missed 3+ by Dec": f"{(g['worst'] >= 3).mean():.1%}",
+        "  (count)": f"{(g['worst'] >= 3).sum()}",
+    }
+
+
+columns = [column(arms[k]) for k in order]
 print("Loans booked from 2024's approvals, by the price quoted")
 print(f"{'':<18}" + "".join(f"{k:>11}" for k in order))
-for name, f in rows.items():
-    print(f"{name:<18}" + "".join(f"{f(arms[k]):>11}" for k in order))
+for name in columns[0]:
+    cells = "".join(f"{c[name]:>11}" for c in columns)
+    print(f"{name:<18}" + cells)
 
 p = (arms["policy"]["worst"] >= 3).mean()
 print(f"\nTo tell {p:.1%} from a fifth more, {1.2 * p:.1%}, needs "

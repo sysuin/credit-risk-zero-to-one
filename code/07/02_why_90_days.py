@@ -37,5 +37,7 @@ first = con.execute("""
 print()
 print("loans opened 2016-2021 that reached three missed within 24")
 print(f"months: {len(first):,}; share that had done so by month")
-print("  " + "  ".join(f"{m:>2}: {(first <= m).mean():.0%}"
-                       for m in (6, 9, 12, 18, 24)))
+line = ""
+for month in (6, 9, 12, 18, 24):
+    line += f"  {month:>2}: {(first <= month).mean():.0%}"
+print(line)

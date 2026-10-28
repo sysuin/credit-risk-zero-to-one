@@ -4,6 +4,8 @@ import json
 import fernhill
 
 con = fernhill.connect()
+# The first online personal loan from March 2023 whose applicant
+# also shared their bank account.
 cur = con.execute("""
     SELECT * FROM applications
     WHERE product = 'personal' AND channel = 'online'
@@ -12,11 +14,15 @@ cur = con.execute("""
     ORDER BY app_id
     LIMIT 1
 """)
-a = dict(zip([d[0] for d in cur.description], cur.fetchone()))
+# Pair each column name with its value, so a["age"] is the age.
+names = [column[0] for column in cur.description]
+a = dict(zip(names, cur.fetchone()))
+# The table keeps the balance and the share used, not the limit.
 limit = a["revolving_balance_cents"] / a["revolving_utilisation"]
 
 
 def usd(cents):
+    """Cents as whole dollars: 1780000 becomes $17,800."""
     return f"${cents / 100:,.0f}"
 
 
@@ -59,6 +65,7 @@ print(f"  offered {usd(a['offered_amount_cents'])} at "
       f"{a['offered_term_months']} months: "
       f"{a['outcome']} as {a['account_id']}")
 
+# Save the record for the chapter's figure.
 a["app_date"] = str(a["app_date"])
 a["revolving_limit_cents"] = round(limit)
 with open("code/05/01_one_application.json", "w") as f:

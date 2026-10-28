@@ -3,18 +3,24 @@
 import fernhill
 
 con = fernhill.connect()
-for label, sql in [
-        ("applications", "SELECT count(*), count(DISTINCT app_id) "
-                         "FROM applications"),
-        ("accounts", "SELECT count(*), count(DISTINCT account_id) "
-                     "FROM accounts"),
-        ("account-months", "SELECT count(*), count(DISTINCT "
-                           "(account_id, month)) FROM performance")]:
+# For each table, count its rows and its distinct keys. If the two
+# counts agree, no key appears twice.
+key_counts = [
+    ("applications",
+     "SELECT count(*), count(DISTINCT app_id) FROM applications"),
+    ("accounts",
+     "SELECT count(*), count(DISTINCT account_id) FROM accounts"),
+    ("account-months",
+     "SELECT count(*), count(DISTINCT (account_id, month)) "
+     "FROM performance"),
+]
+for label, sql in key_counts:
     rows, keys = con.execute(sql).fetchone()
     print(f"{label:<16}{rows:>11,} rows {keys:>11,} distinct keys")
 
 # No customer number, so look for the same person by what they told
 # us: pairs of applications within 90 days that agree on six answers.
+# For each pair, keep how much the months at the address went up.
 con.execute("""
     CREATE TEMP TABLE pairs AS
     SELECT b.address_months - a.address_months AS moved

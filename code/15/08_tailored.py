@@ -17,9 +17,14 @@ print(f"{'covenants':<26}{'last':>7}{'-1 yr':>7}"
 for headroom in (None, 0.30, 0.50):
     f = base[["facility_id", "fy0", "cap", "floor"]].copy()
     if headroom:
-        lv = [st.covenant_levels(d / e, e / i, headroom=headroom)
-              for d, e, i in zip(base.debt, base.ebitda, base.interest)]
-        f["cap"], f["floor"] = [a for a, _ in lv], [b for _, b in lv]
+        # Reset each facility's cap and floor from its own accounts.
+        caps, floors = [], []
+        for d, e, i in zip(base.debt, base.ebitda, base.interest):
+            cap, floor = st.covenant_levels(d / e, e / i,
+                                            headroom=headroom)
+            caps.append(cap)
+            floors.append(floor)
+        f["cap"], f["floor"] = caps, floors
     t = live_years(acc, fac[["facility_id", "company_id",
                              "start_date", "maturity_date"]]
                    .merge(f, on="facility_id"))

@@ -85,16 +85,24 @@ for era, cond in [("old", "close_date <= '2022-12-31'"),
     """).fetchall():
         sev[p, era] = (n, raw / ead, capped / ead)
 
-order = sorted(freq, key=lambda r: -r[2] * sev[r[0], "old"][2])
+
+def expected_loss(row):
+    """Frequency times mature severity, used to sort the products."""
+    product, _, frequency, _ = row
+    return frequency * sev[product, "old"][2]
+
+
+# The products from the largest expected loss to the smallest.
+order = sorted(freq, key=expected_loss, reverse=True)
 print(f"{'':<14}{'opened 2016-22':>16}{'closed by 2022':>20}"
       f"{'2024-25':>10}")
 print(f"{'product':<14}{'accounts':>8}{'90+':>8}{'lost':>7}"
       f"{'workouts':>9}{'severity':>10}{'severity':>10}")
 for p, n, f90, lost in order:
-    nw, _, s_old = sev[p, "old"]
-    s_new = sev[p, "new"][2]
-    print(f"{p:<14}{n:>8,}{f90:>8.1%}{lost:>7.0%}{nw:>9,}"
-          f"{s_old:>10.0%}{s_new:>10.0%}")
+    workouts, _, mature = sev[p, "old"]
+    recent = sev[p, "new"][2]
+    print(f"{p:<14}{n:>8,}{f90:>8.1%}{lost:>7.0%}{workouts:>9,}"
+          f"{mature:>10.0%}{recent:>10.0%}")
 
 print()
 print("Severity as the recoveries table records it, closed by 2022")

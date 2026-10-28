@@ -26,8 +26,12 @@ p_old = 1 / (1 + np.exp((old - points.OFFSET) / points.FACTOR))
 p_new = 1 / (1 + np.exp((new - offset) / factor))
 print(f"largest change in an implied bad rate: "
       f"{np.abs(p_old - p_new).max():.1e}")
-c, w = mark2.params["bureau_score"], bins["bureau_score"].woe
-low = min(w.values())
+# The bureau score's points on the new scale, riskiest bin at 0.
+coef = mark2.params["bureau_score"]
+woes = bins["bureau_score"].woe
+low = min(woes.values())
+cells = []
+for label, w in woes.items():
+    cells.append(f"{label} {round(factor * coef * (w - low))}")
 print("bureau_score points on the new scale:")
-print("  " + ", ".join(f"{lab} {round(factor * c * (v - low))}"
-                       for lab, v in w.items()))
+print("  " + ", ".join(cells))

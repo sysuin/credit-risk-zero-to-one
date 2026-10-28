@@ -9,9 +9,12 @@ from ballast import appetite as ap
 con = fernhill.connect()
 t = ap.returns(con, by="grade")
 g = ap.margins(con, t)
-g = g.loc[sorted(g.index, key=lambda s: int(s.split()[1]))]
+# Put the rows in grade order, 1 to 10.
+g = g.loc[[f"grade {k}" for k in range(1, 11)]]
+# Each client's share of the tail, then each grade's share of the book.
 c = ap.allocate(ap.pf.load_contributions(), ap.pf.load()["ec_999"])
-c = c[c.kind == "name"].assign(grade=lambda d: d.id.map(ap.grades()))
+c = c[c.kind == "name"].copy()
+c["grade"] = c.id.map(ap.grades())
 by = c.groupby("grade")[["ead", "el", "es_999"]].sum()
 by = by / by.sum()
 print(f"{'grade':<7}{'drawn':>7}{'EAD':>6}{'EL':>6}{'ES':>6}"

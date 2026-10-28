@@ -1,4 +1,6 @@
 # Card vintages computed the obvious way, one account id per card.
+import pandas as pd
+
 import fernhill
 from ballast import performance as perf
 
@@ -12,7 +14,11 @@ moved = dict(con.execute("""
 print(f"{'opened':<8}{'cards':>7}" + "".join(
     f"{'m' + str(k):>7}" for k in AGES) + f"{'migrated':>10}")
 for cohort, row in table.iterrows():
-    cells = "".join(f"{row[k]:>7.1%}" if row[k] == row[k]
-                    else f"{'.':>7}" for k in AGES)
+    cells = ""
+    for age in AGES:
+        if pd.isna(row[age]):  # too young to have reached this age
+            cells += f"{'.':>7}"
+        else:
+            cells += f"{row[age]:>7.1%}"
     print(f"{cohort:<8}{int(row['accounts']):>7,}{cells}"
           f"{moved.get(cohort, 0):>10,}")

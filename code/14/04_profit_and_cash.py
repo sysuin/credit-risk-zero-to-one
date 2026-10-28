@@ -16,11 +16,12 @@ print(f"{'$000':<6}{'net':>9}{'EBITDA':>9}{'operating':>11}"
 print(f"{'':<6}{'income':>9}{'':>9}{'cash flow':>11}{'':>8}{'':>11}"
       f"{'year end':>10}")
 widths = (9, 9, 11, 8, 11)
-tot = [0] * 5
-for fy, *vals, cash in rows:
-    print(f"{fy:<6}" + "".join(f"{v / 1e5:>{w},.0f}"
-                               for v, w in zip(vals, widths))
-          + f"{cash / 1e5:>10,.0f}")
-    tot = [t + v for t, v in zip(tot, vals)]
-print(f"{'total':<6}" + "".join(f"{v / 1e5:>{w},.0f}"
-                                for v, w in zip(tot, widths)))
+totals = [0] * 5
+for row in rows:
+    year, values, cash = row[0], row[1:6], row[6]
+    cells = [f"{v / 1e5:>{w},.0f}" for v, w in zip(values, widths)]
+    print(f"{year:<6}" + "".join(cells) + f"{cash / 1e5:>10,.0f}")
+    # Add this year's five flows to the running totals.
+    totals = [t + v for t, v in zip(totals, values)]
+cells = [f"{t / 1e5:>{w},.0f}" for t, w in zip(totals, widths)]
+print(f"{'total':<6}" + "".join(cells))

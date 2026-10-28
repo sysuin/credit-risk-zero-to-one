@@ -14,8 +14,9 @@ acc, fac = accounts(con), facilities(con)
 
 
 def tested(d):
-    return pd.concat([d, st.breaches(d.debt, d.ebitda, d.interest,
-                                     d.cap, d.floor)], axis=1)
+    # Add the ratios and breach flags beside each row of accounts.
+    flags = st.breaches(d.debt, d.ebitda, d.interest, d.cap, d.floor)
+    return pd.concat([d, flags], axis=1)
 
 
 # 1. At signing, against the latest accounts Fernhill then held.
@@ -35,25 +36,28 @@ for label, g in ((f"at the {sign.cap.max():.2f}x ceiling", sign[top]),
           f"{g.leverage_breach.mean():>4.0%}")
 
 # 2. The practice, fitted below the ceiling, applied to Meridian.
-b, a = np.polyfit(sign[~top].leverage, sign[~top].cap, 1)
-k = (sign.floor / sign.cover).median()
-m = analysis(con)
-r = m["r"]
-print(f"\npractice: cap {a:.2f} + {b:.2f} x leverage; floor "
-      f"{k:.2f} x cover")
+slope, start = np.polyfit(sign[~top].leverage, sign[~top].cap, 1)
+floor_share = (sign.floor / sign.cover).median()
+meridian = analysis(con)
+ratios, pro_forma = meridian["r"], meridian["pf"]
+print(f"\npractice: cap {start:.2f} + {slope:.2f} x leverage; floor "
+      f"{floor_share:.2f} x cover")
 for label, lev, cov in (
-        ("Meridian, 2025 accounts", r.loc["leverage", 2025],
-         r.loc["interest_cover", 2025]),
-        ("Meridian, fully drawn", m["pf"].leverage, m["pf"].cover)):
-    cap, floor = round((a + b * lev) * 4) / 4, round(k * cov * 4) / 4
+        ("Meridian, 2025 accounts", ratios.loc["leverage", 2025],
+         ratios.loc["interest_cover", 2025]),
+        ("Meridian, fully drawn", pro_forma.leverage, pro_forma.cover)):
+    # Fernhill's line, rounded to the nearest quarter-turn.
+    cap = round((start + slope * lev) * 4) / 4
+    floor = round(floor_share * cov * 4) / 4
     print(f"  {label:<24}{lev:.2f}x {cov:>5.2f}x -> cap {cap:.2f}x,"
           f" floor {floor:.2f}x")
 
 # 3. Each year's accounts against the covenants live when they came.
 cols = ["leverage_breach", "cover_breach", "breach"]
 t = tested(live_years(acc, fac.drop(columns="fy")))
-cy = (t.groupby(["company_id", "fy", "k"], dropna=False)[cols].any()
-      .reset_index())
+# One row per company-year: in breach of any live facility's covenant.
+cy = t.groupby(["company_id", "fy", "k"], dropna=False)[cols].any()
+cy = cy.reset_index()
 print(f"\n{'in breach of their own covenants':<32}{'n':>5}"
       f"{'either':>8}{'lev.':>7}{'cover':>7}")
 labels = ["defaulters, last accounts",

@@ -30,10 +30,15 @@ shared = rng.binomial(N_LOANS, pd_this_year) * LGD * EAD
 
 print()
 print(f"{'':<22}{'independent':>14}{'shared economy':>17}")
-for label, q in [("average year", None), ("median year", 0.5),
-                 ("1 year in 100", 0.99), ("1 year in 1,000", 0.999)]:
-    a, b = ((independent.mean(), shared.mean()) if q is None else
-            (np.quantile(independent, q), np.quantile(shared, q)))
+print(f"{'average year':<22}{independent.mean():>14,.0f}"
+      f"{shared.mean():>17,.0f}")
+
+# A quantile is the loss that only a given share of years beat:
+# 0.99 is the loss exceeded one year in a hundred.
+for label, q in [("median year", 0.5), ("1 year in 100", 0.99),
+                 ("1 year in 1,000", 0.999)]:
+    a = np.quantile(independent, q)
+    b = np.quantile(shared, q)
     print(f"{label:<22}{a:>14,.0f}{b:>17,.0f}")
 
 # The figure is drawn from these counts, not from numbers typed by hand.

@@ -14,9 +14,11 @@ acc, unk, hold, oot = (f["accepts"], f["unknown"], f["holdout"],
                        f["oot"])
 fits = reject.fit_all(acc, unk, reject.retro(),
                       np.random.default_rng(SEED))
-fits["reweight, cap 10"] = reject.fit(
-    *(lambda t: (t, t["bad"], t["weight"]))(reject.training_set(
-        "reweight", acc, unk, cap=10)))
+# Reweighting again, with the weights capped at 10
+capped = reject.training_set("reweight", acc, unk, cap=10)
+fits["reweight, cap 10"] = reject.fit(capped, capped["bad"],
+                                      capped["weight"])
+# The ceiling: Mark II's design fitted to every true outcome
 train = acc.index.union(unk.index)
 everyone = a.loc[train]
 fits["truth (ceiling)"] = reject.fit(everyone, everyone["truth"])
@@ -57,6 +59,13 @@ print(f"{'Mark I score':<17}"
       f"{metrics.gini(m1o, oot['truth'].astype(int)):>6.3f}"
       f"{'-':>6}{'-':>6}{'-':>6}{'-':>6}{ap1:>9.2%}")
 
+
+
+def gini_gain(base_score, alt_score, bad):
+    """How much better the alternative ranks than the base."""
+    return metrics.gini(alt_score, bad) - metrics.gini(base_score, bad)
+
+
 print()
 print("Gini gain over ignore, holdout, paired bootstrap (1,000 draws)")
 rng = np.random.default_rng(SEED)
@@ -64,9 +73,8 @@ y = hold["truth"].to_numpy().astype(int)
 base = -fits["ignore"].p_bad(hold).to_numpy()
 for m in ("parcelling", "bureau retro", "truth (ceiling)"):
     alt = -fits[m].p_bad(hold).to_numpy()
-    draws = metrics.bootstrap(
-        lambda x1, x2, b: metrics.gini(x2, b) - metrics.gini(x1, b),
-        base, alt, y, n=1000, rng=rng)
+    draws = metrics.bootstrap(gini_gain, base, alt, y, n=1000,
+                              rng=rng)
     lo, hi = metrics.interval(draws)
     g = out[m]["gini_hold"] - out["ignore"]["gini_hold"]
     print(f"  {m:<17}{g:>+7.3f}   {lo:+.3f} to {hi:+.3f}")

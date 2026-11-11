@@ -15,6 +15,14 @@ Nothing in the book's output was typed by hand. Each listing was executed and it
 output saved beside it, so you can compare what you get with what the book shows. Every
 listing is deterministic: run it twice and it prints the same thing, to the last digit.
 
+## The book
+
+- **Kindle**, the whole book: [amazon.com/dp/B0HQZPG7CJ](https://www.amazon.com/dp/B0HQZPG7CJ)
+- **Paperback, Volume 1** (Chapters 1–17): [amazon.com/dp/B0HR1X3Q23](https://www.amazon.com/dp/B0HR1X3Q23)
+- **Paperback, Volume 2** (Chapters 18–31): [amazon.com/dp/B0HR1VL9MC](https://www.amazon.com/dp/B0HR1VL9MC)
+
+The same editions are on Amazon's other stores under the same numbers.
+
 ## Start
 
 You need Python 3.12 and about 1 GB of free disk. No cloud account, no API key.
